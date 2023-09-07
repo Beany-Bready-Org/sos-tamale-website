@@ -9,7 +9,7 @@ const VideoSection = () => {
 			<p className="video-section__description">
 				Watch the intro video below about our prestigious institution.
 			</p>
-			<IntroVideo videoPLaying={videoPLaying} setVideoPlaying={setVideoPlaying}/>
+			<IntroVideo videoPlaying={videoPLaying} setVideoPlaying={setVideoPlaying}/>
 		</section>
 	);
 };
