@@ -1,12 +1,14 @@
-import { useState, lazy } from 'react'
-import './App.scss'
+import { useState } from 'react'
+import './styles/App.scss'
 import Navbar from './components/Navbar'
 
 
 export default function App() {
+  const [showNav, setShowNav] = useState(false)
+
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar show={showNav} setShowNav={setShowNav}/>
+    </>
   )
 }
