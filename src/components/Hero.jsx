@@ -1,14 +1,13 @@
-import Background from "./Background";
+import HeroBackground from "./HeroBackground";
+import HeroText from "./HeroText"
 
-import { Swiper } from "swiper/react";
-import "swiper/css";
-
-import "../stylesheets/Background.scss";
+import '../stylesheets/Hero.scss'
 
 export default function Hero() {
   return (
     <section className="hero">
-      <Background />
+      <HeroBackground sliderSize={4}/>
+      <HeroText />
     </section>
   );
 }

@@ -1,10 +1,12 @@
-import "../stylesheets/Background.scss";
+import "../stylesheets/HeroBackground.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Lazy } from "swiper/modules";
-import "swiper/css";
+import { Pagination } from "swiper/modules";
 
-export default function Background() {
+import "swiper/css";
+import "swiper/css/pagination";
+
+export default function HeroBackground({ sliderSize }) {
   let slides = [];
   for (let i = 1; i <= 4; i++) {
     import(`../assets/bg-img${i}.jpg`)
@@ -12,7 +14,6 @@ export default function Background() {
         slides.push(
           <SwiperSlide key={i}>
             <img src={image.default} alt={`Slide ${i}`} />
-            <p>Slide {i}</p>
           </SwiperSlide>
         );
       })
@@ -20,19 +21,20 @@ export default function Background() {
   }
 
   return (
-    <>
+    <div className="hero__background">
       <Swiper
         centeredSlides={true}
-        // lazy={true}
-        // modules={[Lazy]}
-        loop={true}
+        pagination={{
+          clickable: true,
+        }}
         autoplay={{
-          delay: 100,
+          delay: 1000,
           disableOnInteraction: false,
         }}
+        modules={[Pagination]}
       >
         {slides}
       </Swiper>
-    </>
+    </div>
   );
 }
