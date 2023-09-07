@@ -1,5 +1,6 @@
 @import "./congfig";
 @import "./Navbar.scss";
+@import "./VideoSection.scss";
 
 /* Box sizing rules */
 *,
@@ -50,7 +51,8 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+video {
 	max-width: 100%;
 	display: block;
 }
