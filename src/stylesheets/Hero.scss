@@ -1,14 +1,11 @@
-// temporary
-* {
-  margin: 0;
-  padding: 0;
-}
+@import "./config";
 
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
-  
+
 }

@@ -1,4 +1,4 @@
-import '../stylesheets/HeroText.scss'
+import "../stylesheets/HeroText.scss";
 
 export default function HeroText() {
   return (

@@ -1,7 +1,7 @@
 import "../stylesheets/HeroBackground.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -28,10 +28,10 @@ export default function HeroBackground({ sliderSize }) {
           clickable: true,
         }}
         autoplay={{
-          delay: 1000,
+          delay: 100,
           disableOnInteraction: false,
         }}
-        modules={[Pagination]}
+        modules={[Autoplay, Pagination]}
       >
         {slides}
       </Swiper>

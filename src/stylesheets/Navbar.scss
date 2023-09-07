@@ -1,6 +1,7 @@
-@import "./congfig";
+@import "./config";
 .main-nav {
     @include flex(row, space-between, center, unset);
+    background-color: #fff;
     padding-inline: clamp(2em, 7.5vw, 4em);
     padding-block: .5em;
     position: relative;

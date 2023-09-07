@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import logo from "../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
-import "../styles/Navbar.scss";
+import "../stylesheets/Navbar.scss";
 
 const Navbar = ({ show, setShowNav }) => {
 	return (
