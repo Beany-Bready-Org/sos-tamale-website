@@ -6,10 +6,22 @@
   display: flex;
   position: absolute;
   z-index: 1;
+  text-align: center;
+  padding: 2em;
 
   span {
     text-transform: uppercase;
     font-weight: weights(light);
-    color: $light-text;
+    letter-spacing: 8px;
+  }
+
+  h1 {
+    font-family: family("gelasio");
+    font-size: 6vmin;
+    max-width: 65ch;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 4vmin, 1rem);
   }
 }

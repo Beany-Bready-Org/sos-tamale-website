@@ -3,8 +3,10 @@
 @function family($name) {
   @if $name == "poppins" {
     @return "Poppins", sans-serif;
-  } @else {
+  } @else if $name == "grand hotel" {
     @return "Grand Hotel", cursive;
+  } @else if $name == "gelasio" {
+    @return "Gelasio", serif;
   }
 }
 
@@ -48,4 +50,3 @@ $font-weights: (
 $accent-color: #029ddf;
 $text: #495057;
 $light-text: #bcc3ca;
-  
