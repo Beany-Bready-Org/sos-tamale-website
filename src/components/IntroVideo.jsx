@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import introVideo from "../assets/Videos/test-intro.mp4";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,41 +9,41 @@ const IntroVideo = ({ videoPlaying, setVideoPlaying }) => {
 	const videoPlayerButtonRef = useRef();
 	const [showPlayButton, setShowPlayButton] = useState(true);
 
-
 	return (
 		<div className="video-container">
 			<video
 				src={introVideo}
 				ref={videoRef}
-				onClick={() => {	
+				onClick={() => {
 					setVideoPlaying((prev) => !prev);
-					setShowPlayButton(prev => !prev)
+					setShowPlayButton((prev) => !prev);
 					!videoPlaying && videoPlayerButtonRef.current.style.opacity !== 0
 						? videoRef.current.play()
 						: videoRef.current.pause();
 				}}
-				onEnded={() => {
-					setShowPlayButton(true)
-				}}
 			></video>
-			{console.log(videoRef.current)}
 
 			<div
 				className="video-container__video-action-toggler"
 				onClick={() => {
 					setVideoPlaying((prev) => !prev);
-					setShowPlayButton(prev => !prev)
+					setShowPlayButton((prev) => !prev);
 					!videoPlaying && videoPlayerButtonRef.current.style.opacity !== 0
 						? videoRef.current.play()
 						: videoRef.current.pause();
 				}}
 				ref={videoPlayerButtonRef}
-				style={showPlayButton ? null : {opacity: 0, transition: "opacity 300ms ease"}}
+				style={
+					showPlayButton
+						? null
+						: { opacity: 0, transition: "opacity 300ms ease" }
+				}
 			>
-				<FontAwesomeIcon icon={!videoPlaying ? faPlay : faPause} style={{ fontSize: "1.3rem" }}/>
+				<FontAwesomeIcon
+					icon={!videoPlaying ? faPlay : faPause}
+					style={{ fontSize: "1.3rem" }}
+				/>
 			</div>
-			{console.log(videoPlaying)}
-			{console.log(videoPlayerButtonRef.current)}
 		</div>
 	);
 };
