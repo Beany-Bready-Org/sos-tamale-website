@@ -1,6 +1,9 @@
 import { useState } from 'react'
-import './styles/App.scss'
+
+import './stylesheets/App.scss'
+
 import Navbar from './components/Navbar'
+import Hero from "./components/Hero";
 import VideoSection from './components/VideoSection'
 
 
@@ -10,7 +13,8 @@ export default function App() {
   return (
     <>
       <Navbar show={showNav} setShowNav={setShowNav}/>
+      <Hero />
       <VideoSection />
     </>
-  )
+  );
 }
