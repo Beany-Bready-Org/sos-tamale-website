@@ -1,5 +1,6 @@
 @import "./congfig";
 .main-nav {
+    z-index: inherit;
     @include flex(row, space-between, center, unset);
     padding-inline: clamp(2em, 7.5vw, 4em);
     padding-block: .5em;
@@ -8,6 +9,7 @@
     container-name: navbar;
 
     &__logo {
+        z-index: 1000;
         img {
             width: 70px;
         }
