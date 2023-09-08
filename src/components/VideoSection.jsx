@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import IntroVideo from "./IntroVideo";
+import '../stylesheets/VideoSection.scss'
 
 const VideoSection = () => {
     const [videoPLaying, setVideoPlaying] = useState(false)
