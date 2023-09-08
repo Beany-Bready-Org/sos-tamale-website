@@ -21,7 +21,7 @@ const Navbar = ({ show, setShowNav }) => {
 					<NavLink>About Us</NavLink>
 				</li>
 				<li className="item enroll">
-					<NavLink to="/enroll" className="main-nav__enroll-btn">
+					<NavLink to="/enroll" className="main-nav__enroll-btn --cta">
 						Enroll
 					</NavLink>
 				</li>

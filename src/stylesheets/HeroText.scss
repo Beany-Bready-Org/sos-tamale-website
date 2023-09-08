@@ -8,20 +8,25 @@
   z-index: 1;
   text-align: center;
   padding: 2em;
+  gap: 1rem;
 
   span {
     text-transform: uppercase;
     font-weight: weights(light);
-    letter-spacing: 8px;
+    letter-spacing: 4px;
+    font-size: 4vmin;
   }
 
   h1 {
     font-family: family("gelasio");
-    font-size: 6vmin;
-    max-width: 65ch;
+    font-size: 8vmin;
+    max-width: 15ch;
+    line-height: 100%;
   }
 
   p {
-    font-size: clamp(0.9rem, 4vmin, 1rem);
+    font-size: 3vmin;
+    max-width: 40ch;
+    color: $text;
   }
 }

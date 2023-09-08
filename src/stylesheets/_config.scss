@@ -30,6 +30,16 @@ $font-weights: (
   gap: $gap;
 }
 
+@mixin button($color, $background-color, $padding, $b-radius) {
+  background-color: $background-color;
+  color: $color;
+  padding: $padding;
+  border-radius: $b-radius;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 // Mobile nav mixin
 // @mixin mobileNav($beakpoint) {
 //     @media screen and () {
@@ -50,3 +60,4 @@ $font-weights: (
 $accent-color: #029ddf;
 $text: #495057;
 $light-text: #bcc3ca;
+$btn-small: 0.5em 2em

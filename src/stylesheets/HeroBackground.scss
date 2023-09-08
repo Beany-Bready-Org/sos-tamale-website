@@ -11,7 +11,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background-color: #ffffff5b;
+    background-color: #ffffff79;
     z-index: 1;
   }
 
@@ -22,6 +22,7 @@
     .swiper-slide img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 }

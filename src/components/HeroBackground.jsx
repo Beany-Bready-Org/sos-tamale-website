@@ -28,7 +28,7 @@ export default function HeroBackground({ sliderSize }) {
           clickable: true,
         }}
         autoplay={{
-          delay: 100,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
