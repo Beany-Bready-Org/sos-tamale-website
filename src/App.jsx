@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar show={showNav} setShowNav={setShowNav}/>
+      {/* <Navbar show={showNav} setShowNav={setShowNav}/> */}
       <Hero />
       <VideoSection />
     </>
