@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 export default function HeroBackground({ sliderSize }) {
+  let slides = [];
   for (let i = 1; i <= 4; i++) {
     import(`../assets/images/bg-img1.jpg`)
       .then((image) => {
