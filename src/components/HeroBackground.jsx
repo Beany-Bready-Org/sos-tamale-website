@@ -33,7 +33,15 @@ export default function HeroBackground({ sliderSize }) {
         }}
         modules={[Autoplay, Pagination]}
       >
-        {slides}
+        <SwiperSlide>
+          <p>beans</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <p>beans</p>
+        </SwiperSlide>
+        <SwiperSlide>
+          <p>beans</p>
+        </SwiperSlide>
       </Swiper>
     </div>
   );
