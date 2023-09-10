@@ -3,14 +3,14 @@
   @include flex(row, space-between, center, unset);
   background-color: #fff;
   padding-inline: clamp(2em, 7.5vw, 4em);
-  padding-block: 0.75em;
+  min-height: 12.5vh;
   position: relative;
   container-type: inline-size;
   container-name: navbar;
 
   &__logo {
     img {
-      width: 70px;
+      width: 80px;
     }
   }
 

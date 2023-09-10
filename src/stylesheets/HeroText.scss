@@ -7,26 +7,30 @@
   position: absolute;
   z-index: 1;
   text-align: center;
-  padding: 2em;
-  gap: 1rem;
+  padding: 0 2em;
 
   span {
     text-transform: uppercase;
     font-weight: weights(light);
     letter-spacing: 4px;
-    font-size: 4vmin;
+    font-size: $text-medium;
   }
 
   h1 {
     font-family: family("gelasio");
-    font-size: 8vmin;
+    font-size: $text-large;
     max-width: 15ch;
     line-height: 100%;
   }
 
   p {
-    font-size: 3vmin;
+    font-size: $text-small;
     max-width: 40ch;
     color: $text-color;
+    margin-bottom: 1em;
+  }
+
+  .hero__text__button {
+    font-size: $text-small;
   }
 }

@@ -60,4 +60,10 @@ $font-weights: (
 $accent-color: #029ddf;
 $text-color: #495057;
 $light-text: #bcc3ca;
-$btn-small: 0.5em 2em
+
+$btn-tiny: 0.4em 1.75em;
+$btn-small: 0.5em 2em;
+
+$text-small: clamp(14px, 3vmin, 18px);
+$text-medium: clamp(20px, 4vmin, 30px);
+$text-large: clamp(36px, 8vmin, 44px);

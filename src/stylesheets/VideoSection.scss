@@ -27,6 +27,7 @@
     position: relative;
 
     &__video-action-toggler {
+
         @include flex(row, center, center, unset);
         transition: opacity 300ms ease;
         width: 60px;

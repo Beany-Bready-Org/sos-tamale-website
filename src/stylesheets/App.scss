@@ -2,6 +2,13 @@
 @import "./Navbar.scss";
 @import "./Hero.scss";
 
+/* Swiper.js variables */
+
+:root {
+  --swiper-theme-color: #029ddf !important;
+  --swiper-pagination-bullet-inactive-color: #029ddfaa !important;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -83,5 +90,14 @@ select {
 // Utility styles
 
 .--cta {
-  @include button(#fff, $accent-color, $btn-small, 6px);
+  @include button(#fff, $accent-color, $btn-tiny, 6px);
+}
+
+// Semantic styles
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }

@@ -9,7 +9,7 @@ export default function HeroText() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
         voluptatibus?
       </p>
-      <button className="--cta">Enroll Now</button>
+      <button className="hero__text__button --cta">Enroll Now</button>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import bgImg1 from "../assets/images/bg-img1.jpg";
+import bgImg1 from "../assets/images/bg-img3.jpg";
 
 export default function HeroBackground({ sliderSize }) {
   let slides = [];
