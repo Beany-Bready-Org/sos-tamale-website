@@ -5,6 +5,7 @@ import "./stylesheets/App.scss";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import VideoSection from "./components/VideoSection";
+import InfoSection from "./components/InfoSection";
 
 export default function App() {
   const [showNav, setShowNav] = useState(false);
@@ -18,6 +19,7 @@ export default function App() {
 
       <main>
         <VideoSection />
+        <InfoSection />
       </main>
     </>
   );

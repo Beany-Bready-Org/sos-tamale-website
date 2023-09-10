@@ -39,7 +39,7 @@ $font-weights: (
   border-radius: $b-radius;
   // border: 1px solid $border-color;
   border: none;
-  border-bottom: 5px solid $border-color;
+  border-bottom: 4px solid $border-color;
   outline: none;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ $light-text: #bcc3ca;
 $btn-tiny: 0.4em 1.75em;
 $btn-small: 0.5em 2em;
 
-$text-small: clamp(16px, 3vmin, 18px);
+$text-small: 16px;
 $text-inter: clamp(18px, 3.5vmin, 22px);
 $text-medium: clamp(22px, 4vmin, 28px);
 $text-large: clamp(36px, 8vmin, 52px);

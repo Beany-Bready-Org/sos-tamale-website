@@ -1,0 +1,10 @@
+@import "./config";
+
+.info {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+  width: clamp(300px, 90vw, 900px);
+}

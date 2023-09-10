@@ -1,0 +1,26 @@
+@import "./config";
+
+.info__card {
+  display: flex;
+  border: 1px solid blue;
+  min-height: 500px;
+
+  &__text {
+    flex-basis: 60%;
+
+    h1 {
+      color: $accent-color;
+      font-size: $text-medium;
+    }
+
+    p {
+      color: $text-color;
+      font-size: $text-small;
+    }
+  }
+
+  &__img {
+    flex-basis: 40%;
+    background-size: cover;
+  }
+}

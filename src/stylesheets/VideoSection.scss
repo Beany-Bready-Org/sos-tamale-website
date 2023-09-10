@@ -3,6 +3,9 @@
 .video-section {
     @include flex(column, center, center, unset);
     min-height: 100vh;
+    width: clamp(300px, 90vw, 900px);
+    margin: auto;
+
 
     &__header {
         color: $accent-color;
