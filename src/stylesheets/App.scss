@@ -99,7 +99,7 @@ a {
 }
 
 .--cta {
-  @include button(#fff, $accent-color, $btn-tiny, 6px);
+  @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
 }
 
 // Semantic styles
@@ -109,4 +109,9 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+main {
+  min-height: 100vh;
+  padding: 0 4rem;
 }

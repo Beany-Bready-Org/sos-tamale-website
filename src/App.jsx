@@ -16,7 +16,9 @@ export default function App() {
         <Hero />
       </header>
 
-      <VideoSection />
+      <main>
+        <VideoSection />
+      </main>
     </>
   );
 }

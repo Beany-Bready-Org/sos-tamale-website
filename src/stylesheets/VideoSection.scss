@@ -2,25 +2,27 @@
 
 .video-section {
     @include flex(column, center, center, unset);
-    padding: 4em 0;
-
+    min-height: 100vh;
 
     &__header {
         color: $accent-color;
+        font-size: $text-medium;
     }
 
     &__description {
+        font-size: $text-small;
         font-weight: weights(regular);
         color: $text-color;
+        margin-bottom: 2em;
     }
     
 }
 
 .video-container {
-    margin-top: 3em;
+    // margin-top: 3em;
     // border: 3px solid green;
-    width: 80%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 800px;
     max-height: 400px;
     border-radius: 1rem;
     overflow: clip;
@@ -29,6 +31,7 @@
     &__video-action-toggler {
 
         @include flex(row, center, center, unset);
+        color: $accent-color;
         transition: opacity 300ms ease;
         width: 60px;
         aspect-ratio: 1;

@@ -32,12 +32,14 @@ $font-weights: (
   gap: $gap;
 }
 
-@mixin button($color, $background-color, $padding, $b-radius) {
+@mixin button($color, $border-color, $background-color, $padding, $b-radius) {
   background-color: $background-color;
   color: $color;
   padding: $padding;
   border-radius: $b-radius;
+  // border: 1px solid $border-color;
   border: none;
+  border-bottom: 5px solid $border-color;
   outline: none;
   cursor: pointer;
 }
@@ -60,6 +62,7 @@ $font-weights: (
 }
 
 $accent-color: #029ddf;
+$secondary-color: #0084b8;
 $text-color: #495057;
 $light-text: #bcc3ca;
 
