@@ -8,12 +8,15 @@
   z-index: 1;
   text-align: center;
   padding: 0 2em;
+  font-size: 1.1rem;
+  gap: 0.5em;
 
   span {
     text-transform: uppercase;
     font-weight: weights(light);
     letter-spacing: 4px;
     font-size: $text-medium;
+    color: #000a;
   }
 
   h1 {
@@ -27,7 +30,7 @@
     font-size: $text-small;
     max-width: 40ch;
     color: $text-color;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
   }
 
   .hero__text__button {

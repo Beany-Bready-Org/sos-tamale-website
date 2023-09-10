@@ -89,6 +89,15 @@ select {
 
 // Utility styles
 
+a {
+  text-decoration: none;
+
+  &:focus {
+    color: $accent-color!important;
+    outline: none;
+  }
+}
+
 .--cta {
   @include button(#fff, $accent-color, $btn-tiny, 6px);
 }
