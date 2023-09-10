@@ -9,7 +9,7 @@
   text-align: center;
   padding: 0 2em;
   font-size: 1.1rem;
-  gap: 0.5em;
+  gap: 0.25em;
 
   span {
     text-transform: uppercase;
@@ -17,6 +17,7 @@
     letter-spacing: 4px;
     font-size: $text-medium;
     color: #000a;
+    margin-bottom: 0.5em;
   }
 
   h1 {
@@ -35,5 +36,11 @@
 
   .hero__text__button {
     font-size: $text-small;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hero__text {
+    font-size: 1rem;
   }
 }

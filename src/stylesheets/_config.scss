@@ -64,10 +64,10 @@ $light-text: #bcc3ca;
 $btn-tiny: 0.4em 1.75em;
 $btn-small: 0.5em 2em;
 
-// $text-small: clamp(14px, 3vmin, 18px);
-// $text-medium: clamp(20px, 4vmin, 30px);
-// $text-large: clamp(36px, 8vmin, 44px);
+$text-small: clamp(16px, 3vmin, 18px);
+$text-medium: clamp(18px, 4vmin, 30px);
+$text-large: clamp(34px, 8vmin, 48px);
 
-$text-small: 1em;
-$text-medium: 1.5em;
-$text-large: 3em;
+// $text-small: 1em;
+// $text-medium: 1.5em;
+// $text-large: 3em;
