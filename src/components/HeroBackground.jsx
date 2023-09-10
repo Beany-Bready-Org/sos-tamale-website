@@ -31,11 +31,12 @@ export default function HeroBackground({ sliderSize }) {
     <div className="hero__background">
       <Swiper
         centeredSlides={true}
+        loop={true}
         pagination={{
           clickable: true,
         }}
         autoplay={{
-          delay: 5000,
+          delay: 500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}>

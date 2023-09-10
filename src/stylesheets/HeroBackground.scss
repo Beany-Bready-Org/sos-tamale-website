@@ -29,6 +29,7 @@
 
     .swiper-pagination {
       z-index: 1;
+      --swiper-pagination-bottom: 16px;
 
       .swiper-pagination-bullet {
         --swiper-pagination-bullet-size: 2vmin;

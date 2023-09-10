@@ -21,6 +21,7 @@
     list-style: none;
     width: 90%;
 
+
     li:nth-of-type(1) {
       margin-left: auto;
     }
@@ -31,6 +32,7 @@
         text-decoration: none;
         font-weight: weights(regular);
         transition: color 300ms ease;
+        font-size: $text-small;
 
         &:hover {
           color: color(active);
