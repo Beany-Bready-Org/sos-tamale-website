@@ -3,14 +3,31 @@
   @include flex(row, space-between, center, unset);
   background-color: #fff;
   padding-inline: clamp(2em, 7.5vw, 4em);
-  min-height: 12.5vh;
+  min-height: 15vh;
   position: relative;
   container-type: inline-size;
   container-name: navbar;
 
   &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75em;
+
     img {
       width: 80px;
+    }
+
+    p {
+      font-size: $text-inter;
+      line-height: 100%;
+      max-width: 20ch;
+      color: $accent-color;
+      font-family: family(roboto);
+
+      span {
+        text-shadow: 0 0 1px $accent-color;
+      }
     }
   }
 
@@ -20,7 +37,6 @@
     gap: 2em;
     list-style: none;
     width: 90%;
-
 
     li:nth-of-type(1) {
       margin-left: auto;
@@ -40,12 +56,12 @@
       }
     }
 
-    .enroll {
-      margin-left: auto;
-      .main-nav__enroll-btn {
-        color: #fff;
-      }
-    }
+    // .enroll {
+    //   margin-left: auto;
+    //   .main-nav__enroll-btn {
+    //     color: #fff;
+    //   }
+    // }
   }
 
   &__hamburger {

@@ -9,6 +9,7 @@ const Navbar = ({ show, setShowNav }) => {
 		<nav className="main-nav">
 			<div className="main-nav__logo">
 				<img src={logo} alt="Main logo" />
+				<p>SOS HERMANN GMEINER <span>TAMALE</span></p>
 			</div>
 			<ul className={show ? "main-nav__items active" : "main-nav__items"}>
 				<li className="item">
@@ -21,7 +22,7 @@ const Navbar = ({ show, setShowNav }) => {
 					<NavLink>About Us</NavLink>
 				</li>
 				<li className="item enroll">
-					<NavLink to="/enroll" className="main-nav__enroll-btn --cta">
+					<NavLink to="/enroll">
 						Enroll
 					</NavLink>
 				</li>
