@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import logo from "../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
-import "../styles/Navbar.scss";
+import "../stylesheets/Navbar.scss";
 
 const Navbar = ({ show, setShowNav }) => {
 	return (
@@ -21,7 +21,7 @@ const Navbar = ({ show, setShowNav }) => {
 					<NavLink>About Us</NavLink>
 				</li>
 				<li className="item enroll">
-					<NavLink to="/enroll" className="main-nav__enroll-btn">
+					<NavLink to="/enroll" className="main-nav__enroll-btn --cta">
 						Enroll
 					</NavLink>
 				</li>
