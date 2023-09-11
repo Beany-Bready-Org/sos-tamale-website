@@ -1,6 +1,7 @@
 @import "./config";
 @import "./Navbar.scss";
 @import "./Hero.scss";
+@import "./DidYouKnow.scss";
 
 /* Swiper.js variables */
 
@@ -114,6 +115,9 @@ a {
   color: $text-color;
   margin-bottom: 2em;
 }
+.--cta-secondary {
+  @include button($accent-color, #fff, $btn-tiny, 6px);
+}
 
 // Semantic styles
 
@@ -126,4 +130,17 @@ header {
 
 main {
   min-height: 100vh;
+}
+
+// Utility styles - I already added --description and --header classes, you can use whichever
+.section-header {
+	color: $accent-color;
+	text-transform: capitalize;
+}
+
+.section-description {
+	font-weight: weights(regular);
+	color: $text-color;
+	text-transform: capitalize;
+	text-align: center;
 }
