@@ -14,12 +14,13 @@ const DidYouKnow = () => {
 				consectetur adipiscing elit.
 			</p>
             <div className="did-you-know__buttons">
-                <Link to="#">Visit Our Main Website</Link>
-                <Link to="#">Visit International College
-                <FontAwesomeIcon icon={faArrowCircleRight}/>
+                <Link to="#" className="--cta-secondary">Visit Our Main Website</Link>
+                <Link to="#" className="college-cta">Visit International College
+                <FontAwesomeIcon icon={faArrowCircleRight} className="arrow-icon"/>
                 </Link>
             </div>
-            <div className="overkay">
+            
+            <div className="overlay">
                 <img src={didYouKnowImage} alt="A background" />
             </div>
 		</div>

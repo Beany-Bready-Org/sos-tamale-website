@@ -1,6 +1,7 @@
 @import "./config";
 @import "./Navbar.scss";
 @import "./Hero.scss";
+@import "./DidYouKnow.scss";
 
 /* Swiper.js variables */
 
@@ -101,6 +102,9 @@ a {
 .--cta {
   @include button(#fff, $accent-color, $btn-tiny, 6px);
 }
+.--cta-secondary {
+  @include button($accent-color, #fff, $btn-tiny, 6px);
+}
 
 // Semantic styles
 
@@ -109,4 +113,17 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+// Utility styles
+.section-header {
+	color: $accent-color;
+	text-transform: capitalize;
+}
+
+.section-description {
+	font-weight: weights(regular);
+	color: $text-color;
+	text-transform: capitalize;
+	text-align: center;
 }
