@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './styles/App.scss'
 import Navbar from './components/Navbar'
 import VideoSection from './components/VideoSection'
+import SuccessSection from './components/SuccessSection'
+import DidYouKnow from './components/DidYouKnow'
 
 
 export default function App() {
@@ -11,6 +13,8 @@ export default function App() {
     <>
       <Navbar show={showNav} setShowNav={setShowNav}/>
       <VideoSection />
+      {/* <SuccessSection /> */}
+      <DidYouKnow />
     </>
   )
 }

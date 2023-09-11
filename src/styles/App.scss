@@ -1,6 +1,7 @@
 @import "./congfig";
 @import "./Navbar.scss";
 @import "./VideoSection.scss";
+@import "./SuccessSection.scss";
 
 /* Box sizing rules */
 *,
@@ -9,7 +10,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-    font-family: family(poppins);
+	font-family: family(poppins);
 }
 
 /* Remove default margin */
@@ -79,4 +80,17 @@ select {
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
+}
+
+// Utility styles
+.section-header {
+	color: $accent-color;
+	text-transform: capitalize;
+}
+
+.section-description {
+	font-weight: weights(regular);
+	color: $text-color;
+	text-transform: capitalize;
+	text-align: center;
 }

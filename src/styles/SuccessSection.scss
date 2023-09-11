@@ -1,0 +1,54 @@
+.success-section {
+    border: 3px solid green;
+    margin-top: 1em;
+
+    
+    @include flex(column, center, center, .1em);
+
+   &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+        border: 3px solid red;
+        width: 100vw;
+
+        .success-card {
+            border: 2px solid $accent-color;
+            border-radius: 1rem;
+            display: grid;
+            gap: .5em;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-auto-flow: dense;
+            overflow: clip;
+            max-width: 500px;
+            margin-block: 1em;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &__body {
+                // border: 2px solid green;
+                padding: .5em;
+
+                &-details {
+                    // border: 3px solid green;
+                    border-bottom: thin solid lighten($light-gray, 24%);
+                    margin-bottom: .5em;
+
+                    .success-card__body-name {
+                        color: $accent-color;
+                    }
+
+                   
+                }
+
+                &-success-message {
+                    font-size: clamp(.8rem, 5vw, .9rem);
+                }
+            }
+        }
+    }
+}

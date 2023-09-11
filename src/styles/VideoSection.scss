@@ -3,15 +3,6 @@
 .video-section {
     @include flex(column, center, center, unset);
 
-    &__header {
-        color: $accent-color;
-    }
-
-    &__description {
-        font-weight: weights(regular);
-        color: $text-color;
-    }
-    
 }
 
 .video-container {
