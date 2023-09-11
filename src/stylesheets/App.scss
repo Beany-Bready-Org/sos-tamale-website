@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: family(poppins);
+  font-family: family(inter);
 }
 
 /* Remove default margin */
@@ -93,13 +93,26 @@ a {
   text-decoration: none;
 
   &:focus {
-    color: $accent-color!important;
+    color: $accent-color !important;
     outline: none;
   }
 }
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
+}
+
+.--header {
+  color: $accent-color;
+  font-size: $text-big;
+  font-family: family(gelasio);
+}
+
+.--description {
+  font-size: $text-small;
+  font-weight: weights(regular);
+  color: $text-color;
+  margin-bottom: 2em;
 }
 
 // Semantic styles

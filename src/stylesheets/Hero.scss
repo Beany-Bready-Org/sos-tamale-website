@@ -1,11 +1,11 @@
 @import "./config";
 
 .hero {
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(row, center, center, 0);
+
+
+  min-height: 80vh;
   position: relative;
 
-
+  border-top: 1px solid $light-secondary-color;
 }

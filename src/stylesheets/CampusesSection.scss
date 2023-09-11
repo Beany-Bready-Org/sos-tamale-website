@@ -1,0 +1,14 @@
+@import "./config";
+
+.campuses-section {
+  @include flex(column, center, center, unset);
+
+  padding-block: 4em;
+  min-height: 100vh;
+
+  &__items {
+    @include flex(column, center, center, 3em);
+    margin: auto;
+    width: clamp(300px, 90vw, 1200px);
+  }
+}

@@ -1,8 +1,29 @@
 @import "./config";
+.secondary-nav {
+  background-color: #f0f0f0;
+
+  .secondary-nav__text {
+    @include flex(row, space-between, center, unset);
+    width: clamp(300px, 90vw, 1200px);
+    margin: auto;
+    min-height: 5vh;
+    // padding-block: 0.25em;
+
+    &__items {
+      list-style: none;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
 .main-nav {
   @include flex(row, space-between, center, unset);
   background-color: #fff;
-  padding-inline: clamp(2em, 7.5vw, 4em);
+  width: clamp(300px, 90vw, 1200px);
+  margin: auto;
+  padding-block: 0.75em;
   min-height: 15vh;
   position: relative;
   container-type: inline-size;
@@ -12,21 +33,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.75em;
+    gap: 0.5em;
 
     img {
-      width: 80px;
+      width: 3.75em;
     }
 
-    p {
-      font-size: $text-inter;
-      line-height: 100%;
-      max-width: 20ch;
+    & > span {
+      font-size: 1.35em;
+      line-height: 120%;
+      max-width: 17.5ch;
+      font-weight: weights(400);
       color: $accent-color;
-      font-family: family(roboto);
 
       span {
-        text-shadow: 0 0 1px $accent-color;
+        text-shadow: 0 0 2px $accent-color;
       }
     }
   }

@@ -1,14 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@300;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@500;700&family=Grand+Hotel&family=Inter:wght@100;300;400;500;700;900&display=swap");
 
 @function family($name) {
-  @if $name == "poppins" {
-    @return "Poppins", sans-serif;
+  @if $name == "inter" {
+    @return "Inter", sans-serif;
   } @else if $name == "grand hotel" {
     @return "Grand Hotel", cursive;
   } @else if $name == "gelasio" {
     @return "Gelasio", serif;
-  } @else if $name == "roboto" {
-    @return "Roboto", sans-serif;
   }
 }
 
@@ -55,23 +53,24 @@ $font-weights: (
 // color function
 @function color($color-mode) {
   @if $color-mode == "active" {
-    @return #212529;
+    @return $accent-color;
   } @else {
-    @return #495057;
+    @return $text-color;
   }
 }
 
 $accent-color: #029ddf;
 $secondary-color: #0084b8;
 $text-color: #495057;
-$light-text: #bcc3ca;
+$text-secondary-color: #212529;
+$light-secondary-color: #bcc3ca;
 
 $btn-tiny: 0.4em 1.75em;
 $btn-small: 0.5em 2em;
 
-$text-small: 16px;
-$text-inter: clamp(18px, 3.5vmin, 22px);
-$text-medium: clamp(22px, 4vmin, 28px);
+$text-small: clamp(1em, 2.5vmin, 1.25em);
+$text-medium: clamp(1.5em, 4vmin, 2em);
+$text-big: clamp(2em, 5vmin, 3em);
 $text-large: clamp(36px, 8vmin, 52px);
 
 // $text-small: 1em;

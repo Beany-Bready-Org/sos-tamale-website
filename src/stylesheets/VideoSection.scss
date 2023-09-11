@@ -1,52 +1,36 @@
 @import "./config";
 
 .video-section {
-    @include flex(column, center, center, unset);
-    min-height: 100vh;
-    width: clamp(300px, 90vw, 900px);
-    margin: auto;
-
-
-    &__header {
-        color: $accent-color;
-        font-size: $text-medium;
-    }
-
-    &__description {
-        font-size: $text-small;
-        font-weight: weights(regular);
-        color: $text-color;
-        margin-bottom: 2em;
-    }
-    
+  @include flex(column, center, center, unset);
+  padding-block: 4em;
+  min-height: 100vh;
+  width: clamp(300px, 90vw, 1200px);
+  margin: auto;
 }
 
 .video-container {
-    // margin-top: 3em;
-    // border: 3px solid green;
-    width: 100%;
-    max-width: 800px;
-    max-height: 400px;
-    border-radius: 1rem;
-    overflow: clip;
-    position: relative;
+  // margin-top: 3em;
+  // border: 3px solid green;
+  width: 100%;
+  max-width: 900px;
+  // max-height: 400px;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  overflow: clip;
+  position: relative;
 
-    &__video-action-toggler {
-
-        @include flex(row, center, center, unset);
-        color: $accent-color;
-        transition: opacity 300ms ease;
-        width: 60px;
-        aspect-ratio: 1;
-        background-color: #fff;
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        margin: auto;
-        cursor: pointer;
-        box-shadow: 3px 4px 15px rgb(0 0 0 / .4);
-
-        
-        
-    }
+  &__video-action-toggler {
+    @include flex(row, center, center, unset);
+    color: $accent-color;
+    transition: opacity 300ms ease;
+    width: 70px;
+    aspect-ratio: 1;
+    background-color: #fff;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: 3px 4px 15px rgb(0 0 0 / 0.4);
+  }
 }
