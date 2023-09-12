@@ -23,4 +23,6 @@ export default function App() {
 			  <DidYouKnow />
       </main>
 		</>
-	);
+	)
+
+}
