@@ -116,7 +116,7 @@ a {
   margin-bottom: 2em;
 }
 .--cta-secondary {
-  @include button($accent-color, none, #fff, $btn-tiny, 6px);
+  @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
 }
 
 // Semantic styles

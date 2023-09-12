@@ -36,14 +36,13 @@
     gap: 0.5em;
 
     img {
-      width: 3.75em;
+      width: 3.5em;
     }
 
     & > span {
-      font-size: 1.35em;
-      line-height: 120%;
+      font-size: 1.25em;
+      line-height: 110%;
       max-width: 17.5ch;
-      font-weight: weights(400);
       color: $accent-color;
 
       span {
