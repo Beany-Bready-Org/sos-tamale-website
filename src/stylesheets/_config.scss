@@ -1,33 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Inter:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Poppins:wght@300;500;600;700&display=swap");
 
 @function family($name) {
-  @if $name == "inter" {
+	@if $name == "poppins" {
+		@return "Poppins", sans-serif;
+	} @else if $name == "grand-hotel" {
+		@return "Grand Hotel", cursive;
+	} @else if $name == "gelasio" {
+		@return "Gelasio", serif;
+	} @else if $name == 'inter' {
     @return "Inter", sans-serif;
-  } @else if $name == "grand-hotel" {
-    @return "Grand Hotel", cursive;
-  } @else if $name == "gelasio" {
-    @return "Gelasio", serif;
   }
 }
 
 $font-weights: (
-  "bold": 700,
-  "medium": 500,
-  "regular": 400,
-  "light": 300,
+	"bold": 700,
+	"medium": 500,
+	"regular": 400,
+	"light": 300,
 );
 
 @function weights($weight) {
-  @return map-get($font-weights, $weight);
+	@return map-get($font-weights, $weight);
 }
 
 // Mixins
 @mixin flex($direction, $justify, $align, $gap) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  gap: $gap;
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+	gap: $gap;
 }
 
 @mixin button($color, $border-color, $background-color, $padding, $b-radius) {
@@ -45,20 +47,19 @@ $font-weights: (
 // Colors
 // color function
 @function color($color-mode) {
-  @if $color-mode == "active" {
-    @return $accent-color;
-  } @else {
-    @return $text-color;
-  }
+	@if $color-mode == "active" {
+		@return $accent-color;
+	} @else {
+		@return $text-color;
+	}
 }
 
 $accent-color: #029ddf;
 $secondary-color: #0084b8;
-$accent-color-secondary: #00A8E8;
+$accent-color-secondary: #00a8e8;
 $text-color: #495057;
 $text-secondary-color: #212529;
 $light-secondary-color: #bcc3ca;
-
 
 $btn-tiny: 0.4em 1.75em;
 $btn-small: 0.5em 2em;
