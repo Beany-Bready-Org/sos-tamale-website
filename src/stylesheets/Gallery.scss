@@ -1,13 +1,9 @@
-@import './config';
+@import "./config";
 
 .gallery {
-    .gallery__images {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-template-rows: repeat(3, 1fr);
-    
-
-    }
-
+  .gallery__images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+  }
 }
-

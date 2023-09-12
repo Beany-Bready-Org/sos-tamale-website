@@ -1,7 +1,8 @@
 @import "./config";
 
 .gallery__images__image {
-    img {
-        aspect-ratio: 1;
-    }
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+  }
 }
