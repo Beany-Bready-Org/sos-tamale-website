@@ -7,6 +7,8 @@
 	background-color: $accent-color-secondary;
 	color: #fff;
 	border-radius: 1rem;
+	container-type: inline-size;
+	container-name: didYouKnow;
 
 	&__heading {
 		font-family: family(grand-hotel);
@@ -24,9 +26,29 @@
 
 	&__buttons {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		gap: 0.5em;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		align-items: center;
+		width: 90%;
+		z-index: 100;
+
+		@container didYouKnow (width <= 600px) {
+			width: 100%;
+			gap: 1em;
+			place-items: center;
+
+			> * {
+				width: 100%;
+			}
+		}
+
+		
+
+		.--cta-secondary {
+			box-shadow: 0px 3.5px 0 $light-secondary-color;
+			font-weight: weights(bold);
+			font-family: family(inter);
+			width: fit-content;
+		}
 
 		.college-cta {
 			display: flex;
