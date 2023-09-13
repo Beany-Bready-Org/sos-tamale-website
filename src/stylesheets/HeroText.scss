@@ -7,8 +7,7 @@
   position: absolute;
   z-index: 1;
   text-align: center;
-  padding: 2em;
-  font-size: 1.1rem;
+  padding: 1.5em;
   gap: 0.25em;
 
   span {
@@ -32,10 +31,6 @@
     max-width: 40ch;
     color: $text-color;
     margin-bottom: 1.5em;
-  }
-
-  .hero__text__button {
-    font-size: $text-small;
   }
 }
 

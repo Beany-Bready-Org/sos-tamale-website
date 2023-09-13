@@ -1,35 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Poppins:wght@300;500;600;700&display=swap");
 
 @function family($name) {
-	@if $name == "poppins" {
-		@return "Poppins", sans-serif;
-	} @else if $name == "grand-hotel" {
-		@return "Grand Hotel", cursive;
-	} @else if $name == "gelasio" {
-		@return "Gelasio", serif;
-	} @else if $name == 'inter' {
+  @if $name == "poppins" {
+    @return "Poppins", sans-serif;
+  } @else if $name == "grand-hotel" {
+    @return "Grand Hotel", cursive;
+  } @else if $name == "gelasio" {
+    @return "Gelasio", serif;
+  } @else if $name == "inter" {
     @return "Inter", sans-serif;
   }
 }
 
 $font-weights: (
-	"bold": 700,
-	"medium": 500,
-	"regular": 400,
-	"light": 300,
+  "bold": 700,
+  "medium": 500,
+  "regular": 400,
+  "light": 300,
 );
 
 @function weights($weight) {
-	@return map-get($font-weights, $weight);
+  @return map-get($font-weights, $weight);
 }
 
 // Mixins
 @mixin flex($direction, $justify, $align, $gap) {
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-	gap: $gap;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
 }
 
 @mixin button($color, $border-color, $background-color, $padding, $b-radius) {
@@ -37,21 +37,23 @@ $font-weights: (
   color: $color;
   padding: $padding;
   border-radius: $b-radius;
-  // border: 1px solid $border-color;
   border: none;
   border-bottom: 2px solid $border-color;
   outline: none;
   cursor: pointer;
+  font-size: $text-small;
+  width: fit-content;
+  font-weight: weights(bold)
 }
 
 // Colors
 // color function
 @function color($color-mode) {
-	@if $color-mode == "active" {
-		@return $accent-color;
-	} @else {
-		@return $text-color;
-	}
+  @if $color-mode == "active" {
+    @return $accent-color;
+  } @else {
+    @return $text-color;
+  }
 }
 
 $accent-color: #029ddf;
@@ -65,7 +67,7 @@ $btn-tiny: 0.4em 1.75em;
 $btn-small: 0.5em 2em;
 
 $text-small: clamp(1em, 2.5vmin, 1.25em);
-$text-medium: clamp(1.5em, 4vmin, 2em);
+$text-medium: clamp(1.25em, 4vmin, 2em);
 $text-big: clamp(2em, 5vmin, 3em);
 $text-large: clamp(36px, 8vmin, 52px);
 

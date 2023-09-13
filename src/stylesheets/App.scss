@@ -111,6 +111,7 @@ a {
   color: $accent-color;
   font-size: $text-big;
   font-family: family(gelasio);
+  text-align: center;
 }
 
 .--description {
@@ -118,6 +119,7 @@ a {
   font-weight: weights(regular);
   color: $text-color;
   margin-bottom: 2em;
+  text-align: center
 }
 .--cta-secondary {
   @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
