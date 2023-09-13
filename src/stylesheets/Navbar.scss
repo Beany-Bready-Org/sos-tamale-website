@@ -203,6 +203,28 @@
     }
     .main-nav__hamburger {
       display: inherit;
+
+      > * {
+        transition: all 300ms ease;
+      }
+    }
+  }
+
+  &:has(> #{&}__items.active) {
+    .main-nav__hamburger {
+      .line1 {
+        transform: rotate(45deg) translateY(16.5px);
+      }
+
+      .line2 {
+        width: 20%;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .line3 {
+        transform: rotate(-45deg) translateY(-16.5px);
+      }
     }
   }
 }
