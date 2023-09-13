@@ -6,15 +6,15 @@
   min-height: 100vh;
   width: clamp(300px, 90vw, 1200px);
   margin: auto;
+
+  @media screen and (width <= 680px) {
+    max-height: 700px;
+  }
 }
 
 .video-container {
-  // margin-top: 3em;
-  // border: 3px solid green;
   width: 100%;
   max-width: 900px;
-  // max-height: 400px;
-  aspect-ratio: 16 / 9;
   border-radius: 1rem;
   overflow: clip;
   position: relative;
