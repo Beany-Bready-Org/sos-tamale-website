@@ -18,7 +18,7 @@ const Navbar = ({ show, setShowNav }) => {
 			<section className="secondary-nav">
 				<div className="secondary-nav__text">
 					<div className="secondary-nav__text-info">
-						<a href="https://www.sos-childrensvillages.org">
+						<a href="https://www.sos-childrensvillages.org" target="_blank">
 							<FontAwesomeIcon icon={faGlobe} />
 							www.sos-childrensvillages.org
 						</a>

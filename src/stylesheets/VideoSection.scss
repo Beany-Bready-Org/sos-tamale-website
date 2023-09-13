@@ -3,7 +3,7 @@
 .video-section {
   @include flex(column, center, center, unset);
   padding-block: 4em;
-  min-height: 100vh;
+  max-height: 700px;
   width: clamp(300px, 90vw, 1200px);
   margin: auto;
 

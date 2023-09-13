@@ -9,7 +9,7 @@ import TemaImg from "../assets/images/tema.png";
 
 export default function CampusesSection() {
 	return (
-		<section class="campuses-section">
+		<section className="campuses-section">
 			<h1 className="--header">Our Campuses</h1>
 			<p className="--description">
 				Explore Some Of Our Other Prestine Campuses.

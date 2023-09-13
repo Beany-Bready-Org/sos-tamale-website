@@ -2,6 +2,7 @@
 @import "./Navbar.scss";
 @import "./Hero.scss";
 @import "./DidYouKnow.scss";
+@import "./StaffSection.scss";
 
 /* Swiper.js variables */
 
@@ -105,6 +106,7 @@ a {
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
+  font-weight: weights(bold);
 }
 
 .--header {
@@ -138,8 +140,11 @@ main {
 
 // Utility styles - I already added --description and --header classes, you can use whichever
 .section-header {
+  font-family:family(gelasio);
+  font-size: $text-big;
 	color: $accent-color;
 	text-transform: capitalize;
+	text-align: center;
 }
 
 .section-description {

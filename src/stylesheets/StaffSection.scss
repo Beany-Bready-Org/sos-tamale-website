@@ -1,0 +1,6 @@
+.staff-section {
+    @include flex(column, center, center, 1em);
+    .staff-cta {
+        margin: auto;
+    }
+}
