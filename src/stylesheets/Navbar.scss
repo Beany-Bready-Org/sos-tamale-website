@@ -2,22 +2,78 @@
 .secondary-nav {
   background-color: #f0f0f0;
 
-  .secondary-nav__text {
+  &__text {
     @include flex(row, space-between, center, unset);
     width: clamp(300px, 90vw, 1200px);
     margin: auto;
     min-height: 5vh;
-    // padding-block: 0.25em;
 
-    &__items {
+
+
+    &__social {
+      display: inherit;
+      gap: 1em;
       list-style: none;
 
       li {
         display: inline-block;
+
+        > * {
+          color: $accent-color;
+          font-weight: weights(bold);
+          font-size: 1.1rem;
+        }
       }
+    }
+
+    &-info {
+      display: flex;
+      gap: 1em;
+
+      > * {
+        display: inherit;
+        align-items: center;
+        gap: .5em;
+        color: $text-color;
+        transition: all 300ms ease;
+      
+
+        &:hover:not([title]) {
+          color: $accent-color;
+          text-decoration: underline
+        }
+
+      }
+
+      [title="Call Us Now"] {
+        color: $accent-color;
+      }
+    }
+
+    @media screen and (width <= 680px) {
+      flex-direction: column ;
+      padding-block: .4em;
+
+      &-info {
+        width: 100%;
+        justify-content: center;
+        padding-bottom: .3em;
+        border-bottom: thin solid $light-secondary-color;
+      }
+
+        &__social {
+          gap: 2em;
+          li {
+            > * {
+              font-size: 1.3rem;
+            }
+          }
+        }
     }
   }
 }
+
+
 .main-nav {
   @include flex(row, space-between, center, unset);
   background-color: #fff;
@@ -28,6 +84,8 @@
   position: relative;
   container-type: inline-size;
   container-name: navbar;
+  z-index: 100;
+
 
   &__logo {
     display: flex;
@@ -145,6 +203,28 @@
     }
     .main-nav__hamburger {
       display: inherit;
+
+      > * {
+        transition: all 300ms ease;
+      }
+    }
+  }
+
+  &:has(> #{&}__items.active) {
+    .main-nav__hamburger {
+      .line1 {
+        transform: rotate(45deg) translateY(16.5px);
+      }
+
+      .line2 {
+        width: 20%;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .line3 {
+        transform: rotate(-45deg) translateY(-16.5px);
+      }
     }
   }
 }

@@ -1,3 +1,4 @@
+import React from "react"
 import "../stylesheets/CampusesSectionCard.scss";
 
 export default function CampusesSectionCard({imgSrc, heading, text, direction}) {
