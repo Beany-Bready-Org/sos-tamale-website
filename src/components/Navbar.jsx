@@ -61,13 +61,13 @@ const Navbar = ({ show, setShowNav }) => {
 				</div>
 				<ul className={show ? "main-nav__items active" : "main-nav__items"}>
 					<li className="item">
-						<NavLink>Home</NavLink>
+						<NavLink to="/">Home</NavLink>
 					</li>
 					<li className="item">
-						<NavLink>Contact</NavLink>
+						<NavLink  to="/contact">Contact</NavLink>
 					</li>
 					<li className="item">
-						<NavLink>About Us</NavLink>
+						<NavLink to="/about-us">About Us</NavLink>
 					</li>
 					<li className="item">
 						<NavLink to="/enroll">Enroll</NavLink>
