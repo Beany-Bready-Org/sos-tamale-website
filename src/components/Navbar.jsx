@@ -5,12 +5,12 @@ import "../stylesheets/Navbar.scss";
 import logo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
-import {
-	faFacebook,
-	faInstagram,
-	faXTwitter,
-	faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+// import {
+// 	faFacebook,
+// 	faInstagram,
+// 	faXTwitter,
+// 	faLinkedinIn,
+// } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = ({ show, setShowNav }) => {
 	return (
@@ -27,8 +27,7 @@ const Navbar = ({ show, setShowNav }) => {
 							059 584 4040
 						</span>
 					</div>
-					<ul className="secondary-nav__text__social">
-						{/* add fa icons here */}
+					{/* <ul className="secondary-nav__text__social">
 						<li className="social-link">
 							<Link to="#">
 								<FontAwesomeIcon icon={faFacebook} />
@@ -49,7 +48,7 @@ const Navbar = ({ show, setShowNav }) => {
 								<FontAwesomeIcon icon={faXTwitter} />
 							</Link>
 						</li>
-					</ul>
+					</ul> */}
 				</div>
 			</section>
 			<section className="main-nav">
