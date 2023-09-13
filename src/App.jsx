@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import VideoSection from "./components/VideoSection";
 import CampusesSection from "./components/CampusesSection";
 import DidYouKnow from "./components/DidYouKnow";
+import Gallery from "./components/Gallery";
 
 export default function App() {
   const [showNav, setShowNav] = useState(false);
@@ -21,6 +22,7 @@ export default function App() {
         <CampusesSection />
         {/* <SuccessSection /> */}
         <DidYouKnow />
+        <Gallery />
       </main>
     </>
   );
