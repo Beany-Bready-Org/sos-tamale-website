@@ -1,13 +1,14 @@
+import React from "react";
 import HeroBackground from "./HeroBackground";
-import HeroText from "./HeroText"
+import HeroText from "./HeroText";
 
-import '../stylesheets/Hero.scss'
+import "../stylesheets/Hero.scss";
 
 export default function Hero() {
-  return (
-    <section className="hero">
-      <HeroBackground sliderSize={4}/>
-      <HeroText />
-    </section>
-  );
+	return (
+		<section className="hero">
+			<HeroBackground sliderSize={4} />
+			<HeroText />
+		</section>
+	);
 }

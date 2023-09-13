@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import IntroVideo from "./IntroVideo";
 import '../stylesheets/VideoSection.scss'
 import PlayContext from "../contexts/PlayContext";
