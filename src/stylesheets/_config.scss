@@ -33,15 +33,15 @@ $font-weights: (
 }
 
 @mixin button($color, $border-color, $background-color, $padding, $b-radius) {
-	background-color: $background-color;
-	color: $color;
-	padding: $padding;
-	border-radius: $b-radius;
-	// border: 1px solid $border-color;
-	border: none;
-	border-bottom: 4px solid $border-color;
-	outline: none;
-	cursor: pointer;
+  background-color: $background-color;
+  color: $color;
+  padding: $padding;
+  border-radius: $b-radius;
+  // border: 1px solid $border-color;
+  border: none;
+  border-bottom: 2px solid $border-color;
+  outline: none;
+  cursor: pointer;
 }
 
 // Colors

@@ -34,6 +34,10 @@ dd {
   margin: 0;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -116,7 +120,7 @@ a {
   margin-bottom: 2em;
 }
 .--cta-secondary {
-  @include button($accent-color, none, #fff, $btn-tiny, 6px);
+  @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
 }
 
 // Semantic styles

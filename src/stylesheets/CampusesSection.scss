@@ -7,7 +7,7 @@
   min-height: 100vh;
 
   &__items {
-    @include flex(column, center, center, 3em);
+    @include flex(row, center, center, 2em);
     margin: auto;
     width: clamp(300px, 90vw, 1200px);
   }
