@@ -3,13 +3,13 @@
 .campuses-section {
   @include flex(column, center, center, unset);
 
-  padding-block: 4em;
+  margin-top: 10vmin;
   min-height: 100vh;
 
   &__items {
     @include flex(row, center, center, 2em);
     flex-wrap: wrap;
     margin: auto;
-    width: clamp(300px, 90vw, 1200px);  
+    width: clamp(300px, 90vw, 1200px);
   }
 }

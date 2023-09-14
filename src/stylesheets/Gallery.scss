@@ -1,9 +1,10 @@
 @import "./config";
 
 .gallery {
+  padding-top: 17.5vmin;
   .gallery__images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-template-rows: repeat(3, 1fr);
   }
 }

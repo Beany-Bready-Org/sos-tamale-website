@@ -10,7 +10,6 @@
   border: 1px solid $light-secondary-color;
   position: relative;
   cursor: pointer;
-  font-size: 0.9rem;
 
   overflow: hidden;
 
@@ -52,7 +51,7 @@
 
     h1 {
       color: $accent-color;
-      font-size: $text-big;
+      font-size: $text-medium;
       margin-bottom: 0.5em;
       padding-bottom: 0.5em;
       border-bottom: 1px solid $light-secondary-color;

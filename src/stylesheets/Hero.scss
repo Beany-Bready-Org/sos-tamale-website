@@ -3,9 +3,7 @@
 .hero {
   @include flex(row, center, center, 0);
 
-  min-height: 80vh;
+  height: 80vh;
+  margin-top: 20vh;
   position: relative;
-
-
-  border-top: 1px solid $light-secondary-color;
 }

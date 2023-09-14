@@ -112,7 +112,7 @@ a {
 
 .--header {
   color: $accent-color;
-  font-size: $text-big;
+  font-size: $text-large;
   font-family: family(gelasio);
   text-align: center;
 }
@@ -143,11 +143,11 @@ main {
 
 // Utility styles - I already added --description and --header classes, you can use whichever
 .section-header {
-  font-family:family(gelasio);
+  font-family: family(gelasio);
   font-size: $text-big;
-	color: $accent-color;
-	text-transform: capitalize;
-	text-align: center;
+  color: $accent-color;
+  text-transform: capitalize;
+  text-align: center;
 }
 
 .section-description {

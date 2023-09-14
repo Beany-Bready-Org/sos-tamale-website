@@ -18,6 +18,7 @@
         content: "";
         background-color: #ffffff79;
         z-index: 1;
+        isolation: isolate;
       }
 
       img {

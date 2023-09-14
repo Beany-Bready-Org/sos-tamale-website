@@ -1,7 +1,5 @@
-import React from "react"
+import React from "react";
 import "../stylesheets/HeroText.scss";
-
-
 
 export default function HeroText() {
   return (

@@ -1,9 +1,9 @@
 .did-you-know {
-  width: 90%;
-  max-width: 700px;
-  margin: 1em auto;
-  position: relative;
   padding: 2em;
+  margin: 0 auto;
+  margin-top: 17.5vmin;
+  max-width: 700px;
+  position: relative;
   background-color: $accent-color-secondary;
   color: #fff;
   border-radius: 1rem;
@@ -13,7 +13,7 @@
   &__heading {
     font-family: family(grand-hotel);
     // font-size: clamp(3rem, 50vw, 3.5rem);
-	font-size: $text-large;
+    font-size: $text-large;
     font-weight: weights(regular);
     letter-spacing: 3px;
     width: fit-content;
@@ -30,7 +30,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-items: center;
     width: 90%;
-		
+
     @container didYouKnow (width <= 600px) {
       width: 100%;
       gap: 1em;
@@ -66,7 +66,7 @@
     inset: 0;
     margin: auto;
     pointer-events: none;
-	z-index: -1;
+    z-index: -1;
 
     img {
       pointer-events: inherit;

@@ -1,11 +1,19 @@
 @import "./config";
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 2px $light-secondary-color solid;
+}
 .secondary-nav {
   background-color: #f0f0f0;
-  border-bottom: $light-secondary-color 1px solid;
+  border-bottom: $light-secondary-color 2px solid;
 
   &__text {
     @include flex(row, space-between, center, unset);
-    width: clamp(300px, 90vw, 1200px);
+    width: clamp(300px, 90vw, 1300px);
     margin: auto;
     min-height: 5vh;
 
@@ -20,7 +28,6 @@
         > * {
           color: $accent-color;
           font-weight: weights(bold);
-          font-size: 1.1rem;
         }
       }
     }
@@ -66,7 +73,7 @@
 .main-nav {
   @include flex(row, space-between, center, unset);
   background-color: #fff;
-  width: 100%;
+  width: clamp(300px, 90vw, 1300px);
   margin: auto;
   min-height: 15vh;
   position: relative;
@@ -74,7 +81,6 @@
   container-name: navbar;
   z-index: 100;
   padding-inline: 1em;
-  border-bottom: thin solid $light-secondary-color;
 
   &__logo {
     display: flex;
@@ -83,7 +89,7 @@
     gap: 0.5em;
 
     img {
-      width: clamp(10em, 40vmin, 15em);
+      width: clamp(10em, 45vmin, 17.5em);
     }
 
     & > span {
@@ -125,8 +131,6 @@
     .social-items {
       display: none;
     }
-
-   
   }
 
   &__hamburger {
