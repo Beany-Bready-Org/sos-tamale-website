@@ -19,7 +19,7 @@ export default function App() {
 				<Hero />
 			</header>
 			<Routes>
-				<Route path="/contact" element={<Contact />} />
+				<Route path="/contact" element={Contact}/>
 			</Routes>
 			<main>
 				<VideoSection />
