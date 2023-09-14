@@ -69,10 +69,10 @@ const Navbar = ({ show, setShowNav }) => {
             <NavLink>Home</NavLink>
           </li>
           <li className="item">
-            <NavLink>Contact</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <li className="item">
-            <NavLink>About Us</NavLink>
+            <NavLink to="/about">About Us</NavLink>
           </li>
           <li className="item">
             <NavLink to="/enroll">Enroll</NavLink>
