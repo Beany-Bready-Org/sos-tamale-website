@@ -58,12 +58,6 @@
 
       &__social {
         display: none;
-        // gap: 2em;
-        // li {
-        //   > * {
-        //     font-size: 1.3rem;
-        //   }
-        // }
       }
     }
   }
@@ -127,13 +121,11 @@
         }
       }
     }
+    .social-items {
+      display: none;
+    }
 
-    // .enroll {
-    //   margin-left: auto;
-    //   .main-nav__enroll-btn {
-    //     color: #fff;
-    //   }
-    // }
+   
   }
 
   &__hamburger {
@@ -170,7 +162,7 @@
       pointer-events: none;
       transition: all 300ms ease;
 
-      :is(li:first-of-type, li + li):not(.enroll) {
+      :is(li:first-of-type, li + li):not(.enroll, .social-items) {
         width: 60%;
         text-align: center;
         padding-bottom: 0.5em;
@@ -188,6 +180,23 @@
 
       .enroll {
         width: 100%;
+      }
+
+      // Sicial icons
+      .social-items {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        .get-in-touch {
+          color: $accent-color;
+          font-weight: weights(bold);
+          font-family: family(poppins);
+        }
+
+        .social-icon--mobile {
+          font-size: 1.5rem;
+        }
       }
     }
     .main-nav__items.active {

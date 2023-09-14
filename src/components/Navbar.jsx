@@ -6,10 +6,10 @@ import logo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
-  faInstagram,
-  faXTwitter,
-  faLinkedinIn,
+	faFacebook,
+	faInstagram,
+	faXTwitter,
+	faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = ({ show, setShowNav }) => {
@@ -94,8 +94,8 @@ const Navbar = ({ show, setShowNav }) => {
 };
 
 Navbar.propTypes = {
-  show: PropTypes.bool.isRequired,
-  setShowNav: PropTypes.func.isRequired,
+	show: PropTypes.bool.isRequired,
+	setShowNav: PropTypes.func.isRequired,
 };
 
 export default Navbar;
