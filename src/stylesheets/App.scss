@@ -105,6 +105,7 @@ a {
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
+  @include button-hover("#fff", $deep-secondary-color, $secondary-color);
 }
 
 .--header {
@@ -119,7 +120,7 @@ a {
   font-weight: weights(regular);
   color: $text-color;
   margin-bottom: 2em;
-  text-align: center
+  text-align: center;
 }
 .--cta-secondary {
   @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
@@ -140,13 +141,13 @@ main {
 
 // Utility styles - I already added --description and --header classes, you can use whichever
 .section-header {
-	color: $accent-color;
-	text-transform: capitalize;
+  color: $accent-color;
+  text-transform: capitalize;
 }
 
 .section-description {
-	font-weight: weights(regular);
-	color: $text-color;
-	text-transform: capitalize;
-	text-align: center;
+  font-weight: weights(regular);
+  color: $text-color;
+  text-transform: capitalize;
+  text-align: center;
 }
