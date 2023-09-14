@@ -11,8 +11,13 @@ import {
 	faXTwitter,
 	faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+// Show nav context
+import { useShowNav, useShowNavToggler } from "../contexts/NavContext";
 
-const Navbar = ({ show, setShowNav }) => {
+const Navbar = () => {
+	const show = useShowNav()
+	const setShowNav = useShowNavToggler()
+
 	return (
 		<nav>
 			<section className="secondary-nav">
@@ -60,7 +65,7 @@ const Navbar = ({ show, setShowNav }) => {
 				</div>
 				<ul className={show ? "main-nav__items active" : "main-nav__items"}>
 					<li className="item">
-						<NavLink>Home</NavLink>
+						<NavLink to="/">Home</NavLink>
 					</li>
 					<li className="item">
 						<NavLink to="/contact">Contact</NavLink>
@@ -93,7 +98,7 @@ const Navbar = ({ show, setShowNav }) => {
 				<div
 					className="main-nav__hamburger"
 					onClick={() => {
-						setShowNav((prev) => !prev);
+						setShowNav();
 					}}
 				>
 					<div className="hamburger-line line1"></div>

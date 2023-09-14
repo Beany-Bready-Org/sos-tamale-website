@@ -25,6 +25,9 @@ let images = [
 export default function Gallery() {
   return (
     <section className="gallery">
+      <h2 className="section-header">
+        SOS HGS Moments
+      </h2>
       <div className="gallery__images">
         {/* <img src={Img1} alt="" />
         <img src={Img2} alt="" />

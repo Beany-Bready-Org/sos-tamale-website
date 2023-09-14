@@ -6,14 +6,15 @@ import StaffSection from './StaffSection'
 import DidYouKnow from './DidYouKnow'
 import Gallery from './Gallery'
 import Hero from './Hero'
+import Footer from './Footer'
 
 const Home = () => {
-  const [showNav, setShowNav] = useState(false);
+ 
 
   return (
     <>
     <header>
-      <Navbar show={showNav} setShowNav={setShowNav} />
+      <Navbar />
       <Hero />
     </header>
     <main>
@@ -23,6 +24,9 @@ const Home = () => {
       <DidYouKnow />
       <Gallery />
     </main>
+    <footer>
+        <Footer />
+    </footer>
   </>
   )
 }

@@ -65,14 +65,15 @@
 .main-nav {
   @include flex(row, space-between, center, unset);
   background-color: #fff;
-  width: clamp(300px, 90vw, 1200px);
+  width: 100%;
   margin: auto;
-  // padding-block: 0.75em;
   min-height: 15vh;
   position: relative;
   container-type: inline-size;
   container-name: navbar;
   z-index: 100;
+  padding-inline: 1em;
+  border-bottom: thin solid $light-secondary-color;
 
   &__logo {
     display: flex;
