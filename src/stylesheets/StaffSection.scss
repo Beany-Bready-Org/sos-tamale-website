@@ -1,5 +1,5 @@
 .staff-section {
-    @include flex(column, center, center, 1em);
+    @include flex(column, center, center, 0);
     .staff-cta {
         margin: auto;
     }
