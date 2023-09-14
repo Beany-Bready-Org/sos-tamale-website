@@ -107,6 +107,7 @@ a {
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
   font-weight: weights(bold);
+  @include button-hover("#fff", $deep-secondary-color, $secondary-color);
 }
 
 .--header {
@@ -121,7 +122,7 @@ a {
   font-weight: weights(regular);
   color: $text-color;
   margin-bottom: 2em;
-  text-align: center
+  text-align: center;
 }
 .--cta-secondary {
   @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
@@ -150,8 +151,8 @@ main {
 }
 
 .section-description {
-	font-weight: weights(regular);
-	color: $text-color;
-	text-transform: capitalize;
-	text-align: center;
+  font-weight: weights(regular);
+  color: $text-color;
+  text-transform: capitalize;
+  text-align: center;
 }

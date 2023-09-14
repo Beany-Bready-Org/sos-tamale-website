@@ -41,9 +41,19 @@ $font-weights: (
   border-bottom: 2px solid $border-color;
   outline: none;
   cursor: pointer;
-  font-size: $text-small;
+  font-size: 15px;
   width: fit-content;
-  font-weight: weights(bold)
+  font-weight: weights(bold);
+  text-transform: uppercase;
+  transition: 200ms;
+}
+
+@mixin button-hover($color, $border-color, $background-color) {
+  &:hover {
+    background-color: $background-color;
+    border-bottom: 2px solid $border-color;
+    color: $color;
+  }
 }
 
 // Colors
@@ -58,17 +68,18 @@ $font-weights: (
 
 $accent-color: #029ddf;
 $secondary-color: #0084b8;
+$deep-secondary-color: #0075a3;
 $accent-color-secondary: #00a8e8;
 $text-color: #495057;
 $text-secondary-color: #212529;
 $light-secondary-color: #bcc3ca;
 
-$btn-tiny: 0.4em 1.75em;
+$btn-tiny: 0.65em 1.65em;
 $btn-small: 0.5em 2em;
 
-$text-small: clamp(1em, 2.5vmin, 1.25em);
-$text-medium: clamp(1.25em, 4vmin, 2em);
-$text-big: clamp(2em, 5vmin, 3em);
+$text-small: clamp(1em, 3vmin, 1.5em);
+$text-medium: clamp(1.25em, 3.75vmin, 1.75em);
+$text-big: clamp(2.25em, 5vmin, 3em);
 $text-large: clamp(36px, 8vmin, 52px);
 
 // $text-small: 1em;
