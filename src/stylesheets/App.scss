@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: family(inter);
+  font-family: family(roboto);
 }
 
 /* Remove default margin */
@@ -107,7 +107,6 @@ a {
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
-  font-weight: weights(bold);
   @include button-hover("#fff", $deep-secondary-color, $secondary-color);
 }
 

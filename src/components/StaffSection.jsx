@@ -13,7 +13,7 @@ const StaffSection = () => {
 			<div className="staff-section__staff">
 				<Staff />
 			</div>
-			<Link className="--cta staff-cta" style={{ padding: ".5em 1em" }}>
+			<Link className="--cta">
 				See All Staff
 			</Link>
 		</section>
