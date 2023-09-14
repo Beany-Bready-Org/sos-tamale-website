@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Poppins:wght@300;500;600;700&display=swap");
+// this is deprecated
+// @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Poppins:wght@300;500;600;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500;700&family=Inter:wght@300;500;700&family=Poppins:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,500;1,700&display=swap');
 
 @function family($name) {
   @if $name == "poppins" {
@@ -9,6 +12,8 @@
     @return "Gelasio", serif;
   } @else if $name == "inter" {
     @return "Inter", sans-serif;
+  } @else if $name == "roboto" {
+    @return "Roboto", sans-serif;
   }
 }
 
@@ -77,7 +82,7 @@ $light-secondary-color: #bcc3ca;
 $btn-tiny: 0.65em 1.65em;
 $btn-small: 0.5em 2em;
 
-$text-cta: clamp(12px, 2.5vmin, 15px);
+$text-cta: clamp(12px, 2.25vmin, 15px);
 $text-small: clamp(1em, 3vmin, 1.5em);
 $text-medium: clamp(1.25em, 3.75vmin, 1.75em);
 $text-big: clamp(2.25em, 5vmin, 3em);
