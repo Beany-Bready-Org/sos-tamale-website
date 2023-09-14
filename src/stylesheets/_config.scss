@@ -41,7 +41,7 @@ $font-weights: (
   border-bottom: 2px solid $border-color;
   outline: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: $text-cta;
   width: fit-content;
   font-weight: weights(bold);
   text-transform: uppercase;
@@ -77,10 +77,11 @@ $light-secondary-color: #bcc3ca;
 $btn-tiny: 0.65em 1.65em;
 $btn-small: 0.5em 2em;
 
+$text-cta: clamp(12px, 2.5vmin, 15px);
 $text-small: clamp(1em, 3vmin, 1.5em);
 $text-medium: clamp(1.25em, 3.75vmin, 1.75em);
 $text-big: clamp(2.25em, 5vmin, 3em);
-$text-large: clamp(36px, 8vmin, 52px);
+$text-large: clamp(2.5em, 8vmin, 3.5em);
 
 // $text-small: 1em;
 // $text-medium: 1.5em;

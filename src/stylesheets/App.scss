@@ -106,7 +106,6 @@ a {
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
-  font-weight: weights(bold);
   @include button-hover("#fff", $deep-secondary-color, $secondary-color);
 }
 

@@ -61,7 +61,7 @@ const Navbar = ({ show, setShowNav }) => {
         <div className="main-nav__logo">
           <img src={logo} alt="Main logo" />
           <span>
-            SOS HERMANN GMEINER <span>TAMALE</span>
+            {/* SOS HERMANN GMEINER <span>TAMALE</span> */}
           </span>
         </div>
         <ul className={show ? "main-nav__items active" : "main-nav__items"}>
