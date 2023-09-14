@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import VideoSection from "./VideoSection";
 import CampusesSection from "./CampusesSection";
 import StaffSection from "./StaffSection";
@@ -11,7 +10,7 @@ const Home = () => {
   return (
     <>
       <header>
-        <Navbar />
+        {/* moved nav to App.jsx so it will persist between pages */}
         <Hero />
       </header>
       <main>

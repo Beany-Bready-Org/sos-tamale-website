@@ -1,0 +1,48 @@
+@import "./config";
+
+.contact {
+  @include flex(row, center, center, unset);
+
+  height: 100vh;
+  // width: clamp(300px, 90vw, 1200px);
+  margin: auto;
+  position: relative;
+
+  // &::after {
+  //   content: "";
+  //   width: 40%;
+  //   height: 100%;
+  //   background-color: $accent-color;
+  //   position: absolute;
+  //   inset: 0;
+  //   z-index: -1;
+  // }
+
+  &__img {
+    @include flex(row, flex-end, flex-end, unset);
+    width: 100%;
+    height: inherit;
+    background-color: $accent-color;
+    flex-basis: 35%;
+    position: relative;
+
+    img {
+      max-width: 50vw;
+      max-height: 50vh;
+      position: relative;
+      left: 20%;
+    }
+  }
+
+  &__form {
+    // flex-basis: 65%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contact {
+    &__img {
+      display: none;
+    }
+  }
+}
