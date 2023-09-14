@@ -2,15 +2,53 @@
 
 .campuses__card {
   @include flex(unset, unset, center, 0);
-  max-width: 600px;
-  font-size: 0.8rem;
+  max-width: 750px;
+  height: 350px;
+
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid $light-secondary-color;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.9rem;
+
   overflow: hidden;
 
+  &:hover &__text {
+  }
+
+  &:hover &__img {
+  }
+
   &__text {
+    height: inherit;
     padding: 2rem;
+    z-index: 1;
+    transition: 200ms;
+    position: relative;
+    flex-basis: 50%;
+
+    background: rgba(232, 232, 232, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 10px rgb(0, 0, 0, 0.1) inset;
+      opacity: 0;
+      transition: 200ms;
+      z-index: 1;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    & > * {
+      transition: 200ms;
+    }
 
     h1 {
       color: $accent-color;
@@ -24,30 +62,127 @@
       color: $text-color;
       font-size: $text-small;
     }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      h1 {
+        color: $secondary-color;
+      }
+
+      p {
+        color: $text-secondary-color;
+      }
+    }
   }
 
   &__img {
-    width: 100%;
     flex-basis: 50%;
-    cursor: pointer;
-    display: none;
+    width: 100%;
+    height: inherit;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
+      opacity: 0;
+      transition: 200ms;
+      z-index: 1;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
 
     img {
       width: 100%;
-      max-height: 400px;
-      // aspect-ratio: 1;
+      height: 100%;
+      transition: 200ms;
+
+      // &::after {
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: #1f1f1f57;
+      //   position: absolute;
+      //   inset: 0;
+      // }
     }
-  }
-}
 
-@media screen and (max-width: 600px) {
-  .campuses__card {
-    flex-direction: column-reverse !important;
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
 
-    &__img {
       img {
-        max-height: 300px;
+        transform: scale(1.05);
       }
     }
+  }
+
+  // &:hover &__img img {
+  //   left: 0;
+
+  //   &::after {
+  //     left: 0;
+  //   }
+  // }
+
+  //   &:hover &__text {
+  //     p {
+  //       color: #fff;
+  //       transform: scale(0.9);
+  //       filter: blur(3px);
+  //       opacity: 0;
+  //     }
+
+  //     h1 {
+  //       // color: #fff;
+  //       border: none;
+  //       transform: translate(-17px, -80px);
+  //       padding-bottom: 0.25em;
+  //     }
+  //   }
+}
+
+@media screen and (max-width: 700px) {
+  .campuses__card {
+    flex-direction: column-reverse !important;
+    height: unset;
+    max-width: 400px;
+    font-size: 1rem;
+
+    //   &__text {
+    //   }
+
+    //   &:hover &__text {
+    //     transform: scale(1.05);
+
+    //     p {
+    //       color: $text-color;
+    //     }
+
+    //     h1 {
+    //       color: $accent-color;
+    //       border-color: $light-secondary-color;
+    //     }
+    //   }
+
+    //   &__img {
+    //     position: static;
+
+    //     &::after {
+    //       display: none;
+    //     }
+
+    //     img {
+    //       max-height: 200px;
+    //     }
+    //   }
   }
 }

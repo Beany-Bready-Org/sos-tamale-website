@@ -8,8 +8,6 @@
     margin: auto;
     min-height: 5vh;
 
-
-
     &__social {
       display: inherit;
       gap: 1em;
@@ -33,16 +31,14 @@
       > * {
         display: inherit;
         align-items: center;
-        gap: .5em;
+        gap: 0.5em;
         color: $text-color;
         transition: all 300ms ease;
-      
 
         &:hover:not([title]) {
           color: $accent-color;
-          text-decoration: underline
+          text-decoration: underline;
         }
-
       }
 
       [title="Call Us Now"] {
@@ -51,35 +47,33 @@
     }
 
     @media screen and (width <= 680px) {
-      flex-direction: column ;
-      padding-block: .4em;
+      flex-direction: column;
+      justify-content: center;
 
       &-info {
         width: 100%;
-        justify-content: center;
-        padding-bottom: .3em;
-        border-bottom: thin solid $light-secondary-color;
+        justify-content: space-between;
       }
 
-        &__social {
-          gap: 2em;
-          li {
-            > * {
-              font-size: 1.3rem;
-            }
-          }
-        }
+      &__social {
+        display: none;
+        // gap: 2em;
+        // li {
+        //   > * {
+        //     font-size: 1.3rem;
+        //   }
+        // }
+      }
     }
   }
 }
-
 
 .main-nav {
   @include flex(row, space-between, center, unset);
   background-color: #fff;
   width: clamp(300px, 90vw, 1200px);
   margin: auto;
-  padding-block: 0.75em;
+  // padding-block: 0.75em;
   min-height: 15vh;
   position: relative;
   container-type: inline-size;
@@ -97,9 +91,9 @@
     }
 
     & > span {
-      font-size: 1.25em;
+      font-size: $text-medium;
       line-height: 110%;
-      max-width: 17.5ch;
+      max-width: 20ch;
       color: $accent-color;
 
       span {

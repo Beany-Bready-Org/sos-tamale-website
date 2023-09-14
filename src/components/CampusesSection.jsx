@@ -3,9 +3,15 @@ import CampusesSectionCard from "./CampusesSectionCard";
 
 import "../stylesheets/CampusesSection.scss";
 
-import AsiakwaImg from "../assets/images/asiakwa.png";
-import KumasiImg from "../assets/images/kumasi.png";
-import TemaImg from "../assets/images/tema.png";
+// import TamaleImg from "../assets/images/tamale.jpg";
+// import AsiakwaImg from "../assets/images/asiakwa.jpg";
+// import KumasiImg from "../assets/images/kumasi.jpg";
+// import TemaImg from "../assets/images/tema.jpg";
+
+import TamaleImg from "../assets/images/bg-img1.jpg";
+import AsiakwaImg from "../assets/images/bg-img2.jpg";
+import KumasiImg from "../assets/images/bg-img3.jpg";
+import TemaImg from "../assets/images/bg-img4.jpg";
 
 export default function CampusesSection() {
 	return (

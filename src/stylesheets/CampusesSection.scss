@@ -8,7 +8,8 @@
 
   &__items {
     @include flex(row, center, center, 2em);
+    flex-wrap: wrap;
     margin: auto;
-    width: clamp(300px, 90vw, 1200px);
+    width: clamp(300px, 90vw, 1200px);  
   }
 }
