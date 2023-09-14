@@ -52,22 +52,21 @@
 
     @media screen and (width <= 680px) {
       flex-direction: column ;
-      padding-block: .4em;
+      justify-content: center;
 
       &-info {
         width: 100%;
-        justify-content: center;
-        padding-bottom: .3em;
-        border-bottom: thin solid $light-secondary-color;
+        justify-content: space-between;
       }
 
         &__social {
-          gap: 2em;
-          li {
-            > * {
-              font-size: 1.3rem;
-            }
-          }
+          display: none
+          // gap: 2em;
+          // li {
+          //   > * {
+          //     font-size: 1.3rem;
+          //   }
+          // }
         }
     }
   }
@@ -79,7 +78,7 @@
   background-color: #fff;
   width: clamp(300px, 90vw, 1200px);
   margin: auto;
-  padding-block: 0.75em;
+  // padding-block: 0.75em;
   min-height: 15vh;
   position: relative;
   container-type: inline-size;
@@ -98,9 +97,9 @@
     }
 
     & > span {
-      font-size: 1.25em;
+      font-size: 1.5em;
       line-height: 110%;
-      max-width: 17.5ch;
+      max-width: 20ch;
       color: $accent-color;
 
       span {

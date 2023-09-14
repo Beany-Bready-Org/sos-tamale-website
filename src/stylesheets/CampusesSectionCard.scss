@@ -2,26 +2,53 @@
 
 .campuses__card {
   @include flex(unset, unset, center, 0);
-  max-width: 700px;
+  max-width: 750px;
+  height: 350px;
+
   background-color: #fff;
   border-radius: 8px;
   border: 1px solid $light-secondary-color;
   position: relative;
   cursor: pointer;
+  font-size: 0.9rem;
 
   overflow: hidden;
 
+  &:hover &__text {
+  }
+
+  &:hover &__img {
+  }
+
   &__text {
+    height: inherit;
     padding: 2rem;
     z-index: 1;
     transition: 200ms;
-    height: 100%;
+    position: relative;
     flex-basis: 50%;
 
-    // background: rgba(255, 255, 255, 0.2);
-    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    // backdrop-filter: blur(5px);
-    // -webkit-backdrop-filter: blur(3px);
+    background: rgba(232, 232, 232, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 10px rgb(0, 0, 0, 0.1) inset;
+      opacity: 0;
+      transition: 200ms;
+      z-index: 1;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
+
+    & > * {
+      transition: 200ms;
+    }
 
     h1 {
       color: $accent-color;
@@ -35,13 +62,42 @@
       color: $text-color;
       font-size: $text-small;
     }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      h1 {
+        color: $secondary-color;
+      }
+
+      p {
+        color: $text-secondary-color;
+      }
+    }
   }
 
   &__img {
     flex-basis: 50%;
     width: 100%;
-    height: 300px;
+    height: inherit;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
 
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
+      opacity: 0;
+      transition: 200ms;
+      z-index: 1;
+      display: block;
+      position: absolute;
+      inset: 0;
+    }
 
     img {
       width: 100%;
@@ -56,6 +112,16 @@
       //   position: absolute;
       //   inset: 0;
       // }
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+
+      img {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -84,9 +150,12 @@
   //   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .campuses__card {
     flex-direction: column-reverse !important;
+    height: unset;
+    max-width: 400px;
+    font-size: 1rem;
 
     //   &__text {
     //   }
