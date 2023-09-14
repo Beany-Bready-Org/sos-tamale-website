@@ -1,34 +1,31 @@
-import React, {useState} from 'react'
-import Navbar from './Navbar'
-import VideoSection from './VideoSection'
-import CampusesSection from './CampusesSection'
-import StaffSection from './StaffSection'
-import DidYouKnow from './DidYouKnow'
-import Gallery from './Gallery'
-import Hero from './Hero'
-import Footer from './Footer'
+import Navbar from "./Navbar";
+import VideoSection from "./VideoSection";
+import CampusesSection from "./CampusesSection";
+import StaffSection from "./StaffSection";
+import DidYouKnow from "./DidYouKnow";
+import Gallery from "./Gallery";
+import Hero from "./Hero";
+import Footer from "./Footer";
 
 const Home = () => {
- 
-
   return (
     <>
-    <header>
-      <Navbar />
-      <Hero />
-    </header>
-    <main>
-      <VideoSection />
-      <CampusesSection />
-      <StaffSection />
-      <DidYouKnow />
-      <Gallery />
-    </main>
-    <footer>
+      <header>
+        <Navbar />
+        <Hero />
+      </header>
+      <main>
+        <VideoSection />
+        <CampusesSection />
+        <StaffSection />
+        <DidYouKnow />
+        <Gallery />
+      </main>
+      <footer>
         <Footer />
-    </footer>
-  </>
-  )
-}
+      </footer>
+    </>
+  );
+};
 
-export default Home
+export default Home;
