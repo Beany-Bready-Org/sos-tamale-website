@@ -9,18 +9,17 @@ import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 
 export default function App() {
-  return (
-    <>
-      <Navbar />
-
-      <NavContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/enroll" element={<Enroll />} />
-        </Routes>
-      </NavContextProvider>
-    </>
-  );
+	return (
+		<>
+			<NavContextProvider>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/contact" element={<Contact />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/enroll" element={<Enroll />} />
+				</Routes>
+			</NavContextProvider>
+		</>
+	);
 }
