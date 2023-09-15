@@ -61,13 +61,13 @@ const Navbar = () => {
       </section>
       <section className="main-nav">
         <div className="main-nav__logo">
-          <NavLink to="/">
+          <NavLink to="/sos-tamale-website">
             <img src={logo} alt="Main logo" />
           </NavLink>
         </div>
         <ul className={show ? "main-nav__items active" : "main-nav__items"}>
           <li className="item">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/sos-tamale-website">Home</NavLink>
           </li>
           <li className="item">
             <NavLink to="/contact">Contact</NavLink>
