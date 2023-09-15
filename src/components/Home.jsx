@@ -16,7 +16,7 @@ const Home = () => {
       <main>
         <VideoSection />
         <CampusesSection />
-        <StaffSection />
+        {/* <StaffSection /> */}
         <DidYouKnow />
         <Gallery />
       </main>
