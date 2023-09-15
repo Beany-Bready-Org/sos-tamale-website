@@ -15,8 +15,6 @@ import logo from "../assets/images/logo.png";
 // Show nav context
 import { useShowNav, useShowNavToggler } from "../contexts/NavContext";
 
-import "../stylesheets/Navbar.scss";
-
 const Navbar = () => {
   const show = useShowNav();
   const setShowNav = useShowNavToggler();
@@ -99,10 +97,7 @@ const Navbar = () => {
         </ul>
         <div
           className="main-nav__hamburger"
-          onClick={() => {
-            setShowNav();
-          }}
-        >
+          onClick={() => setShowNav()}>
           <div className="hamburger-line line1"></div>
           <div className="hamburger-line line2"></div>
           <div className="hamburger-line line3"></div>
@@ -112,9 +107,6 @@ const Navbar = () => {
   );
 };
 
-Navbar.propTypes = {
-  show: PropTypes.bool.isRequired,
-  setShowNav: PropTypes.func.isRequired,
-};
+
 
 export default Navbar;
