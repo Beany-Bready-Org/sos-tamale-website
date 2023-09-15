@@ -61,13 +61,13 @@ const Navbar = () => {
       </section>
       <section className="main-nav">
         <div className="main-nav__logo">
-          <NavLink to="/sos-tamale-website">
+          <NavLink to="/">
             <img src={logo} alt="Main logo" />
           </NavLink>
         </div>
         <ul className={show ? "main-nav__items active" : "main-nav__items"}>
           <li className="item">
-            <NavLink to="/sos-tamale-website">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li className="item">
             <NavLink to="/contact">Contact</NavLink>
@@ -101,7 +101,8 @@ const Navbar = () => {
           className="main-nav__hamburger"
           onClick={() => {
             setShowNav();
-          }}>
+          }}
+        >
           <div className="hamburger-line line1"></div>
           <div className="hamburger-line line2"></div>
           <div className="hamburger-line line3"></div>
