@@ -1,9 +1,9 @@
-import { Link, NavLink } from "react-router-dom";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 import ContactForm from "./ContactForm";
+
+import { NavLink } from "react-router-dom";
 
 import "../../stylesheets/Contact.scss";
 
@@ -14,11 +14,12 @@ export default function Contact() {
   return (
     <section className="contact">
       <div className="contact__nav">
-        <NavLink to>
-          {" "}
-          <FontAwesomeIcon icon={faArrow} />
+        <NavLink to="/">
+          <FontAwesomeIcon icon={faHouse} />
         </NavLink>
-        <img src={LogoImg} alt="Logo" />
+        <div className="contact__nav__logo">
+          <img src={LogoImg} alt="Logo" />
+        </div>
       </div>
       <div className="contact__img">
         <img src={OverlayImg} alt="Image of parents and their child" />

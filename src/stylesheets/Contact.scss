@@ -18,6 +18,11 @@
   //   z-index: -1;
   // }
 
+  &__nav {
+    @include flex(row, space-between, center, unset);
+    background-color: red;
+  }
+
   &__img {
     @include flex(row, flex-end, flex-end, unset);
     width: 100%;
