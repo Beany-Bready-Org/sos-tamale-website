@@ -1,0 +1,77 @@
+.footer-main {
+	background-color: $footer-bg;
+	padding: 0 5em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-bottom: 1em;
+
+	&__logo {
+		padding: 3em 0;
+		display: flex;
+		gap: 1em;
+
+		&-school-name {
+			color: #fff;
+			letter-spacing: 1.1px;
+			font-size: 1.5rem;
+			width: 50%;
+		}
+
+		img {
+			align-self: flex-start;
+		}
+	}
+
+	&__links {
+		@include flex(row, unset, unset, 4em);
+		padding-top: 2em;
+		color: #fff;
+
+		> * {
+			@include flex(column, unset, unset, 0.5em);
+			.footer-header {
+				letter-spacing: 2px;
+			}
+			li {
+				color: #fff;
+
+				> * {
+					color: inherit;
+					font-weight: weights(light);
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-secondary {
+	background-color: $footer-bg-secondary;
+	@include flex(row, space-between, center, unset);
+	padding-inline: 5em;
+    padding-block: 1.5em;
+    color: #fff;
+
+	.link {
+		color: #fff;
+        font-weight: weights(light);
+	}
+
+    &__org {
+        display: inherit;
+        gap: .5em;
+    }
+
+	&__nav {
+		list-style: none;
+		display: inherit;
+		gap: 3em;
+	}
+
+    @media screen and (width <= 700px) {
+        flex-direction: row;
+    }
+}
