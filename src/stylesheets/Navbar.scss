@@ -3,8 +3,8 @@
 nav {
   position: fixed;
   width: 100%;
-  z-index: 1;
-  isolation: isolate;
+  z-index: 100;
+  // isolation: isolate;
   background-color: #fff;
   border-bottom: 2px $light-secondary-color solid;
 }
