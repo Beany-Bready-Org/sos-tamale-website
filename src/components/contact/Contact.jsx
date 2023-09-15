@@ -13,15 +13,15 @@ import LogoImg from "../../assets/images/logo2.png";
 export default function Contact() {
   return (
     <section className="contact">
-      <div className="contact__nav">
-        <NavLink to="/">
-          <FontAwesomeIcon icon={faHouse} />
-        </NavLink>
-        <div className="contact__nav__logo">
-          <img src={LogoImg} alt="Logo" />
-        </div>
-      </div>
       <div className="contact__img">
+        <div className="contact__img__nav">
+          <NavLink to="/">
+            <FontAwesomeIcon icon={faHouse} />
+          </NavLink>
+          <div className="contact__img__nav__logo">
+            <img src={LogoImg} alt="Logo" />
+          </div>
+        </div>
         <img src={OverlayImg} alt="Image of parents and their child" />
       </div>
       <ContactForm />
