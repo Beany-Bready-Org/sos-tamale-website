@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const About = () => {
 	return (
 		<>
-			<Navbar />
+			{/* <Navbar /> */}
 			<section className="about-banner">
 				<div className="about-banner__background">
 					<img src={aboutBanner} alt="About " />

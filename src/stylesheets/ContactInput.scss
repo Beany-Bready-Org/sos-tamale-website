@@ -3,4 +3,17 @@
 .contact__form__input {
   padding: 0.8em 1em;
   width: 100%;
+
+  outline: none;
+  &:not([type="submit"]) {
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $accent-color;
+    }
+
+    &:focus {
+      cursor: text;
+      border: 2px solid $accent-color;
+    }
+  }
 }

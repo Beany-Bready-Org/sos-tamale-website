@@ -54,7 +54,8 @@ $font-weights: (
 }
 
 @mixin button-hover($color, $border-color, $background-color) {
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $background-color;
     border-color: $border-color;
     color: $color;

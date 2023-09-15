@@ -1,24 +1,16 @@
 @import "./config";
 
 .contact__form {
-  display: grid;
+  @include flex(column, center, center, 2em);
   gap: 1.5em;
 
   width: clamp(300px, 90vw, 700px);
   padding-inline: 2em;
-  margin: auto;
-
-  :nth-child(3),
-  :nth-child(4) {
-    grid-column: span 2;
-  }
+  margin: 0 auto;
+  margin-top: 20vh;
 
   @media screen and (max-width: 800px) {
     padding-inline: 0;
     gap: 1em;
-    :nth-child(3),
-    :nth-child(4) {
-      grid-column: revert;
-    }
   }
 }

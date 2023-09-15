@@ -24,24 +24,34 @@
     height: inherit;
     background-color: $accent-color;
     flex-basis: 35%;
-    position: relative;
+    z-index: 1;
 
     img {
-      max-width: 50vw;
-      max-height: 50vh;
+      width: 70vw;
+      height: 70vh;
       position: relative;
       left: 20%;
+      bottom: 10%;
     }
   }
 
-  &__form {
-    // flex-basis: 65%;
+  &__logo {
+    position: absolute;
+    inset: 30px 30px;
+    max-width: 120px;
+    height: fit-content;
+    z-index: 100;
+
+    img {
+    }
   }
 }
 
 @media screen and (max-width: 800px) {
   .contact {
-    &__img {
+    z-index: -1;
+    &__img,
+    &__logo {
       display: none;
     }
   }

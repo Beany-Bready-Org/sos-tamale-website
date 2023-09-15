@@ -10,6 +10,17 @@ export default function ContactInput({ type, placeholder, id }) {
         key={id}
         className="contact__form__input"></textarea>
     );
+  } else if (type == "submit") {
+    return (
+      <input
+        type={type}
+        value={placeholder}
+        id={id}
+        name={id}
+        key={id}
+        className="contact__form__input --cta"
+      />
+    );
   } else {
     return (
       <input

@@ -4,6 +4,9 @@ import ContactInput from "./ContactInput";
 export default function ContactForm() {
   return (
     <form className="contact__form">
+      <h1 className="--header" style={{ color: "black" }}>
+        Contact Us
+      </h1>
       <ContactInput
         type={"text"}
         placeholder={"Type your full name here"}
@@ -24,12 +27,7 @@ export default function ContactForm() {
         placeholder={"Type your message here..."}
         id={"message"}
       />
-      <ContactInput
-        type={"submit"}
-        value={"Submit"}
-        id={"button"}
-        className="--cta"
-      />
+      <ContactInput type={"submit"} placeholder={"Submit"} id={"button"} />
     </form>
   );
 }
