@@ -24,7 +24,7 @@ const DidYouKnow = () => {
             className="arrow-icon"
           />
         </Link>
-        <Link to="#" className="college-cta">
+        <Link to="#" className="--cta">
           Visit International College
           <FontAwesomeIcon icon={faArrowCircleRight} className="arrow-icon" />
         </Link>
