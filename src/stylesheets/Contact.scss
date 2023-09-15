@@ -19,12 +19,18 @@
   // }
 
   &__img {
-    @include flex(row, flex-end, flex-end, unset);
+    @include flex(column, flex-end, flex-end, unset);
     width: 100%;
     height: inherit;
     background-color: $accent-color;
     flex-basis: 35%;
     z-index: 1;
+
+    &__nav {
+      @include flex(row, space-between, center, unset);
+      background-color: red;
+      flex-basis: 20;
+    } 
 
     img {
       width: 70vw;

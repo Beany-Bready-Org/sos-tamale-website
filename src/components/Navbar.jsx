@@ -3,19 +3,19 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
 import {
-	faFacebook,
-	faInstagram,
-	faXTwitter,
-	faLinkedinIn,
+  faFacebook,
+  faInstagram,
+  faXTwitter,
+  faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
 import logo from "../assets/images/logo-main.png";
 
 // Show nav context
 import {
-	useShowNav,
-	useShowNavToggler,
-	useNavDisplay,
+  useShowNav,
+  useShowNavToggler,
+  useNavDisplay,
 } from "../contexts/NavContext";
 // Display actions
 import { NAV_DISPLAY_ACTIONS } from "../contexts/NavContext";
@@ -34,9 +34,9 @@ const Navbar = () => {
 		}
 	}, [dispatch, location]);
 
-	const navDisplayStyles = {
-		display: state === NAV_DISPLAY_ACTIONS.CONTACT ? "none" : "flex",
-	};
+  const navDisplayStyles = {
+    display: state === NAV_DISPLAY_ACTIONS.CONTACT ? "none" : "flex",
+  };
 
 	return (
 		<nav>
@@ -113,27 +113,27 @@ const Navbar = () => {
 							<FontAwesomeIcon icon={faFacebook} />
 						</Link>
 
-						<Link to="" className="social-icon--mobile">
-							<FontAwesomeIcon icon={faLinkedinIn} />
-						</Link>
+            <Link to="" className="social-icon--mobile">
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </Link>
 
-						<Link to="#" className="social-icon--mobile">
-							<FontAwesomeIcon icon={faInstagram} />
-						</Link>
+            <Link to="#" className="social-icon--mobile">
+              <FontAwesomeIcon icon={faInstagram} />
+            </Link>
 
-						<Link to="#" className="social-icon--mobile">
-							<FontAwesomeIcon icon={faXTwitter} />
-						</Link>
-					</li>
-				</ul>
-				<div className="main-nav__hamburger" onClick={() => setShowNav()}>
-					<div className="hamburger-line line1"></div>
-					<div className="hamburger-line line2"></div>
-					<div className="hamburger-line line3"></div>
-				</div>
-			</section>
-		</nav>
-	);
+            <Link to="#" className="social-icon--mobile">
+              <FontAwesomeIcon icon={faXTwitter} />
+            </Link>
+          </li>
+        </ul>
+        <div className="main-nav__hamburger" onClick={() => setShowNav()}>
+          <div className="hamburger-line line1"></div>
+          <div className="hamburger-line line2"></div>
+          <div className="hamburger-line line3"></div>
+        </div>
+      </section>
+    </nav>
+  );
 };
 
 export default Navbar;
