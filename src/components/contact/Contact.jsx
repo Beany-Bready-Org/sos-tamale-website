@@ -15,12 +15,12 @@ export default function Contact() {
     <section className="contact">
       <div className="contact__img">
         <div className="contact__img__nav">
-          <NavLink to="/">
-            <FontAwesomeIcon icon={faHouse} />
-          </NavLink>
           <div className="contact__img__nav__logo">
             <img src={LogoImg} alt="Logo" />
           </div>
+          <NavLink to="/" className="contact__img__nav__home">
+            <FontAwesomeIcon icon={faHouse} />
+          </NavLink>
         </div>
         <img src={OverlayImg} alt="Image of parents and their child" />
       </div>

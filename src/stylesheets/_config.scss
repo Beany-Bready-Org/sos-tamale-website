@@ -47,13 +47,14 @@ $font-weights: (
   outline: none;
   cursor: pointer;
   font-size: $text-cta;
-  width: fit-content;
+  // width: fit-content;
   font-weight: weights(bold);
   text-transform: uppercase;
   transition: 200ms;
+  max-width: 100%;
 
-  @media screen and (max-width: 350px) {
-    width: 100%;
+  @media screen and (max-width: 600px) {
+    width: clamp(100px, 80vw, 350px);
   }
 }
 

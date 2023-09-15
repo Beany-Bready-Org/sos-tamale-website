@@ -6,4 +6,9 @@
   height: 80vh;
   margin-top: 20vh;
   position: relative;
+
+  @media screen and (max-width: 500px) {
+    margin-top: 15vh;
+    height: 85vh;
+  }
 }

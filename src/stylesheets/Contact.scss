@@ -1,7 +1,7 @@
 @import "./config";
 
 .contact {
-  @include flex(row, center, center, unset);
+  @include flex(row, space-between, center, unset);
 
   height: 100vh;
   // width: clamp(300px, 90vw, 1200px);
@@ -19,46 +19,76 @@
   // }
 
   &__img {
-    @include flex(column, flex-end, flex-end, unset);
+    @include flex(column, space-between, flex-start, unset);
     width: 100%;
-    height: inherit;
-    background-color: $accent-color;
-    flex-basis: 35%;
+    flex-basis: 50%;
     z-index: 1;
+    height: 100%;
+    position: relative;
+    margin-right: 3em;
+
+    &::after {
+      background-color: $accent-color;
+      width: 70%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0
+    }
 
     &__nav {
       @include flex(row, space-between, center, unset);
-      background-color: red;
-      flex-basis: 20;
-    } 
+      height: 20vh;
+      width: 70%;
+      padding-inline: 1.5em;
+      z-index: 100;
 
-    img {
+      &__home {
+        font-size: clamp(1.2em, 4vmin, 1.75em);
+        color: #fff;
+      }
+
+      img {
+        width: 15vmin;
+      }
+    }
+
+    & > img {
       width: 70vw;
       height: 70vh;
       position: relative;
-      left: 20%;
+      left: 10%;
       bottom: 10%;
-    }
-  }
-
-  &__logo {
-    position: absolute;
-    inset: 30px 30px;
-    max-width: 120px;
-    height: fit-content;
-    z-index: 100;
-
-    img {
     }
   }
 }
 
 @media screen and (max-width: 800px) {
   .contact {
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-bottom: 3em;
     z-index: -1;
-    &__img,
-    &__logo {
-      display: none;
+
+    &__img {
+      flex-basis: unset;
+      height: 15vh;
+      justify-content: center;
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+
+      & > img {
+        display: none;
+      }
+
+      &__nav {
+        width: 100%;
+        background-color: $accent-color;
+      }
     }
   }
 }
