@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -24,6 +24,15 @@ const Navbar = () => {
 	const show = useShowNav();
 	const setShowNav = useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
+	const location = useLocation();
+
+	useEffect(() => {
+		if (location.pathname === "/contact") {
+			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
+		} else {
+			dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
+		}
+	}, [dispatch, location]);
 
 	const navDisplayStyles = {
 		display: state === NAV_DISPLAY_ACTIONS.CONTACT ? "none" : "flex",
@@ -74,7 +83,12 @@ const Navbar = () => {
 					</NavLink>
 				</div>
 				<ul className={show ? "main-nav__items active" : "main-nav__items"}>
-					<li className="item">
+					<li
+						className="item"
+						onClick={() => {
+							dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
+						}}
+					>
 						<NavLink to="/">Home</NavLink>
 					</li>
 					<li className="item">
@@ -86,7 +100,7 @@ const Navbar = () => {
 						>
 							Contact
 						</NavLink>
-					</li> 
+					</li>
 					<li className="item">
 						<NavLink to="/about">About Us</NavLink>
 					</li>
