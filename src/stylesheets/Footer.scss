@@ -1,14 +1,18 @@
 .footer-main {
+	width: 100%;
 	background-color: $footer-bg;
 	padding: 0 5em;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding-bottom: 1em;
+	padding-bottom: 1em;
+	container-type: inline-size;
+	container-name: footerMain;
 
 	&__logo {
 		padding: 3em 0;
 		display: flex;
 		gap: 1em;
+		font-family: family(poppins);
 
 		&-school-name {
 			color: #fff;
@@ -19,6 +23,22 @@
 
 		img {
 			align-self: flex-start;
+		}
+
+		@container footerMain  (width <= 680px) {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding-block: 1em;
+
+			img {
+				align-self: revert !important;
+			}
+
+			&-school-name {
+				width: initial;
+				text-align: center;
+			}
 		}
 	}
 
@@ -49,21 +69,22 @@
 }
 
 .footer-secondary {
+	width: 100%;
 	background-color: $footer-bg-secondary;
 	@include flex(row, space-between, center, unset);
 	padding-inline: 5em;
-    padding-block: 1.5em;
-    color: #fff;
+	padding-block: 1.5em;
+	color: #fff;
 
 	.link {
 		color: #fff;
-        font-weight: weights(light);
+		font-weight: weights(light);
 	}
 
-    &__org {
-        display: inherit;
-        gap: .5em;
-    }
+	&__org {
+		display: inherit;
+		gap: 0.5em;
+	}
 
 	&__nav {
 		list-style: none;
@@ -71,7 +92,17 @@
 		gap: 3em;
 	}
 
-    @media screen and (width <= 700px) {
-        flex-direction: row;
-    }
+	@media screen and (width <= 700px) {
+		flex-direction: column;
+		gap: 1em;
+		text-align: center;
+
+		&__org {
+			display: inline-block;
+
+			.authors {
+				margin-left: 0.5em;
+			}
+		}
+	}
 }

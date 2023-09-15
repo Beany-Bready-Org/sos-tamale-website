@@ -45,7 +45,7 @@ const Footer = () => {
       <div className="footer-secondary">
         <p className="footer-secondary__org">
           &copy;
-        <NavLink to="#" className="link">
+        <NavLink to="#" className="link authors">
           Beany-Bread Org - Emmanuel Opoku & Alexander Afoko Jnr.
           </NavLink>
         </p>
