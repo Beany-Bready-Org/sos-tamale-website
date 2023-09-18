@@ -1,10 +1,12 @@
 @import "./config";
 
 .enroll-container {
-    display: grid;
-    grid-template-columns: 3fr 1fr 2fr 3.5fr;
+    display: flex;
+    // grid-template-columns: 3fr 1fr 2fr 3.5fr;
+    container-name: enrollContainer;
+    container-type: inline-size;
 	.enroll-form {
-        grid-column: span 3;
+        flex: 1;
 		@include flex(column, center, center, 1em);
 
 		&__heading {
@@ -23,7 +25,7 @@
 
 		&__input {
 			border: thin solid $text-color;
-			padding: 0.5em 1em;
+			padding: 0.6em 1em;
 			width: clamp(300px, 85%, 600px);
 			font-size: $text-cta;
 			resize: none;
@@ -48,7 +50,7 @@
 		}
 
 		input {
-			padding: 0.5em 1em;
+			padding: 0.6em 1em;
 			border: 0;
 			flex: 1;
 		}
@@ -62,6 +64,7 @@
 
     // Side nav
     .side-nav {
+        width: 40vw;
         color: #fff;
         background-color: $accent-color;
 
@@ -103,7 +106,7 @@
             img {
                 transform: translateX(-50px);
                 width: 90dvw;
-                max-width: 450px;
+                max-width: 480px;
             }
         }
     }
