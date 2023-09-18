@@ -1,0 +1,16 @@
+@import "./config";
+
+.gallery-section {
+  @include flex(column, center, center, unset);
+  padding-top: 17.5vmin;
+
+  .--header {
+    margin-bottom: 0.75em;
+  }
+
+  .gallery-section__images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: repeat(3, 1fr);
+  }
+}

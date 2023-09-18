@@ -7,11 +7,12 @@
   width: clamp(300px, 100vw, 800px);
   flex-basis: 65%;
   padding-block: 3em;
-  margin-right: 8em;
+  margin-right: 4em;
 
   @media screen and (max-width: 800px) {
     height: 100%;
     gap: 1em;
-    width: clamp(300px, 100vw, 450px);
+    width: clamp(300px, 100vw, 600px);
+    margin: 0;
   }
 }

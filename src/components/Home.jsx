@@ -1,7 +1,7 @@
 import VideoSection from "./VideoSection";
 import CampusesSection from "./CampusesSection";
 import DidYouKnow from "./DidYouKnow";
-import Gallery from "./Gallery";
+import GallerySection from "./GallerySection";
 import Hero from "./Hero";
 import Footer from "./Footer";
 
@@ -17,7 +17,7 @@ const Home = () => {
         <CampusesSection />
         {/* <StaffSection /> */}
         <DidYouKnow />
-        <Gallery />
+        <GallerySection number={12}/>
       </main>
       <footer>
         <Footer />

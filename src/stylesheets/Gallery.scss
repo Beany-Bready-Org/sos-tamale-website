@@ -1,10 +1,19 @@
 @import "./config";
 
 .gallery {
-  padding-top: 17.5vmin;
-  .gallery__images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-template-rows: repeat(3, 1fr);
+  padding-top: 20vh;
+
+  @media screen and (max-width: 680px) {
+    padding-top: 15vh;
+  }
+
+  .gallery-section {
+    padding-top: 0;
+  }
+  .--header {
+    margin: 4vmax 0;
+  }
+  .--cta {
+    display: none !important;
   }
 }

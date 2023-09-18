@@ -4,6 +4,7 @@ import { Routes, Route, redirect } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/contact/Contact";
 import About from "./components/About";
+import Gallery from "./components/gallery/Gallery";
 import Enroll from "./components/enroll/Enroll";
 import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/enroll" element={<Enroll />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </NavContextProvider>
     </>
