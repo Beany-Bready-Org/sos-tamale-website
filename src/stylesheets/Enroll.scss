@@ -1,26 +1,16 @@
 @import "./config";
 
 .enroll-container {
-  display: flex;
-  // grid-template-columns: 3fr 1fr 2fr 3.5fr;
-  container-name: enrollContainer;
-  container-type: inline-size;
-  .enroll-form {
-    flex: 1;
-    @include flex(column, center, center, 1em);
-    display: flex;
-    align-items: center;
-    gap: 2em;
+	display: flex;
+	align-items: center;
+	gap: 2em;
 
-    input {
-        font-weight: weights(light);
-    }
+	> * {
+		height: 100%;
+	}
 
-    >  * {
-        height: 100vh;
-    }
 	.enroll-form {
-        flex: 1;
+		flex: 1;
 		@include flex(column, center, center, 1em);
 
 		&__heading {
@@ -36,30 +26,12 @@
 				font-weight: weights(light);
 			}
 		}
-
-		&__input {
-			border: thin solid $text-color;
-			padding: 0.6em 1em;
-			width: clamp(300px, 85%, 600px);
-			font-size: $text-cta;
-			resize: none;
-			outline: none;
-            font-family: family(poppins);
-            border-radius: .5rem;
-            overflow: clip;
-            transition: all 300ms ease;
-
-            &:is(:hover, :focus, :active) {
-                border-color: $accent-color;
-            }
-
-          
-		}
 	}
 
 	.telephone {
 		padding: unset !important;
-
+		border: none;
+		outline: none;
 		display: flex;
 		// align-items: center;
 
@@ -68,110 +40,165 @@
 			padding-inline: 0.5em;
 			background-color: $accent-color;
 			color: #fff;
+			border-radius: 4px 0 0 4px;
+			outline: 1px solid $accent-color;
 		}
 
 		input {
-			padding: 0.6em 1em;
-			border: 0;
-			flex: 1;
+			width: 100%;
+			border-radius: 0;
+			border-radius: 0 4px 4px 0;
 		}
 	}
 
-    .form-cta {
-        width: clamp(300px, 85%, 600px);
-        padding-block: .5em;
-        letter-spacing: .1em;
-    }
+	// Side nav
+	.side-nav {
+		width: 40vw;
+		color: #fff;
+		background-color: $accent-color;
 
-    // Side nav
-    .side-nav {
-        width: 40vw;
-        color: #fff;
-        background-color: $accent-color;
+		.secondary-navbar {
+			margin-top: 2em;
+			@include flex(row, space-between, center, unset);
+			padding-inline: 3em;
+			position: relative;
 
-        .secondary-navbar {
-            margin-top: 2em;
-            @include flex(row, space-between, center, unset);
-            padding-inline: 3em;
+			.hamburger {
+				width: 40px;
+				height: fit-content;
+				cursor: pointer;
+				@include flex(column, center, unset, 0.5em);
 
-            .hamburger {
-                width: 40px;
-                height: fit-content;
-                cursor: pointer;
-                @include flex(column, center, unset, .5em);
+				.line {
+					width: 100%;
+					height: 5px;
+					background-color: #fff;
+					border-radius: 0.1rem;
+					transition: all 300ms ease;
+				}
+			}
 
-                .line {
-                    width: 100%;
-                    height: 5px;
-                    background-color: #fff;
-                    border-radius: .1rem;
-                }
+			.show {
+				.line1 {
+					transform: rotate(45deg) translateY(18.5px);
+				}
+
+				.line2 {
+					pointer-events: none;
+					opacity: 0;
+				}
+
+				.line3 {
+					transform: rotate(-45deg) translateY(-18.5px);
+				}
+			}
+
+			&__navbar {
+				list-style: none;
+				border: 3px solid white;
+				width: 40%;
+				padding: 1em;
+				position: absolute;
+				right: 3rem;
+				top: 5rem;
+				z-index: 100;
+				background-color: #fff;
+				border-radius: 0.5rem;
+				border: 1px solid lighten($text-color, 30%);
+				box-shadow: 0 4px 0 lighten($text-color, 30%);
+                transition: all 300ms ease;
+                opacity: 0;
+                pointer-events: none;
+				@include flex(column, flex-start, flex-start, 1.5em);
+
+				li {
+					border-bottom: thin solid lighten($text-color, 20%);
+					padding-bottom: 0.3em;
+					width: 100%;
+
+					> * {
+						font-family: family(poppins);
+						color: $text-color;
+						font-weight: weights(light);
+						width: 100%;
+                        transition: all 300ms ease;
+                        
+                        &:hover {
+                            color: $accent-color;
+                        }
+					}
+				}
+
+				li:last-of-type {
+					border: 0;
+				}
+			}
+
+            .show {
+                opacity: 1;
+                pointer-events: all;
             }
-        }
+		}
 
-        &__sdg {
-            margin: 1em 0 0 1em;
-            font-weight: weights(light);
-            width: fit-content;
+		&__sdg {
+			margin: 1em 0 0 1em;
+			font-weight: weights(light);
+			width: fit-content;
 
-            &--four {
-                width: 50%;
-            }
+			&--four {
+				width: 50%;
+			}
 
-            &--sdg {
-                letter-spacing: .2em;
-            }
-        }
+			// &--sdg {
+			//     border: 3px solid green;
+			// }
+		}
 
-        &__image {
-            img {
-                transform: translateX(-50px);
-                width: 90dvw;
-                max-width: 480px;
-            }
-        }
-    }
+		&__image {
+			img {
+				transform: translateX(-50px);
+				width: 90dvw;
+				max-width: 480px;
+			}
+		}
+	}
 
-    @media screen and (max-width: 855px) {
-        // display: none;
-        flex-direction: column-reverse;
-        align-items: unset;
-        justify-content: flex-end;
-        // gap: 3em;
+	@media screen and (max-width: 855px) {
+		// display: none;
+		flex-direction: column-reverse;
+		align-items: unset;
+		justify-content: flex-end;
+		// gap: 3em;
 
-        .enroll-form  {
-            flex: unset;
+		.enroll-form {
+			flex: unset;
+			margin-bottom: 1em;
 
-            &__input,
-            .telephone input {
-                padding-block: 1em;
-            }
-        }
+			&__input,
+			.telephone input {
+				padding-block: 1em;
+			}
+		}
 
-        
+		.side-nav {
+			height: revert;
+			align-self: flex-start;
+			width: 100dvw;
 
+			.secondary-navbar {
+				padding-bottom: 0.5em;
+				height: 100%;
+				margin-top: 0.6em;
+			}
 
-        .side-nav {
-            height: revert;
-            align-self: flex-start;
-            width: 100dvw;
-            
-            .secondary-navbar {
-                padding-bottom: .5em;
-                height: 100%;
-                margin-top: .6em;
-            }
+			&__image,
+			&__sdg {
+				display: none;
+			}
+		}
 
-
-            &__image,
-            &__sdg {
-                display: none;
-            }
-        }
-
-        .form-cta {
-            padding-block: 1em;
-        }
-    }
-}
+		.form-cta {
+			padding-block: 1em;
+		}
+	}
 }
