@@ -4,13 +4,12 @@
   @include flex(column, center, center, 2em);
   gap: 1.5em;
 
-  width: clamp(300px, 90vw, 650px);
-  padding-inline: 2.5em;
+  width: clamp(300px, 100vw, 800px);
+  flex-basis: 65%;
 
   @media screen and (max-width: 800px) {
     height: 100%;
-    padding-inline: 0;
     gap: 1em;
-    width: clamp(300px, 90vw, 450px);
+    width: clamp(300px, 100vw, 450px);
   }
 }

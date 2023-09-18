@@ -11,7 +11,9 @@
   container-name: didYouKnow;
   width: clamp(300px, 90vw, 900px);
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
+    width: clamp(300px, 90vw, 500px);
+
     &__buttons {
       & > * {
         width: 100% !important;
@@ -37,23 +39,20 @@
   }
 
   &__buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    align-items: center;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // align-items: center;
     // width: 90%;
 
+    @include flex(row, flex-start, center, 1.5em);
+
     @container didYouKnow (width <= 600px) {
-      width: 100%;
+      // width: 100%;
       gap: 1em;
-      place-items: center;
+      flex-direction: column;
+      // place-items: center;
 
       > * {
-        width: 100%;
-      }
-    }
-
-    @media screen and (max-width: 700px) {
-      & > * {
         width: 100% !important;
         text-align: center;
       }

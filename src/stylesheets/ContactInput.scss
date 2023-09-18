@@ -2,8 +2,9 @@
 
 .contact__form__input {
   padding: 0.8em 1em;
-  width: 100%;
+  width: clamp(300px, 85%, 600px);
   font-size: $text-cta;
+  resize: none;
 
   outline: none;
   &:not([type="submit"]) {
@@ -17,8 +18,8 @@
       border: 2px solid $accent-color;
     }
   }
-}
 
-.textarea {
-  resize: vertical;
+  @media screen and (max-width: 800px) {
+    width: clamp(300px, 85%, 600px);
+  }
 }
