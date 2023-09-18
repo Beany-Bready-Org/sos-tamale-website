@@ -10,7 +10,6 @@ import bgImg1 from "../assets/images/bg-img1.jpg";
 import bgImg2 from "../assets/images/bg-img2.jpg";
 import bgImg3 from "../assets/images/bg-img3.jpg";
 import bgImg4 from "../assets/images/bg-img4.jpg";
-import bgImg5 from "../assets/images/bg-img4.jpg";
 
 export default function HeroBackground({ sliderSize }) {
   let slides = [
@@ -25,9 +24,6 @@ export default function HeroBackground({ sliderSize }) {
     </SwiperSlide>,
     <SwiperSlide key={bgImg4}>
       <img src={bgImg4} alt="Slide 4" />
-    </SwiperSlide>,
-    <SwiperSlide key={bgImg5}>
-      <img src={bgImg5} alt="Slide 5" />
     </SwiperSlide>,
   ];
 
