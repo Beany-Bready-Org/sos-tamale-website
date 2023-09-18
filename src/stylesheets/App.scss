@@ -130,20 +130,22 @@ a {
 }
 
 .--input {
-  padding: 0.8em 1em;
+  padding: 0.8em 0.8em;
   width: clamp(300px, 85%, 500px);
   font-size: $text-cta;
   resize: none;
-  outline: none;
+  outline: 1px solid $light-secondary-color;
+  border: none;
+  border-radius: 4px;
   &:not([type="submit"]) {
     &:hover {
       cursor: pointer;
-      border: 2px solid $accent-color;
+      outline: 1px solid $accent-color;
     }
 
     &:focus {
       cursor: text;
-      border: 2px solid $accent-color;
+      outline: 1px solid $accent-color;
     }
   }
 }

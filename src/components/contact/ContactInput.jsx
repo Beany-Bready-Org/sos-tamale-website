@@ -8,7 +8,7 @@ export default function ContactInput({ type, placeholder, id }) {
         name={id}
         id={id}
         key={id}
-        className="contact__form__input textarea"
+        className="contact__form__input textarea --input"
       ></textarea>
     );
   } else if (type == "submit") {
@@ -19,7 +19,7 @@ export default function ContactInput({ type, placeholder, id }) {
         id={id}
         name={id}
         key={id}
-        className="contact__form__input --cta"
+        className="contact__form__input --cta --input"
       />
     );
   } else {
@@ -30,7 +30,7 @@ export default function ContactInput({ type, placeholder, id }) {
         id={id}
         name={id}
         key={id}
-        className="contact__form__input"
+        className="contact__form__input --input"
       />
     );
   }

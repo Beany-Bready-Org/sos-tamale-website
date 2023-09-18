@@ -1,25 +1,29 @@
 @import "./config";
 
-.contact__form__input {
-  padding: 0.8em 1em;
-  width: clamp(300px, 85%, 500px);
-  font-size: $text-cta;
-  resize: none;
+// .contact__form__input {
+//   padding: 0.8em 1em;
+//   width: clamp(300px, 85%, 500px);
+//   font-size: $text-cta;
+//   resize: none;
 
-  outline: none;
-  &:not([type="submit"]) {
-    &:hover {
-      cursor: pointer;
-      border: 2px solid $accent-color;
-    }
+//   outline: none;
+//   &:not([type="submit"]) {
+//     &:hover {
+//       cursor: pointer;
+//       border: 2px solid $accent-color;
+//     }
 
-    &:focus {
-      cursor: text;
-      border: 2px solid $accent-color;
-    }
-  }
+//     &:focus {
+//       cursor: text;
+//       border: 2px solid $accent-color;
+//     }
+//   }
 
-  @media screen and (max-width: 800px) {
-    width: clamp(300px, 85%, 600px);
-  }
+//   @media screen and (max-width: 800px) {
+//     width: clamp(300px, 85%, 600px);
+//   }
+// }
+
+.--textarea {
+    
 }
