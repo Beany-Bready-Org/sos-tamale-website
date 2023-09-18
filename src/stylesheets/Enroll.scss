@@ -2,9 +2,16 @@
 
 .enroll-container {
     display: flex;
-    // grid-template-columns: 3fr 1fr 2fr 3.5fr;
-    container-name: enrollContainer;
-    container-type: inline-size;
+    align-items: center;
+    gap: 2em;
+
+    input {
+        font-weight: weights(light);
+    }
+
+    >  * {
+        height: 100vh;
+    }
 	.enroll-form {
         flex: 1;
 		@include flex(column, center, center, 1em);
@@ -31,6 +38,13 @@
 			resize: none;
 			outline: none;
             font-family: family(poppins);
+            border-radius: .5rem;
+            overflow: clip;
+            transition: all 300ms ease;
+
+            &:is(:hover, :focus, :active) {
+                border-color: $accent-color;
+            }
 
           
 		}
@@ -97,9 +111,9 @@
                 width: 50%;
             }
 
-            // &--sdg {
-            //     border: 3px solid green;
-            // }
+            &--sdg {
+                letter-spacing: .2em;
+            }
         }
 
         &__image {
@@ -108,6 +122,48 @@
                 width: 90dvw;
                 max-width: 480px;
             }
+        }
+    }
+
+    @media screen and (max-width: 855px) {
+        // display: none;
+        flex-direction: column-reverse;
+        align-items: unset;
+        justify-content: flex-end;
+        // gap: 3em;
+
+        .enroll-form  {
+            flex: unset;
+
+            &__input,
+            .telephone input {
+                padding-block: 1em;
+            }
+        }
+
+        
+
+
+        .side-nav {
+            height: revert;
+            align-self: flex-start;
+            width: 100dvw;
+            
+            .secondary-navbar {
+                padding-bottom: .5em;
+                height: 100%;
+                margin-top: .6em;
+            }
+
+
+            &__image,
+            &__sdg {
+                display: none;
+            }
+        }
+
+        .form-cta {
+            padding-block: 1em;
         }
     }
 }
