@@ -8,7 +8,8 @@ export default function ContactInput({ type, placeholder, id }) {
         name={id}
         id={id}
         key={id}
-        className="contact__form__input textarea"></textarea>
+        className="contact__form__input textarea"
+      ></textarea>
     );
   } else if (type == "submit") {
     return (

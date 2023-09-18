@@ -1,9 +1,19 @@
 @import "./config";
 
 .gallery__images__image {
+  overflow: hidden;
+  cursor: pointer;
   img {
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
+    transition: 200ms;
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.05);
+    }
   }
 }
