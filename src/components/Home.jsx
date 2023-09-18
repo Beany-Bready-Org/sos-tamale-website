@@ -1,6 +1,5 @@
 import VideoSection from "./VideoSection";
 import CampusesSection from "./CampusesSection";
-import StaffSection from "./StaffSection";
 import DidYouKnow from "./DidYouKnow";
 import Gallery from "./Gallery";
 import Hero from "./Hero";

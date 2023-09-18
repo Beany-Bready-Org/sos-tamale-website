@@ -27,7 +27,7 @@ const Navbar = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		if (location.pathname === "/contact") {
+		if (location.pathname === "/contact" || location.pathname === "/enroll") {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
 		} else {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
@@ -35,7 +35,8 @@ const Navbar = () => {
 	}, [dispatch, location]);
 
   const navDisplayStyles = {
-    display: state === NAV_DISPLAY_ACTIONS.CONTACT ? "none" : "flex",
+    display: state === NAV_DISPLAY_ACTIONS.CONTACT || state === NAV_DISPLAY_ACTIONS.ENROLL ? "none" : "flex",
+	borderBottom: "none"
   };
 
 	return (
