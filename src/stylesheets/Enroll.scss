@@ -1,0 +1,110 @@
+@import "./config";
+
+.enroll-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 3.5fr;
+	.enroll-form {
+        grid-column: span 3;
+		@include flex(column, center, center, 1em);
+
+		&__heading {
+			text-align: center;
+
+			&-header {
+				font-family: family(gelasio);
+				color: $accent-color;
+			}
+
+			&-description {
+				color: $text-color;
+				font-weight: weights(light);
+			}
+		}
+
+		&__input {
+			border: thin solid $text-color;
+			padding: 0.5em 1em;
+			width: clamp(300px, 85%, 600px);
+			font-size: $text-cta;
+			resize: none;
+			outline: none;
+            font-family: family(poppins);
+
+          
+		}
+	}
+
+	.telephone {
+		padding: unset !important;
+
+		display: flex;
+		// align-items: center;
+
+		&__contry-code {
+			@include flex(row, center, center, unset);
+			padding-inline: 0.5em;
+			background-color: $accent-color;
+			color: #fff;
+		}
+
+		input {
+			padding: 0.5em 1em;
+			border: 0;
+			flex: 1;
+		}
+	}
+
+    .form-cta {
+        width: clamp(300px, 85%, 600px);
+        padding-block: .5em;
+        letter-spacing: .1em;
+    }
+
+    // Side nav
+    .side-nav {
+        color: #fff;
+        background-color: $accent-color;
+
+        .secondary-navbar {
+            margin-top: 2em;
+            @include flex(row, space-between, center, unset);
+            padding-inline: 3em;
+
+            .hamburger {
+                width: 40px;
+                height: fit-content;
+                cursor: pointer;
+                @include flex(column, center, unset, .5em);
+
+                .line {
+                    width: 100%;
+                    height: 5px;
+                    background-color: #fff;
+                    border-radius: .1rem;
+                }
+            }
+        }
+
+        &__sdg {
+            margin: 1em 0 0 1em;
+            font-weight: weights(light);
+            width: fit-content;
+
+            &--four {
+                width: 50%;
+            }
+
+            // &--sdg {
+            //     border: 3px solid green;
+            // }
+        }
+
+        &__image {
+            img {
+                transform: translateX(-50px);
+                width: 90dvw;
+                max-width: 450px;
+            }
+        }
+    }
+}
