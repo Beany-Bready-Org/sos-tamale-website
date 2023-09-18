@@ -42,8 +42,8 @@ $font-weights: (
   color: $color;
   padding: $padding;
   border-radius: $b-radius;
-  border: 1px solid $border-color;
-  border-bottom-width: 4px;
+  border: 1px solid $border-color !important;
+  border-bottom-width: 4px !important;
   outline: none;
   cursor: pointer;
   font-size: $text-cta;
@@ -52,6 +52,7 @@ $font-weights: (
   text-transform: uppercase;
   transition: 200ms;
   max-width: 100%;
+  outline: none !important;
 
   @media screen and (max-width: 600px) {
     width: clamp(100px, 80vw, 350px);

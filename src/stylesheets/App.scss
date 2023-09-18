@@ -6,7 +6,6 @@
 @import "./About.scss";
 @import "./Footer.scss";
 
-
 /* Swiper.js variables */
 
 :root {
@@ -128,6 +127,27 @@ a {
 }
 .--cta-secondary {
   @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
+}
+
+.--input {
+  padding: 0.8em 0.8em;
+  width: clamp(300px, 85%, 500px);
+  font-size: $text-cta;
+  resize: none;
+  outline: 1px solid $light-secondary-color;
+  border: none;
+  border-radius: 4px;
+  &:not([type="submit"]) {
+    &:hover {
+      cursor: pointer;
+      outline: 1px solid $accent-color;
+    }
+
+    &:focus {
+      cursor: text;
+      outline: 1px solid $accent-color;
+    }
+  }
 }
 
 // Semantic styles
