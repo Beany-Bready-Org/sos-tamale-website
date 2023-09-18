@@ -4,19 +4,11 @@ import { Routes, Route, redirect } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/contact/Contact";
 import About from "./components/About";
-import Enroll from "./components/Enroll";
+import Enroll from "./components/enroll/Enroll";
 import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 
 export default function App() {
-  // const history = useNavigate();
-
-  // function handleHistory(url) {
-  //   history.push(url);
-  //   console.log(history)
-  // }
-
-  
 
   return (
     <>
