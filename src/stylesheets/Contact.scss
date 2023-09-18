@@ -24,17 +24,18 @@
     position: relative;
     z-index: 1;
     min-height: 100vh;
+    background-color: $accent-color;
 
-    &::after {
-      background-color: $accent-color;
-      width: 100%;
-      margin-left: auto;
-      height: 100%;
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-    }
+    // &::after {
+    //   background-color: $accent-color;
+    //   width: 100%;
+    //   margin-left: auto;
+    //   height: 100%;
+    //   content: "";
+    //   position: absolute;
+    //   z-index: -1;
+    //   inset: 0;
+    // }
 
     &__nav {
       @include flex(row, space-between, center, unset);
@@ -74,10 +75,6 @@
       margin-right: 0;
       height: 15vh;
       min-height: unset;
-
-      &::after {
-        display: none;
-      }
 
       & > img {
         display: none;

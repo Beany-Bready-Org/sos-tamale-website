@@ -6,6 +6,8 @@
 
   width: clamp(300px, 100vw, 800px);
   flex-basis: 65%;
+  padding-block: 3em;
+  margin-right: 8em;
 
   @media screen and (max-width: 800px) {
     height: 100%;
