@@ -90,6 +90,7 @@ nav {
     z-index: 100;
     padding-inline: 1em;
 
+
     &__logo {
       display: flex;
       justify-content: center;
@@ -112,7 +113,7 @@ nav {
       }
     }
 
-    @media screen and (max-width: 680px) {
+    @media screen and (max-width: 780px) {
       margin: unset !important;
     }
 

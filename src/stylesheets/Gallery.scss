@@ -9,6 +9,10 @@
 
   .gallery-section {
     padding-top: 0 !important;
+
+    .gallery-section__images {
+      margin-bottom: 0 !important;
+    }
   }
   .--header {
     margin: 4vmax 0;

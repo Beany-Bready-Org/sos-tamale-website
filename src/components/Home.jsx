@@ -17,7 +17,7 @@ const Home = () => {
         <CampusesSection />
         {/* <StaffSection /> */}
         <DidYouKnow />
-        <GallerySection number={12}/>
+        <GallerySection size={12}/>
       </main>
       <footer>
         <Footer />
