@@ -29,7 +29,7 @@ nav:not(.secondary-navbar) {
         display: inherit;
         gap: 1em;
         list-style: none;
-      
+
 
 
         li {
@@ -86,7 +86,6 @@ nav:not(.secondary-navbar) {
     @include flex(row, space-between, center, unset);
     background-color: #fff;
     width: 100%;
-    // margin: auto;
     min-height: 15vh;
     padding-block: 1vmin;
     position: relative;
@@ -94,6 +93,10 @@ nav:not(.secondary-navbar) {
     container-name: navbar;
     z-index: 100;
     padding-inline: 4em;
+
+    &__items {
+      margin: 0;
+    }
 
     &__logo {
       display: flex;
@@ -263,7 +266,7 @@ nav:not(.secondary-navbar) {
       }
     }
 
-   
+
   }
 }
 
