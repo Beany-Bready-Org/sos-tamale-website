@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import sideNavImage from "../../assets/images/new-side-nav-image.svg";
 import EnrollInput from "./EnrollInput";
 import siteLogo from "../../assets/images/logo2.png";
@@ -16,6 +16,7 @@ const Enroll = () => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
+	const [successMessage, setSuccessMessage] = useState();
 
 	const handleMenu = () => setShowMenu((prev) => !prev);
 
@@ -28,37 +29,61 @@ const Enroll = () => {
 	const wardsNameRef = useRef();
 	const prevSchoolRef = useRef();
 
-	const handleSubmit = (e) => {
+	const showMessageForSomeTime = (errorMessage, successMessage, duration) => {
+		setErrorMessage(errorMessage);
+		setSuccessMessage(successMessage);
+
+		setTimeout(() => {
+			setErrorMessage("");
+			setSuccessMessage("");
+		}, duration);
+	};
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setErrorMessage("");
-		setLoading(true);
 
 		const serviceId = "service_zwdqe87";
 		const templateId = "template_ni7p3hr";
 		const publicKey = "HxfJG_ab_z5fbm2qm";
 
-		emailjs
-			.sendForm(serviceId, templateId, formRef.current, publicKey)
-			.then(
-				(result) => {
-					setLoading(false);
-					console.log(result.text);
-				},
-				(error) => {
-					setLoading(false);
-					setErrorMessage(error.text);
-				}
-			)
-			.catch((error) => {
-				setLoading(false);
-				setErrorMessage(error);
-			});
+		if (
+			nameRef.current.value === "" ||
+			wardsNameRef.current.value === "" ||
+			prevSchoolRef.current.value === "" ||
+			telephoneRef.current.value === "" ||
+			emailRef.current.value === ""
+		) {
+			showMessageForSomeTime("Cannot submit an empty form", "", 2000);
+			setLoading(false);
+			return;
+		}
+
+		try {
+			setLoading(true);
+			await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+			showMessageForSomeTime("", "Email sent successfully", 2000);
+			setLoading(false);
+			nameRef.current.value = "";
+			wardsNameRef.current.value = "";
+			telephoneRef.current.value = "";
+			prevSchoolRef.current.value = "";
+			emailRef.current.value = "";
+		} catch (error) {
+			showMessageForSomeTime(error, "", 2000);
+			setLoading(false);
+		}
 	};
 
 	return (
 		<main className="enroll-container">
 			<form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
-				{errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+				{errorMessage && (
+					<Alert variant="danger" style={{ width: "90%" }}>
+						{errorMessage}
+					</Alert>
+				)}
+				{successMessage && <Alert variant="success">{successMessage}</Alert>}
 				<div className="enroll-form__heading">
 					<h2 className="enroll-form__heading-header --header">
 						Enroll Your Ward
@@ -109,7 +134,9 @@ const Enroll = () => {
 					className="--cta --input"
 					disabled={loading}
 					style={
-						loading ? { backgroundColor: "#ced4da", boxShadow: "none" } : null
+						loading
+							? { backgroundColor: "#ced4da", boxShadow: "none", border: 0 }
+							: null
 					}
 				>
 					{loading ? "Submitting..." : "Make enrollment request"}
@@ -143,6 +170,9 @@ const Enroll = () => {
 						</li>
 						<li className="item">
 							<NavLink to="/contact">Contact</NavLink>
+						</li>
+						<li className="item">
+							<NavLink to="/enroll">Enroll</NavLink>
 						</li>
 					</ul>
 				</nav>

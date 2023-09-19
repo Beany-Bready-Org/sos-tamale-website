@@ -39,6 +39,9 @@ export default function Contact() {
 						<li className="item">
 							<NavLink to="/contact">Contact</NavLink>
 						</li>
+						<li className="item">
+							<NavLink to="/enroll">Enroll</NavLink>
+						</li>
 					</ul>
 				</div>
 				<img src={OverlayImg} alt="Image of parents and their child" />
