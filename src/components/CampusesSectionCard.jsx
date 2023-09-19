@@ -11,7 +11,7 @@ export default function CampusesSectionCard({imgSrc, heading, text, direction}) 
         </p>
       </div>
       <div className="campuses__card__img">
-        <img src={imgSrc} alt={heading} />
+        <img src={imgSrc} alt={heading} loading="lazy"/>
       </div>
     </div>
   );

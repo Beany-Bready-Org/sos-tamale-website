@@ -1,6 +1,10 @@
 @import "./config";
 
 .gallery-section__images__image {
+  background-image: url("../assets/images/placeholder.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   overflow: hidden;
   cursor: pointer;
   img {
@@ -8,6 +12,13 @@
     aspect-ratio: 1;
     object-fit: cover;
     transition: 200ms;
+  }
+
+  &.loaded {
+    filter: none;
+    img {
+      opacity: 1;
+    }
   }
 
   &:hover,
