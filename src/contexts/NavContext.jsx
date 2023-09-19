@@ -19,7 +19,7 @@ export const NAV_DISPLAY_ACTIONS = {
   ABOUT: "about",
   CONTACT: "contact",
   ENROLL: "enroll",
-  GALLERY: "gallery",
+  // GALLERY: "gallery",
 };
 
 const NavContextProvider = ({ children }) => {
@@ -33,8 +33,8 @@ const NavContextProvider = ({ children }) => {
         return (state = NAV_DISPLAY_ACTIONS.CONTACT);
       case NAV_DISPLAY_ACTIONS.ENROLL:
         return (state = NAV_DISPLAY_ACTIONS.ENROLL);
-      case NAV_DISPLAY_ACTIONS.GALLERY:
-        return (state = NAV_DISPLAY_ACTIONS.GALLERY);
+      // case NAV_DISPLAY_ACTIONS.GALLERY:
+      //   return (state = NAV_DISPLAY_ACTIONS.GALLERY);
     }
   };
   const [showNav, setShowNav] = useState(false);
