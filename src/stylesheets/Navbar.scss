@@ -114,7 +114,7 @@ nav:not(.secondary-navbar) {
     }
 
     @media screen and (max-width: 780px) {
-      margin: unset !important;
+      // margin: unset !important;
     }
 
     &__items {
@@ -122,7 +122,7 @@ nav:not(.secondary-navbar) {
       align-items: center;
       gap: 2em;
       list-style: none;
-      width: 90%;
+      // width: 90%;
 
       li:nth-of-type(1) {
         margin-left: auto;

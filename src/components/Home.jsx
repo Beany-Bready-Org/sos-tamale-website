@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <>
       <header>
-        {/* moved nav to App.jsx so it will persist between pages */}
         <Hero />
       </header>
       <main>
