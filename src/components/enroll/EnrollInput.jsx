@@ -1,36 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const EnrollInput = ({ type, placeholder, ref, className, name }) => {
+const EnrollInput = ({ type, placeholder, inputRef, className, nameValue }) => {
 	switch (type) {
 		case "text":
-			return (
-				<input
-					type={type}
-					placeholder={placeholder}
-					ref={ref}
-					className={className}
-					name={name}
-				/>
-			);
 		case "email":
-			return (
-				<input
-					type={type}
-					placeholder={placeholder}
-					ref={ref}
-					className={className}
-					name={name}
-				/>
-			);
 		case "tel":
 			return (
 				<input
 					type={type}
 					placeholder={placeholder}
-					ref={ref}
+					ref={inputRef}
 					className={className}
-					name={name}
+					name={nameValue}
 				/>
 			);
 		default:
@@ -38,9 +20,9 @@ const EnrollInput = ({ type, placeholder, ref, className, name }) => {
 				<input
 					type={type}
 					placeholder={placeholder}
-					ref={ref}
+					ref={inputRef}
 					className={className}
-					name={name}
+					name={nameValue}
 				/>
 			);
 	}
@@ -49,6 +31,8 @@ const EnrollInput = ({ type, placeholder, ref, className, name }) => {
 EnrollInput.propTypes = {
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
+	className: PropTypes.string.isRequired,
+	nameValue: PropTypes.string.isRequired,
 };
 
 export default EnrollInput;

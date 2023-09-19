@@ -10,6 +10,7 @@ nav:not(.secondary-navbar) {
 
   .secondary-nav {
     display: flex;
+    align-items: center;
     background-color: #f0f0f0;
     border-bottom: $light-secondary-color 2px solid;
     padding-block: 0.75vmin;
@@ -28,6 +29,8 @@ nav:not(.secondary-navbar) {
         display: inherit;
         gap: 1em;
         list-style: none;
+      
+
 
         li {
           display: inline-block;
