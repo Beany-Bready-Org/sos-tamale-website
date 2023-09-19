@@ -82,7 +82,7 @@ const Navbar = () => {
         </div>
       </section>
       <section className="main-nav" style={navDisplayStyles}>
-        <div className="main-nav__logo">
+        <div className={show ? "main-nav__logo active" : "main-nav__logo"}>
           <NavLink to="/">
             <img src={logo} alt="Main logo" style={{ width: "80px" }} />
           </NavLink>
