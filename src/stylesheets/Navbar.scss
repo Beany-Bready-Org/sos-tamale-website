@@ -112,6 +112,10 @@ nav {
       }
     }
 
+    @media screen and (max-width: 680px) {
+      margin: unset !important;
+    }
+
     &__items {
       display: inherit;
       align-items: center;
@@ -161,29 +165,47 @@ nav {
 
     @container navbar (max-width: 680px) {
       .main-nav__items {
-        width: 100%;
+        width: 100vw;
         position: absolute;
         flex-direction: column;
-        top: 0.5rem;
-        left: 0;
+        isolation: isolate;
+        inset: 0;
+        padding: 7em 0;
+        gap: unset;
         background-color: #fff;
-        padding: 2em;
-        border-radius: 1rem;
-        box-shadow: 3px 4px 15px rgb(0 0 0 / 0.4);
+        // padding: 2em;
+        // border-radius: 1rem;
         transform: translateY(-100%);
         opacity: 0;
         pointer-events: none;
         transition: all 300ms ease;
 
+        li:nth-child(odd) {
+          background-color: #f0f0f0;
+        }
+
+        li:nth-child(even) {
+          background-color: #fff;
+        }
+
         :is(li:first-of-type, li + li):not(.enroll, .social-items) {
-          width: 60%;
+          width: 100%;
           text-align: center;
-          padding-bottom: 0.5em;
-          border-bottom: 2px solid lighten($accent-color, 20%);
+          cursor: pointer;
+          // border-bottom: 2px solid lighten($accent-color, 20%);
           transition: width 300ms ease;
+          z-index: 1;
+          & > * {
+            padding: 1em;
+            width: 100%;
+            display: inline-block;
+          }
 
           &:hover {
-            width: 100%;
+            background-color: $accent-color;
+            & > * {
+              color: #fff;
+            }
           }
         }
 
@@ -199,12 +221,17 @@ nav {
         .social-items {
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 1em;
+          width: 100%;
+          padding: 3em 0 1em 0;
+          box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
 
           .get-in-touch {
             color: $accent-color;
             font-weight: weights(bold);
             font-family: family(poppins);
+            display: none;
           }
 
           .social-icon--mobile {

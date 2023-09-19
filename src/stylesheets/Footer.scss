@@ -2,11 +2,17 @@
 	width: 100%;
 	background-color: $footer-bg;
 	padding: 0 5em;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	margin-top: 3em;
+	@include flex(row, center, center, unset);	
+	// display: grid;
+	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	padding-bottom: 1em;
 	container-type: inline-size;
 	container-name: footerMain;
+
+	@media screen and (max-width: 680px) {
+		flex-direction: column;
+	}
 
 	&__logo {
 		padding: 3em 0;
@@ -16,7 +22,6 @@
 
 		&-school-name {
 			color: #fff;
-			letter-spacing: 1.1px;
 			font-size: 1.5rem;
 			width: 50%;
 		}

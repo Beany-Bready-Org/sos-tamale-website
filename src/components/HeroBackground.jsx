@@ -6,10 +6,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import bgImg1 from "../assets/images/bg-img1.jpg";
-import bgImg2 from "../assets/images/bg-img2.jpg";
-import bgImg3 from "../assets/images/bg-img3.jpg";
-import bgImg4 from "../assets/images/bg-img4.jpg";
+import bgImg1 from "../assets/images/gallery-images/gallery-img12.png";
+import bgImg2 from "../assets/images/gallery-images/gallery-img13.png";
+import bgImg3 from "../assets/images/gallery-images/gallery-img3.png";
+import bgImg4 from "../assets/images/gallery-images/gallery-img1.png";
+import bgImg5 from "../assets/images/gallery-images/gallery-img4.png";
+import bgImg6 from "../assets/images/gallery-images/gallery-img6.png";
 
 export default function HeroBackground({ sliderSize }) {
   let slides = [
@@ -25,6 +27,12 @@ export default function HeroBackground({ sliderSize }) {
     <SwiperSlide key={bgImg4}>
       <img src={bgImg4} alt="Slide 4" />
     </SwiperSlide>,
+    <SwiperSlide key={bgImg5}>
+      <img src={bgImg5} alt="Slide 5" />
+    </SwiperSlide>,
+    <SwiperSlide key={bgImg6}>
+      <img src={bgImg6} alt="Slide 6" />
+    </SwiperSlide>,
   ];
 
   return (
@@ -36,7 +44,7 @@ export default function HeroBackground({ sliderSize }) {
           clickable: true,
         }}
         autoplay={{
-          delay: 500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}

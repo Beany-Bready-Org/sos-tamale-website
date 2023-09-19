@@ -52,8 +52,8 @@ export default function GallerySection({ number }) {
         SOS HGS Moments
       </h2>
       <div className="gallery-section__images">{galleryImages}</div>
-      <NavLink to="/contact" className="--cta">
-        See more{" "}
+      <NavLink to="/gallery" className="--cta">
+        See more
       </NavLink>
     </section>
   );
