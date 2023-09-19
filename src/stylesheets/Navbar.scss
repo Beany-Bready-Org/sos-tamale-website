@@ -165,6 +165,9 @@ nav:not(.secondary-navbar) {
     }
 
     @container navbar (max-width: 680px) {
+      .main-nav__logo.active {
+          z-index: 1000;
+      }
       .main-nav__items {
         width: 100vw;
         position: absolute;
