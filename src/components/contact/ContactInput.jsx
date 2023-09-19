@@ -1,13 +1,16 @@
 import "../../stylesheets/ContactInput.scss";
+import PropTypes from "prop-types"
 
-export default function ContactInput({ type, placeholder, id }) {
+export default function ContactInput({ type, placeholder, id, inputRef, nameValue
+ }) {
   if (type == "textarea") {
     return (
       <textarea
         placeholder={placeholder}
         name={id}
-        id={id}
+        id={nameValue}
         key={id}
+        ref={inputRef}
         className="contact__form__input textarea --input"
       ></textarea>
     );
@@ -17,8 +20,9 @@ export default function ContactInput({ type, placeholder, id }) {
         type={type}
         value={placeholder}
         id={id}
-        name={id}
+        name={nameValue}
         key={id}
+        ref={inputRef}
         className="contact__form__input --cta --input"
       />
     );
@@ -28,10 +32,17 @@ export default function ContactInput({ type, placeholder, id }) {
         type={type}
         placeholder={placeholder}
         id={id}
-        name={id}
+        name={nameValue}
         key={id}
+        ref={inputRef}
         className="contact__form__input --input"
       />
     );
   }
+}
+
+ContactInput.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired
 }
