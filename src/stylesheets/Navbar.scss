@@ -77,6 +77,8 @@ nav:not(.secondary-navbar) {
     }
   }
 
+  // This is the main navbar
+
   .main-nav {
     @include flex(row, space-between, center, unset);
     background-color: #fff;
@@ -258,22 +260,24 @@ nav:not(.secondary-navbar) {
       }
     }
 
-    &:has(> #{&}__items.active) {
-      .main-nav__hamburger {
-        .line1 {
-          transform: rotate(45deg) translateY(16.5px);
-        }
+   
+  }
+}
 
-        .line2 {
-          width: 20%;
-          opacity: 0;
-          pointer-events: none;
-        }
+.main-nav:has(> .main-nav__items.active) {
+  .main-nav__hamburger {
+    .line1 {
+      transform: rotate(45deg) translateY(16.5px);
+    }
 
-        .line3 {
-          transform: rotate(-45deg) translateY(-16.5px);
-        }
-      }
+    .line2 {
+      width: 20%;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .line3 {
+      transform: rotate(-45deg) translateY(-16.5px);
     }
   }
 }
