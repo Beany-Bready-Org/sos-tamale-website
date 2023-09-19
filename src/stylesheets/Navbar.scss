@@ -82,16 +82,15 @@ nav:not(.secondary-navbar) {
   .main-nav {
     @include flex(row, space-between, center, unset);
     background-color: #fff;
-    width: clamp(300px, 90vw, 1300px);
-    margin: auto;
+    width: 100%;
+    // margin: auto;
     min-height: 15vh;
     padding-block: 1vmin;
     position: relative;
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    padding-inline: 1em;
-
+    padding-inline: 4em;
 
     &__logo {
       display: flex;
@@ -117,6 +116,7 @@ nav:not(.secondary-navbar) {
 
     @media screen and (max-width: 780px) {
       // margin: unset !important;
+      padding-inline: 1.5em;
     }
 
     &__items {
@@ -145,6 +145,7 @@ nav:not(.secondary-navbar) {
       }
       .social-items {
         display: none;
+        border-bottom: 1px solid #f0f0f0;
       }
     }
 
