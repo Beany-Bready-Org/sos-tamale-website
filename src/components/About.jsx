@@ -1,13 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar";
-import aboutJoin from "../assets/images/about-join.jpg";
-import aboutBanner from "../assets/images/banner-about.jpg";
+import aboutBanner from "../assets/images/gallery-images/gallery-img12.png";
 import { Link } from "react-router-dom";
 
 const About = () => {
 	return (
 		<>
-			{/* <Navbar /> */}
 			<section className="about-banner">
 				<div className="about-banner__background">
 					<img src={aboutBanner} alt="About " />

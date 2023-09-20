@@ -10,7 +10,7 @@ export default function Contact() {
   const handleMenu = () => setShowMenu((prev) => !prev);
   return (
     <main className="contact">
-      <div className="contact__img">
+      <div className="contact__img" >
         <div className="contact__img__nav">
           <div className="contact__img__nav__logo">
             <img src={LogoImg} alt="Logo" />

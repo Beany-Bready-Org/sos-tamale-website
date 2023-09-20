@@ -81,24 +81,34 @@
 	padding-block: 1.5em;
 	color: #fff;
 
+	&__org {
+		margin-bottom: 0;
+	}
+
 	.link {
 		color: #fff;
 		font-weight: weights(light);
 	}
 
-	&__org {
-		display: inherit;
-		gap: 0.5em;
+	.authors {
+		margin-bottom: 0 !important;
 	}
 
-	&__nav {
-		list-style: none;
+	.github-reachout {
 		display: inherit;
-		gap: 3em;
+		align-items: center;
+		gap: .4em;
+		color: #fff;
+		font-size: clamp(.5rem, 50vw, 1.2rem);
+
+
+		// .icon {
+		// }
 	}
 
 	@media screen and (width <= 700px) {
 		flex-direction: column;
+		align-items: center;
 		gap: 1em;
 		text-align: center;
 

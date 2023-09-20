@@ -1,6 +1,8 @@
 import React from "react";
 import footerLogo from "../assets/images/logo2.png";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
 	return (
@@ -45,21 +47,14 @@ const Footer = () => {
       <div className="footer-secondary">
         <p className="footer-secondary__org">
           &copy;
-        <NavLink to="#" className="link authors">
-          Beany-Bread Org - Emmanuel Opoku & Alexander Afoko Jnr.
+        <NavLink to="#" className="link authors" target="_blank">
+          Beany-Bready Org - Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
           </NavLink>
         </p>
-        <ul className="footer-secondary__nav">
-          <li>
-            <NavLink to="#" className="link">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="#" className="link">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="#" className="link">Contact</NavLink>
-          </li>
-        </ul>
+		<NavLink to="https://github.com/Beany-Bready-Org/sos-tamale-website" target="_blank" className="github-reachout">
+			GitHub
+			<FontAwesomeIcon icon={faGithub} className="icon"/>
+		</NavLink>
       </div>
 		</>
 	);

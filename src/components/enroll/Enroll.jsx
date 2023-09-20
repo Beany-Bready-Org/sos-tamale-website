@@ -183,7 +183,7 @@ const Enroll = () => {
           </ul>
         </nav>
         <div className="side-nav__image">
-          <img src={sideNavImage} alt="Side nav image" />
+          <img src={sideNavImage} alt="Side nav image" className="side-nav__image-img"/>
         </div>
         <div className="side-nav__sdg">
           <blockquote className="side-nav__sdg--four">

@@ -2,10 +2,13 @@
 
 .contact {
   @include flex(row-reverse, space-between, center, unset);
-
   min-height: 100vh;
   margin: auto;
   position: relative;
+
+  > *{
+    height: 100vh
+  }
 
   &__img {
     @include flex(column, space-between, flex-end, unset);

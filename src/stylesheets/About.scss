@@ -3,185 +3,189 @@
 $max-width: 800px;
 
 .about-banner {
-  align-items: center;
-  height: 80vh;
-  position: relative;
-  isolation: isolate;
+	align-items: center;
+	height: 80vh;
+	position: relative;
+	isolation: isolate;
 
-  &__background {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    img {
-      width: 100%;
-      max-height: 100%;
-      filter: grayscale(60%);
-      object-fit: cover;
-    }
-  }
+	&__background {
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		&-image {
+			width: 100%;
+			max-height: 100%;
+			filter: grayscale(60%);
+			object-fit: cover;
 
-  &__header {
-    position: absolute;
-    inset: max(2em, 2.5em) 0 0 0;
-    margin: auto;
-    text-align: center;
-    color: #fff;
-    font-family: family(poppins);
-    letter-spacing: 1.1px;
-    font-size: clamp(3rem, 50vw, 4rem);
-    height: fit-content;
-    text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
-  }
+			@media screen and (max-width: 700px) {
+				height: 80vh;
+			}
+		}
+	}
+
+	&__header {
+		position: absolute;
+		inset: max(2em, 2.5em) 0 0 0;
+		margin: auto;
+		text-align: center;
+		color: #fff;
+		font-family: family(poppins);
+		letter-spacing: 1.1px;
+		font-size: clamp(3rem, 50vw, 4rem);
+		height: fit-content;
+		text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
+	}
 }
 
 // Mission vision
 .mission-vision {
-  display: grid;
-  gap: 1.5em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 70dvw;
-  max-width: $max-width + 200px;
-  margin: 3em auto;
+	display: grid;
+	gap: 1.5em;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	width: 70dvw;
+	max-width: $max-width + 200px;
+	margin: 3em auto;
 
-  > * {
-    border: thin solid #515559;
-    padding: 2em 1em;
-    border-radius: 1rem;
-    background-color: $very-light-gray;
-    font-family: family(poppins);
-    width: 100%;
-  }
+	> * {
+		border: thin solid #515559;
+		padding: 2em 1em;
+		border-radius: 1rem;
+		background-color: $very-light-gray;
+		font-family: family(poppins);
+		width: 100%;
+	}
 
-  &__header {
-    text-align: center;
-    color: $accent-color;
-  }
+	&__header {
+		text-align: center;
+		color: $accent-color;
+	}
 
-  &__description {
-    color: $text-color-secondary;
-    font-size: 1.3rem;
-    margin-inline: 1em;
-  }
+	&__description {
+		color: $text-color-secondary;
+		font-size: 1.3rem;
+		margin-inline: 1em;
+	}
 }
 
 // Values
 .our-values {
-  @include flex(column, center, center, 1em);
-  color: $accent-color;
-  margin: auto;
-  font-family: family(poppins);
-  width: 90dvw;
-  max-width: $max-width + 250px;
+	@include flex(column, center, center, 1em);
+	color: $accent-color;
+	margin: auto;
+	font-family: family(poppins);
+	width: 90dvw;
+	max-width: $max-width + 250px;
 
-  &__header {
-    font-size: 2.5rem;
-    font-family: family(gelasio);
-    font-weight: weights(bold);
-    position: relative;
+	&__header {
+		font-size: 2.5rem;
+		font-family: family(gelasio);
+		font-weight: weights(bold);
+		position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      margin: auto;
-      width: 50%;
-      height: 6px;
-      background-color: $accent-color;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-  }
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			margin: auto;
+			width: 50%;
+			height: 6px;
+			background-color: $accent-color;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
 
-  &__container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    padding: 1em;
+	&__container {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		padding: 1em;
 
-    > * {
-      padding: 1em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 300ms ease;
-      border-radius: 0.5rem;
+		> * {
+			padding: 1em;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: all 300ms ease;
+			border-radius: 0.5rem;
 
-      &:hover {
-        scale: 1.054;
-        box-shadow: 4px 4px 15px rgb(0 0 0 / 0.5);
-      }
+			&:hover {
+				scale: 1.054;
+				box-shadow: 4px 4px 15px rgb(0 0 0 / 0.5);
+			}
 
-      h2 {
-        font-size: clamp(1rem, 50vw, 1.5rem);
-      }
-      p {
-        text-transform: capitalize;
-        text-align: center;
-        color: $text-color;
-        font-size: 1.2rem;
-      }
-    }
-  }
+			h2 {
+				font-size: clamp(1rem, 50vw, 1.5rem);
+			}
+			p {
+				text-transform: capitalize;
+				text-align: center;
+				color: $text-color;
+				font-size: 1.2rem;
+			}
+		}
+	}
 
-  @media screen and (width <= 680px) {
-    &__container {
-      gap: 1em;
+	@media screen and (width <= 680px) {
+		&__container {
+			gap: 1em;
 
-      > * {
-        box-shadow: 0 4px 0 lighten($text-color, 30%);
-        border: thin solid lighten($text-color, 30%);
-        background-color: $very-light-gray;
-      }
-    }
-  }
+			> * {
+				box-shadow: 0 4px 0 lighten($text-color, 30%);
+				border: thin solid lighten($text-color, 30%);
+				background-color: $very-light-gray;
+			}
+		}
+	}
 }
 
 // Join school section
 .join-school {
-  @include flex(column, center, unset, 1em);
-  border: 2px solid lighten($accent-color, 23%);
-  position: relative;
-  isolation: isolate;
-  width: 90%;
-  max-width: $max-width + 100px;
-  margin: 1em auto 2em;
-  padding: 3em 2em;
-  font-family: family("poppins");
-  border-radius: 1rem;
-  overflow: clip;
-  background: url("../assets/images/about-join.jpg") center center / cover;
+	@include flex(column, center, unset, 1em);
+	border: 2px solid lighten($accent-color, 23%);
+	position: relative;
+	isolation: isolate;
+	width: 90%;
+	max-width: $max-width + 100px;
+	margin: 1em auto 2em;
+	padding: 3em 2em;
+	font-family: family("poppins");
+	border-radius: 1rem;
+	overflow: clip;
+	background: url("../assets/images/gallery-images/gallery-img23.png") center center / cover;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: #029ddfa2;
-    z-index: -1;
-  }
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: #029ddfa2;
+		z-index: -1;
+	}
 
-  &__header {
-    font-family: family(gelasio);
-    color: #fff;
-    font-size: 2rem;
-    width: 70%;
-    text-transform: capitalize;
-    line-height: 1.4;
-    text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
-  }
+	&__header {
+		font-family: family(gelasio);
+		color: #fff;
+		font-size: 2rem;
+		width: 70%;
+		text-transform: capitalize;
+		line-height: 1.4;
+		text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
+	}
 
-  .--cta-secondary {
-    width: fit-content;
-  }
+	.--cta-secondary {
+		width: fit-content;
+	}
 
-  @media screen and (width <= 680px) {
-    align-items: center;
+	@media screen and (width <= 680px) {
+		align-items: center;
 
-    &__header {
-      text-align: center;
-      width: initial;
-    }
-  }
+		&__header {
+			text-align: center;
+			width: initial;
+		}
+	}
 }
