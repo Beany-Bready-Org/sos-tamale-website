@@ -79,7 +79,7 @@ const Enroll = () => {
     <main className="enroll-container">
       <form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
         {errorMessage && (
-          <Alert variant="danger" style={{ width: "90%" }}>
+          <Alert variant="danger">
             {errorMessage}
           </Alert>
         )}
