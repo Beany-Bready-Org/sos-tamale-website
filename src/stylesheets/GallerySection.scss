@@ -4,7 +4,7 @@
   @include flex(column, center, center, unset);
   text-align: center;
   padding-top: 17.5vmin;
-  overflow: scroll;
+  width: 100vw;
 
   .--header {
     margin-bottom: 0.75em;
