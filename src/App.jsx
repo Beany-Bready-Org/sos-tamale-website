@@ -8,9 +8,9 @@ import Gallery from "./components/gallery/Gallery";
 import Enroll from "./components/enroll/Enroll";
 import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
+import RulesRegulations from "./components/rnr/RulesRegulations";
 
 export default function App() {
-
   return (
     <>
       <NavContextProvider>
@@ -21,6 +21,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/enroll" element={<Enroll />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/rules-and-regulations" element={<RulesRegulations />} />
         </Routes>
       </NavContextProvider>
     </>

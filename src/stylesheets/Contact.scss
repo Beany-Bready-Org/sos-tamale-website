@@ -7,8 +7,6 @@
   margin: auto;
   position: relative;
 
-
-
   &__img {
     @include flex(column, space-between, flex-end, unset);
     width: 100%;
@@ -17,7 +15,6 @@
     z-index: 1;
     min-height: 100vh;
     background-color: $accent-color;
-
 
     &__nav {
       @include flex(row, space-between, center, unset);
@@ -30,73 +27,77 @@
       .hamburger {
         width: 40px;
         height: fit-content;
-        @include flex(column, unset, center, .5em);
+        @include flex(column, unset, center, 0.5em);
         cursor: pointer;
 
         .line {
           width: 100%;
           height: 5px;
           background-color: #fff;
-          border-radius: .2rem;
+          border-radius: 0.2rem;
           transition: all 300ms ease;
-
         }
       }
 
       .show {
-				.line1 {
-					transform: rotate(45deg) translateY(18.5px);
-				}
+        .line1 {
+          transform: rotate(45deg) translateY(18.5px);
+        }
 
-				.line2 {
-					pointer-events: none;
-					opacity: 0;
-				}
+        .line2 {
+          pointer-events: none;
+          opacity: 0;
+        }
 
-				.line3 {
-					transform: rotate(-45deg) translateY(-18.5px);
-				}
-			}
+        .line3 {
+          transform: rotate(-45deg) translateY(-18.5px);
+        }
+      }
 
       .secondary-navbar__navbar {
         list-style: none;
-				border: 3px solid white;
-				width: 40%;
-				padding: 1em;
-				position: absolute;
-				right: 3rem;
-				top: 5rem;
-				z-index: 100;
-				background-color: #fff;
-				border-radius: 0.5rem;
-				border: 1px solid lighten($text-color, 30%);
-				box-shadow: 0 4px 0 lighten($text-color, 30%);
-                transition: all 300ms ease;
-                opacity: 0;
-                pointer-events: none;
-				@include flex(column, flex-start, flex-start, 1.5em);
+        // border: 3px solid white;
+        padding: 0;
+        width: 40%;
+        overflow: hidden;
+        // padding: 1em;
+        position: absolute;
+        right: 3rem;
+        top: 7rem;
+        z-index: 100;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid lighten($text-color, 30%);
+        // box-shadow: 0 4px 0 lighten($text-color, 30%);
+        transition: all 300ms ease;
+        opacity: 0;
+        pointer-events: none;
+        @include flex(column, flex-start, flex-start, 0);
 
-				li {
-					border-bottom: thin solid lighten($text-color, 20%);
-					padding-bottom: 0.3em;
-					width: 100%;
+        li {
+          width: 100%;
 
-					> * {
-						font-family: family(poppins);
-						color: $text-color;
-						font-weight: weights(light);
-						width: 100%;
-                        transition: all 300ms ease;
-                        
-                        &:hover {
-                            color: $accent-color;
-                        }
-					}
-				}
+          > * {
+            font-family: family(poppins);
+            color: $text-color;
+            font-weight: weights(light);
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            transition: all 300ms ease;
+            padding: 0.8rem 1rem;
+            border-bottom: thin solid lighten($text-color, 20%);
 
-				li:last-of-type {
-					border: 0;
-				}
+            &:hover {
+              background-color: $accent-color;
+              color: #fff;
+            }
+          }
+        }
+
+        li:last-of-type a {
+          border: 0;
+        }
 
         // display: none;
       }
@@ -143,7 +144,6 @@
       &__nav {
         width: 100%;
         background-color: $accent-color;
-        
       }
     }
   }

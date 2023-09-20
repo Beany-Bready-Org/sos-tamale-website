@@ -39,7 +39,7 @@ $font-weights: (
 
 @mixin button($color, $border-color, $background-color, $padding, $b-radius) {
   background-color: $background-color;
-  color: $color;
+  color: $color !important;
   padding: $padding;
   border-radius: $b-radius;
   border: 1px solid $border-color !important;
@@ -52,6 +52,7 @@ $font-weights: (
   transition: 200ms;
   max-width: 100%;
   outline: none !important;
+  text-align: center;
 
   @media screen and (max-width: 600px) {
     width: clamp(100px, 80vw, 350px);
@@ -62,8 +63,9 @@ $font-weights: (
   &:hover,
   &:focus {
     background-color: $background-color;
-    border-color: $border-color;
-    color: $color;
+    border: 1px solid $border-color !important;
+    border-bottom: 4px solid $border-color !important;
+    color: $color !important;
   }
 }
 
@@ -86,7 +88,7 @@ $text-color-secondary: #515559;
 $text-secondary-color: #212529;
 $light-secondary-color: #bcc3ca;
 $very-light-gray: #f5f5f5;
-$footer-bg-secondary: #0096CD;
+$footer-bg-secondary: #0096cd;
 $footer-bg: $accent-color;
 
 $btn-tiny: 0.875em 1.5em;

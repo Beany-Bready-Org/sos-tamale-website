@@ -1,5 +1,4 @@
 @import "./config";
-
 nav:not(.secondary-navbar) {
   position: fixed;
   width: 100%;
@@ -146,7 +145,8 @@ nav:not(.secondary-navbar) {
           transition: color 300ms ease;
           font-size: $text-small;
 
-          &:hover {
+          &:hover,
+          &:focus {
             color: color(active);
           }
         }
