@@ -65,6 +65,8 @@ $font-weights: (
   &:focus {
     background-color: $background-color;
     color: $color !important;
+    border: 1px solid $border-color;
+    border-bottom: 4px solid $border-color;
   }
 }
 
