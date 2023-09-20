@@ -8,7 +8,7 @@ const About = () => {
 		<>
 			<section className="about-banner">
 				<div className="about-banner__background">
-					<img src={aboutBanner} alt="About " />
+					<img src={aboutBanner} alt="About" className="about-banner__background-image"/>
 				</div>
 				<h1 className="about-banner__header">We are SOS HGS</h1>
 			</section>
