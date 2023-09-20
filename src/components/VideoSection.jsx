@@ -1,7 +1,7 @@
-import React from "react";
 import IntroVideo from "./IntroVideo";
 import "../stylesheets/VideoSection.scss";
 import PlayContext from "../contexts/PlayContext";
+import { Link } from "react-router-dom";
 
 const VideoSection = () => {
   return (
@@ -12,6 +12,9 @@ const VideoSection = () => {
           Watch the intro video below about our prestigious institution.
         </p>
         <IntroVideo />
+        <Link to="/about" className="--cta-secondary">
+          Learn more about us
+        </Link>
       </section>
     </PlayContext>
   );

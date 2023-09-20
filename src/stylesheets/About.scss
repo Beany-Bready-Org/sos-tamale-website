@@ -172,11 +172,8 @@ $max-width: 800px;
     text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
   }
 
-  .enroll {
-    text-transform: capitalize;
+  .--cta-secondary {
     width: fit-content;
-    padding-block: 0.5em;
-    padding-inline: 2em;
   }
 
   @media screen and (width <= 680px) {

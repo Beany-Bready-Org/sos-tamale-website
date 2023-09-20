@@ -98,7 +98,7 @@ select {
 // Utility styles
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 
   &:focus {
     color: $accent-color !important;
@@ -127,6 +127,7 @@ a {
 }
 .--cta-secondary {
   @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
+  @include button-hover($accent-color, #aaa, #eee);
 }
 
 .--input {

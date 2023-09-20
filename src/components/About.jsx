@@ -59,7 +59,7 @@ const About = () => {
         <h2 className="join-school__header">
           Want to join our noble institution?
         </h2>
-        <Link to="/enroll" className="--cta-secondary enroll">
+        <Link to="/enroll" className="--cta-secondary">
           Enroll Now!!
         </Link>
       </div>
