@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import aboutBanner from "../assets/images/gallery-images/gallery-img12.png";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const About = () => {
 	return (
@@ -61,6 +62,7 @@ const About = () => {
           Enroll Now!!
         </Link>
       </div>
+	  <Footer />
 		</>
 	);
 };
