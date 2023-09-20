@@ -42,12 +42,10 @@ $font-weights: (
   color: $color !important;
   padding: $padding;
   border-radius: $b-radius;
-  // border: 1px solid $border-color !important;
-  // border-bottom-width: 4px !important;
+  border: 0;
   box-shadow: 0 4px 0 #0075a3;
   cursor: pointer;
   font-size: $text-cta;
-  // width: fit-content;
   font-weight: weights(bold);
   text-transform: uppercase;
   transition: 200ms;

@@ -12,7 +12,7 @@ const VideoSection = () => {
           Watch the intro video below about our prestigious institution.
         </p>
         <IntroVideo />
-        <Link to="/about" className="--cta-secondary">
+        <Link to="/about" className="--cta">
           Learn more about us
         </Link>
       </section>

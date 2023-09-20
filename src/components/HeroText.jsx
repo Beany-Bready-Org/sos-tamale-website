@@ -11,7 +11,7 @@ export default function HeroText() {
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat,
 				voluptatibus?
 			</p>
-			<button className="hero__text__button --cta">
+			<button className="--cta">
 				<Link to="/enroll" style={{color: "#FFF"}}>
             Enroll Now
         </Link>
