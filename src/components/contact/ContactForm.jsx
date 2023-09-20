@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import { useRef, useState } from "react";
 import "../../stylesheets/ContactForm.scss";
 import ContactInput from "./ContactInput";
 import emailjs from "@emailjs/browser";

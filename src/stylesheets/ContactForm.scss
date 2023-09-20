@@ -9,6 +9,24 @@
   padding-block: 3em;
   margin-right: 4em;
 
+  .success {
+    outline: $success-color thin solid;
+    padding: .7em 0;
+    border-radius: .5rem;
+    background-color: lighten($success-color, 30%);
+    color: $success-color;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center
+  }
+
+  .error {
+    @extend .success;
+    background-color: lighten($error-color, 30%);
+    color: $error-color;
+    outline: $error-color thin solid;
+  }
+
   @media screen and (max-width: 800px) {
     height: 100%;
     gap: 1em;
