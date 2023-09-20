@@ -32,6 +32,7 @@ $max-width: 800px;
 		font-size: clamp(3rem, 50vw, 4rem);
 		height: fit-content;
 		text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
+    text-transform: capitalize;
 	}
 }
 
