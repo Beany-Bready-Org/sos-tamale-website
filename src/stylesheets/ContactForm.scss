@@ -21,6 +21,7 @@
     background-color: lighten($success-color, 30%);
     color: $success-color;
     width: 90%;
+    max-width: 500px;
     margin: 0 auto;
     text-align: center
   }
