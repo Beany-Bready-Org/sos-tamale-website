@@ -33,8 +33,8 @@ export default function ContactForm() {
 		e.preventDefault();
 
 		const templateId = "template_zlkgrnn";
-		const serviceId = "HxfJG_ab_z5fbm2qm";
-		const publicKey = "service_k9t86zv";
+		const serviceId = "service_k9t86zv";
+		const publicKey = "HxfJG_ab_z5fbm2qm";
 
 		const formData = {
 			from_name: fullNameRef.current.value,
@@ -64,6 +64,7 @@ export default function ContactForm() {
 		} finally {
 			setLoading(false);
 		}
+
 	};
 
 	return (
@@ -73,35 +74,38 @@ export default function ContactForm() {
 					{errorMessage ? errorMessage : successMessage}
 				</p>
 			) : null}
-			<h1 className="--header" style={{ color: "black" }}>
+			<div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+      <h1 className="--header contact-header" style={{ color: "black" }}>
 				Contact Us
 			</h1>
+      <p className="contact-des">Contact us now for further enquiries.</p>
+      </div>
 			<ContactInput
 				type={"text"}
 				placeholder={"Type your full name here"}
 				id={"name"}
-				name="from_name"
+				nameValue="from_name"
 				inputRef={fullNameRef}
 			/>
 			<ContactInput
 				type={"email"}
 				placeholder={"Type your email here"}
 				id={"email"}
-				name="from_email"
+				nameValue="from_email"
 				inputRef={emailRef}
 			/>
 			<ContactInput
 				type={"text"}
 				placeholder={"Type your subject here"}
 				id={"subject"}
-				name="from_subject"
+				nameValue="from_subject"
 				inputRef={subjectRef}
 			/>
 			<ContactInput
 				type={"textarea"}
 				placeholder={"Type your message here..."}
 				id={"message"}
-				name="message"
+				nameValue="message"
 				inputRef={messageRef}
 			/>
 			<ContactInput

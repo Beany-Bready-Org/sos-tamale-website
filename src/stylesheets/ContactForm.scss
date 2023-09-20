@@ -9,6 +9,11 @@
   padding-block: 3em;
   margin-right: 4em;
 
+  .contact-header {
+    color: $accent-color !important;
+    font-size: 3rem !important;
+  }
+
   .success {
     outline: $success-color thin solid;
     padding: .7em 0;
