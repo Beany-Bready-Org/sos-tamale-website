@@ -115,6 +115,9 @@ const Navbar = () => {
           <li className="item">
             <NavLink to="/gallery">Gallery</NavLink>
           </li>
+          <li className="item">
+            <NavLink to="/rules-and-regulations">Guidelines</NavLink>
+          </li>
           <li className="item social-items">
             <p className="get-in-touch">Social Media:</p>
             <Link to="#" className="social-icon--mobile">

@@ -98,7 +98,7 @@ export default function GallerySection({ size }) {
   return (
     <section className="gallery-section">
       <h2 className="--header" style={{ color: "black" }}>
-        SOS HGS Moments
+        SOS Tamale Gallery
       </h2>
       <div className="gallery-section__images">{galleryImages}</div>
       <NavLink to="/gallery" className="--cta">

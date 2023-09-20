@@ -13,182 +13,188 @@ import emailjs from "@emailjs/browser";
 import { Alert } from "react-bootstrap";
 
 const Enroll = () => {
-	const [showMenu, setShowMenu] = useState(false);
-	const [loading, setLoading] = useState(false);
-	const [errorMessage, setErrorMessage] = useState("");
-	const [successMessage, setSuccessMessage] = useState();
+  const [showMenu, setShowMenu] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState();
 
-	const handleMenu = () => setShowMenu((prev) => !prev);
+  const handleMenu = () => setShowMenu((prev) => !prev);
 
-	// Form ref
-	const formRef = useRef();
-	// Input refs
-	const nameRef = useRef();
-	const emailRef = useRef();
-	const telephoneRef = useRef();
-	const wardsNameRef = useRef();
-	const prevSchoolRef = useRef();
+  // Form ref
+  const formRef = useRef();
+  // Input refs
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const telephoneRef = useRef();
+  const wardsNameRef = useRef();
+  const prevSchoolRef = useRef();
 
-	const showMessageForSomeTime = (errorMessage, successMessage, duration) => {
-		setErrorMessage(errorMessage);
-		setSuccessMessage(successMessage);
+  const showMessageForSomeTime = (errorMessage, successMessage, duration) => {
+    setErrorMessage(errorMessage);
+    setSuccessMessage(successMessage);
 
-		setTimeout(() => {
-			setErrorMessage("");
-			setSuccessMessage("");
-		}, duration);
-	};
+    setTimeout(() => {
+      setErrorMessage("");
+      setSuccessMessage("");
+    }, duration);
+  };
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		setErrorMessage("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
 
-		const serviceId = "service_zwdqe87";
-		const templateId = "template_ni7p3hr";
-		const publicKey = "HxfJG_ab_z5fbm2qm";
+    const serviceId = "service_zwdqe87";
+    const templateId = "template_ni7p3hr";
+    const publicKey = "HxfJG_ab_z5fbm2qm";
 
-		if (
-			nameRef.current.value === "" ||
-			wardsNameRef.current.value === "" ||
-			prevSchoolRef.current.value === "" ||
-			telephoneRef.current.value === "" ||
-			emailRef.current.value === ""
-		) {
-			showMessageForSomeTime("Cannot submit an empty form", "", 2000);
-			setLoading(false);
-			return;
-		}
+    if (
+      nameRef.current.value === "" ||
+      wardsNameRef.current.value === "" ||
+      prevSchoolRef.current.value === "" ||
+      telephoneRef.current.value === "" ||
+      emailRef.current.value === ""
+    ) {
+      showMessageForSomeTime("Cannot submit an empty form", "", 2000);
+      setLoading(false);
+      return;
+    }
 
-		try {
-			setLoading(true);
-			await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
-			showMessageForSomeTime("", "Email sent successfully", 2000);
-			setLoading(false);
-			nameRef.current.value = "";
-			wardsNameRef.current.value = "";
-			telephoneRef.current.value = "";
-			prevSchoolRef.current.value = "";
-			emailRef.current.value = "";
-		} catch (error) {
-			showMessageForSomeTime(error, "", 2000);
-			setLoading(false);
-		}
-	};
+    try {
+      setLoading(true);
+      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      showMessageForSomeTime("", "Email sent successfully", 2000);
+      setLoading(false);
+      nameRef.current.value = "";
+      wardsNameRef.current.value = "";
+      telephoneRef.current.value = "";
+      prevSchoolRef.current.value = "";
+      emailRef.current.value = "";
+    } catch (error) {
+      showMessageForSomeTime(error, "", 2000);
+      setLoading(false);
+    }
+  };
 
-	return (
-		<main className="enroll-container">
-			<form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
-				{errorMessage && (
-					<Alert variant="danger" style={{ width: "90%" }}>
-						{errorMessage}
-					</Alert>
-				)}
-				{successMessage && <Alert variant="success">{successMessage}</Alert>}
-				<div className="enroll-form__heading">
-					<h2 className="enroll-form__heading-header --header">
-						Enroll Your Ward
-					</h2>
-					<p className="enroll-form__heading-description --description">
-						Please fill out each box to provide information about your ward.
-					</p>
-				</div>
-				<EnrollInput
-					type="text"
-					placeholder="Enter Your Name Here.."
-					className="enroll-form__input --input"
-					inputRef={nameRef}
-					nameValue="from_name"
-				/>
-				<EnrollInput
-					type="email"
-					placeholder="Enter Your Email Here.."
-					className="enroll-form__input --input"
-					inputRef={emailRef}
-					nameValue="from_email"
-				/>
-				<div className="enroll-form__input telephone --input">
-					<div className="telephone__contry-code">+233</div>
-					<EnrollInput
-						type="tel"
-						placeholder="Enter your phone number here"
-						className="--input"
-						inputRef={telephoneRef}
-						nameValue="from_contact"
-					/>
-				</div>
-				<EnrollInput
-					type="text"
-					placeholder="Enter Your Ward's Name here..."
-					className="enroll-form__input --input"
-					inputRef={wardsNameRef}
-					nameValue="from_ward"
-				/>
-				<EnrollInput
-					type="text"
-					placeholder="What's your ward's previous school...?"
-					className="enroll-form__input --input"
-					inputRef={prevSchoolRef}
-					nameValue="from_school"
-				/>
-				<button
-					className="--cta --input"
-					disabled={loading}
-					style={
-						loading
-							? { backgroundColor: "#ced4da", boxShadow: "none", border: 0 }
-							: null
-					}
-				>
-					{loading ? "Submitting..." : "Make enrollment request"}
-				</button>
-			</form>
-			<header className="side-nav">
-				<nav className="secondary-navbar">
-					<div className="logo">
-						<img src={siteLogo} alt="Site logo" style={{ width: "100px" }} />
-					</div>
-					<div
-						className={showMenu ? "hamburger show" : "hamburger"}
-						onClick={handleMenu}
-					>
-						<div className="line line1"></div>
-						<div className="line line2"></div>
-						<div className="line line3"></div>
-					</div>
-					<ul
-						className={
-							showMenu
-								? "secondary-navbar__navbar show"
-								: "secondary-navbar__navbar"
-						}
-					>
-						<li className="item">
-							<NavLink to="/">Home</NavLink>
-						</li>
-						<li className="item">
-							<NavLink to="/about">About Us</NavLink>
-						</li>
-						<li className="item">
-							<NavLink to="/contact">Contact</NavLink>
-						</li>
-						<li className="item">
-							<NavLink to="/enroll">Enroll</NavLink>
-						</li>
-					</ul>
-				</nav>
-				<div className="side-nav__image">
-					<img src={sideNavImage} alt="Side nav image" />
-				</div>
-				<div className="side-nav__sdg">
-					<blockquote className="side-nav__sdg--four">
-						”Ensure inclusive and equitable quality education and promote
-						lifelong learning opportunities for all”
-					</blockquote>
-					<b className="side-nav__sdg--sdg">SDG 4</b>
-				</div>
-			</header>
-		</main>
-	);
+  return (
+    <main className="enroll-container">
+      <form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
+        {errorMessage && (
+          <Alert variant="danger" style={{ width: "90%" }}>
+            {errorMessage}
+          </Alert>
+        )}
+        {successMessage && <Alert variant="success">{successMessage}</Alert>}
+        <div className="enroll-form__heading">
+          <h2 className="enroll-form__heading-header --header">
+            Enroll Your Ward
+          </h2>
+          <p className="enroll-form__heading-description --description">
+            Please fill out each box to provide information about your ward.
+          </p>
+        </div>
+        <EnrollInput
+          type="text"
+          placeholder="Enter Your Name Here.."
+          className="enroll-form__input --input"
+          inputRef={nameRef}
+          nameValue="from_name"
+        />
+        <EnrollInput
+          type="email"
+          placeholder="Enter Your Email Here.."
+          className="enroll-form__input --input"
+          inputRef={emailRef}
+          nameValue="from_email"
+        />
+        <div className="enroll-form__input telephone --input">
+          <div className="telephone__contry-code">+233</div>
+          <EnrollInput
+            type="tel"
+            placeholder="Enter your phone number here"
+            className="--input"
+            inputRef={telephoneRef}
+            nameValue="from_contact"
+          />
+        </div>
+        <EnrollInput
+          type="text"
+          placeholder="Enter Your Ward's Name here..."
+          className="enroll-form__input --input"
+          inputRef={wardsNameRef}
+          nameValue="from_ward"
+        />
+        <EnrollInput
+          type="text"
+          placeholder="What's your ward's previous school...?"
+          className="enroll-form__input --input"
+          inputRef={prevSchoolRef}
+          nameValue="from_school"
+        />
+        <button
+          className="--cta --input"
+          disabled={loading}
+          style={
+            loading
+              ? { backgroundColor: "#ced4da", boxShadow: "none", border: 0 }
+              : null
+          }
+        >
+          {loading ? "Submitting..." : "Make enrollment request"}
+        </button>
+      </form>
+      <header className="side-nav">
+        <nav className="secondary-navbar">
+          <div className="logo">
+            <img src={siteLogo} alt="Site logo" style={{ width: "100px" }} />
+          </div>
+          <div
+            className={showMenu ? "hamburger show" : "hamburger"}
+            onClick={handleMenu}
+          >
+            <div className="line line1"></div>
+            <div className="line line2"></div>
+            <div className="line line3"></div>
+          </div>
+          <ul
+            className={
+              showMenu
+                ? "secondary-navbar__navbar show"
+                : "secondary-navbar__navbar"
+            }
+          >
+            <li className="item">
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li className="item">
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li className="item">
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+            <li className="item">
+              <NavLink to="/enroll">Enroll</NavLink>
+            </li>
+            <li className="item">
+              <NavLink to="/gallery">Gallery</NavLink>
+            </li>
+            <li className="item">
+              <NavLink to="/rules-and-regulations">Guidelines</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <div className="side-nav__image">
+          <img src={sideNavImage} alt="Side nav image" />
+        </div>
+        <div className="side-nav__sdg">
+          <blockquote className="side-nav__sdg--four">
+            ”Ensure inclusive and equitable quality education and promote
+            lifelong learning opportunities for all”
+          </blockquote>
+          <b className="side-nav__sdg--sdg">SDG 4</b>
+        </div>
+      </header>
+    </main>
+  );
 };
 
 export default Enroll;
