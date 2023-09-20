@@ -42,8 +42,9 @@ $font-weights: (
   color: $color !important;
   padding: $padding;
   border-radius: $b-radius;
-  border: 1px solid $border-color !important;
-  border-bottom-width: 4px !important;
+  // border: 1px solid $border-color !important;
+  // border-bottom-width: 4px !important;
+  box-shadow: 0 4px 0 #0075a3;
   cursor: pointer;
   font-size: $text-cta;
   // width: fit-content;
@@ -63,8 +64,6 @@ $font-weights: (
   &:hover,
   &:focus {
     background-color: $background-color;
-    border: 1px solid $border-color !important;
-    border-bottom: 4px solid $border-color !important;
     color: $color !important;
   }
 }
