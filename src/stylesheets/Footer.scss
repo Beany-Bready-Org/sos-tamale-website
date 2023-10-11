@@ -2,7 +2,6 @@
 	width: 100%;
 	background-color: $footer-bg;
 	padding: 0 5em;
-	margin-top: 3em;
 	@include flex(row, center, center, unset);	
 	// display: grid;
 	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

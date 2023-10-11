@@ -41,9 +41,10 @@ $max-width: 800px;
 	display: grid;
 	gap: 1.5em;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	width: 70dvw;
+	width: 90dvw;
 	max-width: $max-width + 200px;
 	margin: 3em auto;
+	text-align: center;
 
 	> * {
 		border: thin solid #515559;
@@ -144,7 +145,7 @@ $max-width: 800px;
 // Join school section
 .join-school {
 	@include flex(column, center, unset, 1em);
-	border: 2px solid lighten($accent-color, 23%);
+	// border: 2px solid lighten($accent-color, 23%);
 	position: relative;
 	isolation: isolate;
 	width: 90%;
@@ -161,7 +162,7 @@ $max-width: 800px;
 		content: "";
 		position: absolute;
 		inset: 0;
-		background-color: #029ddfa2;
+		background-color: #11668a62;
 		z-index: -1;
 	}
 

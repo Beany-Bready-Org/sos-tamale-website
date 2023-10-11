@@ -4,6 +4,7 @@ import DidYouKnow from "./DidYouKnow";
 import GallerySection from "./GallerySection";
 import Hero from "./Hero";
 import Footer from "./Footer";
+import MapEmbed from "./MapEmbed";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         {/* <StaffSection /> */}
         <DidYouKnow />
         <GallerySection size={12}/>
+        <MapEmbed />
       </main>
       <footer>
         <Footer />
