@@ -1,291 +1,341 @@
 @import "./config";
-nav:not(.secondary-navbar) {
-  position: fixed;
-  width: 100%;
-  z-index: 100;
-  // isolation: isolate;
-  background-color: #fff;
-  border-bottom: 2px $light-secondary-color solid;
+nav:not(.secondary-navbar):not(.dropdown-menu) {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	background-color: #fff;
+	border-bottom: 2px $light-secondary-color solid;
 
-  .secondary-nav {
-    display: flex;
-    align-items: center;
-    background-color: #f0f0f0;
-    border-bottom: $light-secondary-color 2px solid;
-    padding-block: 0.75vmin;
-    min-height: 5vh;
+	.secondary-nav {
+		display: flex;
+		align-items: center;
+		background-color: #f0f0f0;
+		border-bottom: $light-secondary-color 2px solid;
+		padding-block: 0.75vmin;
+		min-height: 5vh;
 
-    @media screen and (max-width: 680px) {
-      display: none !important;
-    }
+		@media screen and (max-width: 680px) {
+			display: none !important;
+		}
 
-    &__text {
-      @include flex(row, space-between, center, unset);
-      width: clamp(300px, 90vw, 1300px);
-      margin: auto;
+		&__text {
+			@include flex(row, space-between, center, unset);
+			width: clamp(300px, 90vw, 1300px);
+			margin: auto;
 
-      &__social {
-        display: inherit;
-        gap: 1em;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+			&__social {
+				display: inherit;
+				gap: 1em;
+				list-style: none;
+				margin: 0;
+				padding: 0;
 
+				li {
+					display: inline-block;
 
+					> * {
+						color: $accent-color;
+						font-weight: weights(bold);
+					}
+				}
+			}
 
-        li {
-          display: inline-block;
+			&-info {
+				display: flex;
+				gap: 1em;
 
-          > * {
-            color: $accent-color;
-            font-weight: weights(bold);
+				> * {
+					display: inherit;
+					align-items: center;
+					gap: 0.5em;
+					color: $text-color;
+					transition: all 300ms ease;
+
+					&:hover:not([title]) {
+						color: $accent-color;
+						text-decoration: underline;
+					}
+				}
+
+				[title="Call Us Now"] {
+					color: $accent-color;
+				}
+			}
+
+			@media screen and (width <= 680px) {
+				&-info {
+					width: 100%;
+					justify-content: space-between;
+					flex-direction: column;
+					align-items: center;
+					gap: 0;
+				}
+
+				&__social {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// This is the main navbar
+	.main-nav {
+		@include flex(row, space-between, center, unset);
+		background-color: #fff;
+		width: 100%;
+		min-height: 15vh;
+		padding-block: 1vmin;
+		position: relative;
+		container-type: inline-size;
+		container-name: navbar;
+		z-index: 100;
+		padding-inline: 4em;
+
+		&__items {
+			margin: 0;
+
+			// List item that generates the drop down menu
+			.--drop-down-invoker {
+				cursor: pointer;
+				position: relative;
+
+				// When hovered upon
+				&:is(:hover, :focus-within) {
+					.dropdown-menu {
+						opacity: 1;
+					}
+				}
+
+				span {
+					text-transform: capitalize;
+					& :is(:hover, :focus-visible) {
+						color: color(active);
+					}
+				}
+
+				// Drop down menu
+				.dropdown-menu {
+          width: fit-content;
+					position: absolute;
+					right: 0;
+					display: flex;
+					flex-direction: column;
+					padding: 0;
+					overflow: clip;
+					transition: all 300ms ease;
+					opacity: 0;
+          box-shadow: 3px 4px 15px rgb(0 0 0 / .4);
+
+					> * {
+						padding: 0.51em;
+
+						&:is(:hover, :focus-visible) {
+							background-color: lighten($light-secondary-color, 15%);
+						}
+					}
+
+          > * + * {
+            border-top: thin solid $light-secondary-color;
+          }
+				}
+			}
+		}
+
+		&__logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+
+			img {
+				width: clamp(10em, 45vmin, 17.5em);
+			}
+
+			& > span {
+				font-size: $text-medium;
+				line-height: 110%;
+				max-width: 20ch;
+				color: $accent-color;
+
+				span {
+					text-shadow: 0 0 2px $accent-color;
+				}
+			}
+		}
+
+		@media screen and (max-width: 780px) {
+			padding-inline: 1.5em;
+		}
+
+		&__items {
+			display: inherit;
+			align-items: center;
+			gap: 2em;
+			list-style: none;
+
+			li:nth-of-type(1) {
+				margin-left: auto;
+			}
+
+			li {
+				a {
+					color: color(inactive);
+					text-decoration: none;
+					font-weight: weights(regular);
+					transition: color 300ms ease;
+					font-size: $text-small;
+
+					&:hover,
+					&:focus {
+						color: color(active);
+					}
+				}
+			}
+			.social-items {
+				display: none;
+				border-bottom: 1px solid #f0f0f0;
+			}
+		}
+
+		&__hamburger {
+			z-index: 100;
+			width: 40px;
+			height: fit-content;
+			display: inherit;
+			flex-direction: column;
+			gap: 0.4em;
+			display: none;
+			cursor: pointer;
+
+			.hamburger-line {
+				width: 100%;
+				height: 5px;
+				background-color: $accent-color;
+				border-radius: 0.5rem;
+			}
+		}
+
+		@container navbar (max-width: 680px) {
+			.main-nav__logo.active {
+				z-index: 1000;
+			}
+			.main-nav__items {
+				width: 100vw;
+				position: absolute;
+				flex-direction: column;
+				isolation: isolate;
+				inset: 0;
+				padding: 7em 0;
+				gap: unset;
+				background-color: #fff;
+				// padding: 2em;
+				// border-radius: 1rem;
+				transform: translateY(-100%);
+				opacity: 0;
+				pointer-events: none;
+				transition: all 300ms ease;
+
+        .--drop-down-invoker {
+          margin: 0;
+          padding: 0;
+          .dropdown-menu {
+            max-width: 300px;
+            inset: 0;
+            margin: auto;
+
+            // > *{
+            // }
           }
         }
-      }
 
-      &-info {
-        display: flex;
-        gap: 1em;
+				li:nth-child(odd) {
+					background-color: #f0f0f0;
+				}
 
-        > * {
-          display: inherit;
-          align-items: center;
-          gap: 0.5em;
-          color: $text-color;
-          transition: all 300ms ease;
+				li:nth-child(even) {
+					background-color: #fff;
+				}
 
-          &:hover:not([title]) {
-            color: $accent-color;
-            text-decoration: underline;
-          }
-        }
+				:is(li:first-of-type, li + li):not(.enroll, .social-items) {
+					width: 100%;
+					text-align: center;
+					cursor: pointer;
+					transition: width 300ms ease;
+					z-index: 1;
+					& > * {
+						padding: 1em;
+						width: 100%;
+						display: inline-block;
+					}
 
-        [title="Call Us Now"] {
-          color: $accent-color;
-        }
-      }
+					&:hover {
+						background-color: $accent-color;
+						& > * {
+							color: #fff;
+						}
+					}
+				}
 
-      @media screen and (width <= 680px) {
-        &-info {
-          width: 100%;
-          justify-content: space-between;
-          flex-direction: column;
-          align-items: center;
-          gap: 0;
-        }
+				:is(li, .enroll) {
+					margin-left: unset;
+				}
 
-        &__social {
-          display: none;
-        }
-      }
-    }
-  }
+				.enroll {
+					width: 100%;
+				}
 
-  // This is the main navbar
+				// Sicial icons
+				.social-items {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 1em;
+					width: 100%;
+					padding: 3em 0 1em 0;
+					box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
 
-  .main-nav {
-    @include flex(row, space-between, center, unset);
-    background-color: #fff;
-    width: 100%;
-    min-height: 15vh;
-    padding-block: 1vmin;
-    position: relative;
-    container-type: inline-size;
-    container-name: navbar;
-    z-index: 100;
-    padding-inline: 4em;
+					.get-in-touch {
+						color: $accent-color;
+						font-weight: weights(bold);
+						font-family: family(poppins);
+						display: none;
+					}
 
-    &__items {
-      margin: 0;
-    }
+					.social-icon--mobile {
+						font-size: 1.5rem;
+					}
+				}
+			}
+			.main-nav__items.active {
+				transform: revert;
+				opacity: 1;
+				pointer-events: all;
+			}
+			.main-nav__hamburger {
+				display: inherit;
 
-    &__logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5em;
-
-      img {
-        width: clamp(10em, 45vmin, 17.5em);
-      }
-
-      & > span {
-        font-size: $text-medium;
-        line-height: 110%;
-        max-width: 20ch;
-        color: $accent-color;
-
-        span {
-          text-shadow: 0 0 2px $accent-color;
-        }
-      }
-    }
-
-    @media screen and (max-width: 780px) {
-      // margin: unset !important;
-      padding-inline: 1.5em;
-    }
-
-    &__items {
-      display: inherit;
-      align-items: center;
-      gap: 2em;
-      list-style: none;
-      // width: 90%;
-
-      li:nth-of-type(1) {
-        margin-left: auto;
-      }
-
-      li {
-        a {
-          color: color(inactive);
-          text-decoration: none;
-          font-weight: weights(regular);
-          transition: color 300ms ease;
-          font-size: $text-small;
-
-          &:hover,
-          &:focus {
-            color: color(active);
-          }
-        }
-      }
-      .social-items {
-        display: none;
-        border-bottom: 1px solid #f0f0f0;
-      }
-    }
-
-    &__hamburger {
-      z-index: 100;
-      width: 40px;
-      height: fit-content;
-      display: inherit;
-      flex-direction: column;
-      gap: 0.4em;
-      display: none;
-      cursor: pointer;
-
-      .hamburger-line {
-        width: 100%;
-        height: 5px;
-        background-color: $accent-color;
-        border-radius: 0.5rem;
-      }
-    }
-
-    @container navbar (max-width: 680px) {
-      .main-nav__logo.active {
-          z-index: 1000;
-      }
-      .main-nav__items {
-        width: 100vw;
-        position: absolute;
-        flex-direction: column;
-        isolation: isolate;
-        inset: 0;
-        padding: 7em 0;
-        gap: unset;
-        background-color: #fff;
-        // padding: 2em;
-        // border-radius: 1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 300ms ease;
-
-        li:nth-child(odd) {
-          background-color: #f0f0f0;
-        }
-
-        li:nth-child(even) {
-          background-color: #fff;
-        }
-
-        :is(li:first-of-type, li + li):not(.enroll, .social-items) {
-          width: 100%;
-          text-align: center;
-          cursor: pointer;
-          // border-bottom: 2px solid lighten($accent-color, 20%);
-          transition: width 300ms ease;
-          z-index: 1;
-          & > * {
-            padding: 1em;
-            width: 100%;
-            display: inline-block;
-          }
-
-          &:hover {
-            background-color: $accent-color;
-            & > * {
-              color: #fff;
-            }
-          }
-        }
-
-        :is(li, .enroll) {
-          margin-left: unset;
-        }
-
-        .enroll {
-          width: 100%;
-        }
-
-        // Sicial icons
-        .social-items {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1em;
-          width: 100%;
-          padding: 3em 0 1em 0;
-          box-shadow: 0 0 30px rgb(0 0 0 / 0.4);
-
-          .get-in-touch {
-            color: $accent-color;
-            font-weight: weights(bold);
-            font-family: family(poppins);
-            display: none;
-          }
-
-          .social-icon--mobile {
-            font-size: 1.5rem;
-          }
-        }
-      }
-      .main-nav__items.active {
-        transform: revert;
-        opacity: 1;
-        pointer-events: all;
-      }
-      .main-nav__hamburger {
-        display: inherit;
-
-        > * {
-          transition: all 300ms ease;
-        }
-      }
-    }
-
-
-  }
+				> * {
+					transition: all 300ms ease;
+				}
+			}
+		}
+	}
 }
 
 .main-nav:has(> .main-nav__items.active) {
-  .main-nav__hamburger {
-    .line1 {
-      transform: rotate(45deg) translateY(16.5px);
-    }
+	.main-nav__hamburger {
+		.line1 {
+			transform: rotate(45deg) translateY(16.5px);
+		}
 
-    .line2 {
-      width: 20%;
-      opacity: 0;
-      pointer-events: none;
-    }
+		.line2 {
+			width: 20%;
+			opacity: 0;
+			pointer-events: none;
+		}
 
-    .line3 {
-      transform: rotate(-45deg) translateY(-16.5px);
-    }
-  }
+		.line3 {
+			transform: rotate(-45deg) translateY(-15.5px);
+		}
+	}
 }

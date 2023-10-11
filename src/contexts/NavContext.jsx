@@ -39,8 +39,10 @@ const NavContextProvider = ({ children }) => {
   };
   const [showNav, setShowNav] = useState(false);
   const [state, dispatch] = useReducer(reducer, NAV_DISPLAY_ACTIONS.HOME);
+  const [showDropMenus, setShowDropMenus] = useState(false)
 
   const navStateToggler = () => setShowNav((prev) => !prev);
+  const showDropMenusToggler = (state) => setShowDropMenus(state)
 
   const navDisplayValues = {
     dispatch,
@@ -49,8 +51,8 @@ const NavContextProvider = ({ children }) => {
 
   return (
     <NavDisplayContext.Provider value={navDisplayValues}>
-      <NavContext.Provider value={showNav}>
-        <NavContextUpdater.Provider value={navStateToggler}>
+      <NavContext.Provider value={{showNav, showDropMenus}}>
+        <NavContextUpdater.Provider value={{navStateToggler, showDropMenusToggler}}>
           {children}
         </NavContextUpdater.Provider>
       </NavContext.Provider>
