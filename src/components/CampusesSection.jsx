@@ -18,7 +18,7 @@ export default function CampusesSection() {
     <section className="campuses-section">
       <h1 className="--header">Our Campuses</h1>
       <p className="--description">
-        Explore Some Of Our Other Prestine Campuses.
+        Explore some of our other prestine campuses.
       </p>
       <div className="campuses-section__items">
         <CampusesSectionCard
