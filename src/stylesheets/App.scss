@@ -164,6 +164,12 @@ header {
 
 main {
   min-height: 100vh;
+
+  // flex here to handle the space between the map and footer
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 // Utility styles - I already added --description and --header classes, you can use whichever
