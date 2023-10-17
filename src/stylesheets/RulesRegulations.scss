@@ -1,7 +1,8 @@
 @import "./config";
 
 .rules-regulations {
-  padding-top: 20vh;
+  padding-block: 20vh 5vh;
+  @include flex(column, center, center, 1em);
 
   @media screen and (max-width: 680px) {
     padding-top: 15vh;
@@ -13,6 +14,10 @@
 
   &__text {
     width: clamp(300px, 90vw, 900px);
+    aspect-ratio: 1;
     margin: auto;
+    background-color: $very-light-gray;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 15px rgb(0 0 0 / .2);
   }
 }

@@ -81,8 +81,8 @@ const Enroll = () => {
 	return (
 		<main className="enroll-container">
 			<form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
-				{errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
-				{successMessage && <Alert variant="success">{successMessage}</Alert>}
+				{errorMessage && <Alert variant="danger" style={{width: "80%"}}>{errorMessage}</Alert>}
+				{successMessage && <Alert variant="success" style={{width: "80%", textAlign:  "center"}}>{successMessage}</Alert>}
 				<div className="enroll-form__heading">
 					<h2 className="enroll-form__heading-header --header">
 						Enroll Your Ward.

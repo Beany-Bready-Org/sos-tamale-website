@@ -21,17 +21,16 @@ import {
 import { NAV_DISPLAY_ACTIONS } from "../contexts/NavContext";
 
 const Navbar = () => {
-	const {showNav, showNavDropMenus} = useShowNav();
-	const {navStateToggler, showDropMenusToggler} = useShowNavToggler();
+	const { showNav, showDropMenus } = useShowNav();
+	const { navStateToggler, showDropMenusToggler } = useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
 	const location = useLocation();
 
 
-  console.log(showNavDropMenus, showDropMenusToggler)
-
 	useEffect(() => {
 		if (location.pathname === "/contact" || location.pathname === "/enroll") {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
+			showDropMenusToggler(false);
 		} else {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
 		}
@@ -85,24 +84,45 @@ const Navbar = () => {
 				</div>
 			</section>
 			<section className="main-nav" style={navDisplayStyles}>
-				<div className={showNav ? "main-nav__logo active" : "main-nav__logo"}>
+				<div
+					className={
+						showNav 
+							? "main-nav__logo active"
+							: "main-nav__logo"
+					}
+				>
 					<NavLink to="/">
 						<img src={logo} alt="Main logo" style={{ width: "80px" }} />
 					</NavLink>
 				</div>
-				<ul className={showNav ? "main-nav__items active" : "main-nav__items"}>
+				<ul
+					className={
+						showNav 
+							? "main-nav__items active"
+							: "main-nav__items"
+					}
+				>
 					<li
 						className="item"
 						onClick={() => {
 							dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
 						}}
 					>
-						<NavLink to="/">Home</NavLink>
+						<NavLink
+							to="/"
+							onClick={() => {
+								dispatch({ type: NAV_DISPLAY_ACTIONS.HOME });
+								showDropMenusToggler(false);
+							}}
+						>
+							Home
+						</NavLink>
 					</li>
 					<li className="item">
 						<NavLink
 							to="/contact"
 							onClick={() => {
+								showDropMenusToggler(false);
 								dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
 							}}
 						>
@@ -110,13 +130,34 @@ const Navbar = () => {
 						</NavLink>
 					</li>
 					<li className="item">
-						<NavLink to="/about">About Us</NavLink>
+						<NavLink
+							to="/about"
+							onClick={() => {
+								showDropMenusToggler(false);
+							}}
+						>
+							About Us
+						</NavLink>
 					</li>
 					<li className="item">
-						<NavLink to="/enroll">Enroll</NavLink>
+						<NavLink
+							to="/enroll"
+							onClick={() => {
+								showDropMenusToggler(false);
+							}}
+						>
+							Enroll
+						</NavLink>
 					</li>
 					<li className="item">
-						<NavLink to="/gallery">Gallery</NavLink>
+						<NavLink
+							to="/gallery"
+							onClick={() => {
+								showDropMenusToggler(false);
+							}}
+						>
+							Gallery
+						</NavLink>
 					</li>
 					{/* <li className="item">
             <NavLink to="/rules-and-regulations">Guidelines</NavLink>

@@ -1,0 +1,30 @@
+@import "./config";
+
+.statistics {
+    padding-block: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    background-color: $accent-color;
+
+
+    &__item {
+        @include flex(column, ceneter,center , unset);
+        height: 100%;
+        padding: 2em;
+        color: #fff;
+
+        h2 {
+            font-weight: weights(bold);
+            font-size: 5rem;
+        }
+
+        p {
+            font-weight: weights(light);
+            font-size: 1rem;
+        }
+    }
+
+    &__item + &__item {
+        border-left: thin solid #fff;
+    }
+}
