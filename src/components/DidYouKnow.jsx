@@ -1,6 +1,6 @@
 import React from "react";
 import didYouKnowImage from "../assets/images/didyouknow.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowCircleRight,
@@ -12,22 +12,27 @@ const DidYouKnow = () => {
     <div className="did-you-know important-section">
       <h2 className="did-you-know__heading">Did You Know?</h2>
       <p className="did-you-know__description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-        sollicitudin urna non libero porta aliquet. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
+        SOS Hermann Gmeiner School was founded in 1969 by Hermann Gmeiner to
+        support children orphaned after WWII. The first institution was
+        established in Sweden in 1996. After that, the organisation spread to
+        over 150 countries spanning 6 continents.
       </p>
       <div className="did-you-know__buttons">
-        <Link to="#" className="--cta-secondary">
+        <NavLink
+          to="https://www.sos-childrensvillages.org"
+          className="--cta-secondary"
+          target="_blank"
+        >
           Visit Our Main Website
           <FontAwesomeIcon
             icon={faArrowUpRightFromSquare}
             className="arrow-icon"
           />
-        </Link>
-        <Link to="#" className="--cta">
+        </NavLink>
+        <NavLink to="https://hgic.com" className="--cta" target="_blank">
           Visit International College
           <FontAwesomeIcon icon={faArrowCircleRight} className="arrow-icon" />
-        </Link>
+        </NavLink>
       </div>
 
       <div className="overlay">
