@@ -21,25 +21,25 @@ const Footer = () => {
 					<ul className="footer-main__links-social">
             <h3 className="footer-header">Get in touch</h3>
 						<li>
-							<NavLink to="#">Facebook</NavLink>
+							<NavLink to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr">Facebook</NavLink>
 						</li>
 						<li>
-							<NavLink to="#">Twitter</NavLink>
+							<NavLink to="https://twitter.com/SOSCVGhana">Twitter</NavLink>
 						</li>
 						<li>
-							<NavLink to="#">Linkedin</NavLink>
+							<NavLink to="https://gh.linkedin.com/company/sos-children-s-villages-in-ghana">Linkedin</NavLink>
 						</li>
 						<li>
-							<NavLink to="#">Instagram</NavLink>
+							<NavLink to="https://www.instagram.com/sos_hgic/?hl=en">Instagram</NavLink>
 						</li>
 					</ul>
 					<ul className="footer-main__links-other-links">
             <h3 className="footer-header">Other Links</h3>
 						<li>
-							<NavLink to="#">SOS Ghana</NavLink>
+							<NavLink to="https://www.sos-childrensvillages.org/where-we-help/africa/ghana">SOS CV Ghana</NavLink>
 						</li>
 						<li>
-							<NavLink to="#">SOS HGIC</NavLink>
+							<NavLink to="https://www.soshgic.edu.gh/">SOS HGIC</NavLink>
 						</li>
 					</ul>
 				</div>
