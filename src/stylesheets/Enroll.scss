@@ -10,6 +10,11 @@
 		height: 100%;
 	}
 
+	a {
+		color: #fff;
+		font-weight: 500;
+	}
+
 	.enroll-form {
 		flex: 1;
 		@include flex(column, center, center, 1em);

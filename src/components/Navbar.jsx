@@ -61,22 +61,22 @@ const Navbar = () => {
 					</div>
 					<ul className="secondary-nav__text__social">
 						<li className="social-link">
-							<Link to="#">
+							<Link to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr">
 								<FontAwesomeIcon icon={faFacebook} />
 							</Link>
 						</li>
 						<li className="social-link">
-							<Link to="">
+							<Link to="https://gh.linkedin.com/company/sos-children-s-villages-in-ghana">
 								<FontAwesomeIcon icon={faLinkedinIn} />
 							</Link>
 						</li>
 						<li className="social-link">
-							<Link to="#">
+							<Link to="https://www.instagram.com/sos_hgic/?hl=en">
 								<FontAwesomeIcon icon={faInstagram} />
 							</Link>
 						</li>
 						<li className="social-link">
-							<Link to="#">
+							<Link to="https://twitter.com/SOSCVGhana">
 								<FontAwesomeIcon icon={faXTwitter} />
 							</Link>
 						</li>
