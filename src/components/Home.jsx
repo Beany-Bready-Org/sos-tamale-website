@@ -1,11 +1,11 @@
 import VideoSection from "./VideoSection";
 import CampusesSection from "./CampusesSection";
 import DidYouKnow from "./DidYouKnow";
-import GallerySection from "./GallerySection";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import MapEmbed from "./MapEmbed";
 import Statistics from "./statistics/Statistics";
+import GallerySection from "./gallery/GallerySection";
 
 const Home = () => {
 	return (
@@ -19,8 +19,8 @@ const Home = () => {
 				<CampusesSection />
 				{/* <StaffSection /> */}
 				<DidYouKnow />
-				<GallerySection size={12} />
-				<div style={{height: "100%"}}>
+				<GallerySection/>
+				<div style={{height: "100%", maxHeight: "100%"}}>
 					<MapEmbed />
 				</div>
 			</main>
