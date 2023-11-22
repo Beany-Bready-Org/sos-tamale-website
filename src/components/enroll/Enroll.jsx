@@ -196,6 +196,7 @@ const Enroll = () => {
           <a
             href="https://sdgs.un.org/goals/goal4"
             className="side-nav__sdg--sdg"
+            target="_blank"
           >
             SDG 4
           </a>
