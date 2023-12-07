@@ -26,9 +26,12 @@ const Navbar = () => {
 	const { dispatch, state } = useNavDisplay();
 	const location = useLocation();
 
-
 	useEffect(() => {
-		if (location.pathname === "/contact" || location.pathname === "/enroll") {
+		if (
+			location.pathname === "/contact" ||
+			location.pathname === "/enroll" ||
+			location.pathname === "/events"
+		) {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
 			showDropMenusToggler(false);
 		} else {
@@ -84,24 +87,12 @@ const Navbar = () => {
 				</div>
 			</section>
 			<section className="main-nav" style={navDisplayStyles}>
-				<div
-					className={
-						showNav 
-							? "main-nav__logo active"
-							: "main-nav__logo"
-					}
-				>
+				<div className={showNav ? "main-nav__logo active" : "main-nav__logo"}>
 					<NavLink to="/">
 						<img src={logo} alt="Main logo" style={{ width: "80px" }} />
 					</NavLink>
 				</div>
-				<ul
-					className={
-						showNav 
-							? "main-nav__items active"
-							: "main-nav__items"
-					}
-				>
+				<ul className={showNav ? "main-nav__items active" : "main-nav__items"}>
 					<li
 						className="item"
 						onClick={() => {
