@@ -9,6 +9,7 @@ import Enroll from "./components/enroll/Enroll";
 import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 import RulesRegulations from "./components/rnr/RulesRegulations";
+import Events from "./components/events-page/Events";
 // Lazily loaded components coming soon
 // const Contact = lazy(() => import( "./components/contact/Contact"));
 // const About = lazy(() => import("./components/About"));
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/enroll" element={<Enroll />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/rules-and-regulations" element={<RulesRegulations />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </NavContextProvider>
     </>
