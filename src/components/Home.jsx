@@ -12,9 +12,9 @@ const Home = () => {
 		<>
 			<header>
 				<Hero />
-				<Statistics teachers="25" nonTeachingStaff="30" students="500" />
+				<Statistics teachers="25 +" nonTeachingStaff="30 +" students="500 +" />
 			</header>
-			<main style={{marginTop: "20em"}}>
+			<main>
 				<VideoSection />
 				<CampusesSection />
 				{/* <StaffSection /> */}
