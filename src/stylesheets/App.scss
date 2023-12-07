@@ -157,14 +157,14 @@ a {
 // Semantic styles
 
 header {
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 main {
-  min-height: 100vh;
+  // min-height: 100vh;
 
   // flex here to handle the space between the map and footer
   display: flex;

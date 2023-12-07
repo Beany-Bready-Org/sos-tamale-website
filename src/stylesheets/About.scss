@@ -81,19 +81,6 @@ $max-width: 800px;
 		font-family: family(gelasio);
 		font-weight: weights(bold);
 		position: relative;
-
-		&::before {
-			content: "";
-			position: absolute;
-			display: block;
-			margin: auto;
-			width: 50%;
-			height: 6px;
-			background-color: $accent-color;
-			bottom: 0;
-			left: 0;
-			right: 0;
-		}
 	}
 
 	&__container {

@@ -11,5 +11,8 @@
     flex-wrap: wrap;
     margin: auto;
     width: clamp(300px, 90vw, 1200px);
+    // display: grid;
+    // gap: 2em;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

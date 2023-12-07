@@ -1,4 +1,4 @@
-import GalleryImg1 from "../../assets/images/gallery-images/gallery-img1.png";
+// import GalleryImg1 from "../../assets/images/gallery-images/gallery-img1.png";
 import GalleryImg2 from "../../assets/images/gallery-images/gallery-img2.png";
 import GalleryImg3 from "../../assets/images/gallery-images/gallery-img3.png";
 import GalleryImg4 from "../../assets/images/gallery-images/gallery-img4.png";
@@ -24,7 +24,7 @@ import GalleryImg23 from "../../assets/images/gallery-images/gallery-img23.png";
 import GalleryImg24 from "../../assets/images/gallery-images/gallery-img24.png";
 
 const imageArray = [
-	GalleryImg1,
+	// GalleryImg1,
 	GalleryImg2,
 	GalleryImg3,
 	GalleryImg4,
