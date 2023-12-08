@@ -39,6 +39,29 @@ const Navbar = () => {
 		}
 	}, [dispatch, location]);
 
+	// Get title of the webpage
+
+	let pageTitle = document.querySelector("title");
+	switch (location.pathname) {
+		case "/contact":
+			pageTitle.textContent = "SOS HGS Tamale - Contact";
+			break;
+		case "/events":
+			pageTitle.textContent = "SOS HGS Tamale - Events";
+			break;
+		case "/enroll":
+			pageTitle.textContent = "SOS HGS Tamale - Enroll";
+			break;
+		case "/about":
+			pageTitle.textContent = "SOS HGS Tamale - About";
+			break;
+		case "/gallery":
+			pageTitle.textContent = "SOS HGS Tamale - Gallery";
+			break;
+		default:
+			pageTitle.textContent = "SOS HGS Tamale";
+	}
+
 	const navDisplayStyles = {
 		display:
 			state === NAV_DISPLAY_ACTIONS.CONTACT ||

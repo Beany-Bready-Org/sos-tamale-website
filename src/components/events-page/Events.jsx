@@ -20,7 +20,7 @@ const Events = () => {
 					title="Coming Soon!"
 				/>
 			</div>
-			<div>
+			<div className="events__text-container">
 				<h1 className="events__coming-soon-header">Coming Soon!</h1>
 				<p>
 					We are preparing our best of events and memories for you. Hold on
