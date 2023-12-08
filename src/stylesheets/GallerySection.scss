@@ -5,10 +5,14 @@
   margin-block: 1em;
   outline: 3px solid red;
   isolation: isolate;
-  -webkit-mask: linear-gradient(90deg,transparent, white 20%, white 80%, transparent);
-  mask: linear-gradient(90deg,transparent, white 20%, white 80%, transparent);
-
- 
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 
   .gallery__scroller-inner {
     display: flex;
@@ -16,12 +20,26 @@
     justify-content: center;
     align-items: center;
     z-index: -1;
-    animation: scroll 60s var(--_direction) linear infinite;
+    // animation: scroll 60s var(--_direction) linear infinite;
+
+    &#forwards {
+      animation: scroll-forwards 60s linear infinite;
+    }
+
+    &#backwards {
+      animation: scroll-backwards 60s linear infinite;
+    }
 
     // Infinite horizontal scroll animation
-    @keyframes scroll {
+    @keyframes scroll-forwards {
       to {
-        transform: translate(calc(-50% + .5em));
+        transform: translate(calc(50%));
+      }
+    }
+
+    @keyframes scroll-backwards {
+      to {
+        transform: translate(calc(-50%));
       }
     }
 

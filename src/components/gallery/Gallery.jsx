@@ -4,7 +4,7 @@ import GallerySection from "./GallerySection";
 export default function Gallery() {
   return (
     <main className="gallery">
-      <GallerySection size={24}/>
+      <GallerySection/>
     </main>
   );
 }
