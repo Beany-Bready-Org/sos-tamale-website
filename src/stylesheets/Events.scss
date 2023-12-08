@@ -1,0 +1,25 @@
+@import "./config";
+
+.events {
+	@include flex(column, center, center, 2em);
+    
+	&__logo {
+        width: 100%;
+        @include flex(row-reverse, space-between, center, unset);
+        align-self: flex-end;
+        padding: 1em 3em;
+
+
+        .home {
+            color: $accent-color;
+            font-weight: weights(light);
+        }
+	}
+
+	&__coming-soon-image {
+		img {
+			width: 90%;
+			max-width: 600px;
+		}
+	}
+}

@@ -59,7 +59,7 @@
 
 	// Side nav
 	.side-nav {
-    height: 100dvh;
+		height: 100dvh;
 		width: 40vw;
 		color: #fff;
 		background-color: $accent-color;
@@ -159,11 +159,8 @@
 
 			&--four {
 				width: 50%;
+				margin-top: 1em;
 			}
-
-			// &--sdg {
-			//     border: 3px solid green;
-			// }
 		}
 
 		&__image {
