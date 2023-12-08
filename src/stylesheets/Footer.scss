@@ -19,10 +19,19 @@
 		gap: 1em;
 		font-family: family(poppins);
 
+		.footer-main__name {
+			width: 100%;
+		}
+
 		&-school-name {
 			color: #fff;
 			font-size: 1.5rem;
-			width: 50%;
+			width: 70%;
+		}
+
+		em {
+			color: #fff;
+			font-weight: 100;
 		}
 
 		img {
@@ -58,6 +67,7 @@
 			}
 			li {
 				color: #fff;
+				list-style: none;
 
 				> * {
 					color: inherit;
@@ -90,6 +100,7 @@
 	}
 
 	.authors {
+		margin-left: .5em;
 		margin-bottom: 0 !important;
 	}
 
