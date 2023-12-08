@@ -5,7 +5,7 @@ import Hero from "./Hero";
 import Footer from "./Footer";
 import MapEmbed from "./MapEmbed";
 import Statistics from "./statistics/Statistics";
-import GallerySection from "./gallery/GallerySection";
+import GallerySection from "./GallerySection";
 
 const Home = () => {
 	return (

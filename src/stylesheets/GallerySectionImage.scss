@@ -1,0 +1,37 @@
+@import "./config";
+
+.gallery-section__images__image {
+  background: linear-gradient(to left, rgb(193, 188, 188),rgb(255, 255, 255));
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 300ms ease;
+  animation: moveBg 2s linear infinite;
+
+  @keyframes moveBg {
+    to {
+      background: linear-gradient(to right, rgb(193, 188, 188),rgb(255, 255, 255));
+    }
+  }
+  overflow: hidden;
+  cursor: pointer;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: 200ms;
+  }
+
+  &.loaded {
+    filter: none;
+    img {
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
