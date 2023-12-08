@@ -6,11 +6,11 @@ const GallerySection = () => {
 		<>
         <h1 className="--header" style={{marginTop: "2em"}}>Our Memories</h1>
 			<div className="gallery__scroller">
-				<ul className="gallery__scroller-inner" data-direction="forwards">
+				<ul className="gallery__scroller-inner" id="forwards">
 					<GalleryImage />
 				</ul>
-				<ul className="gallery__scroller-inner" data-direction="reverse">
-					<GalleryImage />
+				<ul className="gallery__scroller-inner" id="backwards">
+					<GalleryImage/>
 				</ul>
 			</div>
             
