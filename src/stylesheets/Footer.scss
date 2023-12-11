@@ -2,7 +2,7 @@
 	width: 100%;
 	background-color: $footer-bg;
 	padding: 0 5em;
-	@include flex(row, center, center, unset);	
+	@include flex(row, center, center, unset);
 	// display: grid;
 	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	padding-bottom: 1em;
@@ -100,17 +100,16 @@
 	}
 
 	.authors {
-		margin-left: .5em;
+		margin-left: 0.5em;
 		margin-bottom: 0 !important;
 	}
 
 	.github-reachout {
 		display: inherit;
 		align-items: center;
-		gap: .4em;
+		gap: 0.4em;
 		color: #fff;
-		font-size: clamp(.5rem, 50vw, 1.2rem);
-
+		font-size: clamp(0.5rem, 50vw, 1.2rem);
 
 		// .icon {
 		// }
