@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import MapEmbed from "./MapEmbed";
 import Statistics from "./statistics/Statistics";
 import GallerySection from "./GallerySection";
+import NewsLetter from "./NewsLetter";
 
 const Home = () => {
 	return (
@@ -18,9 +19,12 @@ const Home = () => {
 				<VideoSection />
 				<CampusesSection />
 				{/* <StaffSection /> */}
-				<DidYouKnow />
-				<GallerySection size={8}/>
-				<div style={{height: "100%", maxHeight: "100%"}}>
+				<GallerySection size={8} />
+				<div className="news-did-wrapper">
+					<NewsLetter />
+					<DidYouKnow />
+				</div>
+				<div style={{ height: "100%", maxHeight: "100%" }}>
 					<MapEmbed />
 				</div>
 			</main>
