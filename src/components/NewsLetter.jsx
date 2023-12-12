@@ -5,9 +5,9 @@ import "../stylesheets/NewsLetter.scss";
 
 const NewsLetter = () => {
 	return (
-		<div>
-			<h1>Sign up for ou news letter</h1>
-			<div className="newsletter_content">
+		<div className="newsletter">
+			<h1>Sign up for our news letter</h1>
+			<div className="newsletter__content">
 				<input type="text" placeholder="Your email here..." />
 				<button type="submit">
 					Sign Up
