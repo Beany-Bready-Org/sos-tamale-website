@@ -8,27 +8,26 @@ import Statistics from "./statistics/Statistics";
 import GallerySection from "./GallerySection";
 
 const Home = () => {
-	return (
-		<>
-			<header>
-				<Hero />
-				<Statistics teachers="25 +" nonTeachingStaff="30 +" students="500 +" />
-			</header>
-			<main>
-				<VideoSection />
-				<CampusesSection />
-				{/* <StaffSection /> */}
-				<DidYouKnow />
-				<GallerySection/>
-				<div style={{height: "100%", maxHeight: "100%"}}>
-					<MapEmbed />
-				</div>
-			</main>
-			<footer>
-				<Footer />
-			</footer>
-		</>
-	);
+  return (
+    <>
+      <header>
+        <Hero />
+        <Statistics teachers="25 +" nonTeachingStaff="30 +" students="500 +" />
+      </header>
+      <main>
+        <VideoSection />
+        <CampusesSection />
+        {/* <StaffSection /> */}
+        <DidYouKnow />
+        <GallerySection size={12}/>
+        {/* No div here, or there'll be a space between footer*/}
+        <MapEmbed />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
+    </>
+  );
 };
 
 export default Home;

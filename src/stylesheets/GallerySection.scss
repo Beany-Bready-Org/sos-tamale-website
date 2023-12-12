@@ -12,8 +12,22 @@
 
   .gallery-section__images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
     margin-bottom: 3em;
+
+    @media screen and (max-width: 500px) {
+      & > *:last-child {
+        position: relative;
+        &::after {
+          content: "";
+          background: linear-gradient(0deg, #fff, transparent);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          inset: 0;
+        }
+      }
+    }
   }
 }
