@@ -1,5 +1,5 @@
 import React from "react";
-import aboutBanner from "../assets/images/gallery-images/gallery-img12.png";
+import aboutBanner from "../assets/images/gallery-images/gallery-img1.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

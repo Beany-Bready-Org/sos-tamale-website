@@ -19,7 +19,7 @@ const Home = () => {
 				<CampusesSection />
 				{/* <StaffSection /> */}
 				<DidYouKnow />
-				<GallerySection/>
+				<GallerySection size={8}/>
 				<div style={{height: "100%", maxHeight: "100%"}}>
 					<MapEmbed />
 				</div>
