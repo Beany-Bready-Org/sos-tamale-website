@@ -13,7 +13,7 @@ const Home = () => {
 		<>
 			<header>
 				<Hero />
-				<Statistics teachers={250} nonTeachingStaff={30} students={500} />
+				<Statistics teachers={500} nonTeachingStaff={30} students={500} />
 			</header>
 			<main>
 				<VideoSection />

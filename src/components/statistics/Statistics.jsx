@@ -14,7 +14,7 @@ const Statistics = ({ teachers, students, nonTeachingStaff }) => {
 				return () => clearInterval(intervalId)
 			}
 			
-		}, 10);
+		}, numteachers/1000);
 
 		return () => clearInterval(intervalId)
 
