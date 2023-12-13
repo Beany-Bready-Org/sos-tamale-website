@@ -163,19 +163,19 @@ const Navbar = () => {
           </li>
           <li className="item social-items">
             <p className="get-in-touch">Social Media:</p>
-            <Link to="#" className="social-icon--mobile">
+            <Link to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr" className="social-icon--mobile">
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
 
-            <Link to="" className="social-icon--mobile">
+            <Link to="https://gh.linkedin.com/company/sos-children-s-villages-in-ghana" className="social-icon--mobile">
               <FontAwesomeIcon icon={faLinkedinIn} />
             </Link>
 
-            <Link to="#" className="social-icon--mobile">
+            <Link to="https://www.instagram.com/sos_hgic/?hl=en" className="social-icon--mobile">
               <FontAwesomeIcon icon={faInstagram} />
             </Link>
 
-            <Link to="#" className="social-icon--mobile">
+            <Link to="https://twitter.com/SOSCVGhana" className="social-icon--mobile">
               <FontAwesomeIcon icon={faXTwitter} />
             </Link>
           </li>
