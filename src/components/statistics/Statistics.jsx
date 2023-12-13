@@ -1,13 +1,30 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 
 const Statistics = ({ teachers, students, nonTeachingStaff }) => {
-	const [count, setCount] = useState(0);
+	const [numteachers, setNumTeachers] = useState(0);
+	const [numStudents, setNumStudents] = useState(0);
+	const [numNonTeaching, setNumNonTeaching] = useState(0);
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			if (numteachers !== teachers) {
+				setNumTeachers((prevNumber) => prevNumber + 1);
+			} else {
+				return () => clearInterval(intervalId)
+			}
+			
+		}, numteachers/1000);
+
+		return () => clearInterval(intervalId)
+
+
+	}, [numteachers, teachers]);
 
 	return (
 		<section className="statistics">
 			<div className="statistics__item">
-				<h2>{teachers}</h2>
+				<h2>{numteachers} +</h2>
 				<p>Teaching Staff</p>
 			</div>
 			<div className="statistics__item">
@@ -23,9 +40,9 @@ const Statistics = ({ teachers, students, nonTeachingStaff }) => {
 };
 
 Statistics.propTypes = {
-	teachers: PropTypes.string.isRequired,
-	students: PropTypes.string.isRequired,
-	nonTeachingStaff: PropTypes.string.isRequired,
+	teachers: PropTypes.number.isRequired,
+	students: PropTypes.number.isRequired,
+	nonTeachingStaff: PropTypes.number.isRequired,
 };
 
 export default Statistics;
