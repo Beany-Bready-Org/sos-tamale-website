@@ -13,7 +13,7 @@ const Home = () => {
 		<>
 			<header>
 				<Hero />
-				<Statistics teachers={500} nonTeachingStaff={30} students={500} />
+				<Statistics teachers={250} nonTeachingStaff={100} students={500} />
 			</header>
 			<main>
 				<VideoSection />
@@ -21,7 +21,7 @@ const Home = () => {
 				{/* <StaffSection /> */}
 				<GallerySection size={8} />
 				<div className="news-did-wrapper">
-					<NewsLetter />
+					{/* <NewsLetter /> */}
 					<DidYouKnow />
 				</div>
 				<div style={{ height: "100%", maxHeight: "100%" }}>

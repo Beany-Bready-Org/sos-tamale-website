@@ -94,6 +94,21 @@
 		margin-bottom: 0;
 	}
 
+	&__social {
+		display: flex;
+		list-style: none;
+		gap: 1em;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			> * {
+				color: #fff;
+				font-size: 1.2rem;
+			}
+		}
+	}
+
 	.link {
 		color: #fff;
 		font-weight: weights(light);

@@ -1,8 +1,13 @@
 import React from "react";
 import footerLogo from "../assets/images/logo2.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+	faFacebook,
+	faXTwitter,
+	faLinkedinIn,
+	faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
 	return (
@@ -70,14 +75,28 @@ const Footer = () => {
 						Beany-Bready Org - Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
 					</NavLink>
 				</p>
-				<NavLink
-					to="https://github.com/Beany-Bready-Org/sos-tamale-website"
-					target="_blank"
-					className="github-reachout"
-				>
-					GitHub
-					<FontAwesomeIcon icon={faGithub} className="icon" />
-				</NavLink>
+				<ul className="footer-secondary__social" aria-name="footer social media">
+					<li className="social-link">
+						<Link to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr">
+							<FontAwesomeIcon icon={faFacebook} />
+						</Link>
+					</li>
+					<li className="social-link">
+						<Link to="https://gh.linkedin.com/company/sos-children-s-villages-in-ghana">
+							<FontAwesomeIcon icon={faLinkedinIn} />
+						</Link>
+					</li>
+					<li className="social-link">
+						<Link to="https://www.instagram.com/sos_hgic/?hl=en">
+							<FontAwesomeIcon icon={faInstagram} />
+						</Link>
+					</li>
+					<li className="social-link">
+						<Link to="https://twitter.com/SOSCVGhana">
+							<FontAwesomeIcon icon={faXTwitter} />
+						</Link>
+					</li>
+				</ul>
 			</div>
 		</>
 	);
