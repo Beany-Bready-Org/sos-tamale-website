@@ -24,33 +24,25 @@ export default function CampusesSection() {
         <CampusesSectionCard
           imgSrc={TamaleImg}
           heading="Tamale"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illum
-      ipsum, sunt officiis mollitia dolor velit dolore alias ut atque voluptatum
-      ipsa animi, consequatur recusandae."
+          text="SOS Tamale is an institution of nice things."
           direction={"row-reverse"}
         />
         <CampusesSectionCard
           imgSrc={AsiakwaImg}
           heading="Asiakwa"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illum
-      ipsum, sunt officiis mollitia dolor velit dolore alias ut atque voluptatum
-      ipsa animi, consequatur recusandae."
+          text="SOS Asiakwa is an institution of nice things."
           direction={"row"}
         />
         <CampusesSectionCard
           imgSrc={KumasiImg}
           heading="Kumasi"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illum
-      ipsum, sunt officiis mollitia dolor velit dolore alias ut atque voluptatum
-      ipsa animi, consequatur recusandae."
+          text="SOS Kumasi is an institution of nice things."
           direction={"row-reverse"}
         />
         <CampusesSectionCard
           imgSrc={TemaImg}
           heading="Tema"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illum
-      ipsum, sunt officiis mollitia dolor velit dolore alias ut atque voluptatum
-      ipsa animi, consequatur recusandae."
+          text="SOS Tema is an institution of nice things."
           direction={"row"}
         />
       </div>
