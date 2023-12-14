@@ -8,6 +8,7 @@ import {
 	faLinkedinIn,
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import FooterJoin from "./FooterJoin";
 
 const Footer = () => {
 	return (
@@ -27,6 +28,7 @@ const Footer = () => {
 							SOS Hermann Gmeiner school tamale
 						</h2>
 						<em>We are tops!</em>
+						<FooterJoin />
 					</div>
 				</div>
 				<div className="footer-main__links">
