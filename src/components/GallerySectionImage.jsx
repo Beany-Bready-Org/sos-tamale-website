@@ -32,7 +32,7 @@ export default function GallerySectionImage({ imgSrc, alt }) {
 			ref={imgContainerRef}
 		>
 			<img src={imgSrc} alt={alt} loading="lazy" ref={imgRef} title={alt} />
-			<div className="gallery-section__images__imagge-action">
+			<div className="gallery-section__images__image-action">
 				<button className="image-button --cta">
 					<FontAwesomeIcon icon={faEye} /> View
 				</button>

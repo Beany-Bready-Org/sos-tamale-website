@@ -117,9 +117,6 @@ export default function GallerySection({ size }) {
         SOS Tamale Gallery
       </h2>
       <div className="gallery-section__images">{galleryImages}</div>
-      <NavLink to="/gallery" className="--cta">
-        See more
-      </NavLink>
     </section>
   );
 }
