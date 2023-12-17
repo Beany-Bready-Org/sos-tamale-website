@@ -32,11 +32,11 @@ $max-width: 800px;
 		font-size: clamp(3rem, 50vw, 4rem);
 		height: fit-content;
 		text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
-    text-transform: capitalize;
+		text-transform: capitalize;
 	}
 }
 
-// Mission vision
+// Mission vision statements
 .mission-vision {
 	display: grid;
 	gap: 1.5em;
@@ -58,12 +58,17 @@ $max-width: 800px;
 	&__header {
 		text-align: center;
 		color: $accent-color;
+		@include flex(row, center, center, .3em);
 	}
 
 	&__description {
 		color: $text-color-secondary;
 		font-size: 1.3rem;
 		margin-inline: 1em;
+
+		em {
+			font-weight: weights(light);
+		}
 	}
 }
 
@@ -81,19 +86,6 @@ $max-width: 800px;
 		font-family: family(gelasio);
 		font-weight: weights(bold);
 		position: relative;
-
-		&::before {
-			content: "";
-			position: absolute;
-			display: block;
-			margin: auto;
-			width: 50%;
-			height: 6px;
-			background-color: $accent-color;
-			bottom: 0;
-			left: 0;
-			right: 0;
-		}
 	}
 
 	&__container {
@@ -113,8 +105,7 @@ $max-width: 800px;
 			border-radius: 0.5rem;
 
 			&:hover {
-				scale: 1.054;
-				box-shadow: 4px 4px 15px rgb(0 0 0 / 0.5);
+				outline: thin solid $text-color;
 			}
 
 			h2 {
@@ -145,7 +136,6 @@ $max-width: 800px;
 // Join school section
 .join-school {
 	@include flex(column, center, unset, 1em);
-	// border: 2px solid lighten($accent-color, 23%);
 	position: relative;
 	isolation: isolate;
 	width: 90%;
@@ -173,7 +163,14 @@ $max-width: 800px;
 		width: 70%;
 		text-transform: capitalize;
 		line-height: 1.4;
+		margin: 0;
 		text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
+	}
+	
+	p {
+		margin: 0;
+		color: #fff;
+		font-weight: weights(regular);
 	}
 
 	.--cta-secondary {

@@ -1,37 +1,61 @@
 @import "./config";
 
 .gallery-section__images__image {
-  background: linear-gradient(to left, rgb(193, 188, 188),rgb(255, 255, 255));
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: background 300ms ease;
-  animation: moveBg 2s linear infinite;
+	background: linear-gradient(to left, rgb(193, 188, 188), rgb(255, 255, 255));
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: background 300ms ease;
+	animation: moveBg 2s linear infinite;
+	display: grid;
+	align-items: flex-end;
+	isolation: isolate;
+	overflow: hidden;
+	cursor: pointer;
 
-  @keyframes moveBg {
-    to {
-      background: linear-gradient(to right, rgb(193, 188, 188),rgb(255, 255, 255));
-    }
-  }
-  overflow: hidden;
-  cursor: pointer;
-  img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    transition: 200ms;
-  }
+	& > * {
+		grid-column: 1 / -1;
+		grid-row: 1/ -1;
+	}
 
-  &.loaded {
-    filter: none;
-    img {
-      opacity: 1;
-    }
-  }
+	.image-button {
+		z-index: 2000 !important;
+		padding: 0.5em 2em;
+		margin: 1em;
+		transform: translateY(100px);
+	}
 
-  &:hover,
-  &:focus {
-    img {
-      transform: scale(1.05);
-    }
-  }
+	@keyframes moveBg {
+		to {
+			background: linear-gradient(
+				to right,
+				rgb(193, 188, 188),
+				rgb(255, 255, 255)
+			);
+		}
+	}
+
+
+	img {
+		width: 100%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		transition: all 200ms;
+	}
+
+	&.loaded {
+		filter: none;
+		img {
+			opacity: 1;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		img {
+			filter: grayscale(70%);
+		}
+		.image-button {
+			transform: translate(0);
+		}
+	}
 }

@@ -7,6 +7,7 @@
 @import "./Footer.scss";
 @import "./Contact.scss";
 @import "./Statistics.scss";
+@import "./GallerySection.scss";
 
 
 /* Swiper.js variables */
@@ -156,7 +157,6 @@ a {
 // Semantic styles
 
 header {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -187,3 +187,9 @@ main {
   text-transform: capitalize;
   text-align: center;
 }
+
+
+// .news-did-wrapper {
+//   outline: 3px solid red;
+ 
+// }

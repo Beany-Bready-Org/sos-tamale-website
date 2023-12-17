@@ -1,0 +1,44 @@
+@import "./config";
+
+.events {
+	@include flex(column, center, center, 2em);
+
+	&__logo {
+		width: 100%;
+		@include flex(row-reverse, space-between, center, unset);
+		align-self: flex-end;
+		padding: 1em 3em;
+
+		.home {
+			color: $accent-color;
+			font-weight: weights(light);
+		}
+	}
+
+	&__coming-soon-image {
+		@include flex(unset, center, center, unset);
+		img {
+			width: 90%;
+			max-width: 600px;
+		}
+	}
+	
+	.events__text-container {
+		@include flex(column, unset, unset, .5em);
+	}
+	
+	@media screen and (max-width: 680px) {
+		&__coming-soon-image {
+			@include flex(unset, center, center, unset);
+			img {
+				width: 70%;
+				max-width: 400px;
+			}
+		}
+		.events__text-container {
+			@include flex(column, center, center, .5em);
+			text-align: center;
+			padding-inline: 2em;
+		}	
+	}
+}

@@ -29,6 +29,14 @@ import GalleryImg21 from "../assets/images/gallery-images/gallery-img21.png";
 import GalleryImg22 from "../assets/images/gallery-images/gallery-img22.png";
 import GalleryImg23 from "../assets/images/gallery-images/gallery-img23.png";
 import GalleryImg24 from "../assets/images/gallery-images/gallery-img24.png";
+import GalleryImg25 from "../assets/images/gallery-images/gallery-img25.png";
+import GalleryImg26 from "../assets/images/gallery-images/gallery-img26.png";
+import GalleryImg27 from "../assets/images/gallery-images/gallery-img27.png";
+import GalleryImg28 from "../assets/images/gallery-images/gallery-img28.png";
+import GalleryImg29 from "../assets/images/gallery-images/gallery-img29.png";
+import GalleryImg30 from "../assets/images/gallery-images/gallery-img30.png";
+import GalleryImg31 from "../assets/images/gallery-images/gallery-img31.png";
+import GalleryImg32 from "../assets/images/gallery-images/gallery-img32.png";
 
 export default function GallerySection({ size }) {
   const [galleryImages, setGalleryImages] = useState([]);
@@ -60,9 +68,17 @@ export default function GallerySection({ size }) {
         <GallerySectionImage imgSrc={GalleryImg22} alt={"Image 22"} />,
         <GallerySectionImage imgSrc={GalleryImg23} alt={"Image 23"} />,
         <GallerySectionImage imgSrc={GalleryImg24} alt={"Image 24"} />,
+        <GallerySectionImage imgSrc={GalleryImg25} alt={"Image 25"} />,
+        <GallerySectionImage imgSrc={GalleryImg26} alt={"Image 26"} />,
+        <GallerySectionImage imgSrc={GalleryImg27} alt={"Image 27"} />,
+        <GallerySectionImage imgSrc={GalleryImg28} alt={"Image 28"} />,
+        <GallerySectionImage imgSrc={GalleryImg29} alt={"Image 29"} />,
+        <GallerySectionImage imgSrc={GalleryImg30} alt={"Image 30"} />,
+        <GallerySectionImage imgSrc={GalleryImg31} alt={"Image 31"} />,
+        <GallerySectionImage imgSrc={GalleryImg32} alt={"Image 32"} />,
       ];
 
-      for (let i = 1; i <= 24 - size; i++) {
+      for (let i = 1; i <= 32 - size; i++) {
         images.pop();
       }
       setGalleryImages(images);

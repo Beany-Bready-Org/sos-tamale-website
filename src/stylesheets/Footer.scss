@@ -2,7 +2,7 @@
 	width: 100%;
 	background-color: $footer-bg;
 	padding: 0 5em;
-	@include flex(row, center, center, unset);	
+	@include flex(row, center, center, unset);
 	// display: grid;
 	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	padding-bottom: 1em;
@@ -19,10 +19,60 @@
 		gap: 1em;
 		font-family: family(poppins);
 
+		.footer-main__name {
+			width: 100%;
+		}
+
+		// Footer call to action
+		.footer-join {
+			width: 95%;
+			background-color: #fff;
+			padding: 1em;
+			border-radius: 0.5rem;
+			margin-top: 0.5em;
+			position: relative;
+			isolation: isolate;
+			overflow: clip;
+
+			&__image {
+				position: absolute;
+				z-index: -1;
+				transform: translateX(30%);
+				top: -1rem;
+				opacity: .4;
+			}
+
+			&__content {
+				h2 {
+					font-size: 1.3rem;
+					color: $accent-color;
+					text-shadow: 3px 4px 15px rgb(0 0 0 / .3);
+				}
+
+				p {
+					font-size: 0.8rem;
+					color: lighten($accent-color, 10%);
+				}
+			}
+
+			&__cta {
+				font-size: 0.9rem;
+				color: #fff;
+				background-color: $accent-color;
+				padding: 0.5em 1em;
+				border-radius: 0.3rem;
+			}
+		}
+
 		&-school-name {
 			color: #fff;
 			font-size: 1.5rem;
-			width: 50%;
+			width: 70%;
+		}
+
+		em {
+			color: #fff;
+			font-weight: 100;
 		}
 
 		img {
@@ -58,6 +108,7 @@
 			}
 			li {
 				color: #fff;
+				list-style: none;
 
 				> * {
 					color: inherit;
@@ -84,22 +135,37 @@
 		margin-bottom: 0;
 	}
 
+	&__social {
+		display: flex;
+		list-style: none;
+		gap: 1em;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			> * {
+				color: #fff;
+				font-size: 1.2rem;
+			}
+		}
+	}
+
 	.link {
 		color: #fff;
 		font-weight: weights(light);
 	}
 
 	.authors {
+		margin-left: 0.5em;
 		margin-bottom: 0 !important;
 	}
 
 	.github-reachout {
 		display: inherit;
 		align-items: center;
-		gap: .4em;
+		gap: 0.4em;
 		color: #fff;
-		font-size: clamp(.5rem, 50vw, 1.2rem);
-
+		font-size: clamp(0.5rem, 50vw, 1.2rem);
 
 		// .icon {
 		// }

@@ -12,10 +12,10 @@ const DidYouKnow = () => {
     <div className="did-you-know important-section">
       <h2 className="did-you-know__heading">Did You Know?</h2>
       <p className="did-you-know__description">
-        SOS Hermann Gmeiner School was founded in 1969 by Hermann Gmeiner to
+        SOS Children's Village foundation was founded in 1949 by Hermann Gmeiner to
         support children orphaned after WWII. The first institution was
-        established in Sweden in 1996. After that, the organisation spread to
-        over 150 countries spanning 6 continents.
+        established in Austria in 1949. After that, the organisation spread to
+        over 118 countries spanning 6 continents.
       </p>
       <div className="did-you-know__buttons">
         <NavLink
@@ -23,13 +23,13 @@ const DidYouKnow = () => {
           className="--cta-secondary"
           target="_blank"
         >
-          Visit Our Main Website
+          Visit The Main Website
           <FontAwesomeIcon
             icon={faArrowUpRightFromSquare}
             className="arrow-icon"
           />
         </NavLink>
-        <NavLink to="https://hgic.com" className="--cta" target="_blank">
+        <NavLink to="https://www.soshgic.edu.gh/" className="--cta" target="_blank">
           Visit International College
           <FontAwesomeIcon icon={faArrowCircleRight} className="arrow-icon" />
         </NavLink>

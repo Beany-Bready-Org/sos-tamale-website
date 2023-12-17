@@ -19,6 +19,7 @@ export const NAV_DISPLAY_ACTIONS = {
   ABOUT: "about",
   CONTACT: "contact",
   ENROLL: "enroll",
+  EVENT: "event"
   // GALLERY: "gallery",
 };
 
@@ -33,6 +34,8 @@ const NavContextProvider = ({ children }) => {
         return (state = NAV_DISPLAY_ACTIONS.CONTACT);
       case NAV_DISPLAY_ACTIONS.ENROLL:
         return (state = NAV_DISPLAY_ACTIONS.ENROLL);
+      case NAV_DISPLAY_ACTIONS.EVENT:
+        return (state = NAV_DISPLAY_ACTIONS.EVENT);
       // case NAV_DISPLAY_ACTIONS.GALLERY:
       //   return (state = NAV_DISPLAY_ACTIONS.GALLERY);
     }

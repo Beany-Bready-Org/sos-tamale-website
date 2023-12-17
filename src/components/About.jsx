@@ -1,40 +1,52 @@
 import React from "react";
-import Navbar from "./Navbar";
-import aboutBanner from "../assets/images/gallery-images/gallery-img12.png";
+import aboutBanner from "../assets/images/gallery-images/gallery-img1.png";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCrosshairs, faEye, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const About = () => {
 	return (
 		<>
 			<section className="about-banner">
 				<div className="about-banner__background">
-					<img src={aboutBanner} alt="About" className="about-banner__background-image"/>
+					<img
+						src={aboutBanner}
+						alt="About"
+						className="about-banner__background-image"
+					/>
 				</div>
 				<h1 className="about-banner__header">We are SOS HGS</h1>
 			</section>
 			<section className="mission-vision">
 				<div className="mission">
-					<h2 className="mission-vision__header">Our Mission</h2>
+					<h2 className="mission-vision__header">
+						{" "}
+						<FontAwesomeIcon icon={faCrosshairs} />
+						Our Mission{" "}
+					</h2>
 					<p className="mission-vision__description">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
-						distinctio vero laboriosam ipsa accusamus, sapiente quis recusandae
-						qui, nam dignissimos accusantium, culpa at sit assumenda doloremque?
-						Labore recusandae molestiae odio!
+						<em>
+							We provide quality basic education for pupils/students through the
+							development of children's capabilities that they require to live
+							dignified life to empower them to effectively participate
+							positively in society.
+						</em>
 					</p>
 				</div>
 				<div className="vision">
-					<h2 className="mission-vision__header">Our Vision</h2>
+					<h2 className="mission-vision__header">
+						<FontAwesomeIcon icon={faEye} />
+						Our Vision
+					</h2>
 					<p className="mission-vision__description">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
-						distinctio vero laboriosam ipsa accusamus, sapiente quis recusandae
-						qui, nam dignissimos accusantium, culpa at sit assumenda doloremque?
-						Labore recusandae molestiae odio!
+						Here at SOS, it is our vision that,
+						<em>"Every child has a latent potential and can be nurtured".</em>
 					</p>
 				</div>
 			</section>
 			<section className="our-values">
-        <h2 className="our-values__header">Our Values</h2>
+				<h2 className="our-values__header">Our Values</h2>
 				<div className="our-values__container">
 					<div className="our-values__value">
 						<h2>Courage</h2>
@@ -54,15 +66,19 @@ const About = () => {
 					</div>
 				</div>
 			</section>
-      <div className="join-school">
-        <h2 className="join-school__header">
-          Want to join our noble institution?
-        </h2>
-        <Link to="/enroll" className="--cta-secondary">
-          Enroll Now!!
-        </Link>
-      </div>
-	  <Footer />
+			<div className="join-school">
+				<h2 className="join-school__header">
+					Want to join our noble institution?
+				</h2>
+				<p>
+					We cannot wait to have you and your ward <br /> with us here at SOS
+					Hermmann Gmeiner School!
+				</p>
+				<Link to="/enroll" className="--cta-secondary">
+					Enroll Now <FontAwesomeIcon icon={faArrowRight} />
+				</Link>
+			</div>
+			<Footer />
 		</>
 	);
 };
