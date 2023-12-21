@@ -24,9 +24,7 @@ const Home = () => {
 					{/* <NewsLetter /> */}
 					<DidYouKnow />
 				</div>
-				<div style={{ height: "100%", maxHeight: "100%" }}>
 					<MapEmbed />
-				</div>
 			</main>
 			<footer>
 				<Footer />

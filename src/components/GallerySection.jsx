@@ -38,88 +38,64 @@ import GalleryImg30 from "../assets/images/gallery-images/gallery-img30.png";
 import GalleryImg31 from "../assets/images/gallery-images/gallery-img31.png";
 import GalleryImg32 from "../assets/images/gallery-images/gallery-img32.png";
 
-export default function GallerySection({ size }) {
-  const [galleryImages, setGalleryImages] = useState([]);
+export default function GallerySection({ size }) { 
+	const [galleryImages, setGalleryImages] = useState([]);
 
-  useEffect(() => {
-    function handleGalleryImages(size) {
-      const images = [
-        <GallerySectionImage imgSrc={GalleryImg1} alt={"Image 1"} />,
-        <GallerySectionImage imgSrc={GalleryImg2} alt={"Image 2"} />,
-        <GallerySectionImage imgSrc={GalleryImg3} alt={"Image 3"} />,
-        <GallerySectionImage imgSrc={GalleryImg4} alt={"Image 4"} />,
-        <GallerySectionImage imgSrc={GalleryImg5} alt={"Image 5"} />,
-        <GallerySectionImage imgSrc={GalleryImg6} alt={"Image 6"} />,
-        <GallerySectionImage imgSrc={GalleryImg7} alt={"Image 7"} />,
-        <GallerySectionImage imgSrc={GalleryImg8} alt={"Image 8"} />,
-        <GallerySectionImage imgSrc={GalleryImg9} alt={"Image 9"} />,
-        <GallerySectionImage imgSrc={GalleryImg10} alt={"Image 10"} />,
-        <GallerySectionImage imgSrc={GalleryImg11} alt={"Image 11"} />,
-        <GallerySectionImage imgSrc={GalleryImg12} alt={"Image 12"} />,
-        <GallerySectionImage imgSrc={GalleryImg13} alt={"Image 13"} />,
-        <GallerySectionImage imgSrc={GalleryImg14} alt={"Image 14"} />,
-        <GallerySectionImage imgSrc={GalleryImg15} alt={"Image 15"} />,
-        <GallerySectionImage imgSrc={GalleryImg16} alt={"Image 16"} />,
-        <GallerySectionImage imgSrc={GalleryImg17} alt={"Image 17"} />,
-        <GallerySectionImage imgSrc={GalleryImg18} alt={"Image 18"} />,
-        <GallerySectionImage imgSrc={GalleryImg19} alt={"Image 19"} />,
-        <GallerySectionImage imgSrc={GalleryImg20} alt={"Image 20"} />,
-        <GallerySectionImage imgSrc={GalleryImg21} alt={"Image 21"} />,
-        <GallerySectionImage imgSrc={GalleryImg22} alt={"Image 22"} />,
-        <GallerySectionImage imgSrc={GalleryImg23} alt={"Image 23"} />,
-        <GallerySectionImage imgSrc={GalleryImg24} alt={"Image 24"} />,
-        <GallerySectionImage imgSrc={GalleryImg25} alt={"Image 25"} />,
-        <GallerySectionImage imgSrc={GalleryImg26} alt={"Image 26"} />,
-        <GallerySectionImage imgSrc={GalleryImg27} alt={"Image 27"} />,
-        <GallerySectionImage imgSrc={GalleryImg28} alt={"Image 28"} />,
-        <GallerySectionImage imgSrc={GalleryImg29} alt={"Image 29"} />,
-        <GallerySectionImage imgSrc={GalleryImg30} alt={"Image 30"} />,
-        <GallerySectionImage imgSrc={GalleryImg31} alt={"Image 31"} />,
-        <GallerySectionImage imgSrc={GalleryImg32} alt={"Image 32"} />,
-      ];
+	useEffect(() => {
+		function handleGalleryImages(size) {
+			const images = [
+				<GallerySectionImage imgSrc={GalleryImg1} alt={"Image 1"} />,
+				<GallerySectionImage imgSrc={GalleryImg2} alt={"Image 2"} />,
+				<GallerySectionImage imgSrc={GalleryImg3} alt={"Image 3"} />,
+				<GallerySectionImage imgSrc={GalleryImg4} alt={"Image 4"} />,
+				<GallerySectionImage imgSrc={GalleryImg5} alt={"Image 5"} />,
+				<GallerySectionImage imgSrc={GalleryImg6} alt={"Image 6"} />,
+				<GallerySectionImage imgSrc={GalleryImg7} alt={"Image 7"} />,
+				<GallerySectionImage imgSrc={GalleryImg8} alt={"Image 8"} />,
+				<GallerySectionImage imgSrc={GalleryImg9} alt={"Image 9"} />,
+				<GallerySectionImage imgSrc={GalleryImg10} alt={"Image 10"} />,
+				<GallerySectionImage imgSrc={GalleryImg11} alt={"Image 11"} />,
+				<GallerySectionImage imgSrc={GalleryImg12} alt={"Image 12"} />,
+				<GallerySectionImage imgSrc={GalleryImg13} alt={"Image 13"} />,
+				<GallerySectionImage imgSrc={GalleryImg14} alt={"Image 14"} />,
+				<GallerySectionImage imgSrc={GalleryImg15} alt={"Image 15"} />,
+				<GallerySectionImage imgSrc={GalleryImg16} alt={"Image 16"} />,
+				<GallerySectionImage imgSrc={GalleryImg17} alt={"Image 17"} />,
+				<GallerySectionImage imgSrc={GalleryImg18} alt={"Image 18"} />,
+				<GallerySectionImage imgSrc={GalleryImg19} alt={"Image 19"} />,
+				<GallerySectionImage imgSrc={GalleryImg20} alt={"Image 20"} />,
+				<GallerySectionImage imgSrc={GalleryImg21} alt={"Image 21"} />,
+				<GallerySectionImage imgSrc={GalleryImg22} alt={"Image 22"} />,
+				<GallerySectionImage imgSrc={GalleryImg23} alt={"Image 23"} />,
+				<GallerySectionImage imgSrc={GalleryImg24} alt={"Image 24"} />,
+				<GallerySectionImage imgSrc={GalleryImg25} alt={"Image 25"} />,
+				<GallerySectionImage imgSrc={GalleryImg26} alt={"Image 26"} />,
+				<GallerySectionImage imgSrc={GalleryImg27} alt={"Image 27"} />,
+				<GallerySectionImage imgSrc={GalleryImg28} alt={"Image 28"} />,
+				<GallerySectionImage imgSrc={GalleryImg29} alt={"Image 29"} />,
+				<GallerySectionImage imgSrc={GalleryImg30} alt={"Image 30"} />,
+				<GallerySectionImage imgSrc={GalleryImg31} alt={"Image 31"} />,
+				<GallerySectionImage imgSrc={GalleryImg32} alt={"Image 32"} />,
+			];
 
-      for (let i = 1; i <= 32 - size; i++) {
-        images.pop();
-      }
-      setGalleryImages(images);
-    }
+			for (let i = 1; i <= 32 - size; i++) {
+				images.pop();
+			}
+			setGalleryImages(images);
+		}
 
-    handleGalleryImages(size);
-  }, []);
+		handleGalleryImages(size);
+	}, []);
 
-  // useEffect(() => {
-  //   async function importImages(number) {
-  //     const images = [];
-  //     for (let i = 1; i <= number; i++) {
-  //       try {
-  //         const image = await import(
-  //           `../assets/images/gallery-images/gallery-img${i}.png`
-  //         );
-  //         images.push(
-  //           <GallerySectionImage
-  //             key={`gallery-img${i}`}
-  //             imgSrc={image.default}
-  //             alt={`Gallery Image ${i}`}
-  //           />
-  //         );
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     }
-  //     setGalleryImages(images);
-  //   }
-  //   importImages(number);
-  // }, []);
-
-  return (
-    <section className="gallery-section">
-      <h2 className="--header" style={{ color: "black" }}>
-        SOS Tamale Gallery
-      </h2>
-      <div className="gallery-section__images">{galleryImages}</div>
-      <NavLink to="/gallery" className="--cta">
-        See more
-      </NavLink>
-    </section>
-  );
+	return (
+		<section className="gallery-section">
+			<h2 className="--header" style={{ color: "black" }}>
+				SOS Tamale Gallery
+			</h2>
+			<div className="gallery-section__images">{galleryImages}</div>
+			<NavLink to="/gallery" className="--cta" id="see-more-btn">
+				See more
+			</NavLink>
+		</section>
+	);
 }

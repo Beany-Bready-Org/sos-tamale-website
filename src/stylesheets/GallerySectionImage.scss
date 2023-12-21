@@ -52,7 +52,8 @@
 	&:hover,
 	&:focus {
 		img {
-			filter: grayscale(70%);
+			// filter: grayscale(70%);
+			transform: scale(1.05);
 		}
 		.image-button {
 			transform: translate(0);

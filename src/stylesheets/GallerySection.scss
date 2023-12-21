@@ -13,7 +13,7 @@
   .gallery-section__images {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1em;
+    // gap: 1em;
     grid-template-rows: repeat(auto-fit, 1fr);
     margin-bottom: 3em;
 
