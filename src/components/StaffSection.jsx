@@ -8,7 +8,7 @@ const StaffSection = () => {
 			<h2 className="staff-section__header section-header">Meet Our Staff</h2>
 			<p className="staff-section__description section-description">
 				Meet our noble staff members who have greatly helped in the success of
-				our school
+				our school.
 			</p>
 			<div className="staff-section__staff">
 				<Staff />

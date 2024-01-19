@@ -23,6 +23,47 @@
 			width: 100%;
 		}
 
+		// Footer call to action
+		.footer-join {
+			width: 95%;
+			background-color: #fff;
+			padding: 1em;
+			border-radius: 0.5rem;
+			margin-top: 0.5em;
+			position: relative;
+			isolation: isolate;
+			overflow: clip;
+
+			&__image {
+				position: absolute;
+				z-index: -1;
+				transform: translateX(30%);
+				top: -1rem;
+				opacity: .4;
+			}
+
+			&__content {
+				h2 {
+					font-size: 1.3rem;
+					color: $accent-color;
+					text-shadow: 3px 4px 15px rgb(0 0 0 / .3);
+				}
+
+				p {
+					font-size: 0.8rem;
+					color: lighten($accent-color, 10%);
+				}
+			}
+
+			&__cta {
+				font-size: 0.9rem;
+				color: #fff;
+				background-color: $accent-color;
+				padding: 0.5em 1em;
+				border-radius: 0.3rem;
+			}
+		}
+
 		&-school-name {
 			color: #fff;
 			font-size: 1.5rem;

@@ -8,6 +8,7 @@ import {
 	faLinkedinIn,
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import FooterJoin from "./FooterJoin";
 
 const Footer = () => {
 	return (
@@ -27,6 +28,7 @@ const Footer = () => {
 							SOS Hermann Gmeiner school tamale
 						</h2>
 						<em>We are tops!</em>
+						<FooterJoin />
 					</div>
 				</div>
 				<div className="footer-main__links">
@@ -75,7 +77,7 @@ const Footer = () => {
 						Beany-Bready Org - Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
 					</NavLink>
 				</p>
-				<ul className="footer-secondary__social" aria-name="footer social media">
+				<ul className="footer-secondary__social">
 					<li className="social-link">
 						<Link to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr">
 							<FontAwesomeIcon icon={faFacebook} />
