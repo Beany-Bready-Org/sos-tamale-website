@@ -55,7 +55,7 @@ const NavContextProvider = ({ children }) => {
   return (
     <NavDisplayContext.Provider value={navDisplayValues}>
       <NavContext.Provider value={{showNav, showDropMenus}}>
-        <NavContextUpdater.Provider value={{navStateToggler, showDropMenusToggler}}>
+        <NavContextUpdater.Provider value={{navStateToggler, showDropMenusToggler, setShowNav}}>
           {children}
         </NavContextUpdater.Provider>
       </NavContext.Provider>
