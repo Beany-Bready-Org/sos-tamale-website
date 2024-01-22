@@ -165,12 +165,21 @@ const Navbar = () => {
 					{/* <li className="item">
             <NavLink to="/rules-and-regulations">Guidelines</NavLink>
           </li> */}
-					<li className="item --drop-down-invoker">
-						<span>See more</span>
+					{/* <li className="item --drop-down-invoker"> */}
+					<li className="item">
+						<NavLink
+							to="/rules-and-regulations"
+							onClick={() => {
+								// Hide mobile nav
+								setShowNav(false);
+							}}
+						>
+							Guidelines
+						</NavLink>
+						{/* <span>See more</span>
 						<div className="dropdown-menu">
-							<NavLink to="/rules-and-regulations">Guidelines</NavLink>
 							<NavLink to="/events">Events</NavLink>
-						</div>
+						</div> */}
 					</li>
 					<li className="item social-items">
 						<p className="get-in-touch">Social Media:</p>
