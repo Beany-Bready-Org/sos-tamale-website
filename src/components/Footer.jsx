@@ -68,7 +68,7 @@ const Footer = () => {
 			</div>
 			<div className="footer-secondary">
 				<p className="footer-secondary__org">
-					&copy; 2023
+					&copy; 2024
 					<NavLink
 						to="https://github.com/Beany-Bready-Org/sos-tamale-website"
 						className="link authors"

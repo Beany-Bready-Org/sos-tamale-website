@@ -2,6 +2,11 @@ import { useRef, useState } from "react";
 import "../../stylesheets/ContactForm.scss";
 import ContactInput from "./ContactInput";
 import emailjs from "@emailjs/browser";
+// import {
+// 	SECRET_PUBLIC_KEY,
+// 	SECRET_SERVICE_ID,
+// 	SECRET_TEMPLATE_ID,
+// } from "../../secrets/EmailSecrets";
 // import { Alert } from "react-bootstrap";
 
 export default function ContactForm() {
@@ -64,7 +69,6 @@ export default function ContactForm() {
 		} finally {
 			setLoading(false);
 		}
-
 	};
 
 	return (
@@ -74,12 +78,18 @@ export default function ContactForm() {
 					{errorMessage ? errorMessage : successMessage}
 				</p>
 			) : null}
-			<div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-      <h1 className="--header contact-header" style={{ color: "black" }}>
-				Contact Us
-			</h1>
-      <p className="contact-des">Contact us now for further enquiries.</p>
-      </div>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+				}}
+			>
+				<h1 className="--header contact-header" style={{ color: "black" }}>
+					Contact Us
+				</h1>
+				<p className="contact-des">Contact us now for further enquiries.</p>
+			</div>
 			<ContactInput
 				type={"text"}
 				placeholder={"Type your full name here"}
