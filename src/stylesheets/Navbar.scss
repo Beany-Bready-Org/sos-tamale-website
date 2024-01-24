@@ -4,13 +4,13 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 	width: 100%;
 	z-index: 100;
 	background-color: #fff;
-	border-bottom: 2px $light-secondary-color solid;
+	// border-bottom: 2px $light-secondary-color solid;
 
 	.secondary-nav {
 		display: flex;
 		align-items: center;
 		background-color: #f0f0f0;
-		border-bottom: $light-secondary-color 2px solid;
+		// border-bottom: $light-secondary-color 2px solid;
 		padding-block: 0.75vmin;
 		min-height: 5vh;
 
