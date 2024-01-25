@@ -10,14 +10,9 @@ import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 import RulesRegulations from "./components/rnr/RulesRegulations";
 import Events from "./components/events-page/Events";
-// Lazily loaded components coming soon
-// const Contact = lazy(() => import( "./components/contact/Contact"));
-// const About = lazy(() => import("./components/About"));
-// const Gallery = lazy(() => import("./components/gallery/Gallery"))
-// const Enroll = lazy(() => import("./components/enroll/Enroll"))
-// const RulesRegulations = lazy(() => import("./components/rnr/RulesRegulations"))
+require("dotenv").config()
 
-
+// Main component
 export default function App() {
   return (
     <>
