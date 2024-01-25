@@ -11,15 +11,34 @@
 	isolation: isolate;
 	overflow: hidden;
 	cursor: pointer;
+	position: relative;
 
 	& > * {
 		grid-column: 1 / -1;
 		grid-row: 1/ -1;
 	}
 
+	dialog {
+		width: clamp(300px, 80%, 500px);
+		border: none;
+		margin: auto;
+
+		&::backdrop {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		img {
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+
 	.image-button {
 		z-index: 2000 !important;
 		padding: 0.5em 2em;
+		font-size: 0.9em;
 		margin: 1em;
 		transform: translateY(100px);
 	}
@@ -35,25 +54,25 @@
 	}
 
 
-	img {
+	& > img {
 		width: 100%;
 		aspect-ratio: 1;
 		object-fit: cover;
-		transition: all 200ms;
+		transition: all 300ms ease;
 	}
 
 	&.loaded {
 		filter: none;
-		img {
+		& > img {
 			opacity: 1;
 		}
 	}
 
 	&:hover,
 	&:focus {
-		img {
+		& > img {
 			// filter: grayscale(70%);
-			transform: scale(1.05);
+			transform: scale(1.025);
 		}
 		.image-button {
 			transform: translate(0);
