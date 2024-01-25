@@ -43,7 +43,7 @@ const Enroll = () => {
 		e.preventDefault();
 		setErrorMessage("");
 
-		const serviceId = "service_zwdqe87";
+		const serviceId = "service_zwdqe87" || process.env.SERVICE_ID_ENROLL;
 		const templateId = "template_ni7p3hr";
 		const publicKey = "HxfJG_ab_z5fbm2qm";
 
