@@ -10,7 +10,7 @@ import NavContextProvider from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 import RulesRegulations from "./components/rnr/RulesRegulations";
 import Events from "./components/events-page/Events";
-require("dotenv").config()
+
 
 // Main component
 export default function App() {
