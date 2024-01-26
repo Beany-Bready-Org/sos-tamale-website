@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.PORT || 5000
 
 // Admin routes
-import adminRoutes from "./routes/adminRoutes"
+import adminRoutes from "./routes/adminRoutes.js"
 app.use("/api/admin", adminRoutes)
 
 // Start mongoose database
