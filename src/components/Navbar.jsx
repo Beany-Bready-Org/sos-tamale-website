@@ -60,7 +60,7 @@ const Navbar = () => {
 						</a>
 						<span title="Call Us Now">
 							<FontAwesomeIcon icon={faPhone} />
-							059 584 4040
+							<em>NEEDS TO BE CHANGED</em>
 						</span>
 					</div>
 					<ul className="secondary-nav__text__social">

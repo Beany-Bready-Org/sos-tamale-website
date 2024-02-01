@@ -11,6 +11,8 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 		display: flex;
 		align-items: center;
 		background-color: #f0f0f0;
+		z-index: 1;
+		
 		// border-bottom: $light-secondary-color 2px solid;
 		padding-block: 0.75vmin;
 		min-height: 5vh;
@@ -91,6 +93,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 		container-name: navbar;
 		z-index: 100;
 		padding-inline: 4em;
+		box-shadow: 0 0 10px 0 #0000003d;
 
 		&__items {
 			margin: 0;
