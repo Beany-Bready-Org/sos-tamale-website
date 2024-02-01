@@ -27,11 +27,10 @@ app.use("/api/admin", adminRoutes);
 
 // Start mongoose database
 mongoose.connect(process.env.CONNECTION_STRING).then(() => {
-	console.log("hello");
 	app.listen(port, () => console.log(`Server running on ${port}`));
 });
 
-let connection = mongoose.connection;
+const connection = mongoose.connection;
 
 connection.once("open", () => {
 	console.log("MongoDB just the fun!!!!");

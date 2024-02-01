@@ -7,6 +7,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 	// border-bottom: 2px $light-secondary-color solid;
 	box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
 
+
 	.secondary-nav {
 		display: flex;
 		align-items: center;
@@ -93,7 +94,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 		container-name: navbar;
 		z-index: 100;
 		padding-inline: 4em;
-		box-shadow: 0 0 10px 0 #0000003d;
+		// box-shadow: 0 0 10px 0 #0000003d;
 
 		&__items {
 			margin: 0;
