@@ -19,7 +19,8 @@
 	}
 
 	dialog {
-		width: clamp(300px, 80%, 500px);
+		width: clamp(250px, 70%, 500px);
+		overflow: hidden;
 		border: none;
 		margin: auto;
 
