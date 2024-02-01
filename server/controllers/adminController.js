@@ -37,7 +37,6 @@ const registerAccount = asyncHandler(async (req, res, next) => {
 		const newUser = new Admin({
 			name,
 			email,
-			password,
 			token,
 			password: hashedPassword,
 		});
