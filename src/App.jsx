@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import "./stylesheets/App.scss";
-import { Routes, Route, redirect } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/contact/Contact";
 import About from "./components/About";

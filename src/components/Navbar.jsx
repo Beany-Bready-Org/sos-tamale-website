@@ -181,6 +181,21 @@ const Navbar = () => {
 							<NavLink to="/events">Events</NavLink>
 						</div> */}
 					</li>
+					<li className="item signup">
+						<NavLink
+							to="/register"
+							onClick={() => {
+								// Hide mobile nav
+								setShowNav(false);
+							}}
+						>
+							Signup
+						</NavLink>
+						{/* <span>See more</span>
+						<div className="dropdown-menu">
+							<NavLink to="/events">Events</NavLink>
+						</div> */}
+					</li>
 					<li className="item social-items">
 						<p className="get-in-touch">Social Media:</p>
 						<Link

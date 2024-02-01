@@ -15,7 +15,7 @@
 .video-container {
   width: 100%;
   max-width: 900px;
-  border-radius: 2vmin;
+  border-radius: 2vmin !important;
   overflow: hidden;
   aspect-ratio: 16 / 9;
   position: relative;

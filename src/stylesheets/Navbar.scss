@@ -5,6 +5,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 	z-index: 100;
 	background-color: #fff;
 	// border-bottom: 2px $light-secondary-color solid;
+	box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
 
 	.secondary-nav {
 		display: flex;
@@ -191,6 +192,19 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 					&:focus {
 						color: color(active);
 					}
+				}
+			}
+
+			// Signup
+			.signup {
+				border-radius: 5px;
+				padding: 0.5em 0.7em;
+				background-color: $accent-color;
+				color: #fff !important;
+				border-bottom: 4px solid $border-color;
+
+				& :is(:hover, :focus) {
+					color: #fff !important;
 				}
 			}
 			.social-items {

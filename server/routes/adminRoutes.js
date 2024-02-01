@@ -1,10 +1,8 @@
-import express from "express"
+const express = require("express");
+const { registerAccount } = require("../controllers/adminController");
+// Export
+const router = express.Router();
 
-const router = express.Router()
+router.get("/", registerAccount);
 
-
-router.get("/", (req, res) => {
-    res.status(200).send("hello")
-})
-
-export default router
+module.exports = router;

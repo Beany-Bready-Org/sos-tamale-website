@@ -1,20 +1,38 @@
-import express from "express"
-import cors from "cors"
-import dotenv from "dotenv"
-import mongoose from "mongoose"
-dotenv.config()
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const upload = require("express-fileupload");
 
-const app = express()
+dotenv.config();
 
-const port = process.env.PORT || 5000
+const app = express();
+
+const port = process.env.PORT || 5000;
+// Middleware
+app.use(
+	cors({
+		origin: "http://localhost:5173/#/",
+		credentials: true,
+		optionsSuccessStatus: 200,
+	})
+);
+app.options(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Admin routes
-import adminRoutes from "./routes/adminRoutes.js"
-app.use("/api/admin", adminRoutes)
+const adminRoutes = require("./routes/adminRoutes.js");
+app.use("/api/admin", adminRoutes);
 
 // Start mongoose database
-// mongoose.connect(process.env.CONNECTION_STRING).then(() => {
-//     console.log("hello")
-// })
+mongoose.connect(process.env.CONNECTION_STRING).then(() => {
+	console.log("hello");
+	app.listen(port, () => console.log(`Server running on ${port}`));
+});
 
-app.listen(port, () => console.log(`Server running on ${port}`))
+let connection = mongoose.connection;
+
+connection.once("open", () => {
+	console.log("MongoDB just the fun!!!!");
+});
