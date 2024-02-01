@@ -3,8 +3,9 @@
 .hero {
   @include flex(row, center, center, 0);
 
-  height: 80vh;
-  margin-top: 20vh;
+  height: 100vh;
+  // margin-top: 20vh;
+  padding-top: 5em;
   position: relative;
 
   @media screen and (max-width: 500px) {
