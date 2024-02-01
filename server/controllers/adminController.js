@@ -1,9 +1,10 @@
 const asyncHandler = require("../middleware/asyncHandler");
 const Admin = require("../models/adminModel");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 const path = require("path");
 const fs = require("fs");
+const createToken = require("../utils/createToken");
 
 // @route /api/admin/register
 // @desc Register admin account
@@ -28,6 +29,11 @@ const registerAccount = asyncHandler(async (req, res, next) => {
 			);
 		}
 
+		// Validate token
+		if (token !== process.env.ADMIN_TOKEN) {
+			return next(res.status(401).json({ message: "Invalid access token" }));
+		}
+
 		// Secure user password
 		// Create a salt
 		const salt = bcrypt.genSalt();
@@ -43,17 +49,17 @@ const registerAccount = asyncHandler(async (req, res, next) => {
 
 		// Save new user
 		await newUser.save();
+		// Generate token for user
+		let token = createToken(res, newUser?.name, newUser?.email);
 
 		if (newUser) {
-			res.status(200).json(newUser);
+			res.status(200).json({ user: await newUser.select("-password"), token });
 		}
 	} catch (error) {
 		res.status(500).json({ message: "An error occured on our end" });
 	}
 });
 
-const loginUser = asyncHandler(async (req, res, next) => {
-	
-})
+const loginUser = asyncHandler(async (req, res, next) => {});
 
 module.exports = { registerAccount };
