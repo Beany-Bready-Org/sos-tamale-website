@@ -7,17 +7,25 @@ const authenticate = (req, res, next) => {
 		const token = Authorizatinon.split(" ")[1];
 
 		jwt.verify(
-			token,JWT_SECRET,
+			token,
+			process.env.JWT_SECRET,
 			(error,
 			(info) => {
 				if (error) {
 					return next(res.status(401).json({ message: error.message }));
 				}
 
-                req.user = info
+				req.user = info;
+				next();
 			})
+		);
+	} else {
+		return next(
+			res
+				.status(401)
+				.json({ message: "Token not found, failed to authenticate" })
 		);
 	}
 };
 
-export default authenticate
+export default authenticate;

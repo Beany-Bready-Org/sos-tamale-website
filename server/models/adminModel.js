@@ -15,9 +15,9 @@ const adminSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		token: {
+		accessToken: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		avatar: {
 			type: String,
