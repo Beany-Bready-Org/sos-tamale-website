@@ -200,16 +200,14 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 			}
 
 			// Signup
-			.signup {
-				border-radius: 5px;
-				padding: 0.5em 0.7em;
-				background-color: $accent-color;
-				color: #fff !important;
-				border-bottom: 4px solid $border-color;
+			.--cta {
+				font-size: $text-cta !important;
+				transition: 200ms;
+				
 
-				& :is(:hover, :focus) {
-					color: #fff !important;
-				}
+				// & :is(:hover, :focus) {
+				// 	color: #fff !important;
+				// }
 			}
 			.social-items {
 				display: none;
