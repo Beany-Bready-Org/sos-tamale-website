@@ -6,7 +6,7 @@ import Contact from "./components/contact/Contact";
 import About from "./components/About";
 import Gallery from "./components/gallery/Gallery";
 import Enroll from "./components/enroll/Enroll";
-import NavContextProvider from "./contexts/NavContext";
+import NavContextProvider, { useAccessBox } from "./contexts/NavContext";
 import Navbar from "./components/Navbar";
 import RulesRegulations from "./components/rnr/RulesRegulations";
 import Events from "./components/events-page/Events";

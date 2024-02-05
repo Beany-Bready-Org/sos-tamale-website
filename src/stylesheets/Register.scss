@@ -1,27 +1,62 @@
 @import "./config";
 
 .register {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2em;
+	display: flex;
+	flex-direction: row-reverse;
+	height: 100dvh;
+	// align-items: center;
 
-  > * {
-    height: 100%;
-  }
+	.side-image {
+		width: 47%;
+		height: 100%;
+    position: relative;
+    display: grid;
+    // i;
 
-  &__form {
-    flex: 1;
-    @include flex(column, center, center, 1em);
-
-    &__heading {
-      text-align: center;
-
-      &__header {
-        font-size: $text-big;
-        font-family: family(gelasio);
-        color: $accent-color;
-      }
+    >  * {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
     }
-  }
+
+    .notice {
+      z-index: 100;
+      color: #fff;
+      margin: 1em auto;
+    }
+
+		&__item {
+			max-width: 100%;
+			object-fit: cover;
+			height: 100%;
+      filter: grayscale(30%);
+		}
+	}
+
+	> * {
+		height: 100%;
+	}
+
+	&__form {
+		flex: 1;
+		@include flex(column, center, center, 1em);
+
+		&__heading {
+			text-align: center;
+
+			&__header {
+				font-size: $text-big;
+				font-family: family(gelasio);
+				color: $accent-color;
+			}
+		}
+
+		.--cta {
+			width: clamp(300px, 85%, 500px);
+		}
+
+    .cancel-cta {
+      background-color: rgba(128, 128, 128, 0.609);
+      border: none !important;
+    }
+	}
 }
