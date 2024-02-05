@@ -203,6 +203,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 			.--cta {
 				font-size: $text-cta !important;
 				transition: 200ms;
+				font-weight: 700;
 				
 
 				// & :is(:hover, :focus) {

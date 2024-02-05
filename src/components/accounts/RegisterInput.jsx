@@ -7,16 +7,13 @@ export default function RegisterInput({
   className,
   nameValue,
 }) {
-  switch (type) {
-    case "name":
-      return (
-        <input
-          type={type}
-          placeholder={placeholder}
-          ref={inputRef}
-          className={className}
-          name={nameValue}
-        />
-      );
-  }
+  return (
+    <input
+      type={type}
+      placeholder={placeholder}
+      ref={inputRef}
+      className="register__form__input --input"
+      name={nameValue}
+    />
+  );
 }

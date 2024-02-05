@@ -1,2 +1,27 @@
 @import "./config";
 
+.register {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+
+  > * {
+    height: 100%;
+  }
+
+  &__form {
+    flex: 1;
+    @include flex(column, center, center, 1em);
+
+    &__heading {
+      text-align: center;
+
+      &__header {
+        font-size: $text-big;
+        font-family: family(gelasio);
+        color: $accent-color;
+      }
+    }
+  }
+}
