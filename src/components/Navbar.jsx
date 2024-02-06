@@ -16,15 +16,13 @@ import {
 	useShowNav,
 	useShowNavToggler,
 	useNavDisplay,
-	useAccessBox,
 } from "../contexts/NavContext";
 // Display actions
 import { NAV_DISPLAY_ACTIONS } from "../contexts/NavContext";
 
 const Navbar = () => {
 	const { showNav } = useShowNav();
-	// Access box
-	const { showAccessBoxToggler } = useAccessBox();
+
 	const { navStateToggler, showDropMenusToggler, setShowNav } =
 		useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
@@ -189,7 +187,7 @@ const Navbar = () => {
 							onClick={() => {
 								// Hide mobile nav
 								setShowNav(false);
-								showAccessBoxToggler(true)
+								showAccessBoxToggler(true);
 							}}
 							className=" --cta"
 						>

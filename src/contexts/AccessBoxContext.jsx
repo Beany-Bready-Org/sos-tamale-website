@@ -4,12 +4,10 @@ const AccessBoxContext = React.createContext();
 export function useAccessBox() {
 	return useContext(AccessBoxContext);
 }
-const [showAccessBox, setShowAccessBox] = useState(false);
 
 const AccessBoxProvider = ({ children }) => {
-	return <AccessBoxContext.Provider>
-        {children}
-    </AccessBoxContext.Provider>;
+    const [showAccessBox, setShowAccessBox] = useState(false);
+	return <AccessBoxContext.Provider value={{showAccessBox, setShowAccessBox}}>{children}</AccessBoxContext.Provider>;
 };
 
 export default AccessBoxProvider;
