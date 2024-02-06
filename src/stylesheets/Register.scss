@@ -3,8 +3,9 @@
 .register {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 2em;
+  padding-top: 20vh;
 
   > * {
     height: 100%;
@@ -18,9 +19,7 @@
       text-align: center;
 
       &__header {
-        font-size: $text-big;
-        font-family: family(gelasio);
-        color: $accent-color;
+        margin: 4vmax 0 2vmax;
       }
     }
   }

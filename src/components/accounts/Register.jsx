@@ -12,7 +12,7 @@ export default function Register() {
         // ref={formRef}
       >
         <div className="register__form__heading">
-          <h2 className="register__form__heading__header">
+          <h2 className="register__form__heading__header --header">
             Register as an Admin
           </h2>
         </div>

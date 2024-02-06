@@ -89,7 +89,7 @@ export default function GallerySection({ size }) {
 
 	return (
 		<section className="gallery-section">
-			<h2 className="--header" style={{ color: "black" }}>
+			<h2 className="--header">
 				SOS Tamale Gallery
 			</h2>
 			<div className="gallery-section__images">{galleryImages}</div>
