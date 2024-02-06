@@ -15,10 +15,10 @@ const adminSchema = mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		accessToken: {
-			type: String,
-			required: false,
-		},
+		// accessToken: {
+		// 	type: String,
+		// 	required: false,
+		// },
 		avatar: {
 			type: String,
 			required: false,

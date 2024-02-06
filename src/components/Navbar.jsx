@@ -21,7 +21,8 @@ import {
 import { NAV_DISPLAY_ACTIONS } from "../contexts/NavContext";
 
 const Navbar = () => {
-	const { showNav, showDropMenus } = useShowNav();
+	const { showNav } = useShowNav();
+
 	const { navStateToggler, showDropMenusToggler, setShowNav } =
 		useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
@@ -31,7 +32,7 @@ const Navbar = () => {
 		if (
 			location.pathname === "/contact" ||
 			location.pathname === "/enroll" ||
-			location.pathname === "/events"
+			location.pathname === "/register"
 		) {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
 			showDropMenusToggler(false);
@@ -182,16 +183,16 @@ const Navbar = () => {
 						</div> */}
 					</li>
 					<li className="item">
-						<NavLink
-							to="/register"
+						<button
 							onClick={() => {
 								// Hide mobile nav
 								setShowNav(false);
+								showAccessBoxToggler(true);
 							}}
 							className=" --cta"
 						>
 							Register as admin
-						</NavLink>
+						</button>
 						{/* <span>See more</span>
 						<div className="dropdown-menu">
 							<NavLink to="/events">Events</NavLink>

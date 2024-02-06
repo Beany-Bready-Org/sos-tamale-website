@@ -44,8 +44,8 @@ $font-weights: (
 	border-radius: $b-radius;
 	border: 0;
 	// box-shadow: 0 4px 0 #0075a3;
-	border: 1px solid $border-color;
-	border-bottom: 4px solid $border-color;
+	border: 1px solid $border-color !important;
+	border-bottom: 4px solid $border-color !important;
 	cursor: pointer;
 	font-size: $text-cta;
 	font-weight: weights(bold);

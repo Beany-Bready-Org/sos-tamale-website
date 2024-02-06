@@ -5,14 +5,32 @@ const path = require("path");
 const fs = require("fs");
 const createToken = require("../utils/createToken");
 
+// @route /api/admin/validate-token
+// @desc Validate access token
+// @access private
+const validateToken = asyncHandler(async (req, res, next) => {
+	const { accessToken } = req.body;
+	if (!accessToken) {
+		return next(res.status(401).json({ message: "No access token found" }));
+	}
+
+	if (accessToken !== process.env.AMDIN_TOKEN) {
+		return next(res.status(401).json({ message: "Your token is invalid" }));
+	}
+
+	return next(
+		res.statuS(200).json({ message: "Access token verified!", success: true })
+	);
+});
+
 // @route /api/admin/register
 // @desc Register admin account
 // @access private
 
 const registerAccount = asyncHandler(async (req, res, next) => {
-	const { name, email, password, accessToken } = req.body;
+	const { name, email, password } = req.body;
 
-	if ((!name, !email, !password, !accessToken)) {
+	if ((!name, !email, !password)) {
 		return next(res.status(427).json({ message: "Invalid credentials" }));
 	}
 	// Verify access token
@@ -130,4 +148,4 @@ const logoutUser = asyncHandler(async (req, res, next) => {
 	);
 });
 
-module.exports = { registerAccount, loginUser, logoutUser };
+module.exports = { registerAccount, loginUser, logoutUser, validateToken };
