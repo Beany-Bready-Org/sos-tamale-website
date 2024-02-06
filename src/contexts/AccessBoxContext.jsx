@@ -6,8 +6,13 @@ export function useAccessBox() {
 }
 
 const AccessBoxProvider = ({ children }) => {
-    const [showAccessBox, setShowAccessBox] = useState(false);
-	return <AccessBoxContext.Provider value={{showAccessBox, setShowAccessBox}}>{children}</AccessBoxContext.Provider>;
+	const [showAccessBox, setShowAccessBox] = useState(false);
+    
+	return (
+		<AccessBoxContext.Provider value={{ showAccessBox, setShowAccessBox }}>
+			{children}
+		</AccessBoxContext.Provider>
+	);
 };
 
 export default AccessBoxProvider;

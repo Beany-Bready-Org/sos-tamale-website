@@ -12,6 +12,7 @@ import RulesRegulations from "./components/rnr/RulesRegulations";
 import Events from "./components/events-page/Events";
 import Register from "./components/accounts/Register";
 import AccessBoxProvider from "./contexts/AccessBoxContext";
+import AccessTokenBox from "./components/accounts/AccessTokenBox";
 
 // Main component
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
 			<NavContextProvider>
 				<AccessBoxProvider>
 					<Navbar />
+          <AccessTokenBox />
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/contact" element={<Contact />} />

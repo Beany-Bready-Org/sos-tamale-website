@@ -123,6 +123,12 @@ a {
   text-align: center;
 }
 
+.--header-small {
+  color: $accent-color;
+  font-size: calc($text-large - 1rem);
+  font-family: family(gelasio);
+}
+
 .--description {
   font-size: $text-small;
   font-weight: weights(regular);

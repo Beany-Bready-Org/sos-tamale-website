@@ -19,6 +19,8 @@ import {
 } from "../contexts/NavContext";
 // Display actions
 import { NAV_DISPLAY_ACTIONS } from "../contexts/NavContext";
+// Access Box context
+import { useAccessBox } from "../contexts/AccessBoxContext";
 
 const Navbar = () => {
 	const { showNav } = useShowNav();
@@ -27,6 +29,9 @@ const Navbar = () => {
 		useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
 	const location = useLocation();
+
+	// Access box
+	const { setShowAccessBox } = useAccessBox();
 
 	useEffect(() => {
 		if (
@@ -187,7 +192,7 @@ const Navbar = () => {
 							onClick={() => {
 								// Hide mobile nav
 								setShowNav(false);
-								showAccessBoxToggler(true);
+								setShowAccessBox(true);
 							}}
 							className=" --cta"
 						>
