@@ -57,7 +57,7 @@ export default function Register() {
 					nameValue="formPassword"
 				/> */}
 				<button className="register-cta --cta" type="submit">Submit</button>
-        <button type="button" className="cancel-cta --cta" onClick={() => navigate(-1)}>Cancel</button>
+        <button type="button" className="cancel-cta --danger" onClick={() => navigate(-1)}>Cancel</button>
 			</form>
 		</main>
 	);

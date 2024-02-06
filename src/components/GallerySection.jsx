@@ -14,7 +14,7 @@ import GalleryImg6 from "../assets/images/gallery-images/gallery-img6.png";
 import GalleryImg7 from "../assets/images/gallery-images/gallery-img7.png";
 import GalleryImg8 from "../assets/images/gallery-images/gallery-img8.png";
 import GalleryImg9 from "../assets/images/gallery-images/gallery-img9.png";
-// import GalleryImg10 from "../assets/images/gallery-images/gallery-img10.png";
+import GalleryImg10 from "../assets/images/gallery-images/gallery-img10.png";
 import GalleryImg11 from "../assets/images/gallery-images/gallery-img11.png";
 import GalleryImg12 from "../assets/images/gallery-images/gallery-img12.png";
 import GalleryImg13 from "../assets/images/gallery-images/gallery-img13.png";
@@ -53,7 +53,7 @@ export default function GallerySection({ size }) {
 				<GallerySectionImage imgSrc={GalleryImg7} alt={"Image 7"} />,
 				<GallerySectionImage imgSrc={GalleryImg8} alt={"Image 8"} />,
 				<GallerySectionImage imgSrc={GalleryImg9} alt={"Image 9"} />,
-				// <GallerySectionImage imgSrc={GalleryImg10} alt={"Image 10"} />,
+				<GallerySectionImage imgSrc={GalleryImg10} alt={"Image 10"} />,
 				<GallerySectionImage imgSrc={GalleryImg11} alt={"Image 11"} />,
 				<GallerySectionImage imgSrc={GalleryImg12} alt={"Image 12"} />,
 				<GallerySectionImage imgSrc={GalleryImg13} alt={"Image 13"} />,
@@ -89,7 +89,7 @@ export default function GallerySection({ size }) {
 
 	return (
 		<section className="gallery-section">
-			<h2 className="--header" style={{ color: "black" }}>
+			<h2 className="--header">
 				SOS Tamale Gallery
 			</h2>
 			<div className="gallery-section__images">{galleryImages}</div>
