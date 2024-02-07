@@ -68,7 +68,7 @@ const Footer = () => {
 			</div>
 			<div className="footer-secondary">
 				<p className="footer-secondary__org">
-					&copy; 2023
+					&copy; 2024
 					<NavLink
 						to="https://github.com/Beany-Bready-Org/sos-tamale-website"
 						className="link authors"
@@ -77,7 +77,7 @@ const Footer = () => {
 						Beany-Bready Org - Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
 					</NavLink>
 				</p>
-				<ul className="footer-secondary__social" aria-name="footer social media">
+				<ul className="footer-secondary__social">
 					<li className="social-link">
 						<Link to="https://web.facebook.com/SOSCVGHANA/?_rdc=1&_rdr">
 							<FontAwesomeIcon icon={faFacebook} />

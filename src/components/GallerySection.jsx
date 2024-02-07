@@ -87,36 +87,15 @@ export default function GallerySection({ size }) {
     handleGalleryImages(size);
   }, []);
 
-  // useEffect(() => {
-  //   async function importImages(number) {
-  //     const images = [];
-  //     for (let i = 1; i <= number; i++) {
-  //       try {
-  //         const image = await import(
-  //           `../assets/images/gallery-images/gallery-img${i}.png`
-  //         );
-  //         images.push(
-  //           <GallerySectionImage
-  //             key={`gallery-img${i}`}
-  //             imgSrc={image.default}
-  //             alt={`Gallery Image ${i}`}
-  //           />
-  //         );
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     }
-  //     setGalleryImages(images);
-  //   }
-  //   importImages(number);
-  // }, []);
-
-  return (
-    <section className="gallery-section">
-      <h2 className="--header" style={{ color: "black" }}>
-        SOS Tamale Gallery
-      </h2>
-      <div className="gallery-section__images">{galleryImages}</div>
-    </section>
-  );
+	return (
+		<section className="gallery-section">
+			<h2 className="--header">
+				SOS Tamale Gallery
+			</h2>
+			<div className="gallery-section__images">{galleryImages}</div>
+			<NavLink to="/gallery" className="--cta" id="see-more-btn">
+				See more
+			</NavLink>
+		</section>
+	);
 }

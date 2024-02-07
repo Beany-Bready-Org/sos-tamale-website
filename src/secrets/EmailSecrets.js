@@ -1,0 +1,16 @@
+const SECRET_TEMPLATE_ID = "template_zlkgrnn";
+const SECRET_SERVICE_ID = "service_k9t86zv";
+const SECRET_PUBLIC_KEY = "HxfJG_ab_z5fbm2qm";
+
+const SECRET_PUBLIC_KEY_ENROLL = "HxfJG_ab_z5fbm2qm";
+const SECRET_SERVICE_ID_ENROLL = "service_zwdqe87";
+const SECRET_TEMPLATE_ID_ENROLL = "template_ni7p3hr";
+
+export default {
+	SECRET_PUBLIC_KEY,
+	SECRET_SERVICE_ID,
+	SECRET_TEMPLATE_ID,
+	SECRET_PUBLIC_KEY_ENROLL,
+    SECRET_SERVICE_ID_ENROLL,
+    SECRET_TEMPLATE_ID_ENROLL
+};

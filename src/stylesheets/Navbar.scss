@@ -4,13 +4,17 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 	width: 100%;
 	z-index: 100;
 	background-color: #fff;
-	border-bottom: 2px $light-secondary-color solid;
+	// border-bottom: 2px $light-secondary-color solid;
+	box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
+
 
 	.secondary-nav {
 		display: flex;
 		align-items: center;
 		background-color: #f0f0f0;
-		border-bottom: $light-secondary-color 2px solid;
+		z-index: 1;
+		
+		// border-bottom: $light-secondary-color 2px solid;
 		padding-block: 0.75vmin;
 		min-height: 5vh;
 
@@ -90,6 +94,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 		container-name: navbar;
 		z-index: 100;
 		padding-inline: 4em;
+		// box-shadow: 0 0 10px 0 #0000003d;
 
 		&__items {
 			margin: 0;
@@ -111,11 +116,13 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 					& :is(:hover, :focus-visible) {
 						color: color(active);
 					}
+					color: $text-color;
+					font-size: $text-small;
 				}
 
 				// Drop down menu
 				.dropdown-menu {
-          width: fit-content;
+					width: fit-content;
 					position: absolute;
 					right: 0;
 					display: flex;
@@ -124,7 +131,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 					overflow: clip;
 					transition: all 300ms ease;
 					opacity: 0;
-          box-shadow: 3px 4px 15px rgb(0 0 0 / .4);
+					box-shadow: 3px 4px 15px rgb(0 0 0 / 0.4);
 
 					> * {
 						padding: 0.51em;
@@ -134,9 +141,9 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 						}
 					}
 
-          > * + * {
-            border-top: thin solid $light-secondary-color;
-          }
+					> * + * {
+						// border-top: thin solid $light-secondary-color;
+					}
 				}
 			}
 		}
@@ -191,6 +198,18 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 					}
 				}
 			}
+
+			// Signup
+			.--cta {
+				font-size: $text-cta !important;
+				transition: 200ms;
+				font-weight: 700;
+				
+
+				// & :is(:hover, :focus) {
+				// 	color: #fff !important;
+				// }
+			}
 			.social-items {
 				display: none;
 				border-bottom: 1px solid #f0f0f0;
@@ -235,18 +254,19 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 				pointer-events: none;
 				transition: all 300ms ease;
 
-        .--drop-down-invoker {
-          margin: 0;
-          padding: 0;
-          .dropdown-menu {
-            max-width: 300px;
-            inset: 0;
-            margin: auto;
+				.--drop-down-invoker {
+					margin: 0;
+					padding: 0;
 
-            // > *{
-            // }
-          }
-        }
+					.dropdown-menu {
+						max-width: 300px;
+						inset: 0;
+						margin: auto;
+
+						// > *{
+						// }
+					}
+				}
 
 				li:nth-child(odd) {
 					background-color: #f0f0f0;

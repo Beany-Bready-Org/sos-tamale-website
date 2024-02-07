@@ -111,14 +111,27 @@ a {
 
 .--cta {
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
-  @include button-hover("#fff", $deep-secondary-color, $secondary-color);
+  @include button-hover(#fff, $deep-secondary-color, $secondary-color);
 }
+
+.--danger {
+  @include button(#f8f8f8, $light-secondary-color, $light-secondary-color, $btn-tiny, 6px);
+  @include button-hover(#fff, $error-darker, $error-color);
+}
+
+
 
 .--header {
   color: $accent-color;
   font-size: $text-large;
   font-family: family(gelasio);
   text-align: center;
+}
+
+.--header-small {
+  color: $accent-color;
+  font-size: calc($text-large - 1rem);
+  font-family: family(gelasio);
 }
 
 .--description {

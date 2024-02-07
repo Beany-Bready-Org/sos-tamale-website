@@ -9,28 +9,29 @@ import GallerySection from "./GallerySection";
 import NewsLetter from "./NewsLetter";
 
 const Home = () => {
-  return (
-    <>
-      <header>
-        <Hero />
-        <Statistics teachers={250} nonTeachingStaff={100} students={500} />
-      </header>
-      <main>
-        <VideoSection />
-        <CampusesSection />
-        {/* <StaffSection /> */}
-        <GallerySection size={8} />
-        <div className="news-did-wrapper">
-          {/* <NewsLetter /> */}
-          <DidYouKnow />
-        </div>
-        <MapEmbed />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </>
-  );
+	return (
+		<>
+			<header>
+				<Hero />
+				{/* removed for now*/}
+				{/* <Statistics teachers={33} nonTeachingStaff={16} students={400} /> */}
+			</header>
+			<main>
+				<VideoSection />
+				<CampusesSection />
+				{/* <StaffSection /> */}
+				<GallerySection size={8} />
+				<div className="news-did-wrapper">
+					{/* <NewsLetter /> */}
+					<DidYouKnow />
+				</div>
+					<MapEmbed />
+			</main>
+			<footer>
+				<Footer />
+			</footer>
+		</>
+	);
 };
 
 export default Home;
