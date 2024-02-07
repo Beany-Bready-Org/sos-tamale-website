@@ -7,6 +7,7 @@ $max-width: 800px;
   height: 80vh;
   position: relative;
   isolation: isolate;
+  text-align: center;
 
   &__background {
     width: 100%;
@@ -25,7 +26,6 @@ $max-width: 800px;
     position: absolute;
     inset: max(2em, 2.5em) 0 0 0;
     margin: auto;
-    text-align: center;
     color: #fff;
     font-family: family(poppins);
     letter-spacing: 1.1px;
@@ -44,7 +44,6 @@ $max-width: 800px;
   width: 90dvw;
   max-width: $max-width + 200px;
   margin: 3em auto;
-  text-align: center;
 
   > * {
     border: thin solid #515559;
@@ -79,7 +78,7 @@ $max-width: 800px;
   margin: auto;
   font-family: family(poppins);
   width: 80dvw;
-  max-width: $max-width + 250px;
+  max-width: $max-width + 300px;
 
   &__header {
     font-size: 2.5rem;
@@ -92,17 +91,16 @@ $max-width: 800px;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    // padding: 1em;
     gap: 1em;
 
     > * {
-      padding: 0.75em;
+      padding: 0.75em 1em;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      transition: all 300ms ease;
+      // transition: all 300ms ease;
       border-radius: 0.5rem;
 
       box-shadow: 0 4px 0 lighten($text-color, 30%);
@@ -160,7 +158,6 @@ $max-width: 800px;
   font-family: family("poppins");
   border-radius: 1rem;
   overflow: clip;
-  text-align: center;
   background: url("../assets/images/gallery-images/gallery-img23.png") center
     center / cover;
 
@@ -176,9 +173,8 @@ $max-width: 800px;
     font-family: family(gelasio);
     color: #fff;
     font-size: 2rem;
-    width: 70%;
     text-transform: capitalize;
-    line-height: 1.4;
+    line-height: 1;
     margin: 0;
     text-shadow: 3px 4px 15px rgb(0 0 0 / 0.5);
   }

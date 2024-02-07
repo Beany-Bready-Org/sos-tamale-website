@@ -1,190 +1,190 @@
 .footer-main {
-	width: 100%;
-	background-color: $footer-bg;
-	padding: 0 5em;
-	@include flex(row, center, center, unset);
-	// display: grid;
-	// grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	padding-bottom: 1em;
-	container-type: inline-size;
-	container-name: footerMain;
+  width: 100%;
+  background-color: $footer-bg;
+  padding: 1em 4vmax;
+  @include flex(row, space-between, center, 4vmax);
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  container-type: inline-size;
+  container-name: footerMain;
 
-	@media screen and (max-width: 680px) {
-		flex-direction: column;
-	}
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+  }
 
-	&__logo {
-		padding: 3em 0;
-		display: flex;
-		gap: 1em;
-		font-family: family(poppins);
+  &__logo {
+    padding: 3em 0;
+    display: flex;
+    gap: 1em;
+    font-family: family(poppins);
 
-		.footer-main__name {
-			width: 100%;
-		}
+    .footer-main__name {
+      width: 100%;
+    }
 
-		// Footer call to action
-		.footer-join {
-			width: 95%;
-			background-color: #fff;
-			padding: 1em;
-			border-radius: 0.5rem;
-			margin-top: 0.5em;
-			position: relative;
-			isolation: isolate;
-			overflow: clip;
+    // Footer call to action
+    .footer-join {
+      width: 95%;
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 0.5rem;
+      margin-top: 0.5em;
+      position: relative;
+      isolation: isolate;
+      overflow: clip;
 
-			&__image {
-				position: absolute;
-				z-index: -1;
-				transform: translateX(30%);
-				top: -1rem;
-				opacity: .4;
-			}
+      &__image {
+        position: absolute;
+        z-index: -1;
+        transform: translateX(30%);
+        top: -1rem;
+        opacity: 0.4;
+      }
 
-			&__content {
-				h2 {
-					font-size: 1.3rem;
-					color: $accent-color;
-					text-shadow: 3px 4px 15px rgb(0 0 0 / .3);
-				}
+      &__content {
+        h2 {
+          font-size: 1.3rem;
+          color: $accent-color;
+          text-shadow: 3px 4px 15px rgb(0 0 0 / 0.3);
+        }
 
-				p {
-					font-size: 0.8rem;
-					color: lighten($accent-color, 10%);
-				}
-			}
+        p {
+          font-size: 0.8rem;
+          color: lighten($accent-color, 10%);
+        }
+      }
 
-			&__cta {
-				font-size: 0.9rem;
-				color: #fff;
-				background-color: $accent-color;
-				padding: 0.5em 1em;
-				border-radius: 0.3rem;
-			}
-		}
+      &__cta {
+        font-size: 0.9rem;
+        color: #fff;
+        background-color: $accent-color;
+        padding: 0.5em 1em;
+        border-radius: 0.3rem;
+      }
+    }
 
-		&-school-name {
-			color: #fff;
-			font-size: 1.5rem;
-			width: 70%;
-		}
+    &-school-name {
+      color: #fff;
+      font-size: 1.5rem;
+      width: 70%;
+    }
 
-		em {
-			color: #fff;
-			font-weight: 100;
-		}
+    em {
+      color: #fff;
+      font-weight: 100;
+    }
 
-		img {
-			align-self: flex-start;
-		}
+    img {
+      align-self: flex-start;
+    }
 
-		@container footerMain  (width <= 680px) {
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			padding-block: 1em;
+    @container footerMain  (width <= 680px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-block: 1em;
 
-			img {
-				align-self: revert !important;
-			}
+      img {
+        align-self: revert !important;
+      }
 
-			&-school-name {
-				width: initial;
-				text-align: center;
-			}
+      &-school-name {
+        width: initial;
+        // text-align: center;
+      }
+    }
+  }
 
-			
-		}
-	}
+  &__links {
+    @include flex(row, unset, unset, 4em);
+    color: #fff;
 
-	&__links {
-		@include flex(row, unset, unset, 4em);
-		padding-top: 2em;
-		color: #fff;
+    > * {
+      padding: 0 !important;
 
-		> * {
-			@include flex(column, unset, unset, 0.5em);
-			.footer-header {
-				letter-spacing: 2px;
-			}
-			li {
-				color: #fff;
-				list-style: none;
+      @include flex(column, unset, unset, 0.5em);
+      .footer-header {
+        letter-spacing: 2px;
+        line-height: 110%;
+      }
+      li {
+        color: #fff;
+        list-style: none;
 
-				> * {
-					color: inherit;
-					font-weight: weights(light);
+        > * {
+          color: inherit;
+          font-weight: weights(light);
 
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
 
 .footer-secondary {
-	width: 100%;
-	background-color: $footer-bg-secondary;
-	@include flex(row, space-between, center, unset);
-	padding-inline: 5em;
-	padding-block: 1.5em;
-	color: #fff;
+  width: 100%;
+  background-color: $footer-bg-secondary;
+  @include flex(row, space-between, center, unset);
+  padding-inline: 4vmax;
+  padding-block: 1em;
+  color: #fff;
 
-	&__org {
-		margin-bottom: 0;
-	}
+  &__org {
+    margin-bottom: 0;
+    max-width: 50%;
+  }
 
-	&__social {
-		display: flex;
-		list-style: none;
-		gap: 1em;
-		margin: 0;
-		padding: 0;
+  &__social {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
 
-		& li {
-			> * {
-				color: #fff;
-				font-size: 1.2rem;
-			}
-		}
-	}
+    & li {
+      > * {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+    }
+  }
 
-	.link {
-		color: #fff;
-		font-weight: weights(light);
-	}
+  .link {
+    color: #fff;
+    font-weight: weights(light);
+  }
 
-	.authors {
-		margin-left: 0.5em;
-		margin-bottom: 0 !important;
-	}
+  .authors {
+    margin-left: 0.5em;
+    margin-bottom: 0 !important;
+  }
 
-	.github-reachout {
-		display: inherit;
-		align-items: center;
-		gap: 0.4em;
-		color: #fff;
-		font-size: clamp(0.5rem, 50vw, 1.2rem);
+  .github-reachout {
+    display: inherit;
+    align-items: center;
+    gap: 0.4em;
+    color: #fff;
+    font-size: clamp(0.5rem, 50vw, 1.2rem);
 
-		// .icon {
-		// }
-	}
+    // .icon {
+    // }
+  }
 
-	@media screen and (width <= 700px) {
-		flex-direction: column;
-		align-items: center;
-		gap: 1em;
-		text-align: center;
+  @media screen and (width <= 700px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
 
-		&__org {
-			display: inline-block;
+    &__org {
+      display: inline-block;
 
-			.authors {
-				margin-left: 0.5em;
-			}
-		}
-	}
+      .authors {
+        margin-left: 0.5em;
+      }
+    }
+  }
 }
