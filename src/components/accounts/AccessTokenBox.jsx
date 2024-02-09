@@ -36,6 +36,7 @@ const AccessTokenBox = () => {
 		}, interval);
 	};
 
+	// Actual API call implementation
 	const handleAccessTokenValidation = async (event) => {
 		event.preventDefault();
 		setLoading(false);
