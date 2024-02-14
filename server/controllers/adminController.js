@@ -7,26 +7,37 @@ const createToken = require("../utils/createToken");
 
 // @route /api/admin/validate-token
 // @desc Validate access token
-// @access private
+// @access PUBLIC
 const validateToken = asyncHandler(async (req, res, next) => {
+	// Retrieve access token
 	const { accessToken } = req.body;
+	// Check for existence of access token
 	if (!accessToken) {
-		return next(res.status(401).json({ message: "No access token found" }));
+		return next(
+			res
+				.status(401)
+				.json({ message: "No access token provided!", success: false })
+		);
 	}
 
-	if (accessToken !== process.env.AMDIN_TOKEN) {
-		return next(res.status(401).json({ message: "Your token is invalid" }));
+	// Confirm access token
+	if (accessToken !== process.env.ADMIN_TOKEN) {
+		return next(
+			res.status(401).json({ message: "Your token is invalid", success: false })
+		);
 	}
 
+	// Send success message
 	return next(
-		res.statuS(200).json({ message: "Access token verified!", success: true })
+		res
+			.status(200)
+			.json({ message: "Access token verified!", success: true, accessToken })
 	);
 });
 
 // @route /api/admin/register
 // @desc Register admin account
-// @access private
-
+// @access PRIVATE
 const registerAccount = asyncHandler(async (req, res, next) => {
 	const { name, email, password } = req.body;
 
@@ -89,7 +100,7 @@ const registerAccount = asyncHandler(async (req, res, next) => {
 
 // @route /api/admin/login
 // @desc Login admin account
-// @access private
+// @access PRIVATE
 const loginUser = asyncHandler(async (req, res, next) => {
 	const { email, password } = req.body;
 
@@ -130,7 +141,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
 
 // @route /api/admin/logout
 // @desc Logout admin account
-// @access private
+// @access PRIVATE
 const logoutUser = asyncHandler(async (req, res, next) => {
 	if (!req.user) {
 		return next(res.status(403).json({ message: "No user currenlty active" }));
@@ -148,4 +159,28 @@ const logoutUser = asyncHandler(async (req, res, next) => {
 	);
 });
 
-module.exports = { registerAccount, loginUser, logoutUser, validateToken };
+// @route /api/admin/add-event
+// @desc Add new event
+// @access PRIVATE
+const addEvent = asyncHandler(async (req, res, next) => {
+	if (!req.user) {
+		return next(
+			res
+				.status(401)
+				.json({ message: "You need to be logged in to  perform this action" })
+		);
+	}
+	const { file, title, description } = req.body;
+
+	if ((!title, !description)) {
+		return next(res.status(427).json({ message }));
+	}
+});
+
+module.exports = {
+	registerAccount,
+	loginUser,
+	logoutUser,
+	validateToken,
+	addEvent,
+};
