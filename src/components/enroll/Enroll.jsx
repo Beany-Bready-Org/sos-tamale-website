@@ -63,7 +63,7 @@ const Enroll = () => {
 			!formData.from_email
 		) {
 			showMessageForSomeTime(
-				"All fields are mandatory, fill out all fields and try again.",
+				"All fields are mandatory, please fill out all fields and try again.",
 				"",
 				2000
 			);
