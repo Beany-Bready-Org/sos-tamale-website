@@ -7,13 +7,12 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 	// border-bottom: 2px $light-secondary-color solid;
 	box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
 
-
 	.secondary-nav {
 		display: flex;
 		align-items: center;
 		background-color: #f0f0f0;
 		z-index: 1;
-		
+
 		// border-bottom: $light-secondary-color 2px solid;
 		padding-block: 0.75vmin;
 		min-height: 5vh;
@@ -204,7 +203,6 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 				font-size: $text-cta !important;
 				transition: 200ms;
 				font-weight: 700;
-				
 
 				// & :is(:hover, :focus) {
 				// 	color: #fff !important;
@@ -234,6 +232,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 			}
 		}
 
+		// Mobile view code
 		@container navbar (max-width: 680px) {
 			.main-nav__logo.active {
 				z-index: 1000;
@@ -330,6 +329,13 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 				transform: revert;
 				opacity: 1;
 				pointer-events: all;
+			}
+
+			.main-nav__items.active {
+				.admin-cta button {
+					// Reset button styles
+					@include reset;
+				}
 			}
 			.main-nav__hamburger {
 				display: inherit;

@@ -118,7 +118,6 @@ const Navbar = () => {
 							Home
 						</NavLink>
 					</li>
-
 					<li className="item">
 						<NavLink
 							to="/about"
@@ -168,10 +167,6 @@ const Navbar = () => {
 							Gallery
 						</NavLink>
 					</li>
-					{/* <li className="item">
-            <NavLink to="/rules-and-regulations">Guidelines</NavLink>
-          </li> */}
-					{/* <li className="item --drop-down-invoker"> */}
 					<li className="item">
 						<NavLink
 							to="/rules-and-regulations"
@@ -187,7 +182,7 @@ const Navbar = () => {
 							<NavLink to="/events">Events</NavLink>
 						</div> */}
 					</li>
-					<li className="item">
+					<li className="item admin-cta">
 						<button
 							onClick={() => {
 								// Hide mobile nav

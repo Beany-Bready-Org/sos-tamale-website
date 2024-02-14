@@ -34,7 +34,9 @@ $padding: 0.7em;
 		button.disabled {
 			background-color: $light-secondary-color;
 			box-shadow: none;
-			border: 0;
+			border: 0 !important;
+			border-bottom: none !important;
+			padding: 0.8em;
 		}
 	}
 
@@ -42,19 +44,19 @@ $padding: 0.7em;
 	.status-message {
 		text-align: center;
 		border-radius: $border-radius;
-		font-size: .9rem;
+		font-size: 0.9rem;
 	}
 
 	.status-message.success {
-		outline: $border-thickness solid green;
-		color: green;
-		background-color: lighten(green, 40%);
+		outline: $border-thickness solid $success-color;
+		color: $success-color;
+		background-color: #b2f2bb;
 		padding-block: $padding;
 	}
 	.status-message.error {
-		outline: $border-thickness solid red;
-		color: red;
-		background-color: lighten(red, 40%);
+		outline: $border-thickness solid $error-color;
+		color: $error-color;
+		background-color: #ffa8a8;
 		padding-block: $padding;
 	}
 }
