@@ -15,7 +15,7 @@ const AccessTokenBox = () => {
 		success: false,
 	});
 	const [loading, setLoading] = useState(false);
-	const [fieldActive, setFieldActive] = useState(false)
+	// const [fieldActive, setFieldActive] = useState(false)
 
 	// Set up navigator
 	const navigate = useNavigate();
