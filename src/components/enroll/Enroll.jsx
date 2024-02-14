@@ -29,7 +29,7 @@ const Enroll = () => {
 	const wardsNameRef = useRef();
 	const prevSchoolRef = useRef();
 
-	const showMessageForSomeTime = (errorMessage, successMessage, duration) => {
+	const showMessageForSomeTime = (errorMessage = "", successMessage = "", duration = 1500) => {
 		setErrorMessage(errorMessage);
 		setSuccessMessage(successMessage);
 
@@ -63,7 +63,7 @@ const Enroll = () => {
 			!formData.from_email
 		) {
 			showMessageForSomeTime(
-				"Cannot submit an empty form. Fill out the fields.",
+				"All fields are mandatory, fill out all fields and try again.",
 				"",
 				2000
 			);
