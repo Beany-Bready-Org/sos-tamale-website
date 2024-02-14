@@ -10,12 +10,12 @@ export default function Register() {
 
 	return (
 		<main className="register">
-      <div className="side-image">
-      <div className="notice">
+      <div className="register__image">
+      <div className="register__image__notice">
       <h1>Admin Account</h1>
         <p>Register as an admin to overlook events that transpire on this website.</p>
       </div>
-			<img src={sideImage} alt="" className="side-image__item" />
+			<img src={sideImage} alt="" className="register__image__item" />
 
       </div>
 			<form
