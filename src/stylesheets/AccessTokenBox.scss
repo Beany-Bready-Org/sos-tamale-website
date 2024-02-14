@@ -37,6 +37,12 @@ $padding: 0.7em;
 			border: 0 !important;
 			border-bottom: none !important;
 			padding: 0.8em;
+			cursor: not-allowed;
+
+			&:hover {
+				background-color: $light-secondary-color !important;
+			}
+			// pointer-events: none;
 		}
 	}
 
