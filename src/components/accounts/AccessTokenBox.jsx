@@ -137,6 +137,7 @@ const AccessTokenBox = () => {
 					type="text"
 					name="accessToken"
 					id="accessToken"
+					className="--input"
 					placeholder="Enter valid access token..."
 					onChange={(e) => setAccessToken(e.target.value)}
 				/>
