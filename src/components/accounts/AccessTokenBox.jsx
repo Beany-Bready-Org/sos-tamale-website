@@ -12,9 +12,10 @@ const AccessTokenBox = () => {
 	const [accessToken, setAccessToken] = useState("");
 	const [responseStatus, setResponseStatus] = useState({
 		message: "",
-		success: null,
+		success: false,
 	});
 	const [loading, setLoading] = useState(false);
+	// const [fieldActive, setFieldActive] = useState(false)
 
 	// Set up navigator
 	const navigate = useNavigate();
@@ -25,28 +26,31 @@ const AccessTokenBox = () => {
 	};
 
 	// Helper function
-	const showResponse = (message = "", success = false, interval = 0) => {
-		if (message && success) {
-			return setResponseStatus({ message: "", success: null });
-		}
-		return setInterval(() => {
+	const showResponse = (message = "", success = Boolean(), interval = 1500) => {
+		if (message) {
 			setResponseStatus((prev) => {
-				return { ...prev, message: message, success: success };
+				return { ...prev, message, success };
 			});
+		}
+
+		const timeout = setTimeout(() => {
+			setResponseStatus({ message: "", success: false });
 		}, interval);
+		return () => clearTimeout(timeout);
 	};
 
-	// Actual API call implementationigesdglh[ewthvld[w]]
+	// Actual API call implementation
 	const handleAccessTokenValidation = async (event) => {
 		event.preventDefault();
 		setLoading(false);
-		showResponse("", false, 0);
+		// showResponse("", false, 0);
 
 		// Guard clause
-		if (!accessToken) {
-			showResponse("Provide an access token", false, 1500);
-			return;
+		if (accessToken === "") {
+			return showResponse("Token missing, provide token.", false, 1500);
 		}
+
+		console.log(responseStatus.message);
 
 		// Options for API request
 		const postOptions = {
@@ -56,6 +60,8 @@ const AccessTokenBox = () => {
 			},
 			body: JSON.stringify(tokenObject),
 		};
+
+		// Try API call
 		try {
 			setLoading(true);
 			let response = await fetch(
@@ -64,17 +70,20 @@ const AccessTokenBox = () => {
 			);
 
 			if (!response.ok) {
-				return showResponse(response.message, response.success, 1500);
+				throw new Error(`An error occured: ${response.statusText}`);
 			}
 
 			// Show success message on UI
-			accessBoxRef.current.close()
-			showResponse(response.message, response.success, 1500);
+			showResponse("Token verified", true, 1500);
+			// Close access box if token verified
+			accessBoxRef.current.close();
 			// Navigate to register page on success
 			navigate("/register");
 		} catch (error) {
 			console.log(error);
-			showResponse(error.message, error.success, 1500);
+			showResponse(error.message + ", try again.", false, 1500);
+			setLoading(false);
+		} finally {
 			setLoading(false);
 		}
 	};
@@ -87,12 +96,12 @@ const AccessTokenBox = () => {
 	function closeModal(modal, event) {
 		const modalDimensions = modal.getBoundingClientRect();
 		if (
+			event.clientY < modalDimensions.top ||
+			event.clientY > modalDimensions.bottom ||
 			event.clientX < modalDimensions.left ||
-			event.clientX > modalDimensions.right ||
-			event.clientX > modalDimensions.bottom ||
-			event.clientX < modalDimensions.top
+			event.clientX > modalDimensions.right
 		) {
-			modal?.close();
+			modal.close();
 		}
 	}
 
@@ -100,8 +109,8 @@ const AccessTokenBox = () => {
 		<dialog
 			ref={accessBoxRef}
 			className="access-box"
-			onClick={(e) => {
-				closeModal(e.target, e);
+			onClick={(event) => {
+				closeModal(event.target, event);
 				setShowAccessBox(false);
 			}}
 		>
@@ -120,7 +129,10 @@ const AccessTokenBox = () => {
 			{/* JSX */}
 			<h2 className="--header-small">Enter Access Token</h2>
 			<p>You need to provide an access token to register as admin</p>
-			<form className="access-token-box" onSubmit={handleAccessTokenValidation}>
+			<form
+				className="access-token-box"
+				onSubmit={(event) => handleAccessTokenValidation(event)}
+			>
 				<input
 					type="text"
 					name="accessToken"

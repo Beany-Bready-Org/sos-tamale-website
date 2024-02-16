@@ -39,12 +39,20 @@ $padding: 0.7em;
     }
   }
 
-  button.disabled {
-    background-color: $light-secondary-color;
-    box-shadow: none;
-    border: 0;
-  }
-}
+		button.disabled {
+			background-color: $light-secondary-color;
+			box-shadow: none;
+			border: 0 !important;
+			border-bottom: none !important;
+			padding: 0.8em;
+			cursor: not-allowed;
+
+			&:hover {
+				background-color: $light-secondary-color !important;
+			}
+			// pointer-events: none;
+		}
+	}
 
 // Status message box
 .status-message {
