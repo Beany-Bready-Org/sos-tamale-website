@@ -6,7 +6,6 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
   background-color: #fff;
   // border-bottom: 2px $light-secondary-color solid;
   box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
-	
 
   .secondary-nav {
     display: flex;
@@ -134,7 +133,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
           box-shadow: 3px 4px 15px rgb(0 0 0 / 0.4);
 
           > * {
-            padding: 0.51em;
+            padding: 0.5em;
 
             &:is(:hover, :focus-visible) {
               background-color: lighten($light-secondary-color, 15%);
@@ -190,7 +189,6 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
           color: color(inactive);
           text-decoration: none;
           font-weight: weights(regular);
-          transition: color 300ms ease;
           font-size: $text-small;
 
           &:hover,
@@ -200,17 +198,12 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
         }
       }
 
-      // Signup
       .--cta {
         font-size: $text-cta !important;
         transition: 200ms;
         font-weight: 700;
-
-
-        // & :is(:hover, :focus) {
-        // 	color: #fff !important;
-        // }
       }
+
       .social-items {
         display: none;
         border-bottom: 1px solid #f0f0f0;
@@ -269,6 +262,13 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
           }
         }
 
+		li:has(.--cta) {
+			.--cta {
+				width: 50% !important;
+			}
+		}
+
+
         li:nth-child(odd) {
           background-color: #f0f0f0;
         }
@@ -277,7 +277,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
           background-color: #fff;
         }
 
-        :is(li:first-of-type, li + li):not(.enroll, .social-items) {
+        :is(li:first-of-type, li + li):not(.enroll, .social-items, .--cta) {
           width: 100%;
           text-align: center;
           cursor: pointer;

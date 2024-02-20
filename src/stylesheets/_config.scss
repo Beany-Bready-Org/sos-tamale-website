@@ -1,6 +1,4 @@
-// this is deprecated
-// @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Grand+Hotel&family=Poppins:wght@300;500;600;700&display=swap");
-
+// File for all base styles - i guess ...
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@500;700&family=Grand+Hotel&family=Inter:wght@300;500;700&family=Poppins:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,500;1,700&display=swap");
 
 @function family($name) {
@@ -17,6 +15,7 @@
 	}
 }
 
+// Available font-weights
 $font-weights: (
 	"bold": 700,
 	"medium": 500,
@@ -24,6 +23,7 @@ $font-weights: (
 	"light": 300,
 );
 
+// Function to utilize font-weights
 @function weights($weight) {
 	@return map-get($font-weights, $weight);
 }
@@ -43,7 +43,6 @@ $font-weights: (
 	padding: $padding;
 	border-radius: $b-radius;
 	border: 0;
-	// box-shadow: 0 4px 0 #0075a3;
 	border: 1px solid $border-color !important;
 	border-bottom: 4px solid $border-color !important;
 	cursor: pointer;
@@ -54,9 +53,24 @@ $font-weights: (
 	max-width: 100%;
 	outline: none !important;
 	text-align: center;
+	letter-spacing: 0.16em;
 
 	@media screen and (max-width: 600px) {
 		width: clamp(100px, 80vw, 350px);
+	}
+}
+
+// Reset styles for buttons with "--cta" class
+@mixin reset {
+	width: 50% !important;
+	background: none !important;
+	color: $text-secondary-color !important;
+	border: 0 !important;
+	text-transform: capitalize;
+	font-family: family(poppins);
+
+	&:hover {
+		color: #fff !important;
 	}
 }
 
@@ -91,9 +105,9 @@ $light-secondary-color: #a7adb3;
 $very-light-gray: #f5f5f5;
 $footer-bg-secondary: #0096cd;
 $footer-bg: $accent-color;
-$error-color: #f03e3e;
+$error-color: #e03131;
 $error-darker: #b12727;
-$success-color: #37b24d;
+$success-color: #40c057;
 $border-color: #0084b8;
 $btn-tiny: 0.875em 1.5em;
 // $btn-small: 0.5em 2em;
