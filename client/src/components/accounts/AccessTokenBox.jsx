@@ -70,11 +70,14 @@ const AccessTokenBox = () => {
 			);
 
 			if (!response.ok) {
-				throw new Error(`An error occured: ${response.statusText}`);
+				throw new Error(`An error ocurred: ${response.statusText}`);
 			}
 
 			// Show success message on UI
 			showResponse("Token verified", true, 1500);
+
+			// Set token to local storage
+			localStorage.setItem("accessToken", accessToken)
 			// Close access box if token verified
 			accessBoxRef.current.close();
 			// Navigate to register page on success

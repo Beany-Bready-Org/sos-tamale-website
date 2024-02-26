@@ -14,6 +14,7 @@ import Register from "./components/accounts/Register";
 import AccessBoxProvider from "./contexts/AccessBoxContext";
 import AccessTokenBox from "./components/accounts/AccessTokenBox";
 import Dashboard from "./components/admin-dashboard/Dashboard";
+import ProtectedRoutes from "./protected-routes/ProtectedRoutes";
 
 // Main component
 export default function App() {
@@ -34,8 +35,23 @@ export default function App() {
               element={<RulesRegulations />}
             />
             <Route path="/events" element={<Events />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/admin-dashboard" element={<Dashboard />} />
+            {/* Protected routes => accessToken required */}
+            <Route
+              path="/register"
+              element={
+                <ProtectedRoutes>
+                  <Register />
+                </ProtectedRoutes>
+              }
+            />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ProtectedRoutes>
+                  <Dashboard />
+                </ProtectedRoutes>
+              }
+            />
           </Routes>
         </AccessBoxProvider>
       </NavContextProvider>
