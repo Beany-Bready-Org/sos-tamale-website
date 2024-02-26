@@ -1,0 +1,30 @@
+@import "./config";
+
+.dashboard * {
+  border: red 1px solid;
+}
+
+.dashboard {
+  @include flex(column, center, center, unset);
+  padding-top: 20vh;
+
+  @media screen and (max-width: 680px) {
+    padding-top: 15vh;
+  }
+
+  &__header {
+    h1 {
+      margin: 4vmax 0;
+    }
+  }
+
+  &__main {
+    @include flex(column, center, center, 0);
+
+    &__events {
+      &__container {
+        @include flex(row, center, center, 0);
+      }
+    }
+  }
+}
