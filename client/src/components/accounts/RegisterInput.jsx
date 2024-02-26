@@ -1,19 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function RegisterInput({
   type,
   placeholder,
-  inputRef,
-  className,
+  // className,
   nameValue,
+  onChangeHandler,
 }) {
   return (
     <input
       type={type}
       placeholder={placeholder}
-      ref={inputRef}
       className="register__form__input --input"
       name={nameValue}
+      onChange={(e) => onChangeHandler(e)}
     />
   );
 }
+
+RegisterInput.propTypes = {
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  nameValue: PropTypes.string.isRequired,
+  onChangeHandler: PropTypes.func.isRequired,
+};
