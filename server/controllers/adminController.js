@@ -15,7 +15,7 @@ const validateToken = asyncHandler(async (req, res, next) => {
 	if (!accessToken) {
 		return next(
 			res
-				.status(401)
+				.status(400)
 				.json({ message: "No access token provided!", success: false })
 		);
 	}
