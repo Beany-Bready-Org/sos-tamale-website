@@ -143,7 +143,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
 // @access PRIVATE
 const logoutUser = asyncHandler(async (req, res, next) => {
   if (!req.user) {
-    return next(res.status(403).json({ message: "No user currenlty active" }));
+    return next(res.status(403).json({ message: "No user currently active" }));
   }
 
   // Remove http  cookie
