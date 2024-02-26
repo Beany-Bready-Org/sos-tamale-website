@@ -2,96 +2,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Gelasio:wght@500;700&family=Grand+Hotel&family=Inter:wght@300;500;700&family=Poppins:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,500;1,700&display=swap");
 
 @function family($name) {
-	@if $name == "poppins" {
-		@return "Poppins", sans-serif;
-	} @else if $name == "grand-hotel" {
-		@return "Grand Hotel", cursive;
-	} @else if $name == "gelasio" {
-		@return "Gelasio", serif;
-	} @else if $name == "inter" {
-		@return "Inter", sans-serif;
-	} @else if $name == "roboto" {
-		@return "Roboto", sans-serif;
-	}
+  @if $name == "poppins" {
+    @return "Poppins", sans-serif;
+  } @else if $name == "grand-hotel" {
+    @return "Grand Hotel", cursive;
+  } @else if $name == "gelasio" {
+    @return "Gelasio", serif;
+  } @else if $name == "inter" {
+    @return "Inter", sans-serif;
+  } @else if $name == "roboto" {
+    @return "Roboto", sans-serif;
+  }
 }
 
 // Available font-weights
 $font-weights: (
-	"bold": 700,
-	"medium": 500,
-	"regular": 400,
-	"light": 300,
+  "bold": 700,
+  "medium": 500,
+  "regular": 400,
+  "light": 300,
 );
 
 // Function to utilize font-weights
 @function weights($weight) {
-	@return map-get($font-weights, $weight);
+  @return map-get($font-weights, $weight);
 }
 
 // Mixins
 @mixin flex($direction, $justify, $align, $gap) {
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-	gap: $gap;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
 }
 
 @mixin button($color, $border-color, $background-color, $padding, $b-radius) {
-	background-color: $background-color;
-	color: $color !important;
-	padding: $padding;
-	border-radius: $b-radius;
-	border: 0;
-	border: 1px solid $border-color !important;
-	border-bottom: 4px solid $border-color !important;
-	cursor: pointer;
-	font-size: $text-cta;
-	font-weight: weights(bold);
-	text-transform: uppercase;
-	transition: 200ms;
-	max-width: 100%;
-	outline: none !important;
-	text-align: center;
-	letter-spacing: 0.16em;
+  background-color: $background-color;
+  color: $color !important;
+  padding: $padding;
+  border-radius: $b-radius;
+  border: 0;
+  border: 1px solid $border-color !important;
+  border-bottom: 4px solid $border-color !important;
+  cursor: pointer;
+  font-size: $text-cta;
+  font-weight: weights(bold);
+  text-transform: uppercase;
+  transition: 200ms;
+  max-width: 100%;
+  outline: none !important;
+  text-align: center;
+  // letter-spacing: 0.16em;
 
-	@media screen and (max-width: 600px) {
-		width: clamp(100px, 80vw, 350px);
-	}
+  @media screen and (max-width: 600px) {
+    width: clamp(100px, 80vw, 350px);
+  }
 }
 
 // Reset styles for buttons with "--cta" class
 @mixin reset {
-	width: 50% !important;
-	background: none !important;
-	color: $text-secondary-color !important;
-	border: 0 !important;
-	text-transform: capitalize;
-	font-family: family(poppins);
+  width: 50% !important;
+  background: none !important;
+  color: $text-secondary-color !important;
+  border: 0 !important;
+  text-transform: capitalize;
+  font-family: family(poppins);
 
-	&:hover {
-		color: #fff !important;
-	}
+  &:hover {
+    color: #fff !important;
+  }
 }
 
 @mixin button-hover($color, $border-color, $background-color) {
-	&:hover,
-	&:focus {
-		background-color: $background-color !important;
-		color: $color !important;
-		border: 1px solid $border-color !important;
-		border-bottom: 4px solid $border-color !important;
-	}
+  &:hover,
+  &:focus {
+    background-color: $background-color !important;
+    color: $color !important;
+    border: 1px solid $border-color !important;
+    border-bottom: 4px solid $border-color !important;
+  }
 }
 
 // Colors
 // color function
 @function color($color-mode) {
-	@if $color-mode == "active" {
-		@return $accent-color;
-	} @else {
-		@return $text-color;
-	}
+  @if $color-mode == "active" {
+    @return $accent-color;
+  } @else {
+    @return $text-color;
+  }
 }
 
 $accent-color: #029ddf;

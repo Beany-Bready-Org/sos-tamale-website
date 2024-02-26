@@ -9,7 +9,6 @@
 @import "./Statistics.scss";
 @import "./GallerySection.scss";
 
-
 /* Swiper.js variables */
 
 :root {
@@ -115,14 +114,18 @@ a {
 }
 
 .--danger {
-  @include button(#f8f8f8, $light-secondary-color, $light-secondary-color, $btn-tiny, 6px);
+  @include button(
+    #f8f8f8,
+    $light-secondary-color,
+    $light-secondary-color,
+    $btn-tiny,
+    6px
+  );
   @include button-hover(#fff, $error-darker, $error-color);
 }
 
-
-
 .--header {
-  color: $accent-color;
+  color: $accent-color !important;
   font-size: $text-large;
   font-family: family(gelasio);
   text-align: center;
@@ -201,8 +204,7 @@ main {
   text-align: center;
 }
 
-
 // .news-did-wrapper {
 //   outline: 3px solid red;
- 
+
 // }

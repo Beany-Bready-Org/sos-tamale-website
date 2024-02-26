@@ -17,29 +17,28 @@ import Dashboard from "./components/admin-dashboard/Dashboard";
 
 // Main component
 export default function App() {
-	return (
-		<>
-			<NavContextProvider>
-				<AccessBoxProvider>
-					<Navbar />
-					<AccessTokenBox />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/contact" element={<Contact />} />
-						<Route path="/about" element={<About />} />
-						<Route path="/enroll" element={<Enroll />} />
-						<Route path="/gallery" element={<Gallery />} />
-						<Route
-							path="/rules-and-regulations"
-							element={<RulesRegulations />}
-						/>
-						<Route path="/events" element={<Events />} />
-						<Route path="/register" element={<Register />} />
-						{/* Protected routes = auth required */}
-						{/* <Route path="/admin-dashboard/:id" element={<Dashboard />} /> */}
-					</Routes>
-				</AccessBoxProvider>
-			</NavContextProvider>
-		</>
-	);
+  return (
+    <>
+      <NavContextProvider>
+        <AccessBoxProvider>
+          <Navbar />
+          <AccessTokenBox />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/enroll" element={<Enroll />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route
+              path="/rules-and-regulations"
+              element={<RulesRegulations />}
+            />
+            <Route path="/events" element={<Events />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/admin-dashboard" element={<Dashboard />} />
+          </Routes>
+        </AccessBoxProvider>
+      </NavContextProvider>
+    </>
+  );
 }
