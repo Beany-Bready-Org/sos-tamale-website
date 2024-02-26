@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RegisterInput from "./RegisterInput";
 import sideImage from "../../assets/images/bg-img4.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import "../../stylesheets/Register.scss";
 import { useStatusMessage } from "../../contexts/StatusMessageContext";
@@ -12,7 +13,7 @@ export default function Register() {
   // Navigate hook
   const navigate = useNavigate();
 
-//  const { statusMessage } = useStatusMessage()
+  //  const { statusMessage } = useStatusMessage()
 
   //   Admin credentials state
   const [adminCredentials, setAdminCredentials] = useState({
@@ -34,6 +35,10 @@ export default function Register() {
   const handleRegistration = async (e) => {
     e.preventDefault();
 
+    if (adminCredentials.password !== adminCredentials.confirmPassword) {
+      throw new Error("Passwords do not match");
+    }
+
     const postOptions = {
       method: "POST",
       "Content-Type": "application/json",
@@ -41,17 +46,23 @@ export default function Register() {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/admin/register");
+      //   const response = await fetch("http://localhost:5001/api/admin/register", postOptions);
+      const response = axios.post("http://localhost:5001/api/admin/register", {
+        ...adminCredentials,
+        accessToken,
+      });
 
-	  if(!response.ok) {
-		throw new Error("Failed to register" + response.statusText)
-	  }
+      if (!response.ok) {
+        throw new Error("Failed to register" + response.statusText);
+      }
 
-	  let data = response.json()
+      let data = response.json();
 
-	  let {message} = data
-	  console.log(message)
-	  navigate("/admin-dashboard")
+      let { message } = data;
+      console.log(message);
+      //   Reset form
+      e.target.reset();
+      navigate("/admin-dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +84,7 @@ export default function Register() {
       </div>
       <form
         className="register__form"
-        // onSubmit={handleSubmit}
+        onSubmit={(e) => handleRegistration(e)}
         // ref={formRef}
       >
         <div className="register__form__heading">

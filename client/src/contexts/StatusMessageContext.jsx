@@ -14,7 +14,7 @@ const StatusMessageContext = ({ children }) => {
 
   // Dismissible status message function
   const showStatusMessageForAWhile = (message, success) => {
-    if (message) {
+    if (message && success) {
       setStatusMessage((prev) => {
         return { ...prev, message, success };
       });
@@ -24,7 +24,6 @@ const StatusMessageContext = ({ children }) => {
       setStatusMessage({ message: "", success: false });
     });
   };
-
 
   return (
     <StatusMessageContextProvider.Provider

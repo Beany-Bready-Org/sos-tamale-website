@@ -28,5 +28,5 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const adminRoutes = require("./routes/adminRoutes.js");
 app.use("/api/admin", adminRoutes);
 
-// ESatablish MongoDB database connection
+// Establish MongoDB database connection
 establishDbConnection(process.env.CONNECTION_STRING, port, app)
