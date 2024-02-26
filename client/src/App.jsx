@@ -47,9 +47,9 @@ export default function App() {
             <Route
               path="/admin-dashboard"
               element={
-                <ProtectedRoutes>
+                // <ProtectedRoutes>
                   <Dashboard />
-                </ProtectedRoutes>
+                // </ProtectedRoutes>
               }
             />
           </Routes>
