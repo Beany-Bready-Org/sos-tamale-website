@@ -34,6 +34,10 @@ export default function Register() {
   const handleRegistration = async (e) => {
     e.preventDefault();
 
+	if(adminCredentials.password !== adminCredentials.confirmPassword) {
+		throw new Error("Passwords do not match")
+	}
+
     const postOptions = {
       method: "POST",
       "Content-Type": "application/json",
