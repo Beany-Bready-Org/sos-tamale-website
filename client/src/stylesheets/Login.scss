@@ -50,7 +50,7 @@
     }
 
     .login-cta:disabled {
-      background-color: $light-secondary-color;
+      background-color: $light-secondary-color !important;
       cursor: not-allowed;
     }
   }
