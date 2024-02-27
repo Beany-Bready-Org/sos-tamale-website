@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import RegisterInput from "./RegisterInput";
+import LoginInput from "./LoginInput";
 import sideImage from "../../assets/images/bg-img4.jpg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import "../../stylesheets/Register.scss";
+import "../../stylesheets/login.scss";
 import { useStatusMessage } from "../../contexts/StatusMessageContext";
 
-export default function Register() {
+export default function Login() {
   const BASE_URL = import.meta.env.BASE_URL;
   console.log(BASE_URL);
   // Retrieve accessToken from localStorage
@@ -94,7 +94,7 @@ export default function Register() {
 
       if (!response.ok) {
         setLoading(false);
-        throw new Error("Failed to register" + response.statusText);
+        throw new Error("Failed to login");
       }
 
       let data = response.json();
@@ -113,17 +113,15 @@ export default function Register() {
       setLoading(false);
     }
   };
-
   return (
-    <main className="register">
-      <div className="register__image">
-        <img src={sideImage} alt="" className="register__image__item" />
+    <main className="login">
+      <div className="login__image">
+
+        <img src={sideImage} alt="" className="login__image__item" />
       </div>
-      <form className="register__form" onSubmit={(e) => handleRegistration(e)}>
-        <div className="register__form__heading">
-          <h2 className="register__form__heading__header">
-            Register as an Admin
-          </h2>
+      <form className="login__form" onSubmit={(e) => handleRegistration(e)}>
+        <div className="login__form__heading">
+          <h2 className="login__form__heading__header">Log into your account</h2>
           {/* Display status message */}
           {responseStatus.message && (
             <p
@@ -136,35 +134,22 @@ export default function Register() {
           )}
         </div>
 
-        <RegisterInput
-          type="name"
-          placeholder="Enter Your Name"
-          nameValue="name"
-          onChangeHandler={handleCredentialsUpdate}
-        />
-
-        <RegisterInput
+        <LoginInput
           type="email"
           placeholder="Enter Your Email"
           nameValue="email"
           onChangeHandler={handleCredentialsUpdate}
         />
 
-        <RegisterInput
+        <LoginInput
           type="password"
           placeholder="Enter Your Password"
           nameValue="password"
           onChangeHandler={handleCredentialsUpdate}
         />
 
-        <RegisterInput
-          type="password"
-          placeholder="Confirm Your Password"
-          nameValue="confirmPassword"
-          onChangeHandler={handleCredentialsUpdate}
-        />
-        <button className="register-cta --cta" type="submit" disabled={loading}>
-          {loading ? "Registering...": "Register"}
+        <button className="login-cta --cta" type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
         </button>
         <button
           type="button"

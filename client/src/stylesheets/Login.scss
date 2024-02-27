@@ -1,6 +1,6 @@
 @import "./config";
 
-.register {
+.login {
   display: flex;
   flex-direction: row-reverse;
   height: 100dvh;
@@ -49,7 +49,7 @@
       width: clamp(300px, 85%, 500px);
     }
 
-    .register-cta:disabled {
+    .login-cta:disabled {
       background-color: $light-secondary-color;
       cursor: not-allowed;
     }
