@@ -54,5 +54,10 @@
     .--cta {
       width: clamp(300px, 85%, 500px);
     }
+
+    .register-cta:disabled {
+      background-color: $light-secondary-color;
+      cursor: not-allowed;
+    }
   }
 }
