@@ -15,7 +15,6 @@ nav {
     height: 100%;
     position: relative;
     display: grid;
-    // i;
 
     > * {
       grid-column: 1 / -1;
@@ -23,7 +22,7 @@ nav {
     }
 
     &__item {
-      max-width: 100%;
+      min-width: 100%;
       object-fit: cover;
       height: 100%;
       filter: grayscale(30%);
