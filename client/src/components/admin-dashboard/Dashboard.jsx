@@ -1,7 +1,13 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "../../stylesheets/Dashboard.scss";
 
 export default function Dashboard({ profileImgSrc, username, email }) {
+  let date = new Date();
+  let [time, setTime] = useState(`${date.getHours()}:${date.getMinutes()}`);
+
+  useEffect;
+
   return (
     <div className="dashboard">
       <nav className="dashboard__nav">
@@ -11,7 +17,7 @@ export default function Dashboard({ profileImgSrc, username, email }) {
           <p>{email}</p> */}
 
           {/* placeholder */}
-          <img src="/src/assets/images/bg-img1.jpg" alt="profile image" />
+          <img src="/src/assets/images/bg-img2.jpg" alt="profile image" />
           <h2>Alexander Afoko</h2>
           <p>alexanderafoko@gmail.com</p>
         </div>
@@ -28,31 +34,72 @@ export default function Dashboard({ profileImgSrc, username, email }) {
       </nav>
 
       <main className="dashboard__main">
-        <h1>Home</h1>
+        <h1 className="--header">Home</h1>
         <div className="dashboard__main__info">
           <div className="dashboard__main__info__greeting">
             {/* <h2>{greeting}</h2> */}
-            <h2>Good Afternoon,</h2>
+            <h2 className="greeting">Good Afternoon,</h2>
             {/* <h2>{username}</h2> */}
-            <h2>Alexander Afoko</h2>
+            <h2 className="username">Alexander Afoko</h2>
           </div>
           <div className="dashboard__main__info__date">
-            {/* <span>{time}</span> */}
-            <span>11:00am</span>
+            <p className="time">{time}</p>
+            {/* <p className="time">11:00<span>am</span></p> */}
             {/* <span>{date}</span> */}
-            <span>Tuesday</span>
+            <p className="date">Tuesday</p>
           </div>
         </div>
 
-        <div className="dashboard__main__inbox">{/* nothin for now */}</div>
+        <div className="dashboard__main__inbox">
+          {/* dummy text for now */}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+          exercitationem assumenda expedita similique ut accusantium voluptatem
+          dicta porro reprehenderit mollitia distinctio illum esse quam ullam,
+          doloribus, deleniti possimus vero in est autem libero aliquid alias
+          enim? Fuga inventore, pariatur assumenda distinctio repudiandae
+          praesentium cumque dolorem, quisquam, quo porro maxime magnam optio
+          harum delectus vel accusantium accusamus tempora? Totam fugiat aperiam
+          consequatur beatae sapiente cum animi iste sunt temporibus delectus
+          debitis neque nesciunt libero, praesentium blanditiis eum, assumenda
+          quo, error eligendi. Eum quam pariatur rerum dignissimos rem
+          necessitatibus consequatur enim, quas quo omnis, totam sunt labore
+          reprehenderit doloremque nulla blanditiis! Est sint libero, laborum
+          ratione perspiciatis voluptates, impedit necessitatibus beatae sequi
+          architecto, delectus inventore recusandae animi. Omnis, aspernatur
+          explicabo officiis nisi vel laborum. Exercitationem odio placeat vitae
+          molestiae alias dolorem! Sit esse voluptatum libero ex et ipsam eaque
+          incidunt tempora dolorum dolorem, in nisi minima cupiditate, eligendi
+          dicta porro reprehenderit mollitia distinctio illum esse quam ullam,
+          doloribus, deleniti possimus vero in est autem libero aliquid alias
+          enim? Fuga inventore, pariatur assumenda distinctio repudiandae
+          praesentium cumque dolorem, quisquam, quo porro maxime magnam optio
+          harum delectus vel accusantium accusamus tempora? Totam fugiat aperiam
+          consequatur beatae sapiente cum animi iste sunt temporibus delectus
+          debitis neque nesciunt libero, praesentium blanditiis eum, assumenda
+          quo, error eligendi. Eum quam pariatur rerum dignissimos rem
+          necessitatibus consequatur enim, quas quo omnis, totam sunt labore
+          reprehenderit doloremque nulla blanditiis! Est sint libero, laborum
+          ratione perspiciatis voluptates, impedi dicta porro reprehenderit
+          mollitia distinctio illum esse quam ullam, doloribus, deleniti
+          possimus vero in est autem libero aliquid alias enim? Fuga inventore,
+          pariatur assumenda distinctio repudiandae praesentium cumque dolorem,
+          quisquam, quo porro maxime magnam optio harum delectus vel accusantium
+          accusamus tempora? Totam fugiat aperiam consequatur beatae sapiente
+          cum animi iste sunt temporibus delectus debitis neque nesciunt libero,
+          praesentium blanditiis eum, assumenda quo, error eligendi. Eum quam
+          pariatur rerum dignissimos rem necessitatibus consequatur enim, quas
+          quo omnis, totam sunt labore reprehenderit doloremque nulla
+          blanditiis! Est sint libero, laborum ratione perspiciatis voluptates,
+          impedi exum delectus ipsum aspernatur perferendis. Adipisci, magnam?
+        </div>
       </main>
 
       <aside className="dashboard__aside">
         <div className="dashboard__aside__events">
-          <h2>Most viewed events</h2>
+          <h2 className="--header">Most viewed events</h2>
           <ul>
             <li>
-              <img src="" alt="image" />
+              <img src="/src/assets/images/bg-img2.jpg" alt="image" />
               <div>
                 <h3>Graduation 2023</h3>
                 <p>
@@ -65,7 +112,7 @@ export default function Dashboard({ profileImgSrc, username, email }) {
             </li>
 
             <li>
-              <img src="" alt="image" />
+              <img src="/src/assets/images/bg-img2.jpg" alt="image" />
               <div>
                 <h3>BDAY 2023</h3>
                 <p>
@@ -78,31 +125,32 @@ export default function Dashboard({ profileImgSrc, username, email }) {
             </li>
           </ul>
         </div>
-        <div className="dashboard__aside__contacts"></div>
-        <h2>Recent contacts</h2>
-        <ul>
-          <li>
-            <img src="" alt="image" />
-            <div>
-              <h3>John Doe</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit tenetur.
-              </p>
-            </div>
-          </li>
+        <div className="dashboard__aside__contacts">
+          <h2 className="--header">Recent contacts</h2>
+          <ul>
+            <li>
+              <img src="/src/assets/images/bg-img4.jpg" alt="image" />
+              <div>
+                <h3>John Doe</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit tenetur.
+                </p>
+              </div>
+            </li>
 
-          <li>
-            <img src="" alt="image" />
-            <div>
-              <h3>Jane Doe</h3>
-              <p>
-                Rutenet tiredneherper. Tile gnicisipida rutetcesnoc tema tis
-                rolod muspi merol.
-              </p>
-            </div>
-          </li>
-        </ul>
+            <li>
+              <img src="/src/assets/images/bg-img4.jpg" alt="image" />
+              <div>
+                <h3>Jane Doe</h3>
+                <p>
+                  Rutenet tiredneherper. Tile gnicisipida rutetcesnoc tema tis
+                  rolod muspi merol.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </aside>
     </div>
   );
