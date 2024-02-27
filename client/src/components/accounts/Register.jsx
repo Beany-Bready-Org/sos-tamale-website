@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RegisterInput from "./RegisterInput";
 import sideImage from "../../assets/images/bg-img4.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 import "../../stylesheets/Register.scss";
@@ -120,8 +120,7 @@ export default function Register() {
         <div className="register__image__notice">
           <h1>Admin Account</h1>
           <p>
-            Register as an admin to overlook events that transpire on this
-            website.
+            Register as an admin to overlook events that transpire in this prestigious institution.  
           </p>
         </div>
         <img src={sideImage} alt="" className="register__image__item" />
@@ -180,6 +179,7 @@ export default function Register() {
         >
           Cancel
         </button>
+      <div>Already have an account? <Link to="/login">Log In</Link></div>
       </form>
     </main>
   );
