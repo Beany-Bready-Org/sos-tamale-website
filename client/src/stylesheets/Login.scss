@@ -1,0 +1,57 @@
+@import "./config";
+
+.login {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100dvh;
+  // align-items: center;
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    // i;
+
+    > * {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__item {
+      max-width: 100%;
+      object-fit: cover;
+      height: 100%;
+      filter: grayscale(30%);
+    }
+  }
+
+  > * {
+    height: 100%;
+  }
+
+  &__form {
+    flex: 1;
+    @include flex(column, center, center, 1em);
+
+    &__heading {
+      text-align: center;
+
+      &__header {
+        font-size: $text-big;
+        font-family: family(gelasio);
+        color: $accent-color;
+      }
+    }
+
+    .--danger,
+    .--cta {
+      width: clamp(300px, 85%, 500px);
+    }
+
+    .login-cta:disabled {
+      background-color: $light-secondary-color;
+      cursor: not-allowed;
+    }
+  }
+}
