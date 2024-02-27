@@ -1,5 +1,9 @@
 @import "./config";
 
+nav {
+  display: none;
+}
+
 .login {
   display: flex;
   flex-direction: row-reverse;

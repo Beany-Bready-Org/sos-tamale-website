@@ -1,5 +1,5 @@
 @import "./config";
-nav:not(.secondary-navbar):not(.dropdown-menu) {
+nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
   position: fixed;
   width: 100%;
   z-index: 100;
