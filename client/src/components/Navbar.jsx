@@ -37,7 +37,11 @@ const Navbar = () => {
 		if (
 			location.pathname === "/contact" ||
 			location.pathname === "/enroll" ||
-			location.pathname === "/register"
+			location.pathname === "/register" ||
+			location.pathname === "/login" ||
+			location.pathname === "/admin-dashboard"
+
+
 		) {
 			dispatch({ type: NAV_DISPLAY_ACTIONS.CONTACT });
 			showDropMenusToggler(false);

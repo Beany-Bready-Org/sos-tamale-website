@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import RulesRegulations from "./components/rnr/RulesRegulations";
 import Events from "./components/events-page/Events";
 import Register from "./components/accounts/Register";
+import Login from "./components/accounts/Login";
 // Contexts
 import AccessBoxProvider from "./contexts/AccessBoxContext";
 import AccessTokenBox from "./components/accounts/AccessTokenBox";
@@ -44,6 +45,14 @@ export default function App() {
                 element={
                   <ProtectedRoutes>
                     <Register />
+                  </ProtectedRoutes>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <ProtectedRoutes>
+                    <Login />
                   </ProtectedRoutes>
                 }
               />

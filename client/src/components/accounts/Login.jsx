@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LoginInput from "./LoginInput";
 import sideImage from "../../assets/images/bg-img4.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 import "../../stylesheets/login.scss";
@@ -38,11 +38,8 @@ export default function Login() {
 
   //   Admin credentials state
   const [adminCredentials, setAdminCredentials] = useState({
-    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
-    accessToken: "",
   });
 
   //   Function to handle credentials state
@@ -53,23 +50,12 @@ export default function Login() {
   };
 
   // Function to perform admin sign up
-  const handleRegistration = async (e) => {
+  const handleLogin = async (e) => {
+    // Prevent default behavior
     e.preventDefault();
 
-    if (
-      !adminCredentials.name ||
-      !adminCredentials.email ||
-      !adminCredentials.password ||
-      !adminCredentials.confirmPassword
-    ) {
+    if (!adminCredentials.email || !adminCredentials.password) {
       return showResponse("All fields must be filled out, try again", false);
-    }
-
-    if (adminCredentials.password !== adminCredentials.confirmPassword) {
-      return showResponse(
-        "Passwords do not match, check passwords and try again",
-        false
-      );
     }
 
     const postOptions = {
@@ -77,13 +63,13 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ...adminCredentials, accessToken }),
+      body: JSON.stringify(adminCredentials),
     };
 
     try {
       setLoading(true);
       const response = await fetch(
-        "http://localhost:5001/api/admin/register",
+        "http://localhost:5001/api/admin/login",
         postOptions
       );
       // const response = await axios.post(
@@ -116,12 +102,13 @@ export default function Login() {
   return (
     <main className="login">
       <div className="login__image">
-
         <img src={sideImage} alt="" className="login__image__item" />
       </div>
-      <form className="login__form" onSubmit={(e) => handleRegistration(e)}>
+      <form className="login__form" onSubmit={(e) => handleLogin(e)}>
         <div className="login__form__heading">
-          <h2 className="login__form__heading__header">Log into your account</h2>
+          <h2 className="login__form__heading__header">
+            Log into your account
+          </h2>
           {/* Display status message */}
           {responseStatus.message && (
             <p
@@ -158,6 +145,9 @@ export default function Login() {
         >
           Cancel
         </button>
+        <div>
+          Don't have an account yet? <Link to="/register">Register one</Link>
+        </div>
       </form>
     </main>
   );
