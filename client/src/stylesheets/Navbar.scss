@@ -23,7 +23,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
 
     &__text {
       @include flex(row, space-between, center, unset);
-      width: clamp(300px, 90vw, 1300px);
+      width: max(300px, 90vw);
       margin: auto;
 
       &__social {
@@ -92,7 +92,8 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    padding-inline: 4em;
+    width: max(300px, 90vw);
+    margin: auto;
     // box-shadow: 0 0 10px 0 #0000003d;
 
     &__items {
@@ -154,8 +155,8 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
       gap: 0.5em;
 
       img {
-        // width: clamp(2.5em, 45vmin, 5em);
-        width: 5em;
+        width: clamp(2.5em, 50vmin, 6em);
+        // width: 5em;
       }
 
       & > span {
@@ -262,12 +263,11 @@ nav:not(.secondary-navbar):not(.dropdown-menu) {
           }
         }
 
-		li:has(.--cta) {
-			.--cta {
-				width: 50% !important;
-			}
-		}
-
+        li:has(.--cta) {
+          .--cta {
+            width: 50% !important;
+          }
+        }
 
         li:nth-child(odd) {
           background-color: #f0f0f0;
