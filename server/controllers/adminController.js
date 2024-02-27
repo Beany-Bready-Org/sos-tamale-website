@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 const fs = require("fs");
 const createToken = require("../utils/createToken");
+const { threadId } = require("worker_threads");
 
 // @route /api/admin/validate-token
 // @desc Validate access token
@@ -104,9 +105,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
 
   if ((!email, !password)) {
-    return next(
-      res.status(401).json({ message: "Incorrect email or password" })
-    );
+   throw new Error("Incorrect email or password")
   }
 
   // Find  user with incoming email
@@ -129,12 +128,12 @@ const loginUser = asyncHandler(async (req, res, next) => {
             _id: userAvailable._id,
           },
           token,
-          status: "User signed successfully",
+          message: "User signed in successfully",
         })
       );
     }
   } catch (error) {
-    next(res.status(500).json({ message: "Something went wrong on our end" }));
+    next(res.status(error.statusCode || 500).json({ message: "Something went wrong on our end" }));
   }
 });
 

@@ -94,7 +94,7 @@ export default function Register() {
 
       if (!response.ok) {
         setLoading(false);
-        throw new Error("Failed to register" + response.statusText);
+        throw new Error("Failed to register: " + response.statusText);
       }
 
       let data = response.json();
