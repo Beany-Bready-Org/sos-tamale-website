@@ -8,33 +8,12 @@ import "../../stylesheets/Register.scss";
 import { useStatusMessage } from "../../contexts/StatusMessageContext";
 
 export default function Register() {
-  const BASE_URL = import.meta.env.BASE_URL;
-  console.log(BASE_URL);
   // Retrieve accessToken from localStorage
   const accessToken = localStorage.getItem("accessToken");
   // Navigate hook
   const navigate = useNavigate();
 
-  // const { statusMessage, showStatusMessageForAWhile } = useStatusMessage();
-  const [loading, setLoading] = useState(false);
-  const [responseStatus, setResponseStatus] = useState({
-    message: "",
-    success: false,
-  });
-
-  // Helper function
-  const showResponse = (message = "", success = Boolean(), interval = 1500) => {
-    if (message) {
-      setResponseStatus((prev) => {
-        return { ...prev, message, success };
-      });
-    }
-
-    const timeout = setTimeout(() => {
-      setResponseStatus({ message: "", success: false });
-    }, interval);
-    return () => clearTimeout(timeout);
-  };
+  //  const { statusMessage } = useStatusMessage()
 
   //   Admin credentials state
   const [adminCredentials, setAdminCredentials] = useState({
@@ -56,63 +35,40 @@ export default function Register() {
   const handleRegistration = async (e) => {
     e.preventDefault();
 
-    if (
-      !adminCredentials.name ||
-      !adminCredentials.email ||
-      !adminCredentials.password ||
-      !adminCredentials.confirmPassword
-    ) {
-      return showResponse("All fields must be filled out, try again", false);
-    }
-
     if (adminCredentials.password !== adminCredentials.confirmPassword) {
-      return showResponse(
-        "Passwords do not match, check passwords and try again",
-        false
-      );
+      throw new Error("Passwords do not match");
     }
 
     const postOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      "Content-Type": "application/json",
       body: JSON.stringify({ ...adminCredentials, accessToken }),
     };
 
     try {
-      setLoading(true);
-      const response = await fetch(
-        "http://localhost:5001/api/admin/register",
-        postOptions
-      );
-      // const response = await axios.post(
-      //   "http://localhost:5001/api/admin/register",
-      //   postOptions.body,
-      //   postOptions.headers
-      // );
+      //   const response = await fetch("http://localhost:5001/api/admin/register", postOptions);
+      const response = axios.post("http://localhost:5001/api/admin/register", {
+        ...adminCredentials,
+        accessToken,
+      });
 
       if (!response.ok) {
-        setLoading(false);
-        throw new Error("Failed to register: " + response.statusText);
+        throw new Error("Failed to register" + response.statusText);
       }
 
       let data = response.json();
 
       let { message } = data;
-      showResponse(message, true);
-      //   Reset form data
+      console.log(message);
+      //   Reset form
       e.target.reset();
-      setLoading(false);
       navigate("/admin-dashboard");
     } catch (error) {
-      showResponse(error.message, false);
-      setLoading(false);
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
+
+  // console.log(adminCredentials)
 
   return (
     <main className="register">
@@ -125,21 +81,15 @@ export default function Register() {
         </div>
         <img src={sideImage} alt="" className="register__image__item" />
       </div>
-      <form className="register__form" onSubmit={(e) => handleRegistration(e)}>
+      <form
+        className="register__form"
+        onSubmit={(e) => handleRegistration(e)}
+        // ref={formRef}
+      >
         <div className="register__form__heading">
           <h2 className="register__form__heading__header">
             Register as an Admin
           </h2>
-          {/* Display status message */}
-          {responseStatus.message && (
-            <p
-              className={`status-message ${
-                responseStatus.success ? "success" : "error"
-              }`}
-            >
-              {responseStatus.message}
-            </p>
-          )}
         </div>
 
         <RegisterInput
@@ -169,8 +119,8 @@ export default function Register() {
           nameValue="confirmPassword"
           onChangeHandler={handleCredentialsUpdate}
         />
-        <button className="register-cta --cta" type="submit" disabled={loading}>
-          {loading ? "Registering...": "Register"}
+        <button className="register-cta --cta" type="submit">
+          Register
         </button>
         <button
           type="button"

@@ -16,7 +16,7 @@ app.use(
 		origin: "http://localhost:5173",
 		credentials: true,
 		optionsSuccessStatus: 200,
-	}) 
+	})
 );
 app.options(cors());
 app.use(express.json());
