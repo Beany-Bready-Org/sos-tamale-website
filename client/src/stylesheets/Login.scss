@@ -1,14 +1,15 @@
 @import "./config";
 
-nav {
-  display: none;
-}
 
 .login {
   display: flex;
   flex-direction: row-reverse;
   height: 100dvh;
   // align-items: center;
+
+  // nav {
+  //   display: none;
+  // }
 
   &__image {
     width: 50%;

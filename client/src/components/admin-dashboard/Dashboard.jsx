@@ -6,7 +6,6 @@ export default function Dashboard({ profileImgSrc, username, email }) {
   let date = new Date();
   let [time, setTime] = useState(`${date.getHours()}:${date.getMinutes()}`);
 
-  useEffect;
 
   return (
     <div className="dashboard">

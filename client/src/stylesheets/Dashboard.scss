@@ -1,12 +1,12 @@
 @import "./config";
 
-img {
-  max-width: 300px !important;
-}
-
 .dashboard {
   @include flex(row, space-between, flex-start, 0);
   min-height: 100vh;
+
+  img {
+    max-width: 300px !important;
+  }
 
   &__nav {
     @include flex(column, center, center, 5vh);
