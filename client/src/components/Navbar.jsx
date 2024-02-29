@@ -28,6 +28,7 @@ const Navbar = () => {
 	const { navStateToggler, showDropMenusToggler, setShowNav } =
 		useShowNavToggler();
 	const { dispatch, state } = useNavDisplay();
+	// Set variable from useLocation hook
 	const location = useLocation();
 
 	// Access box
