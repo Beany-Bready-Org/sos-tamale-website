@@ -92,8 +92,8 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    width: max(300px, 90vw);
-    margin: auto;
+    padding: 0 3vw;
+    // width: max(300px, 100vw);
     // box-shadow: 0 0 10px 0 #0000003d;
 
     &__items {
@@ -153,10 +153,12 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       justify-content: center;
       align-items: center;
       gap: 0.5em;
+      width: 5em;
+      flex-shrink: 0;
 
       img {
-        width: clamp(2.5em, 50vmin, 6em);
-        // width: 5em;
+        // width: clamp(2.5em, 50vmin, 6em);
+        width: 100%;
       }
 
       & > span {
@@ -171,8 +173,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       }
     }
 
-    @media screen and (max-width: 780px) {
-      padding-inline: 1.5em;
+    @media screen and (max-width: 900px) {
     }
 
     &__items {
@@ -229,7 +230,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       }
     }
 
-    @container navbar (max-width: 680px) {
+    @container navbar (max-width: 900px) {
       .main-nav__logo.active {
         z-index: 1000;
       }
@@ -277,15 +278,17 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
           background-color: #fff;
         }
 
-        :is(li:first-of-type, li + li):not(.enroll, .social-items, .--cta) {
+        :is(li:first-of-type, li + li):not(.enroll, .social-items) {
           width: 100%;
+          font-size: $text-small !important;
           text-align: center;
           cursor: pointer;
           transition: width 300ms ease;
           z-index: 1;
+
           & > * {
             padding: 1em;
-            width: 100%;
+            font-size: $text-small !important;
             display: inline-block;
           }
 
@@ -305,7 +308,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
           width: 100%;
         }
 
-        // Sicial icons
+        // Social icons
         .social-items {
           display: flex;
           align-items: center;

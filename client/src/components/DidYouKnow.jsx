@@ -35,9 +35,9 @@ const DidYouKnow = () => {
         </NavLink>
       </div>
 
-      <div className="overlay">
+      {/* <div className="overlay">
         <img src={didYouKnowImage} alt="A background" />
-      </div>
+      </div> */}
     </div>
   );
 };
