@@ -92,7 +92,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    padding-inline: 4em;
+    padding: 0 3vw;
     // box-shadow: 0 0 10px 0 #0000003d;
 
     &__items {
