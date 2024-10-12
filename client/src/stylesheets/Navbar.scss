@@ -23,7 +23,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
 
     &__text {
       @include flex(row, space-between, center, unset);
-      width: max(300px, 90vw);
+      width: clamp(300px, 90vw, 1300px);
       margin: auto;
 
       &__social {
@@ -92,8 +92,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    padding: 0 3vw;
-    // width: max(300px, 100vw);
+    padding-inline: 4em;
     // box-shadow: 0 0 10px 0 #0000003d;
 
     &__items {
@@ -157,8 +156,8 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       flex-shrink: 0;
 
       img {
-        // width: clamp(2.5em, 50vmin, 6em);
-        width: 100%;
+        // width: clamp(2.5em, 45vmin, 5em);
+        width: 5em;
       }
 
       & > span {
@@ -264,11 +263,12 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
           }
         }
 
-        li:has(.--cta) {
-          .--cta {
-            width: 50% !important;
-          }
-        }
+		li:has(.--cta) {
+			.--cta {
+				width: 50% !important;
+			}
+		}
+
 
         li:nth-child(odd) {
           background-color: #f0f0f0;

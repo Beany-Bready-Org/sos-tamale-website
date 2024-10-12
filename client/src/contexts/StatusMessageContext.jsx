@@ -3,7 +3,7 @@ import React, { useState, useContext, createContext } from "react";
 const StatusMessageContextProvider = createContext();
 
 export const useStatusMessage = () => {
-  return useContext(StatusMessageContextProvider);
+  return useContext(StatusMessageContext);
 };
 
 const StatusMessageContext = ({ children }) => {
@@ -20,11 +20,9 @@ const StatusMessageContext = ({ children }) => {
       });
     }
 
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setStatusMessage({ message: "", success: false });
-    }, 1500);
-
-    return () => clearTimeout(timeout);
+    });
   };
 
   return (

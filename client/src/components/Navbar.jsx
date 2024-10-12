@@ -25,10 +25,11 @@ import { useAccessBox } from "../contexts/AccessBoxContext";
 const Navbar = () => {
   const { showNav } = useShowNav();
 
-  const { navStateToggler, showDropMenusToggler, setShowNav } =
-    useShowNavToggler();
-  const { dispatch, state } = useNavDisplay();
-  const location = useLocation();
+	const { navStateToggler, showDropMenusToggler, setShowNav } =
+		useShowNavToggler();
+	const { dispatch, state } = useNavDisplay();
+	// Set variable from useLocation hook
+	const location = useLocation();
 
   // Access box
   const { setShowAccessBox } = useAccessBox();
