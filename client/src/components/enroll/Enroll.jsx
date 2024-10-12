@@ -98,10 +98,10 @@ const Enroll = () => {
         {successMessage && <Alert variant="success">{successMessage}</Alert>}
         <div className="enroll-form__heading">
           <h1 className="enroll-form__heading-header --header">
-            Enroll Your Ward.
+            Enroll Your Ward
           </h1>
           <p className="--description">
-            Please fill out each box to provide information about your ward.
+            Please fill out each box
           </p>
         </div>
         <EnrollInput
@@ -157,7 +157,7 @@ const Enroll = () => {
       <header className="side-nav">
         <nav className="secondary-navbar">
           <div className="logo">
-            <img src={siteLogo} alt="Site logo" style={{ width: "100px" }} />
+            <img src={siteLogo} alt="Site logo" style={{ width: "5em" }} />
           </div>
           <div
             className={showMenu ? "hamburger show" : "hamburger"}

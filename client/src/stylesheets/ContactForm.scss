@@ -1,13 +1,11 @@
 @import "./config";
 
 .contact__form {
-  @include flex(column, center, center, 2em);
-  gap: 1.5em;
+  @include flex(column, center, center, 1.5em);
 
   width: clamp(300px, 100vw, 800px);
   flex-basis: 65%;
   padding-block: 3em;
-  margin-right: 4em;
 
   .contact-header {
     color: $accent-color !important;
@@ -35,8 +33,8 @@
 
   @media screen and (max-width: 800px) {
     height: 100%;
-    gap: 1em;
     width: clamp(300px, 100vw, 600px);
     margin: 0;
+    padding-top: 0;
   }
 }

@@ -74,7 +74,7 @@ const Footer = () => {
 						className="link authors"
 						target="_blank"
 					>
-						Beany bready LLC - Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
+						Emmanuel Opoku-Ameyaw & Alexander Afoko Jnr.
 					</NavLink>
 				</p>
 				<ul className="footer-secondary__social">

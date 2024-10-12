@@ -1,214 +1,225 @@
 @import "./config";
 
 .enroll-container {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-	> * {
-		height: 100%;
-	}
+  > * {
+    height: 100%;
+  }
 
-	a {
-		color: #fff;
-		font-weight: 500;
-	}
+  a {
+    color: #fff;
+    font-weight: 500;
+  }
 
-	.enroll-form {
-		flex: 1;
-		@include flex(column, center, center, 1em);
+  .enroll-form {
+    flex: 1;
+    flex-basis: 65%;
+    @include flex(column, center, center, 1.5em);
+    padding-block: 3em;
 
-		&__heading {
-			text-align: center;
+    &__heading {
+      text-align: center;
+      max-width: 80%;
 
-			&-header {
-				font-family: family(gelasio);
-				color: $accent-color;
-			}
+      &-header {
+        font-family: family(gelasio);
+        color: $accent-color;
+      }
 
-			&-description {
-				color: $text-color;
-				font-weight: weights(light);
-			}
-		}
-	}
+      &-description {
+        color: $text-color;
+        font-weight: weights(light);
+      }
+    }
 
-	.telephone {
-		padding: unset !important;
-		border: none;
-		outline: none;
-		display: flex;
-		// align-items: center;
-
-		&__contry-code {
-			@include flex(row, center, center, unset);
-			padding-inline: 0.5em;
-			background-color: $accent-color;
-			color: #fff;
-			border-radius: 4px 0 0 4px;
-			outline: 1px solid $accent-color;
-		}
-
-		input {
-			width: 100%;
-			border-radius: 0;
-			border-radius: 0 4px 4px 0;
-		}
-	}
-
-	// Side nav
-	.side-nav {
-		height: 100dvh;
-		width: 40vw;
-		color: #fff;
-		background-color: $accent-color;
-
-		.secondary-navbar {
-			margin-top: 2em;
-			@include flex(row, space-between, center, unset);
-			padding-inline: 3em;
-			position: relative;
-
-			.hamburger {
-				width: 40px;
-				height: fit-content;
-				cursor: pointer;
-				@include flex(column, center, unset, 0.5em);
-
-				.line {
-					width: 100%;
-					height: 5px;
-					background-color: #fff;
-					border-radius: 0.1rem;
-					transition: all 300ms ease;
-				}
-			}
-
-			.show {
-				.line1 {
-					transform: rotate(45deg) translateY(18.5px);
-				}
-
-				.line2 {
-					pointer-events: none;
-					opacity: 0;
-				}
-
-				.line3 {
-					transform: rotate(-45deg) translateY(-18.5px);
-				}
-			}
-
-			&__navbar {
-				list-style: none;
-				// border: 3px solid white;
-				padding: 0;
-				width: 40%;
-				overflow: hidden;
-				// padding: 1em;
-				position: absolute;
-				right: 3rem;
-				top: 5rem;
-				z-index: 100;
-				background-color: #fff;
-				border-radius: 8px;
-				border: 1px solid lighten($text-color, 30%);
-				// box-shadow: 0 4px 0 lighten($text-color, 30%);
-				transition: all 300ms ease;
-				opacity: 0;
-				pointer-events: none;
-				@include flex(column, flex-start, flex-start, 0);
-
-				li {
-					width: 100%;
-
-					> * {
-						font-family: family(poppins);
-						color: $text-color;
-						font-weight: weights(light);
-						width: 100%;
-						height: 100%;
-						display: inline-block;
-						transition: all 300ms ease;
-						padding: 0.8rem 1rem;
-						border-bottom: thin solid lighten($text-color, 20%);
-
-						&:hover {
-							background-color: $accent-color;
-							color: #fff;
-						}
-					}
-				}
-
-				li:last-of-type a {
-					border: 0;
-				}
-			}
-
-			.show {
-				opacity: 1;
-				pointer-events: all;
+		.telephone {
+			input {
+				width: 100%;
 			}
 		}
+  }
 
-		&__sdg {
-			padding: 0 1em;
-			font-weight: weights(light);
-			width: fit-content;
+  .telephone {
+    padding: unset !important;
+    border: none;
+    outline: none;
+    display: flex;
+    // align-items: center;
 
-			&--four {
-				width: 50%;
-				margin-top: 1em;
-			}
-		}
+    &__contry-code {
+      @include flex(row, center, center, unset);
+      padding-inline: 0.5em;
+      background-color: $accent-color;
+      color: #fff;
+      border-radius: 4px 0 0 4px;
+      outline: 1px solid $accent-color;
+    }
+  }
 
-		&__image {
-			img {
-				transform: translateX(-50px);
-				width: 90dvw;
-				max-width: 480px;
-				filter: drop-shadow(3px 4px 15px rgba(0, 0, 0, 0.2));
-			}
-		}
-	}
+  // Side nav
+  .side-nav {
+    height: 100dvh;
+    width: min(500px, 40vw);
+    color: #fff;
+    background-color: $accent-color;
+    flex-basis: 40%;
+    justify-content: space-between;
+    align-items: center;
 
-	@media screen and (max-width: 855px) {
-		// display: none;
-		flex-direction: column-reverse;
-		align-items: unset;
-		justify-content: flex-end;
-		// gap: 3em;
+    .secondary-navbar {
+      @include flex(row, space-between, center, unset);
+      width: 100%;
+      padding-block: 2em;
+      padding-inline: 3em;
+      z-index: 100;
+      position: relative;
 
-		.enroll-form {
-			flex: unset;
-			margin-bottom: 1em;
+      .hamburger {
+        width: 40px;
+        height: fit-content;
+        cursor: pointer;
+        @include flex(column, center, unset, 0.5em);
 
-			&__input,
-			.telephone input {
-				padding-block: 1em;
-			}
-		}
+        .line {
+          width: 100%;
+          height: 5px;
+          background-color: #fff;
+          border-radius: 0.1rem;
+          transition: all 300ms ease;
+        }
+      }
 
-		.side-nav {
-			height: revert;
-			align-self: flex-start;
-			width: 100dvw;
+      .show {
+        .line1 {
+          transform: rotate(45deg) translateY(18.5px);
+        }
 
-			.secondary-navbar {
-				padding-bottom: 0.5em;
-				height: 100%;
-				margin-top: 0.6em;
-			}
+        .line2 {
+          pointer-events: none;
+          opacity: 0;
+        }
 
-			&__image,
-			&__sdg {
-				display: none;
-			}
-		}
+        .line3 {
+          transform: rotate(-45deg) translateY(-18.5px);
+        }
+      }
 
-		.form-cta {
-			// padding-block: 1em;
-		}
-	}
+      &__navbar {
+        list-style: none;
+        // border: 3px solid white;
+        padding: 0;
+        width: 40%;
+        overflow: hidden;
+        // padding: 1em;
+        position: absolute;
+        right: 3rem;
+        top: 5rem;
+        z-index: 100;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid lighten($text-color, 30%);
+        // box-shadow: 0 4px 0 lighten($text-color, 30%);
+        transition: all 300ms ease;
+        opacity: 0;
+        pointer-events: none;
+        @include flex(column, flex-start, flex-start, 0);
+
+        li {
+          width: 100%;
+
+          > * {
+            font-family: family(poppins);
+            color: $text-color;
+            font-weight: weights(light);
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            transition: all 300ms ease;
+            padding: 0.8rem 1rem;
+            border-bottom: thin solid lighten($text-color, 20%);
+
+            &:hover {
+              background-color: $accent-color;
+              color: #fff;
+            }
+          }
+        }
+
+        li:last-of-type a {
+          border: 0;
+        }
+      }
+
+      .show {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &__sdg {
+      border: thin solid #515559;
+      padding: 2em 0.75em;
+      width: 100%;
+      background-color: #f5f5f5b2;
+      backdrop-filter: blur(2px);
+      color: $text-color;
+      font-family: family(poppins);
+
+      &--four {
+        max-width: 325px;
+      }
+
+      &--sdg {
+        color: $accent-color;
+      }
+    }
+
+    &__image {
+      padding-inline: 3em;
+			max-width: 500px;
+      img {
+        filter: drop-shadow(3px 4px 15px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    // display: none;
+    flex-direction: column-reverse;
+    align-items: unset;
+    justify-content: flex-end;
+    gap: 3em;
+    v .enroll-form {
+      flex: unset;
+      padding-top: 0;
+
+      &__input,
+      .telephone input {
+        // padding-block: 1em;
+      }
+    }
+
+    .side-nav {
+      height: revert;
+      align-self: flex-start;
+      width: 100dvw;
+
+      .secondary-navbar {
+        padding: 0 max(3vw, 2em);
+        height: 15vh;
+      }
+
+      &__image,
+      &__sdg {
+        display: none;
+      }
+    }
+
+    .form-cta {
+      // padding-block: 1em;
+    }
+  }
 }

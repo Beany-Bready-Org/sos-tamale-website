@@ -92,7 +92,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
     container-type: inline-size;
     container-name: navbar;
     z-index: 100;
-    padding: 0 3vw;
+    padding: 0 max(3vw, 2em);
     // box-shadow: 0 0 10px 0 #0000003d;
 
     &__items {
@@ -229,7 +229,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       }
     }
 
-    @container navbar (max-width: 900px) {
+    @media (max-width: 975px) {
       .main-nav__logo.active {
         z-index: 1000;
       }
@@ -278,7 +278,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
           background-color: #fff;
         }
 
-        :is(li:first-of-type, li + li):not(.enroll, .social-items) {
+        :is(li:first-of-type, li):not(.enroll, .social-items) {
           width: 100%;
           font-size: $text-small !important;
           text-align: center;

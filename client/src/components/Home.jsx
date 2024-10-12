@@ -17,7 +17,7 @@ const Home = () => {
 				{/* <Statistics teachers={33} nonTeachingStaff={16} students={400} /> */}
 			</header>
 			<main>
-				<VideoSection />
+				{/* <VideoSection /> */}
 				<CampusesSection />
 				{/* <StaffSection /> */}
 				<GallerySection size={8} />

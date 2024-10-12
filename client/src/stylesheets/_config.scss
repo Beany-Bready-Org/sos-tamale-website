@@ -112,8 +112,8 @@ $border-color: #0084b8;
 $btn-tiny: 0.875em 1.5em;
 // $btn-small: 0.5em 2em;
 
-$text-cta: clamp(12px, 2.25vmin, 16px);
-$text-small: clamp(1em, 3vmin, 1.15em);
+$text-cta: max(2.25vmin, 16px);
+$text-small: max(3vmin, 1.25em);
 $text-medium: clamp(1.75em, 4vmin, 2.5em);
 $text-big: clamp(2.25em, 6vmin, 2.9em);
 $text-large: clamp(2.5em, 8vmin, 3.5em);

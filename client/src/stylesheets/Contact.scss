@@ -6,14 +6,14 @@
   margin: auto;
   position: relative;
 
-  > *{
+  > * {
     height: 100vh
   }
 
   &__img {
-    @include flex(column, space-between, flex-end, unset);
+    @include flex(column, flex-start, center, 3em);
     width: 100%;
-    flex-basis: 35%;
+    flex-basis: 40%;
     position: relative;
     z-index: 1;
     min-height: 100vh;
@@ -115,19 +115,17 @@
       }
 
       img {
-        width: 15vmin;
+        width: 5em;
       }
     }
 
     & > img {
-      position: absolute;
-      right: 30%;
-      bottom: 7.5%;
+      padding: 1em;
     }
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .contact {
     justify-content: flex-start;
     gap: 4em;
@@ -147,10 +145,6 @@
       &__nav {
         width: 100%;
         background-color: $accent-color;
-
-
-
-
         padding: 0 2em;
       }
     }
