@@ -53,5 +53,4 @@ ContactInput.propTypes = {
 	id: PropTypes.string.isRequired,
 	type: PropTypes.string.isRequired,
 	placeholder: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired
 };
