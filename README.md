@@ -9,7 +9,7 @@ A website for our school, [SOS HGS Tamale](c:\Users\alexa\OneDrive\Desktop\progr
 
 ## Table of contents 📑
 
-- [Features and Screenshots✨🖼️](#features-and-screenshots-✨🖼️)
+- [Features and Screenshots✨🖼️](#features-and-screenshots-✨-🖼️)
 - [Technologies Used 🔬](#technologies-used-🔬)
 - [License 📝](#license-📝)
 - [Project Status 🔥](#project-status-🔥)
