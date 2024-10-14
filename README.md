@@ -1,3 +1,8 @@
+Deploy status from Netlify
+<br/>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/13009c38-c2b8-410c-8aab-1a8a91947cca/deploy-status)](https://app.netlify.com/sites/sos-hgstl/deploys)
+
+---
 # SOS HGS-TL WEBSITE 🏫
 
 A website for our school, [SOS HGS Tamale](c:\Users\alexa\OneDrive\Desktop\programming\README-template.md)
