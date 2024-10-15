@@ -148,6 +148,18 @@ const Navbar = () => {
           </li>
           <li className="item">
             <NavLink
+              to="/teachers"
+              onClick={() => {
+                showDropMenusToggler(false);
+                // Hide mobile nav
+                setShowNav(false);
+              }}
+            >
+              Our Teachers
+            </NavLink>
+          </li>
+          <li className="item">
+            <NavLink
               to="/enroll"
               onClick={() => {
                 showDropMenusToggler(false);

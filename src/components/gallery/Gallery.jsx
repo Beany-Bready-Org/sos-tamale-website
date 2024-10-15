@@ -1,5 +1,5 @@
 import GallerySection from "../GallerySection";
-import Footer from "./../Footer";
+import Footer from "../Footer";
 
 import "../../stylesheets/Gallery.scss";
 

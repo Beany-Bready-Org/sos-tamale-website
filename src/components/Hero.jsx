@@ -1,6 +1,6 @@
 import React from "react";
-import HeroBackground from "./HeroBackground";
-import HeroText from "./HeroText";
+import HeroBackground from "./HeroBackground.jsx";
+import HeroText from "./HeroText.jsx";
 import Login from "./accounts/Login.jsx";
 
 import "../stylesheets/Hero.scss";
