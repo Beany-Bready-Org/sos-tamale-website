@@ -39,31 +39,13 @@ export default function App() {
                 element={<RulesRegulations />}
               />
               <Route path="/events" element={<Events />} />
+
               {/* Protected routes => accessToken required */}
-              <Route
-                path="/register"
-                element={
-                  <ProtectedRoutes>
-                    <Register />
-                  </ProtectedRoutes>
-                }
-              />
-              <Route
-                path="/login"
-                element={
-                  <ProtectedRoutes>
-                    <Login />
-                  </ProtectedRoutes>
-                }
-              />
-              <Route
-                path="/admin-dashboard"
-                element={
-                  <ProtectedRoutes>
-                    <Dashboard />
-                  </ProtectedRoutes>
-                }
-              />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/admin-dashboard" element={<Dashboard />} />
+              </Route>
             </Routes>
           </AccessBoxProvider>
         </StatusMessageContext>
