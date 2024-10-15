@@ -5,11 +5,10 @@
 
   height: 100vh;
   // margin-top: 20vh;
-  padding-top: 5em;
+  // padding-top: 5em;
   position: relative;
 
   @media screen and (max-width: 500px) {
-    margin-top: 15vh;
     height: 85vh;
   }
 }
