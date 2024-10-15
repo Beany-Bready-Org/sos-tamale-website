@@ -10,7 +10,7 @@ const FooterJoin = () => {
 				<h2>Ready for quality education?</h2>
 				<p>Talk to us today!</p>
 			</div>
-			<Link to="/enroll" className="footer-join__cta">
+			<Link to="/enroll" className="footer-join__cta" title="Enroll your ward now!">
 				Enroll Now
 			</Link>
 		</div>

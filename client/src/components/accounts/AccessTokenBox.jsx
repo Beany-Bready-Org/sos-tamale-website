@@ -104,7 +104,7 @@ const AccessTokenBox = () => {
 			event.clientX < modalDimensions.left ||
 			event.clientX > modalDimensions.right
 		) {
-			modal.close();
+			modal?.close();
 		}
 	}
 

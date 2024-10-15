@@ -1,9 +1,10 @@
 @import "./config";
 nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
-  position: fixed;
+  position: sticky;
   width: 100%;
   z-index: 100;
   background-color: #fff;
+  top: 0;
   // border-bottom: 2px $light-secondary-color solid;
   box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
 

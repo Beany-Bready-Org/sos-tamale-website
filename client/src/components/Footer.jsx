@@ -21,6 +21,7 @@ const Footer = () => {
 						style={{ width: "90px" }}
 					/>
 					<div className="footer-main__name">
+						<div className="footer-main__name-school">
 						<h2
 							className="footer-main__logo-school-name"
 							style={{ textTransform: "capitalize" }}
@@ -28,6 +29,7 @@ const Footer = () => {
 							SOS Hermann Gmeiner school tamale
 						</h2>
 						<em>We are tops!</em>
+						</div>
 						<FooterJoin />
 					</div>
 				</div>

@@ -8,6 +8,7 @@
   container-type: inline-size;
   container-name: footerMain;
 
+  // Smaller screen sizes
   @media screen and (max-width: 680px) {
     flex-direction: column;
   }
@@ -184,6 +185,12 @@
       .authors {
         margin-left: 0.5em;
       }
+    }
+
+    .footer-main__name-school {
+     h2 {
+      text-align: center;
+     }
     }
   }
 }

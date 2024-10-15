@@ -45,7 +45,7 @@ export default function GallerySectionImage({ imgSrc, alt }) {
       event.clientX > modalDimensions.bottom ||
       event.clientX < modalDimensions.top
     ) {
-      modal.close()
+      modal?.close()
     }
   }
 

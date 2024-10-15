@@ -1,8 +1,7 @@
 @import "./config";
 
 .gallery {
-  padding-top: 20vh;
-
+  padding-block: 3em;
   @media screen and (max-width: 680px) {
     padding-top: 15vh;
   }
@@ -13,9 +12,13 @@
     .gallery-section__images {
       margin-bottom: 0 !important;
     }
-  }
-  .--header {
-    margin: 4vmax 0;
+
+    &__header {
+      margin-bottom: .7em;
+      font-size: $text-large;
+      color: $accent-color-secondary;
+      font-family: family(gelasio);
+    }
   }
 
   #see-more-btn {

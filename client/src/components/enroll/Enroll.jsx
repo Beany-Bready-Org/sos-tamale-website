@@ -143,7 +143,7 @@ const Enroll = () => {
           nameValue="from_school"
         />
         <button
-          className="--cta --input"
+          className="--cta --input mb-2"
           disabled={loading}
           style={
             loading

@@ -73,16 +73,12 @@ export default function ContactForm() {
 
   return (
     <form className="contact__form" onSubmit={handleSubmit} ref={formRef}>
-      {errorMessage || successMessage ? (
-        <p className={errorMessage ? "error" : "success"}>
-          {errorMessage ? errorMessage : successMessage}
-        </p>
-      ) : null}
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          margin: 0,
         }}
       >
         <h1 className="--header" style={{ color: "black" }}>
@@ -90,6 +86,11 @@ export default function ContactForm() {
         </h1>
         <p className="	--description">Contact us now for further enquiries.</p>
       </div>
+      {errorMessage || successMessage ? (
+        <p className={errorMessage ? "error" : "success"}>
+          {errorMessage ? errorMessage : successMessage}
+        </p>
+      ) : null}
       <ContactInput
         type={"text"}
         placeholder={"Type your full name here"}

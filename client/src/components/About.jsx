@@ -20,7 +20,7 @@ const About = () => {
             className="about-banner__background-image"
           />
         </div>
-        <h1 className="about-banner__header">We are SOS HGS</h1>
+        <h1 className="about-banner__header">We are SOS HGSTL</h1>
       </section>
       <section className="mission-vision">
         <div className="mission">
