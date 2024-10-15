@@ -4,7 +4,7 @@ import sideImage from "../../assets/images/bg-img4.jpg";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-import "../../stylesheets/login.scss";
+import "../../stylesheets/Login.scss";
 import { useStatusMessage } from "../../contexts/StatusMessageContext";
 
 export default function Login() {
