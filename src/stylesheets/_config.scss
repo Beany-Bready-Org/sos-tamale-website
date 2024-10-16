@@ -21,6 +21,7 @@ $font-weights: (
   "medium": 500,
   "regular": 400,
   "light": 300,
+  "lighter": 200,
 );
 
 // Function to utilize font-weights
@@ -60,6 +61,24 @@ $font-weights: (
   }
 }
 
+// Button - outline
+@mixin button-outline($border-color, $color) {
+  border: 1px solid $border-color !important;
+  border: 0;
+  max-width: 100%;
+  transition: 200ms ease-in-out;
+  background-color: transparent;
+  color: $color;
+  padding: 0.5em 1em;
+  font-weight: weights(light);
+  width: fit-content !important;
+  cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+    width: clamp(100px, 80vw, 350px);
+  }
+}
+
 // Reset styles for buttons with "--cta" class
 @mixin reset {
   width: 50% !important;
@@ -84,6 +103,11 @@ $font-weights: (
   }
 }
 
+@mixin overlap {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
 // Colors
 // color function
 @function color($color-mode) {
@@ -94,7 +118,7 @@ $font-weights: (
   }
 }
 
-$shadow-sm: rgb(0 0 0 / .5);
+$shadow-sm: rgb(0 0 0 / 0.5);
 $accent-color: #029ddf;
 $secondary-color: #0084b8;
 $deep-secondary-color: #0075a3;
@@ -111,10 +135,11 @@ $error-darker: #b12727;
 $success-color: #40c057;
 $border-color: #0084b8;
 $btn-tiny: 0.875em 1.5em;
-// $btn-small: 0.5em 2em;
+$btn-extra-tiny: 0.5em 2em;
 
 $text-cta: max(2.25vmin, 16px);
 $text-small: max(3vmin, 1.25em);
+$text-smaller: max(2vmin, 1em);
 $text-medium: clamp(1.75em, 4vmin, 2.5em);
 $text-big: clamp(2.25em, 6vmin, 2.9em);
 $text-large: clamp(2.5em, 8vmin, 3.5em);

@@ -5,11 +5,8 @@ import { faEye, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export default function GallerySectionImage({ imgSrc, alt }) {
   const imgContainerRef = useRef();
-  const [currentImageSrc, setCurrentImageSrc] = useState("");
-  const [error, setError] = useState("");
   const imgRef = useRef();
   const modalRef = useRef();
-  const closeButtonRef = useRef();
 
   useEffect(() => {
     const loadImage = () => {
@@ -28,11 +25,6 @@ export default function GallerySectionImage({ imgSrc, alt }) {
       }
     };
   }, [imgSrc]);
-
-  // function grabImageURL() {
-  //   const imageElemet = document.querySelector("[data-gallery-image]");
-  //   console.log(imageElemet);
-  // }
 
   function openModal() {
     modalRef.current.showModal();
@@ -71,8 +63,14 @@ export default function GallerySectionImage({ imgSrc, alt }) {
         >
           <FontAwesomeIcon icon={faClose} />
         </button>
-        <div>
+        <div className="expanded-image">
           <img src={imgSrc} alt={alt} />
+          <p className="--description-secondary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+            numquam officiis quae consequuntur corporis eligendi eos? Doloremque
+            voluptatibus consequatur quos, repudiandae aspernatur nesciunt
+            aliquam, nulla earum totam quibusdam ipsum dicta?
+          </p>
         </div>
       </dialog>
       <img
@@ -83,7 +81,7 @@ export default function GallerySectionImage({ imgSrc, alt }) {
         ref={imgRef}
         title={alt}
       />
-      <div className="gallery-section__images__imagge-action">
+      <div className="gallery-section__images__image-action">
         <button className="image-button --cta" onClick={openModal}>
           <FontAwesomeIcon icon={faEye} /> View
         </button>

@@ -13,7 +13,6 @@
   cursor: pointer;
   position: relative;
 
-
   & > * {
     grid-column: 1 / -1;
     grid-row: 1/ -1;
@@ -28,12 +27,33 @@
     &::backdrop {
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(5, 184, 255, 0.5);
     }
 
-    img {
-      width: 100%;
-      overflow: hidden;
+    .expanded-image {
+      display: grid;
+      height: 500px;
+      border-radius: .5rem;
+
+
+      & > * {
+        grid-column: 1/ -1;
+        grid-row: 1/ -1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      p {
+        align-self: flex-end;
+        background-color: #fff;
+        text-align: justify;
+        padding: 1em;
+        margin: max(.7em, .85em);
+        box-shadow: 3px 4px 15px $shadow-sm;
+      }
     }
 
     .close-btn {

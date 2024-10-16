@@ -19,6 +19,7 @@ import StatusMessageContext from "./contexts/StatusMessageContext";
 import Dashboard from "./components/admin-dashboard/Dashboard";
 import ProtectedRoutes from "./protected-routes/ProtectedRoutes";
 import Teachers from "./components/Teachers";
+import Clubs from "./components/clubs/Clubs";
 
 // Main component
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
               />
               <Route path="/events" element={<Events />} />
               <Route path="/teachers" element={<Teachers />} />
+              <Route path="/school-clubs" element={<Clubs />} />
 
               {/* Protected routes => accessToken required */}
               <Route element={<ProtectedRoutes />}>
