@@ -1,0 +1,36 @@
+@import "./config";
+
+.info-box {
+  @include flex(column, start, unset, 1em);
+  width: 100%;
+  height: max-content;
+  background-color: rgba(17, 176, 250, 0.815);
+  color: #fff;
+  padding: 2em;
+
+  &__header {
+    font-family: family(gelasio);
+    font-size: $text-big;
+    text-transform: capitalize;
+    line-height: normal;
+  }
+
+  &__description {
+    font-weight: weights(light);
+    
+    &::before {
+        content: '';
+        width: 20%;
+        height: 1px;
+        background-color: #fff;
+        visibility: visible;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: .7em;
+    align-self: flex-start;
+  }
+}

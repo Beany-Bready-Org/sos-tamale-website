@@ -1,0 +1,57 @@
+@import "./config";
+
+.clubs {
+  margin: max(2em, 3em);
+  &__header {
+    text-align: left;
+  }
+
+  &__clubs {
+    margin-top: 1em;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .club-card {
+    border: 1px solid $accent-color-secondary;
+    height: fit-content;
+    transition: height 300ms ease-in-out;
+    $_padding: .8em;
+
+    &__image {
+      display: grid;
+
+      & > * {
+        @include overlap;
+      }
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        filter: brightness(40%);
+      }
+
+      h1 {
+        font-family: family(gelasio);
+        color: #fff;
+        text-shadow: 3px 4px 15px $shadow-sm;
+        align-self: flex-end;
+        z-index: 10;
+        margin: .5em;
+      }
+    }
+
+    &__description {
+      padding: $_padding;
+      font-weight: weights(light);
+    }
+
+    &__cta {
+      border: 0;
+      background-color: transparent;
+      color: $accent-color-secondary;
+      cursor: pointer;
+    }
+  }
+}
