@@ -4,7 +4,9 @@ import GallerySectionImage from "./GallerySectionImage";
 import "../stylesheets/GallerySection.scss";
 
 // Dynamically import all gallery images
-const galleryImagesPaths = import.meta.glob('../assets/images/gallery-images/*.png');
+const galleryImagesPaths = import.meta.glob(
+  "../assets/images/gallery-images/*.png"
+);
 
 export default function GallerySection({ size }) {
   const [galleryImages, setGalleryImages] = useState([]);
@@ -13,7 +15,7 @@ export default function GallerySection({ size }) {
     async function loadGalleryImages(size) {
       const images = await Promise.all(
         Object.keys(galleryImagesPaths)
-          .slice(0, 32 - size)
+          .slice(0, size)
           .map(async (path, index) => {
             const imgSrc = (await galleryImagesPaths[path]()).default;
             return (

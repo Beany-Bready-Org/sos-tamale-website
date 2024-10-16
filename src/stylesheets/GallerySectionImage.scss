@@ -13,6 +13,7 @@
   cursor: pointer;
   position: relative;
 
+
   & > * {
     grid-column: 1 / -1;
     grid-row: 1/ -1;
@@ -33,6 +34,21 @@
     img {
       width: 100%;
       overflow: hidden;
+    }
+
+    .close-btn {
+      @include flex(unset, center, center, unset);
+      position: absolute;
+      right: 0;
+      margin: 1em;
+      width: 30px;
+      aspect-ratio: 1;
+      font-size: 1em;
+      border-radius: 50%;
+      border: 0;
+      background-color: #fff;
+      box-shadow: 4px 5px 15px $shadow-sm;
+      cursor: pointer;
     }
   }
 

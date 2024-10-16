@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import "../stylesheets/GallerySectionImage.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export default function GallerySectionImage({ imgSrc, alt }) {
   const imgContainerRef = useRef();
@@ -9,6 +9,7 @@ export default function GallerySectionImage({ imgSrc, alt }) {
   const [error, setError] = useState("");
   const imgRef = useRef();
   const modalRef = useRef();
+  const closeButtonRef = useRef();
 
   useEffect(() => {
     const loadImage = () => {
@@ -45,7 +46,13 @@ export default function GallerySectionImage({ imgSrc, alt }) {
       event.clientX > modalDimensions.bottom ||
       event.clientX < modalDimensions.top
     ) {
-      modal?.close()
+      modal?.close();
+    }
+  }
+
+  function closeModalBtnCall() {
+    if (modalRef.current.open) {
+      modalRef.current?.close();
     }
   }
 
@@ -57,6 +64,13 @@ export default function GallerySectionImage({ imgSrc, alt }) {
     >
       {/* <dialog ref={modalRef} onClick={(e) => closeModal()}> */}
       <dialog ref={modalRef} onClick={(e) => closeModal(e.target, e)}>
+        <button
+          className="close-btn"
+          onClick={closeModalBtnCall}
+          title="Close Image modal"
+        >
+          <FontAwesomeIcon icon={faClose} />
+        </button>
         <div>
           <img src={imgSrc} alt={alt} />
         </div>

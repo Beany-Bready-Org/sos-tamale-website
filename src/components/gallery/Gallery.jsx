@@ -7,7 +7,7 @@ export default function Gallery() {
   return (
     <>
       <main className="gallery">
-        <GallerySection size={8} />
+        <GallerySection size={32} />
       </main>
       {/* <Footer /> */}
     </>

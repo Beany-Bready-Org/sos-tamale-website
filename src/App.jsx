@@ -18,6 +18,7 @@ import AccessTokenBox from "./components/accounts/AccessTokenBox";
 import StatusMessageContext from "./contexts/StatusMessageContext";
 import Dashboard from "./components/admin-dashboard/Dashboard";
 import ProtectedRoutes from "./protected-routes/ProtectedRoutes";
+import Teachers from "./components/Teachers";
 
 // Main component
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
                 element={<RulesRegulations />}
               />
               <Route path="/events" element={<Events />} />
+              <Route path="/teachers" element={<Teachers />} />
 
               {/* Protected routes => accessToken required */}
               <Route element={<ProtectedRoutes />}>

@@ -20,7 +20,7 @@ const Home = () => {
 				{/* <VideoSection /> */}
 				<CampusesSection />
 				{/* <StaffSection /> */}
-				<GallerySection size={8} />
+				<GallerySection size={6} />
 				<div className="news-did-wrapper">
 					{/* <NewsLetter /> */}
 					<DidYouKnow />

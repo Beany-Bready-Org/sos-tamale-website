@@ -1,0 +1,42 @@
+@import "./config";
+
+.teachers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70dvh;
+
+  img {
+    width: clamp(300px, 60%, 500px);
+
+  }
+
+  .message {
+    h1 {
+        text-align: left;
+    }
+
+    span {
+        font-weight: 300;
+    }
+  }
+
+  @media screen and (width <= 700px) {
+    flex-direction: column;
+
+    img {
+        width: 200px;
+    }
+
+    .message {
+        @include flex(column, center, center, 1rem);
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            text-align: center;
+        }
+    }
+  }
+}
