@@ -39,6 +39,9 @@
         align-self: flex-end;
         z-index: 10;
         margin: .5em;
+        line-height: normal;
+        text-wrap: wrap;
+        word-break: break-all;
       }
     }
 
@@ -52,6 +55,11 @@
       background-color: transparent;
       color: $accent-color-secondary;
       cursor: pointer;
+    }
+
+    &__status {
+      color: $text-color;
+      padding: $_padding;
     }
   }
 }

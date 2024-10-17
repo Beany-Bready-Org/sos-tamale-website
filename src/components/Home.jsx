@@ -17,8 +17,8 @@ const Home = () => {
         {/* removed for now*/}
         <section className="info">
           <InfoBox
-            title="Our Clubs"
-            description="Explore our amazing school clubs driven by our very own students!"
+            title="Our School's Clubs"
+            description="Explore our amazing school clubs driven by our very own students together with dedicated teachers who give their very best to the clubs!"
             linkRef="/school-clubs"
           />
           <InfoBox

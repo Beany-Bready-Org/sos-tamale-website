@@ -143,6 +143,7 @@ $text-smaller: max(2vmin, 1em);
 $text-medium: clamp(1.75em, 4vmin, 2.5em);
 $text-big: clamp(2.25em, 6vmin, 2.9em);
 $text-large: clamp(2.5em, 8vmin, 3.5em);
+$text-tiny: max(1vmin, 16px);
 
 // $text-small: 1em;
 // $text-medium: 1.5em;

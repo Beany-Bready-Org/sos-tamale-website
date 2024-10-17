@@ -8,6 +8,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
   // border-bottom: 2px $light-secondary-color solid;
   box-shadow: 3px 4px 15px rgb(0 0 0 / 0.2);
 
+  // The navbar that sits on top of the main navbar
   .secondary-nav {
     display: flex;
     align-items: center;
@@ -68,6 +69,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
 
       @media screen and (width <= 680px) {
         &-info {
+          display: none;
           width: 100%;
           justify-content: space-between;
           flex-direction: column;
@@ -141,9 +143,9 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
             }
           }
 
-          > * + * {
-            // border-top: thin solid $light-secondary-color;
-          }
+          // > * + * {
+          //   // border-top: thin solid $light-secondary-color;
+          // }
         }
       }
     }
@@ -157,7 +159,6 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
       flex-shrink: 0;
 
       img {
-        // width: clamp(2.5em, 45vmin, 5em);
         width: 5em;
       }
 
@@ -264,12 +265,11 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
           }
         }
 
-		li:has(.--cta) {
-			.--cta {
-				width: 50% !important;
-			}
-		}
-
+        li:has(.--cta) {
+          .--cta {
+            width: 50% !important;
+          }
+        }
 
         li:nth-child(odd) {
           background-color: #f0f0f0;
@@ -347,6 +347,7 @@ nav:not(.secondary-navbar):not(.dropdown-menu):not(.dashboard__nav) {
   }
 }
 
+// Hamburger
 .main-nav:has(> .main-nav__items.active) {
   .main-nav__hamburger {
     .line1 {

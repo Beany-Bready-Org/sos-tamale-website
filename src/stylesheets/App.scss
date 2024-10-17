@@ -114,13 +114,7 @@ a {
 }
 
 .--cta-secondary {
-  @include button(
-    $accent-color,
-    $light-secondary-color,
-    #fff,
-    $btn-tiny,
-    6px
-  );
+  @include button($accent-color, $light-secondary-color, #fff, $btn-tiny, 6px);
   @include button-hover($accent-color, #aaa, #eee);
 }
 
@@ -226,20 +220,6 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  // & > *:not(:nth-of-type(3)) {
-  //   position: relative;
-
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     right: 0;
-  //     height: 80%;
-  //     width: 2px;
-  //     background-color: #fff;
-  //   }
-
-  // }
-
   & > :nth-of-type(1) {
     background-color: #e03131;
   }
@@ -250,5 +230,12 @@ main {
   }
   & > :nth-of-type(3) {
     background-color: #3bc9db;
+  }
+
+  @media screen and (width <= 850px) {
+    > * {
+      height: 300px;
+      max-height: 500px;
+    }
   }
 }

@@ -18,6 +18,7 @@ const Clubs = () => {
             key={index}
             clubName={item.clubName}
             clubDescription={item.clubDescription}
+            clubStatus={item.clubStatus}
             imgSrc={item.imgSrc}
             alt={item.alt}
           />
