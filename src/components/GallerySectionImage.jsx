@@ -65,12 +65,6 @@ export default function GallerySectionImage({ imgSrc, alt }) {
         </button>
         <div className="expanded-image">
           <img src={imgSrc} alt={alt} />
-          <p className="--description-secondary">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            numquam officiis quae consequuntur corporis eligendi eos? Doloremque
-            voluptatibus consequatur quos, repudiandae aspernatur nesciunt
-            aliquam, nulla earum totam quibusdam ipsum dicta?
-          </p>
         </div>
       </dialog>
       <img

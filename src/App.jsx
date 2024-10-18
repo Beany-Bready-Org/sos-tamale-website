@@ -41,7 +41,7 @@ export default function App() {
                 element={<RulesRegulations />}
               />
               <Route path="/events" element={<Events />} />
-              <Route path="/teachers" element={<Teachers />} />
+              {/* <Route path="/teachers" element={<Teachers />} /> */}
               <Route path="/school-clubs" element={<Clubs />} />
 
               {/* Protected routes => accessToken required */}

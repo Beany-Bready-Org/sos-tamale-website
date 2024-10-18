@@ -146,7 +146,7 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
-          <li className="item">
+          {/* <li className="item">
             <NavLink
               to="/teachers"
               onClick={() => {
@@ -157,7 +157,7 @@ const Navbar = () => {
             >
               Our Teachers
             </NavLink>
-          </li>
+          </li> */}
           <li className="item">
             <NavLink
               to="/enroll"
