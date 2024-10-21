@@ -43,10 +43,10 @@
       }
 
       &__content {
+        margin-bottom: 0.5em;
         h2 {
           font-size: 1.3rem;
           color: $accent-color;
-          text-shadow: 3px 4px 15px rgb(0 0 0 / 0.3);
         }
 
         p {
@@ -188,9 +188,9 @@
     }
 
     .footer-main__name-school {
-     h2 {
-      text-align: center;
-     }
+      h2 {
+        text-align: center;
+      }
     }
   }
 }

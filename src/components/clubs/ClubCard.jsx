@@ -4,7 +4,9 @@ import truncate from "../../helper-functions/Truncator";
 const ClubCard = ({ imgSrc, alt, clubName, clubDescription, clubStatus }) => {
   const [showMore, setShowMore] = useState(false);
   return (
-    <div className="club-card">
+    <div
+      className="club-card"
+    >
       <div className="club-card__image">
         <img src={imgSrc} alt={alt} />
         <h1>{clubName}</h1>
