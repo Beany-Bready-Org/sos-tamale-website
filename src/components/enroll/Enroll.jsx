@@ -1,16 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import sideNavImage from "../../assets/images/new-side-nav-image.svg";
 import EnrollInput from "./EnrollInput";
 import siteLogo from "../../assets/images/logo2.png";
 import "../../stylesheets/Enroll.scss";
 import { NavLink } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import { Alert } from "react-bootstrap";
-// import {
-// 	SECRET_PUBLIC_KEY_ENROLL,
-// 	SECRET_SERVICE_ID_ENROLL,
-// 	SECRET_TEMPLATE_ID_ENROLL,
-// } from "../../secrets/EmailSecrets";
 
 const Enroll = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -75,9 +69,13 @@ const Enroll = () => {
       return;
     }
 
-    if(!navigator.onLine) {
-      showMessageForSomeTime('You\'re not online please,check your network', '', 2000)
-      return
+    if (!navigator.onLine) {
+      showMessageForSomeTime(
+        "You're not online please,check your network",
+        "",
+        2000
+      );
+      return;
     }
 
     try {
@@ -107,11 +105,11 @@ const Enroll = () => {
             Enroll Your Ward
           </h1>
           <p className="--description">Please fill out each box</p>
-        {errorMessage || successMessage ? (
-          <p className={errorMessage ? "error" : "success"}>
-            {errorMessage ? errorMessage : successMessage}
-          </p>
-        ) : null}
+          {errorMessage || successMessage ? (
+            <p className={errorMessage ? "error" : "success"}>
+              {errorMessage ? errorMessage : successMessage}
+            </p>
+          ) : null}
         </div>
         <EnrollInput
           type="text"
@@ -128,7 +126,7 @@ const Enroll = () => {
           nameValue="from_email"
         />
         <div className="enroll-form__input telephone --input">
-          <div className="telephone__contry-code">+233</div>
+          <div className="telephone__country-code">+233</div>
           <EnrollInput
             type="tel"
             placeholder="Enter your phone number here"
