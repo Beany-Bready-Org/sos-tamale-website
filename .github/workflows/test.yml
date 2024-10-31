@@ -1,0 +1,47 @@
+name: Run Tests
+
+# Run this workflow on pushes and pull requests to specific branches
+on:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main", "dev"]
+
+# Define the jobs to be run
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    # Define the Node.js version matrix (you can add more if needed)
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
+    # Steps to execute in the job
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment based on matrix
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Step 3: Cache npm dependencies to speed up builds
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ matrix.node-version }}-
+
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: npm test

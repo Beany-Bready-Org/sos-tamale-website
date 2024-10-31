@@ -48,7 +48,7 @@
     display: flex;
     // align-items: center;
 
-    &__contry-code {
+    &__country-code {
       @include flex(row, center, center, unset);
       padding-inline: 0.5em;
       background-color: $accent-color;
