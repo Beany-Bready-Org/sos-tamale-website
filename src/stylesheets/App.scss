@@ -132,6 +132,28 @@ a {
   @include button-hover(#fff, $error-darker, $error-color);
 }
 
+// Message styles for error and success messages
+.success {
+  outline: $success-color thin solid;
+  padding: .7em 0;
+  border-radius: .5rem;
+  background-color: lighten($success-color, 30%);
+  color: $success-color;
+  width: 100%;
+  max-width: 500px;
+  margin: .5em auto 0;
+  text-align: center
+}
+
+// Error message styles
+.error {
+  @extend .success;
+  background-color: lighten($error-color, 30%);
+  color: $error-color;
+  outline: $error-color thin solid;
+}
+
+
 .--header {
   color: $accent-color !important;
   font-size: $text-large;

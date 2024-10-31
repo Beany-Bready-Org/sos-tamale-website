@@ -2,12 +2,6 @@ import { useRef, useState } from "react";
 import "../../stylesheets/ContactForm.scss";
 import ContactInput from "./ContactInput";
 import emailjs from "@emailjs/browser";
-// import {
-// 	SECRET_PUBLIC_KEY,
-// 	SECRET_SERVICE_ID,
-// 	SECRET_TEMPLATE_ID,
-// } from "../../secrets/EmailSecrets";
-// import { Alert } from "react-bootstrap";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -37,9 +31,9 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const templateId = "template_zlkgrnn";
-    const serviceId = "service_k9t86zv";
-    const publicKey = "HxfJG_ab_z5fbm2qm";
+    const templateId = import.meta.env.VITE_CONTACT_TEMPLATE_ID;
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
     const formData = {
       from_name: fullNameRef.current.value,
@@ -54,8 +48,21 @@ export default function ContactForm() {
       !formData.from_subject ||
       !formData.message
     ) {
-      showMessageForSomeTime("Cannot submit an empty form", "", 2000);
+      showMessageForSomeTime(
+        "All fields are mandatory, please fill out all fields and try again.",
+        "",
+        2000
+      );
       setLoading(false);
+      return;
+    }
+
+    if (!navigator.onLine) {
+      showMessageForSomeTime(
+        "You're not online please,check your network",
+        "",
+        2000
+      );
       return;
     }
 
@@ -65,7 +72,9 @@ export default function ContactForm() {
       showMessageForSomeTime("", "Thank You For Reaching Out!", 2000);
       formRef.current.reset();
     } catch (error) {
-      showMessageForSomeTime(error, "", 2000);
+      const errorMessage = error.message || error.text || JSON.stringify(error);
+      console.log(errorMessage);
+      showMessageForSomeTime(errorMessage, "", 2000);
     } finally {
       setLoading(false);
     }

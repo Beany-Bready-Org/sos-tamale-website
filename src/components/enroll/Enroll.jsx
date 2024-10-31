@@ -47,9 +47,9 @@ const Enroll = () => {
     e.preventDefault();
     setErrorMessage("");
 
-    const serviceId = "service_zwdqe87" || process.env.SERVICE_ID_ENROLL;
-    const templateId = "template_ni7p3hr";
-    const publicKey = "HxfJG_ab_z5fbm2qm";
+    const templateId = import.meta.env.VITE_ENROLL_TEMPLATE_ID;
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
     const formData = {
       from_name: nameRef.current.value,
@@ -75,6 +75,11 @@ const Enroll = () => {
       return;
     }
 
+    if(!navigator.onLine) {
+      showMessageForSomeTime('You\'re not online please,check your network', '', 2000)
+      return
+    }
+
     try {
       setLoading(true);
       await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
@@ -86,7 +91,10 @@ const Enroll = () => {
       setLoading(false);
       formRef.current.reset();
     } catch (error) {
-      showMessageForSomeTime(error, "", 2000);
+      const errorMessage = error.message || error.text || JSON.stringify(error);
+      console.log(errorMessage);
+
+      showMessageForSomeTime(errorMessage, "", 2000);
       setLoading(false);
     }
   };
@@ -94,15 +102,16 @@ const Enroll = () => {
   return (
     <main className="enroll-container">
       <form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
-        {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
-        {successMessage && <Alert variant="success">{successMessage}</Alert>}
         <div className="enroll-form__heading">
           <h1 className="enroll-form__heading-header --header">
             Enroll Your Ward
           </h1>
-          <p className="--description">
-            Please fill out each box
+          <p className="--description">Please fill out each box</p>
+        {errorMessage || successMessage ? (
+          <p className={errorMessage ? "error" : "success"}>
+            {errorMessage ? errorMessage : successMessage}
           </p>
+        ) : null}
         </div>
         <EnrollInput
           type="text"
