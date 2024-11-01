@@ -3,7 +3,6 @@
 .enroll-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
 
   > * {
     height: 100%;
@@ -16,8 +15,27 @@
 
   .enroll-form {
     flex: 1;
-    flex-basis: 65%;
-    @include flex(column, center, center, 1.5em);
+    @include flex(column, unset, center, 1em);
+
+    // > *:not(#{&}__heading) {
+    //   outline: 2px solid red;
+    // }
+
+    &__form-group {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+
+      p {
+        margin-right: auto;
+      }
+
+      input {
+        margin-inline: 0 !important;
+      }
+    }
 
     &__heading {
       text-align: center;

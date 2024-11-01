@@ -1,0 +1,36 @@
+// import { screen, fireEvent, waitFor, render } from "@testing-library/react";
+// import { describe, test, vi, afterEach, expect } from "vitest";
+// import "@testing-library/jest-dom/vitest";
+// import emailjs from "@emailjs/browser";
+// import Enroll from "../components/enroll/Enroll";
+
+// import.meta.env.VITE_ENROLL_TEMPLATE_ID = "mockTemplateId";
+// import.meta.env.VITE_SERVICE_ID = "mockServiceId";
+// import.meta.env.VITE_PUBLIC_KEY = "mockPublicKey";
+
+// // Mock emailjs module
+// vi.mock("@emailjs/browser", {
+//   default: {
+//     send: vi.fn().mockResolvedValueOnce(),
+//   },
+//   send: vi.fn().mockRejectedValueOnce(),
+// });
+
+// describe("Enroll", () => {
+//   afterEach(() => {
+//     vi.clearAllMocks();
+//   });
+//   // Form should render properly
+//   test("should render form properly", () => {
+//     render(<Enroll />);
+
+//     // header must be present in the document
+//     expect(screen.getByText("Enroll Your Ward")).toBeInTheDocument();
+
+//     // Sub-header must be present in the document
+//     expect(screen.getByText("Please fill out each box")).toBeInTheDocument();
+
+//     // Inputs must be present
+//     // expect(screen.)
+//   });
+// });

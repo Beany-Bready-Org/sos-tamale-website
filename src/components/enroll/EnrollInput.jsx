@@ -1,7 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const EnrollInput = ({ type, placeholder, inputRef, className, nameValue }) => {
+const EnrollInput = ({
+  type,
+  placeholder,
+  className,
+  nameValue = "",
+  register,
+  registerValue,
+}) => {
   switch (type) {
     case "text":
     case "email":
@@ -10,9 +17,10 @@ const EnrollInput = ({ type, placeholder, inputRef, className, nameValue }) => {
         <input
           type={type}
           placeholder={placeholder}
-          ref={inputRef}
           className={className}
           name={nameValue}
+          id={nameValue}
+          {...register(registerValue)}
         />
       );
     default:
@@ -20,9 +28,10 @@ const EnrollInput = ({ type, placeholder, inputRef, className, nameValue }) => {
         <input
           type={type}
           placeholder={placeholder}
-          ref={inputRef}
           className={className}
           name={nameValue}
+          id={nameValue}
+          {...register(registerValue)}
         />
       );
   }

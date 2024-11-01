@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
+  const [messageLength, setMessageLength] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -13,9 +14,10 @@ export default function ContactForm() {
   const emailRef = useRef();
   const subjectRef = useRef();
   const messageRef = useRef();
-
-  // Form Ref
   const formRef = useRef();
+
+  // max message length
+  const maxMessageLength = 250;
 
   // Custom messages
   const showMessageForSomeTime = (errorMessage, successMessage, duration) => {
@@ -26,6 +28,18 @@ export default function ContactForm() {
       setErrorMessage("");
       setSuccessMessage("");
     }, duration);
+  };
+
+  // Handle message length
+  const handleMessageLength = (e) => {
+    let value = e.target.value;
+    setMessageLength(value.length);
+
+    if (messageLength >= maxMessageLength) {
+      value = value.substring(0, maxMessageLength - 1);
+    }
+
+    messageRef.current.value = value;
   };
 
   const handleSubmit = async (e) => {
@@ -68,7 +82,7 @@ export default function ContactForm() {
 
     try {
       setLoading(true);
-      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
+      await emailjs.send(serviceId, templateId, formData, publicKey);
       showMessageForSomeTime("", "Thank You For Reaching Out!", 2000);
       formRef.current.reset();
     } catch (error) {
@@ -93,7 +107,7 @@ export default function ContactForm() {
         <h1 className="--header" style={{ color: "black" }}>
           Contact Us
         </h1>
-        <p className="	--description">Contact us now for further enquiries.</p>
+        <p className="--description">Contact us now for further enquiries.</p>
       </div>
       {errorMessage || successMessage ? (
         <p className={errorMessage ? "error" : "success"}>
@@ -121,13 +135,19 @@ export default function ContactForm() {
         nameValue="from_subject"
         inputRef={subjectRef}
       />
-      <ContactInput
-        type={"textarea"}
-        placeholder={"Type your message here..."}
-        id={"message"}
-        nameValue="message"
-        inputRef={messageRef}
-      />
+      <div className="form-group">
+        <ContactInput
+          type={"textarea"}
+          placeholder={"Type your message here..."}
+          id={"message"}
+          nameValue="message"
+          inputRef={messageRef}
+          onChange={handleMessageLength}
+        />
+        <p data-testId="limiter">
+          {messageLength}/{maxMessageLength}
+        </p>
+      </div>
       <ContactInput
         type={"submit"}
         placeholder={loading ? "Submitting..." : "Submit"}
