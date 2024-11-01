@@ -1,7 +1,7 @@
 @import "./config";
 
 .contact__form {
-  @include flex(column, center, center, 1.5em);
+  @include flex(column, unset, center, 1em);
 
   width: clamp(300px, 100vw, 800px);
   flex-basis: 65%;
@@ -12,7 +12,25 @@
     font-size: 3rem !important;
   }
 
- 
+  .form-group {
+    width: clamp(300px, 100%, 500px) !important;
+    display: grid;
+
+
+    > * {
+      grid-row: 1/ -1;
+      grid-column: 1 / -1;
+    }
+
+    p {
+      justify-self: end;
+      margin-block: auto .5em;
+      margin-right: .5em;
+      color: $accent-color-secondary;
+      font-weight: weights(light);
+    }
+  }
+
   @media screen and (max-width: 800px) {
     height: 100%;
     width: clamp(300px, 100vw, 600px);

@@ -109,6 +109,7 @@ a {
 }
 
 .--cta {
+  width: clamp(300px, 85%, 500px) !important;
   @include button(#fff, $secondary-color, $accent-color, $btn-tiny, 6px);
   @include button-hover(#fff, $deep-secondary-color, $secondary-color);
 }
@@ -135,14 +136,14 @@ a {
 // Message styles for error and success messages
 .success {
   outline: $success-color thin solid;
-  padding: .7em 0;
-  border-radius: .5rem;
+  padding: 0.7em 0;
+  border-radius: 0.5rem;
   background-color: lighten($success-color, 30%);
   color: $success-color;
   width: 100%;
   max-width: 500px;
-  margin: .5em auto 0;
-  text-align: center
+  margin: 0.5em auto 0;
+  text-align: center;
 }
 
 // Error message styles
@@ -153,6 +154,12 @@ a {
   outline: $error-color thin solid;
 }
 
+.error-no-bg {
+  padding: 0 !important;
+  border: 0;
+  color: $error-color;
+  // align-self: flex-start !important;
+}
 
 .--header {
   color: $accent-color !important;
@@ -185,7 +192,8 @@ a {
 
 .--input {
   padding: 0.8em 0.8em;
-  width: clamp(300px, 85%, 500px);
+  width: clamp(300px, 100%, 500px) !important;
+
   font-size: $text-cta;
   resize: none;
   outline: 1px solid $light-secondary-color;
@@ -202,6 +210,29 @@ a {
       outline: 1px solid $accent-color;
     }
   }
+  margin: 0;
+}
+
+.--input-special {
+  padding: 0.8em 0.8em;
+  width: clamp(300px, 100%, 500px) !important;
+  font-size: $text-cta;
+  resize: none;
+  outline: 1px solid $light-secondary-color;
+  border: none;
+  border-radius: 4px;
+  &:not([type="submit"]) {
+    &:hover {
+      cursor: pointer;
+      outline: 1px solid $accent-color;
+    }
+
+    &:focus {
+      cursor: text;
+      outline: 1px solid $accent-color;
+    }
+  }
+  margin: 0;
 }
 
 // Semantic styles

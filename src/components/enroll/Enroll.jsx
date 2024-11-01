@@ -5,160 +5,191 @@ import siteLogo from "../../assets/images/logo2.png";
 import "../../stylesheets/Enroll.scss";
 import { NavLink } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const Enroll = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState();
-
+  const [successMessage, setSuccessMessage] = useState("");
   const handleMenu = () => setShowMenu((prev) => !prev);
 
-  // Form ref
+  // Form reference
   const formRef = useRef();
-  // Input refs
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const telephoneRef = useRef();
-  const wardsNameRef = useRef();
-  const prevSchoolRef = useRef();
 
-  const showMessageForSomeTime = (
-    errorMessage = "",
+  // form fields schema for enroll form
+  const formSchema = z.object({
+    name: z
+      .string({
+        message: "Your name must be a text",
+      })
+      .min(5),
+    email: z.string().email(),
+    phone: z.string().max(10, {
+      message: "Your phone number must be 10 characters long",
+    }),
+    wardName: z.string().min(5),
+    previousSchool: z.string().min(5),
+  });
+
+  // React hook form init
+  const {
+    register,
+    handleSubmit: submitHandler,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
+
+  const showSuccessMessageForSomeTime = (
     successMessage = "",
     duration = 1500
   ) => {
-    setErrorMessage(errorMessage);
     setSuccessMessage(successMessage);
 
     setTimeout(() => {
-      setErrorMessage("");
       setSuccessMessage("");
     }, duration);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrorMessage("");
-
+  const handleSubmit = async (data) => {
     const templateId = import.meta.env.VITE_ENROLL_TEMPLATE_ID;
     const serviceId = import.meta.env.VITE_SERVICE_ID;
     const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
     const formData = {
-      from_name: nameRef.current.value,
-      from_ward: wardsNameRef.current.value,
-      from_school: prevSchoolRef.current.value,
-      from_contact: telephoneRef.current.value,
-      from_email: emailRef.current.value,
+      from_name: data.name,
+      from_ward: data.wardName,
+      from_school: data.previousSchool,
+      from_contact: data.phone,
+      from_email: data.email,
     };
 
-    if (
-      !formData.from_name ||
-      !formData.from_contact ||
-      !formData.from_school ||
-      !formData.from_ward ||
-      !formData.from_email
-    ) {
-      showMessageForSomeTime(
-        "All fields are mandatory, please fill out all fields and try again.",
-        "",
-        2000
-      );
-      setLoading(false);
-      return;
-    }
-
+    // If user is offline
     if (!navigator.onLine) {
-      showMessageForSomeTime(
-        "You're not online please,check your network",
-        "",
-        2000
-      );
+      setError("root", {
+        message: "You're not online please,check your network",
+      });
+      console.log("Not online");
       return;
     }
 
     try {
-      setLoading(true);
-      await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
-      showMessageForSomeTime(
-        "",
+      await emailjs.send(serviceId, templateId, formData, publicKey);
+      showSuccessMessageForSomeTime(
         "Your request has been sent to our Head of School",
         2000
       );
-      setLoading(false);
       formRef.current.reset();
     } catch (error) {
-      const errorMessage = error.message || error.text || JSON.stringify(error);
+      const errorMessage =
+        error.message ||
+        error.text ||
+        JSON.stringify(error) ||
+        "An error occurred";
       console.log(errorMessage);
 
-      showMessageForSomeTime(errorMessage, "", 2000);
-      setLoading(false);
+      setError("root", {
+        message: errorMessage,
+      });
     }
   };
 
   return (
     <main className="enroll-container">
-      <form className="enroll-form" onSubmit={handleSubmit} ref={formRef}>
+      <form
+        className="enroll-form"
+        onSubmit={submitHandler(handleSubmit)}
+        ref={formRef}
+      >
         <div className="enroll-form__heading">
           <h1 className="enroll-form__heading-header --header">
             Enroll Your Ward
           </h1>
           <p className="--description">Please fill out each box</p>
-          {errorMessage || successMessage ? (
-            <p className={errorMessage ? "error" : "success"}>
-              {errorMessage ? errorMessage : successMessage}
-            </p>
+          {errors.root ? (
+            <p className="error">{errors.root.message}</p>
+          ) : successMessage ? (
+            <p className="success">{successMessage}</p>
           ) : null}
         </div>
-        <EnrollInput
-          type="text"
-          placeholder="Enter Your Name Here.."
-          className="enroll-form__input --input"
-          inputRef={nameRef}
-          nameValue="from_name"
-        />
-        <EnrollInput
-          type="email"
-          placeholder="Enter Your Email Here.."
-          className="enroll-form__input --input"
-          inputRef={emailRef}
-          nameValue="from_email"
-        />
-        <div className="enroll-form__input telephone --input">
-          <div className="telephone__country-code">+233</div>
+        <div className="enroll-form__form-group">
           <EnrollInput
-            type="tel"
-            placeholder="Enter your phone number here"
-            className="--input"
-            inputRef={telephoneRef}
-            nameValue="from_contact"
+            type="text"
+            placeholder="Enter Your Name Here.."
+            className="enroll-form__input --input-special"
+            nameValue="from_name"
+            register={register}
+            registerValue={"name"}
           />
+          {errors.name && <p className="error-no-bg">{errors.name.message}</p>}
         </div>
-        <EnrollInput
-          type="text"
-          placeholder="Enter Your Ward's Name here..."
-          className="enroll-form__input --input"
-          inputRef={wardsNameRef}
-          nameValue="from_ward"
-        />
-        <EnrollInput
-          type="text"
-          placeholder="What's your ward's previous school...?"
-          className="enroll-form__input --input"
-          inputRef={prevSchoolRef}
-          nameValue="from_school"
-        />
+        <div className="enroll-form__form-group">
+          <EnrollInput
+            type="email"
+            placeholder="Enter Your Email Here.."
+            className="enroll-form__input --input-special"
+            nameValue="from_email"
+            register={register}
+            registerValue={"email"}
+          />
+          {errors.email && (
+            <p className="error-no-bg">{errors.email.message}</p>
+          )}
+        </div>
+        <div className="enroll-form__form-group">
+          <div className="enroll-form__input telephone --input-special">
+            <div className="telephone__country-code">+233</div>
+            <EnrollInput
+              type="tel"
+              placeholder="Enter your phone number here"
+              className="--input"
+              nameValue="from_contact"
+              register={register}
+              registerValue={"phone"}
+            />
+          </div>
+          {errors.phone && (
+            <p className="error-no-bg">{errors.phone.message}</p>
+          )}
+        </div>
+        <div className="enroll-form__form-group">
+          <EnrollInput
+            type="text"
+            placeholder="Enter Your Ward's Name here..."
+            className="enroll-form__input --input-special"
+            nameValue="from_ward"
+            register={register}
+            registerValue={"wardName"}
+          />
+          {errors.wardName && (
+            <p className="error-no-bg">{errors.wardName.message}</p>
+          )}
+        </div>
+        <div className="enroll-form__form-group">
+          <EnrollInput
+            type="text"
+            placeholder="What's your ward's previous school...?"
+            className="enroll-form__input --input-special"
+            nameValue="from_school"
+            register={register}
+            registerValue={"previousSchool"}
+          />
+          {errors.previousSchool && (
+            <p className="error-no-bg">{errors.previousSchool.message}</p>
+          )}
+        </div>
         <button
-          className="--cta --input mb-2"
-          disabled={loading}
+          className="--cta mb-2"
+          disabled={isSubmitting}
           style={
-            loading
+            isSubmitting
               ? { backgroundColor: "#ced4da", boxShadow: "none", border: 0 }
               : null
           }
         >
-          {loading ? "Submitting..." : "Make enrollment request"}
+          {isSubmitting ? "Submitting..." : "Make enrollment request"}
         </button>
       </form>
       <header className="side-nav">
@@ -210,8 +241,8 @@ const Enroll = () => {
         </div>
         <div className="side-nav__sdg">
           <blockquote className="side-nav__sdg--four">
-            ”Ensure inclusive and equitable quality education and promote
-            lifelong learning opportunities for all”
+            â€Ensure inclusive and equitable quality education and promote
+            lifelong learning opportunities for allâ€
           </blockquote>
           <a
             href="https://sdgs.un.org/goals/goal4"
